@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Albetora – AI Suite</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Optional: Custom Fonts or Colors -->
+    <style>
+      @keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-slide {
+  animation: slide 40s linear infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.animate-scroll {
+  animation: scroll 50s linear infinite;
+}
+
+    </style>
+    <link rel="stylesheet" href="landingPage.css" />
+  </head>
+  <body class="bg-gray-50 text-gray-800 antialiased">
+   <!-- ===== SECTION 1: NAVIGATION + HERO (ENHANCED ZOHO-THEMED) ===== -->
+   <header class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+      <!-- Logo -->
+      <div class="flex items-center space-x-2">
+        <div class="w-8 h-8 rounded bg-gradient-to-br from-red-500 via-yellow-400 to-blue-500 flex items-center justify-center text-white font-bold text-sm shadow">M</div>
+        <span class="text-lg font-semibold tracking-tight text-gray-900">Albetora</span>
+      </div>
+  
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center space-x-6 text-sm text-gray-700">
+        <a href="./products.html" class="hover:text-blue-600 hover:underline underline-offset-4 transition">Products</a>
+        <a href="#enterprise" class="hover:text-green-600 hover:underline underline-offset-4 transition">Enterprise</a>
+  
+        <!-- Customers -->
+        <div class="relative group">
+          <button class="flex items-center gap-1 hover:text-blue-600 hover:underline underline-offset-4 transition">
+            <span>Customers</span>
+            <svg class="w-4 h-4 text-gray-500 group-hover:text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="absolute left-0 mt-2 w-64 bg-white border border-gray-200 shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+            <a href="#customer-stories" class="block p-4 hover:bg-blue-50">
+              <h4 class="font-semibold text-gray-900">Customer Stories</h4>
+              <p class="text-xs text-gray-600">Real impact by real users.</p>
+            </a>
+            <a href="#user-community" class="block p-4 hover:bg-blue-50">
+              <h4 class="font-semibold text-gray-900">User Community</h4>
+              <p class="text-xs text-gray-600">Connect, learn, and grow.</p>
+            </a>
+            <a href="#training" class="block p-4 hover:bg-blue-50">
+              <h4 class="font-semibold text-gray-900">Training & Certification</h4>
+              <p class="text-xs text-gray-600">Upskill with our resources.</p>
+            </a>
+          </div>
+        </div>
+  
+        <!-- Partners -->
+        <div class="relative group">
+          <button class="flex items-center gap-1 hover:text-yellow-600 hover:underline underline-offset-4 transition">
+            <span>Partners</span>
+            <svg class="w-4 h-4 text-gray-500 group-hover:text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="absolute left-0 mt-2 w-64 bg-white border border-gray-200 shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+            <a href="#work-with-partner" class="block p-4 hover:bg-yellow-50">
+              <h4 class="font-semibold text-gray-900">Work With a Partner</h4>
+              <p class="text-xs text-gray-600">Get expert implementation help.</p>
+            </a>
+            <a href="#become-partner" class="block p-4 hover:bg-yellow-50">
+              <h4 class="font-semibold text-gray-900">Become a Partner</h4>
+              <p class="text-xs text-gray-600">Grow with our network.</p>
+            </a>
+          </div>
+        </div>
+  
+        <a href="#resources" class="hover:text-red-500 hover:underline underline-offset-4 transition">Resources</a>
+        <button class="text-gray-500 hover:text-blue-600">EN</button>
+        <a href="./SignUp Pages/QuickSetup.html" class="ml-4 px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-400 text-white rounded-md hover:from-green-500 hover:to-yellow-400 transition shadow-md">Sign Up for Free</a>
+      </nav>
+  
+      <!-- Mobile Toggle -->
+      <button id="mobile-nav-toggle" class="md:hidden text-gray-600 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  
+    <!-- Mobile Nav Menu -->
+    <div id="mobile-nav" class="md:hidden hidden px-4 pb-4 bg-white border-t border-gray-200 shadow text-sm text-gray-800 space-y-2">
+      <a href="./products.html" class="block py-2 hover:text-blue-600 hover:underline underline-offset-4">Products</a>
+      <a href="#enterprise" class="block py-2 hover:text-green-600 hover:underline underline-offset-4">Enterprise</a>
+  
+      <!-- Customers -->
+      <div>
+        <button onclick="toggleSubmenu('mobile-customers')" class="flex justify-between items-center w-full py-2 hover:text-blue-600 hover:underline underline-offset-4">
+          <span>Customers</span>
+          <svg id="mobile-customers-arrow" class="w-4 h-4 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div id="mobile-customers" class="hidden pl-4 mt-1 space-y-1">
+          <a href="#customer-stories" class="block py-1 hover:text-blue-600">Customer Stories</a>
+          <a href="#user-community" class="block py-1 hover:text-blue-600">User Community</a>
+          <a href="#training" class="block py-1 hover:text-blue-600">Training & Certification</a>
+        </div>
+      </div>
+  
+      <!-- Partners -->
+      <div>
+        <button onclick="toggleSubmenu('mobile-partners')" class="flex justify-between items-center w-full py-2 hover:text-yellow-600 hover:underline underline-offset-4">
+          <span>Partners</span>
+          <svg id="mobile-partners-arrow" class="w-4 h-4 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div id="mobile-partners" class="hidden pl-4 mt-1 space-y-1">
+          <a href="#work-with-partner" class="block py-1 hover:text-yellow-600">Work With a Partner</a>
+          <a href="#become-partner" class="block py-1 hover:text-yellow-600">Become a Partner</a>
+        </div>
+      </div>
+  
+      <a href="#resources" class="block py-2 hover:text-red-500 hover:underline underline-offset-4">Resources</a>
+      <div class="flex justify-between items-center pt-2">
+        <button class="text-gray-500 hover:text-blue-600">EN</button>
+        <a href="./SignUp Pages/QuickSetup.html" class="px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-400 text-white rounded-md hover:from-green-500 hover:to-yellow-400 shadow">Sign Up for Free</a>
+      </div>
+    </div>
+  
+    <script>
+      const navToggle = document.getElementById('mobile-nav-toggle');
+      const mobileNav = document.getElementById('mobile-nav');
+  
+      navToggle.addEventListener('click', () => {
+        mobileNav.classList.toggle('hidden');
+      });
+  
+      function toggleSubmenu(id) {
+        const menu = document.getElementById(id);
+        const arrow = document.getElementById(`${id}-arrow`);
+        menu.classList.toggle('hidden');
+        arrow.classList.toggle('rotate-180');
+      }
+    </script>
+  </header>
+  
+  
+
+    <!-- HERO SECTION -->
+    <section
+      class="relative bg-white overflow-hidden py-24 sm:py-32 text-center"
+    >
+      <!-- Optional subtle background illusion -->
+      <div
+        class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-50 via-white to-transparent opacity-40 pointer-events-none"
+      ></div>
+
+      <div class="relative z-10 max-w-5xl mx-auto px-4">
+        <h1
+          class="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-tight mb-4"
+        >
+          Your Life’s Work,
+          <span
+            class="bg-gradient-to-r from-red-500 via-green-500 to-blue-600 bg-clip-text text-transparent animate-pulse"
+            >Powered by AI</span
+          >
+        </h1>
+        <p class="text-lg sm:text-xl text-gray-600 mb-10">
+          Albetora is your all-in-one business suite — automate sales, hiring,
+          onboarding, support, and reporting using intelligent agents.
+        </p>
+
+        <!-- CTA Button and Product Highlights -->
+<div class="mt-8 mb-16 space-y-6 text-center">
+  <!-- CTA Button -->
+  <a
+    href="./SignUp Pages/QuickSetup.html"
+    class="inline-block w-full sm:w-auto px-6 py-3 text-white bg-gradient-to-r from-blue-600 to-blue-400 hover:from-green-500 hover:to-yellow-400 font-medium rounded-md shadow-lg transition"
+  >
+    Get Started – Free Forever
+  </a>
+
+  <!-- Product Highlights -->
+  <div class="flex flex-wrap justify-center gap-2 text-sm text-gray-500 mb-10">
+    <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-medium">LeadFlow</span>
+    <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-medium">HireBot</span>
+    <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-xs font-medium">NoteTaker</span>
+    <span class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-xs font-medium">CashFlow</span>
+    <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-medium">SupportPro</span>
+  </div>
+</div>
+
+
+    <!-- MOBILE MENU SCRIPT -->
+    <script>
+      const toggle = document.getElementById("menu-toggle");
+      const menu = document.getElementById("mobile-menu");
+      toggle.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+    </script>
+
+    <!-- ===== SECTION 4.1: Trusted by Industry Leaders (Refined Theme) ===== -->
+    <section
+      id="trusted-carousel"
+      class="relative py-20 bg-gradient-to-br from-white via-slate-50 to-white overflow-hidden"
+    >
+      <!-- Decorative Backgrounds -->
+      <div
+        class="absolute -top-40 -left-40 w-[400px] h-[400px] bg-gradient-to-br from-blue-200 via-transparent to-transparent rounded-full blur-3xl opacity-30 pointer-events-none"
+      ></div>
+      <div
+        class="absolute bottom-[-120px] right-[-100px] w-[300px] h-[300px] bg-gradient-to-tr from-green-100 to-transparent rounded-full blur-3xl opacity-40 pointer-events-none"
+      ></div>
+
+      <!-- Section Title -->
+      <div
+        class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12"
+      >
+        <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
+          Trusted by
+          <span
+            class="bg-gradient-to-r from-blue-600 via-green-500 to-yellow-500 bg-clip-text text-transparent"
+            >Industry Leaders</span
+          >
+        </h2>
+        <p class="mt-4 text-gray-600 text-lg max-w-2xl mx-auto">
+          From fast-growing startups to established enterprises — Albetora
+          powers growth across industries.
+        </p>
+      </div>
+
+     <!-- Logo Carousel -->
+<!-- Logo Carousel -->
+<div class="relative overflow-hidden">
+  <div class="animate-slide flex items-center gap-16 w-max px-6 py-4">
+    <img src="https://img.icons8.com/?size=256&id=yy4kVfgjQwg2&format=png" alt="Notion" class="h-10 grayscale hover:grayscale-0 transition duration-300"/>
+    <img src="https://img.icons8.com/?size=256&id=4Xem_S1LR0kT&format=png" alt="Slack" class="h-10 grayscale hover:grayscale-0 transition duration-300"/>
+    <img src="https://img.icons8.com/?size=256&id=38732&format=png" alt="Figma" class="h-10 grayscale hover:grayscale-0 transition duration-300"/>
+    <img src="https://img.icons8.com/?size=256&id=A6r5yddU9uA0&format=png" alt="Trello" class="h-10 grayscale hover:grayscale-0 transition duration-300"/>
+    <img src="https://img.icons8.com/?size=256&id=SLaSNXnwjPFm&format=png" alt="Asana" class="h-10 grayscale hover:grayscale-0 transition duration-300"/>
+    <img src="https://img.icons8.com/?size=256&id=102679&format=png" alt="Airtable" class="h-10 grayscale hover:grayscale-0 transition duration-300"/>
+    <img src="https://img.icons8.com/?size=256&id=24669&format=png" alt="Miro" class="h-10 grayscale hover:grayscale-0 transition duration-300"/>
+    <img src="https://img.icons8.com/?size=256&id=QbT7DLJ4hAB0&format=png" alt="Linear" class="h-10 grayscale hover:grayscale-0 transition duration-300"/>
+
+    <!-- Loop duplicates -->
+    <img src="https://img.icons8.com/?size=256&id=yy4kVfgjQwg2&format=png" alt="Notion" class="h-10 grayscale hover:grayscale-0 transition duration-300"/>
+    <img src="https://img.icons8.com/?size=256&id=4Xem_S1LR0kT&format=png" alt="Slack" class="h-10 grayscale hover:grayscale-0 transition duration-300"/>
+    <img src="https://img.icons8.com/?size=256&id=38732&format=png" alt="Figma" class="h-10 grayscale hover:grayscale-0 transition duration-300"/>
+    <img src="https://img.icons8.com/?size=256&id=A6r5yddU9uA0&format=png" alt="Trello" class="h-10 grayscale hover:grayscale-0 transition duration-300"/>
+    <img src="https://img.icons8.com/?size=256&id=SLaSNXnwjPFm&format=png" alt="Asana" class="h-10 grayscale hover:grayscale-0 transition duration-300"/>
+    <img src="https://img.icons8.com/?size=256&id=102679&format=png" alt="Airtable" class="h-10 grayscale hover:grayscale-0 transition duration-300"/>
+    <img src="https://img.icons8.com/?size=256&id=24669&format=png" alt="Miro" class="h-10 grayscale hover:grayscale-0 transition duration-300"/>
+    <img src="https://img.icons8.com/?size=256&id=QbT7DLJ4hAB0&format=png" alt="Linear" class="h-10 grayscale hover:grayscale-0 transition duration-300"/>
+  </div>
+</div>
+
+
+    </section>
+
+    <!-- Part 2 -->
+  <!-- ===== SECTION 2: 6 CORE AGENTS (ZOHO-THEMED) ===== -->
+<section id="products" class="py-24 bg-gray-50 relative overflow-hidden">
+  <!-- Decorative radial illusion -->
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_var(--tw-gradient-stops))] from-blue-50 via-white to-transparent opacity-40 pointer-events-none"></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <!-- Section Title -->
+    <h2 class="text-4xl font-extrabold text-gray-900 mb-4">
+      Automate Every Department with
+      <span class="bg-gradient-to-r from-red-500 via-blue-500 to-green-400 bg-clip-text text-transparent">Albetora Agents</span>
+    </h2>
+    <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-12">
+      From lead generation to onboarding, meetings to finances — these AI
+      agents handle the most critical workflows for your business.
+    </p>
+
+    <!-- Grid of 6 Agents -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
+
+      <!-- 🟢 Operations: Agentic NoteTaker (ACTIVE + ON TOP) -->
+      <div class="order-1 relative bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transform hover:-translate-y-1 transition border border-green-300">
+        <!-- Top-right Tag -->
+        <a href="./products.html" class="absolute top-4 right-4 z-20 bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1 hover:bg-green-200 transition">
+          Live
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+        <div class="absolute -bottom-6 -left-6 w-24 h-24 bg-green-100 rounded-full blur-2xl opacity-30"></div>
+        <div class="relative z-10 p-6">
+          <div class="text-4xl mb-4">📝</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Agentic NoteTaker</h3>
+          <p class="text-sm text-gray-600 mb-4">Ensures follow-ups post-meeting with smart summaries and actions.</p>
+          <span class="inline-block bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Operations</span>
+        </div>
+      </div>
+
+      <!-- 🔴 Sales: Agentic LeadFlow -->
+      <div class="order-2 relative bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transform hover:-translate-y-1 transition border border-blue-200">
+        <span class="absolute top-4 right-4 z-20 bg-gray-200 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full">Inactive</span>
+        <div class="absolute -top-6 -left-6 w-24 h-24 bg-blue-100 rounded-full blur-2xl opacity-30"></div>
+        <div class="relative z-10 p-6">
+          <div class="text-4xl mb-4">📈</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Agentic LeadFlow</h3>
+          <p class="text-sm text-gray-600 mb-4">Converts more leads by responding instantly and booking demos.</p>
+          <span class="inline-block bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Sales</span>
+        </div>
+      </div>
+
+      <!-- 🔴 Marketing: Agentic CampaignView -->
+      <div class="order-3 relative bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transform hover:-translate-y-1 transition border border-yellow-300">
+        <span class="absolute top-4 right-4 z-20 bg-gray-200 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full">Inactive</span>
+        <div class="absolute -top-6 -right-6 w-24 h-24 bg-yellow-100 rounded-full blur-2xl opacity-30"></div>
+        <div class="relative z-10 p-6">
+          <div class="text-4xl mb-4">📊</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Agentic CampaignView</h3>
+          <p class="text-sm text-gray-600 mb-4">Tracks ad ROI and highlights your top-performing campaigns.</p>
+          <span class="inline-block bg-yellow-100 text-yellow-800 text-xs px-3 py-1 rounded-full">Marketing</span>
+        </div>
+      </div>
+
+      <!-- 🔴 HR: Agentic HireBot -->
+      <div class="order-4 relative bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transform hover:-translate-y-1 transition border border-purple-300">
+        <span class="absolute top-4 right-4 z-20 bg-gray-200 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full">Inactive</span>
+        <div class="absolute -top-6 -left-6 w-24 h-24 bg-purple-100 rounded-full blur-2xl opacity-30"></div>
+        <div class="relative z-10 p-6">
+          <div class="text-4xl mb-4">👥</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Agentic HireBot</h3>
+          <p class="text-sm text-gray-600 mb-4">Filters resumes and schedules interviews — without human delay.</p>
+          <span class="inline-block bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">HR</span>
+        </div>
+      </div>
+
+      <!-- 🔴 Client Success: Agentic ClientMate -->
+      <div class="order-5 relative bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transform hover:-translate-y-1 transition border border-pink-300">
+        <span class="absolute top-4 right-4 z-20 bg-gray-200 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full">Inactive</span>
+        <div class="absolute -top-6 -right-6 w-24 h-24 bg-pink-100 rounded-full blur-2xl opacity-30"></div>
+        <div class="relative z-10 p-6">
+          <div class="text-4xl mb-4">🤝</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Agentic ClientMate</h3>
+          <p class="text-sm text-gray-600 mb-4">Automates onboarding emails, document requests, and reminders.</p>
+          <span class="inline-block bg-pink-100 text-pink-800 text-xs px-3 py-1 rounded-full">Client Success</span>
+        </div>
+      </div>
+
+      <!-- 🔴 Finance: Agentic CashView -->
+      <div class="order-6 relative bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transform hover:-translate-y-1 transition border border-gray-300">
+        <span class="absolute top-4 right-4 z-20 bg-gray-200 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full">Inactive</span>
+        <div class="absolute -bottom-6 -left-6 w-24 h-24 bg-gray-200 rounded-full blur-2xl opacity-30"></div>
+        <div class="relative z-10 p-6">
+          <div class="text-4xl mb-4">💰</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Agentic CashView</h3>
+          <p class="text-sm text-gray-600 mb-4">Gives a real-time snapshot of your company’s financial health.</p>
+          <span class="inline-block bg-gray-200 text-gray-800 text-xs px-3 py-1 rounded-full">Finance</span>
+        </div>
+      </div>
+
+    </div>
+    <!-- End of Grid -->
+  </div>
+</section>
+
+    <!-- ===== SECTION 3: Why Teams Trust Albetora (Enhanced Colorful UX) ===== -->
+    <section id="why-Albetora" class="relative py-28 bg-white overflow-hidden">
+      <!-- Decorative Backgrounds -->
+      <div
+        class="absolute -top-40 -left-40 w-[500px] h-[500px] bg-gradient-to-br from-blue-200 via-white to-transparent rounded-full blur-3xl opacity-40 pointer-events-none"
+      ></div>
+      <div
+        class="absolute top-20 right-[-150px] w-[400px] h-[400px] bg-gradient-to-tr from-yellow-100 to-transparent rounded-full blur-3xl opacity-50 pointer-events-none"
+      ></div>
+
+      <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Header -->
+        <div class="text-center mb-20" data-aos="fade-up">
+          <h2
+            class="text-4xl md:text-4xl font-extrabold text-gray-900 leading-tight"
+          >
+            Why Teams
+            <span
+              class="bg-gradient-to-r from-blue-600 via-green-500 to-yellow-500 bg-clip-text text-transparent"              "
+              >Trust Albetora</span
+            >
+          </h2>
+          <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+            Not just tools — your 24/7 AI teammates. Built to automate, adapt,
+            and deliver results.
+          </p>
+        </div>
+
+        <!-- Features -->
+        <div class="space-y-24">
+          <!-- Feature 1 -->
+          <div
+            class="flex flex-col md:flex-row items-center gap-10"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="relative group">
+              <div
+                class="w-24 h-24 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white text-4xl shadow-xl transform transition-transform duration-300 group-hover:scale-110 border-4 border-blue-200"
+              ></div>
+              <div
+                class="absolute top-0 left-0 w-full h-full rounded-full border-[3px] border-blue-300 animate-pulse opacity-20 group-hover:opacity-40"
+              ></div>
+              <div
+                class="absolute top-0 left-0 w-full h-full rounded-full blur-lg bg-blue-400 opacity-10 group-hover:opacity-20"
+              ></div>
+              <div
+                class="absolute inset-0 flex items-center justify-center text-4xl text-white"
+              >
+                ⚙️
+              </div>
+            </div>
+            <div>
+              <h3 class="text-2xl font-semibold text-blue-700 mb-2">
+                Works While You Sleep
+              </h3>
+              <p class="text-gray-600 text-base leading-relaxed max-w-xl">
+                From lead follow-ups to meeting summaries, Albetora agents stay
+                active around the clock — so you don’t have to.
+              </p>
+            </div>
+          </div>
+
+          <!-- Feature 2 -->
+          <div
+            class="flex flex-col md:flex-row-reverse items-center gap-10"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="relative group">
+              <div
+                class="w-24 h-24 rounded-full bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center text-white text-4xl shadow-xl transform transition-transform duration-300 group-hover:scale-110 border-4 border-green-200"
+              ></div>
+              <div
+                class="absolute top-0 left-0 w-full h-full rounded-full border-[3px] border-green-300 animate-pulse opacity-20 group-hover:opacity-40"
+              ></div>
+              <div
+                class="absolute top-0 left-0 w-full h-full rounded-full blur-lg bg-green-400 opacity-10 group-hover:opacity-20"
+              ></div>
+              <div
+                class="absolute inset-0 flex items-center justify-center text-4xl text-white"
+              >
+                🔌
+              </div>
+            </div>
+            <div>
+              <h3 class="text-2xl font-semibold text-green-700 mb-2">
+                Connects Everything
+              </h3>
+              <p class="text-gray-600 text-base leading-relaxed max-w-xl">
+                Sync with Gmail, Slack, Stripe, Notion, Trello and 50+ other
+                tools instantly — without writing a single line of code.
+              </p>
+            </div>
+          </div>
+
+          <!-- Feature 3 -->
+          <div
+            class="flex flex-col md:flex-row items-center gap-10"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="relative group">
+              <div
+                class="w-24 h-24 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center text-white text-4xl shadow-xl transform transition-transform duration-300 group-hover:scale-110 border-4 border-yellow-200"
+              ></div>
+              <div
+                class="absolute top-0 left-0 w-full h-full rounded-full border-[3px] border-yellow-300 animate-pulse opacity-20 group-hover:opacity-40"
+              ></div>
+              <div
+                class="absolute top-0 left-0 w-full h-full rounded-full blur-lg bg-yellow-400 opacity-10 group-hover:opacity-20"
+              ></div>
+              <div
+                class="absolute inset-0 flex items-center justify-center text-4xl text-white"
+              >
+                🚀
+              </div>
+            </div>
+            <div>
+              <h3 class="text-2xl font-semibold text-yellow-700 mb-2">
+                Scales With You
+              </h3>
+              <p class="text-gray-600 text-base leading-relaxed max-w-xl">
+                Whether you're a solo founder or growing to an enterprise,
+                Albetora agents adapt to your speed and complexity.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ===== SECTION 5: Enhanced Testimonials with Auto-Rotate & Progress Bar ===== -->
+<section
+id="testimonials"
+class="relative py-28 bg-gradient-to-b from-white via-slate-50 to-white overflow-hidden"
+>
+<!-- Decorative Backgrounds -->
+<div class="absolute -top-40 -left-40 w-96 h-96 bg-gradient-to-br from-blue-200 via-transparent to-transparent rounded-full blur-3xl opacity-30 pointer-events-none"></div>
+<div class="absolute bottom-[-100px] right-[-100px] w-80 h-80 bg-gradient-to-tr from-yellow-200 to-transparent rounded-full blur-3xl opacity-40 pointer-events-none"></div>
+
+<div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- Section Header -->
+  <div class="text-center mb-20">
+    <h2 class="text-4xl md:text-4xl font-extrabold text-gray-900">
+      What Teams
+      <span class="bg-gradient-to-r from-red-500 via-blue-500 to-green-400 bg-clip-text text-transparent">Say About Albetora</span>
+    </h2>
+    <p class="mt-4 text-lg text-gray-600 max-w-xl mx-auto">
+      Voices from startups and enterprises using Albetora daily.
+    </p>
+  </div>
+
+  <!-- Testimonials Grid -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+    <!-- Card 1 -->
+    <div
+      class="bg-white/60 backdrop-blur-lg rounded-2xl shadow-xl p-8 border border-blue-200 relative overflow-hidden group transition duration-500 hover:shadow-2xl hover:scale-[1.01]"
+      data-aos="fade-up"
+    >
+      <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-50 via-transparent to-transparent opacity-20 group-hover:opacity-30 transition duration-500 pointer-events-none"></div>
+      <div id="testimonial-1" class="transition-opacity duration-500 ease-in-out"></div>
+
+      <!-- Progress Bar -->
+      <div class="mt-6 h-1 w-full bg-gray-200 rounded overflow-hidden">
+        <div class="h-full bg-gradient-to-r from-blue-500 to-green-400 animate-progress-7s rounded" id="bar-1"></div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div
+      class="bg-white/60 backdrop-blur-lg rounded-2xl shadow-xl p-8 border border-yellow-200 relative overflow-hidden group transition duration-500 hover:shadow-2xl hover:scale-[1.01]"
+      data-aos="fade-up"
+      data-aos-delay="150"
+    >
+      <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-tr from-yellow-50 via-transparent to-transparent opacity-20 group-hover:opacity-30 transition duration-500 pointer-events-none"></div>
+      <div id="testimonial-2" class="transition-opacity duration-500 ease-in-out"></div>
+
+      <!-- Progress Bar -->
+      <div class="mt-6 h-1 w-full bg-gray-200 rounded overflow-hidden">
+        <div class="h-full bg-gradient-to-r from-yellow-400 to-pink-500 animate-progress-7s rounded" id="bar-2"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA Button -->
+<div class="mt-16 text-center" data-aos="fade-up" data-aos-delay="300">
+  <a
+    href="./SignUp Pages/QuickSetup.html"
+    class="inline-block bg-gradient-to-r from-blue-600 via-green-500 to-yellow-400 text-white font-semibold text-lg px-8 py-3 rounded-full shadow-lg hover:brightness-105 hover:scale-105 transition-all duration-300"
+  >
+    Get Started - Free Forever
+  </a>
+</div>
+</section>
+
+<!-- Custom Animation Style for Progress Bar -->
+<style>
+@keyframes progress-bar-anim {
+from {
+  width: 0%;
+}
+to {
+  width: 100%;
+}
+}
+.animate-progress-7s {
+animation: progress-bar-anim 7s linear infinite;
+}
+</style>
+
+<!-- Testimonials Script -->
+<script>
+const testimonials1 = [
+  {
+    text: "“Albetora replaced our sales inbox and calendar chaos. We’re closing leads 3x faster.”",
+    name: "Prakarsh Gagdani",
+    role: "CEO, 5Paisa",
+    avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+  },
+  {
+    text: "“We now use 4 agents daily. It’s like having an extra 3 employees, but smarter.”",
+    name: "Ravi Kulkarni",
+    role: "CTO, Reco.ai",
+    avatar: "https://randomuser.me/api/portraits/men/45.jpg",
+  },
+];
+
+const testimonials2 = [
+  {
+    text: "“The onboarding, follow-ups, and email replies just run on their own — it’s brilliant.”",
+    name: "Ananya Deshmukh",
+    role: "COO, Zomato",
+    avatar: "https://randomuser.me/api/portraits/women/45.jpg",
+  },
+  {
+    text: "“We scaled to 25+ clients without needing more ops staff thanks to Albetora.”",
+    name: "Nidhi Shah",
+    role: "CMO, LemonPay",
+    avatar: "https://randomuser.me/api/portraits/women/34.jpg",
+  },
+];
+
+let index1 = 0, index2 = 0;
+
+function updateTestimonial(id, data) {
+  const element = document.getElementById(id);
+  element.style.opacity = 0;
+  setTimeout(() => {
+    element.innerHTML = `
+      <p class="text-lg text-gray-700 mb-6">"${data.text}"</p>
+      <div class="flex items-center gap-4">
+        <img src="${data.avatar}" alt="${data.name}" class="w-12 h-12 rounded-full object-cover border border-gray-200 shadow-md" />
+        <div>
+          <p class="text-sm font-bold text-gray-900">${data.name}</p>
+          <p class="text-sm text-gray-500">${data.role}</p>
+        </div>
+      </div>
+    `;
+    element.style.opacity = 1;
+  }, 300);
+}
+
+function resetProgressBars() {
+  const bar1 = document.getElementById('bar-1');
+  const bar2 = document.getElementById('bar-2');
+
+  bar1.classList.remove('animate-progress-7s');
+  bar2.classList.remove('animate-progress-7s');
+
+  // Trigger reflow to restart animation
+  void bar1.offsetWidth;
+  void bar2.offsetWidth;
+
+  bar1.classList.add('animate-progress-7s');
+  bar2.classList.add('animate-progress-7s');
+}
+
+function rotate() {
+  updateTestimonial("testimonial-1", testimonials1[index1]);
+  updateTestimonial("testimonial-2", testimonials2[index2]);
+  resetProgressBars();
+  index1 = (index1 + 1) % testimonials1.length;
+  index2 = (index2 + 1) % testimonials2.length;
+}
+
+rotate();
+setInterval(rotate, 7000);
+</script>
+<!-- ===== SECTION: Integrations Carousel – Colorful Edition ===== -->
+<section id="integrations" class="py-20 bg-white overflow-hidden relative">
+  <!-- Decorative Blurs -->
+  <div class="absolute top-[-120px] left-[-100px] w-[400px] h-[400px] bg-gradient-to-br from-green-200 to-transparent rounded-full blur-3xl opacity-30 pointer-events-none"></div>
+  <div class="absolute bottom-[-120px] right-[-100px] w-[400px] h-[400px] bg-gradient-to-tr from-yellow-200 to-transparent rounded-full blur-3xl opacity-20 pointer-events-none"></div>
+
+  <!-- Title + Subtitle -->
+  <div class="text-center mb-10 px-4" data-aos="fade-up">
+    <h2 class="text-4xl font-extrabold text-gray-900">
+      Connects with <span class="bg-gradient-to-r from-green-500 via-blue-500 to-yellow-400 bg-clip-text text-transparent">Your Tools</span>
+    </h2>
+    <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+      Don’t just integrate — connect in full color. Your favorite apps, as vibrant as your workflow.
+    </p>
+  </div>
+
+  <!-- Scrolling Logos -->
+  <div class="relative w-full overflow-hidden">
+    <div class="animate-scroll flex items-center gap-16 w-max px-6 py-4">
+      
+      <!-- Logos in full color with glow on hover -->
+      <img src="https://img.icons8.com/?size=256&id=17949&format=png" alt="Google" class="h-10 mx-auto transition-transform duration-300 hover:scale-105 hover:brightness-110" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg" alt="Slack" class="h-10 mx-auto transition-transform duration-300 hover:scale-105 hover:brightness-110" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Notion-logo.svg/1024px-Notion-logo.svg.png" alt="Notion" class="h-10 mx-auto transition-transform duration-300 hover:scale-105 hover:brightness-110" />
+      <img src="https://img.icons8.com/?size=256&id=82ewLsKHYlLc&format=png" alt="Zoom" class="h-10 mx-auto transition-transform duration-300 hover:scale-105 hover:brightness-110" />
+      <img src="https://img.icons8.com/?size=256&id=21049&format=png" alt="Trello" class="h-10 mx-auto transition-transform duration-300 hover:scale-105 hover:brightness-110" />
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgyn8Ng8PXWBZX5eLh8orPs-6Ntz65mAJHhg&s" alt="Calendly" class="h-10 mx-auto transition-transform duration-300 hover:scale-105 hover:brightness-110" />
+      <img src="https://images.seeklogo.com/logo-png/36/1/typeform-logo-png_seeklogo-363144.png" alt="Typeform" class="h-10 mx-auto transition-transform duration-300 hover:scale-105 hover:brightness-110" />
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrVwOzVey6XcMevohRDman3xgDFw91v8qZfw&s" alt="Zapier" class="h-10 mx-auto transition-transform duration-300 hover:scale-105 hover:brightness-110" />
+      <img src="https://logos-world.net/wp-content/uploads/2021/03/Stripe-Emblem.png" alt="Stripe" class="h-10 mx-auto transition-transform duration-300 hover:scale-105 hover:brightness-110" />
+      
+      <!-- "+ More" indicator -->
+      <div class="h-10 w-10 rounded-full border-2 border-gray-300 bg-white text-gray-700 flex items-center justify-center text-sm font-medium hover:brightness-110 transition duration-300">
+        +50
+      </div>
+      
+      <!-- Repeat logos for smooth loop -->
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google" class="h-10 mx-auto transition-transform duration-300 hover:scale-105 hover:brightness-110" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg" alt="Slack" class="h-10 mx-auto transition-transform duration-300 hover:scale-105 hover:brightness-110" />
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 5: Global Presence & Support ===== -->
+<section id="global-support" class="relative py-24 bg-gradient-to-br from-white via-slate-50 to-white overflow-hidden">
+  <!-- Background Blobs -->
+  <div class="absolute -top-32 -left-32 w-[400px] h-[400px] bg-blue-100 rounded-full blur-3xl opacity-30 pointer-events-none"></div>
+  <div class="absolute bottom-[-120px] right-[-100px] w-[300px] h-[300px] bg-green-100 rounded-full blur-3xl opacity-30 pointer-events-none"></div>
+
+  <!-- Section Content -->
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">
+      Global
+      <span class="bg-gradient-to-r from-red-500 via-blue-500 to-green-400 bg-clip-text text-transparent">
+        Presence & Support
+      </span>
+    </h2>
+    <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-12">
+      Wherever your team operates — Albetora AI Agents are there. Backed by 24/7 support, across time zones.
+    </p>
+
+    <!-- World Map with Pin Overlay (You can replace image with custom SVG) -->
+    <div class="relative max-w-4xl mx-auto mb-12">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/World_map_blank_without_borders.svg/1920px-World_map_blank_without_borders.svg.png"
+           alt="Global Map"
+           class="w-full rounded-lg shadow-lg opacity-90" />
+
+      <!-- Example Glowing Pins -->
+      <div class="absolute top-[30%] left-[22%] w-4 h-4 bg-green-500 rounded-full animate-ping opacity-80"></div>
+      <div class="absolute top-[48%] left-[48%] w-4 h-4 bg-blue-500 rounded-full animate-ping opacity-80"></div>
+      <div class="absolute top-[40%] left-[65%] w-4 h-4 bg-yellow-500 rounded-full animate-ping opacity-80"></div>
+    </div>
+
+     <!-- Support Features -->
+     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Card 1 -->
+      <div class="group relative bg-white rounded-2xl p-8 shadow-lg border-2 border-blue-100 hover:border-blue-400 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+        <div class="flex items-center justify-center w-14 h-14 mb-4 rounded-full bg-blue-50 text-blue-600 text-2xl shadow-inner group-hover:scale-105 transition">
+          🌐
+        </div>
+        <h4 class="text-lg font-semibold text-gray-900 mb-2">Available in 40+ Countries</h4>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          From North America to APAC, your agents run around the clock across continents.
+        </p>
+        <div class="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-blue-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="group relative bg-white rounded-2xl p-8 shadow-lg border-2 border-green-100 hover:border-green-400 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+        <div class="flex items-center justify-center w-14 h-14 mb-4 rounded-full bg-green-50 text-green-600 text-2xl shadow-inner group-hover:scale-105 transition">
+          🕒
+        </div>
+        <h4 class="text-lg font-semibold text-gray-900 mb-2">24/7 AI-Powered Support</h4>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Get instant help anytime — from our smart assistant or real humans.
+        </p>
+        <div class="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-green-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="group relative bg-white rounded-2xl p-8 shadow-lg border-2 border-yellow-100 hover:border-yellow-400 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+        <div class="flex items-center justify-center w-14 h-14 mb-4 rounded-full bg-yellow-50 text-yellow-600 text-2xl shadow-inner group-hover:scale-105 transition">
+          💬
+        </div>
+        <h4 class="text-lg font-semibold text-gray-900 mb-2">Regional Experts On Call</h4>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Localized onboarding, guidance, and account support for your timezone.
+        </p>
+        <div class="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-yellow-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FINAL CTA SECTION (With Gradient Text Button) ===== -->
+<section class="relative py-20 bg-gradient-to-b from-white via-slate-50 to-white overflow-hidden">
+  <!-- Blobs -->
+  <div class="absolute -top-32 -left-32 w-[450px] h-[450px] bg-gradient-to-br from-blue-300 via-white to-transparent rounded-full blur-3xl opacity-40 pointer-events-none animate-pulse"></div>
+  <div class="absolute bottom-[-120px] right-[-120px] w-[350px] h-[350px] bg-gradient-to-tr from-yellow-200 via-white to-transparent rounded-full blur-3xl opacity-30 pointer-events-none animate-ping"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-snug">
+      Get More Done with
+      <span class="bg-gradient-to-r from-blue-600 via-green-500 to-yellow-400 bg-clip-text text-transparent">
+        Albetora AI Agents
+      </span>
+    </h2>
+    <p class="text-base md:text-lg text-gray-600 max-w-xl mx-auto mb-10">
+      Automate sales, support, HR, and more — instantly. No credit card, no setup, just results.
+    </p>
+
+    <!-- Gradient Text Button with border -->
+    <div class="mt-6">
+      <a
+        href="./SignUp Pages/QuickSetup.html"
+        class="inline-block px-8 py-3 text-lg font-semibold rounded-full border-2 border-transparent bg-white bg-clip-padding hover:shadow-xl transition-all duration-300 hover:scale-105"
+        style="
+          border-image: linear-gradient(to right, #ef4444, #3b82f6, #10b981) 1;
+          color: transparent;
+          background-clip: text;
+          -webkit-background-clip: text;
+          background-image: linear-gradient(to right, #ef4444, #3b82f6, #10b981);
+        "
+      >
+        Get Started – Free AI Access Forever
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ENHANCED COLORFUL FOOTER SECTION ===== -->
+<footer class="relative bg-gradient-to-br from-white via-slate-50 to-white pt-20 pb-10 border-t border-gray-200 overflow-hidden">
+  <!-- Background Blobs -->
+  <div class="absolute -top-20 -left-32 w-[400px] h-[400px] bg-gradient-to-br from-blue-300 via-white to-transparent rounded-full blur-3xl opacity-30 pointer-events-none"></div>
+  <div class="absolute bottom-[-100px] right-[-100px] w-[300px] h-[300px] bg-gradient-to-tr from-green-200 to-transparent rounded-full blur-3xl opacity-30 pointer-events-none"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-sm text-gray-700">
+
+      <!-- Logo + Tagline -->
+      <div>
+        <h3 class="text-2xl font-extrabold bg-gradient-to-r from-blue-600 via-red-500 to-yellow-400 bg-clip-text text-transparent mb-3">
+          Albetora
+        </h3>
+        <p class="text-gray-600">
+          Intelligent AI agents that automate your entire business — from sales to support. Built for scale, powered by simplicity.
+        </p>
+      </div>
+
+      <!-- Products -->
+      <div>
+        <h4 class="text-lg font-semibold text-blue-600 mb-3">Products</h4>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:text-blue-500 transition">Sales Agent</a></li>
+          <li><a href="#" class="hover:text-blue-500 transition">Recruitment Agent</a></li>
+          <li><a href="#" class="hover:text-blue-500 transition">Support Agent</a></li>
+          <li><a href="#" class="hover:text-blue-500 transition">Finance Agent</a></li>
+        </ul>
+      </div>
+
+      <!-- Company -->
+      <div>
+        <h4 class="text-lg font-semibold text-green-600 mb-3">Company</h4>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:text-green-500 transition">About Us</a></li>
+          <li><a href="#" class="hover:text-green-500 transition">Blog</a></li>
+          <li><a href="#" class="hover:text-green-500 transition">Careers</a></li>
+          <li><a href="#" class="hover:text-green-500 transition">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Support -->
+      <div>
+        <h4 class="text-lg font-semibold text-yellow-600 mb-3">Support</h4>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:text-yellow-500 transition">Help Center</a></li>
+          <li><a href="#" class="hover:text-yellow-500 transition">Live Chat</a></li>
+          <li><a href="#" class="hover:text-yellow-500 transition">Terms of Service</a></li>
+          <li><a href="#" class="hover:text-yellow-500 transition">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Divider -->
+    <div class="mt-10 border-t border-gray-300 pt-6 text-center text-gray-500 text-sm">
+      &copy; 2025 <span class="font-medium text-gray-700">Albetora Technologies</span>. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+
+
+</section>
+
+
+
+  </body>
+</html>
