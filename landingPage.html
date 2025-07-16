@@ -1,0 +1,1456 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI NoteTaker</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-T37TCTN8');
+</script>
+  </head>
+  <body>
+    <!-- ====== SECTION 1: NAVIGATION BAR ====== -->
+    <header
+      class="bg-blue-50 border-b border-blue-200 sticky top-0 z-50 shadow-sm"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16"
+      >
+        <!-- Logo -->
+      <div class="flex items-center space-x-2">
+              <img src="./assets/Lo.png" class="w-8 h-8 rounded bg-gradient-to-br from-red-500 via-yellow-400 to-blue-500 flex items-center justify-center text-white font-bold text-sm shadow" />
+          <span class="text-lg font-semibold tracking-tight text-gray-900"
+            >Albetora</span
+          >
+        </div>
+
+        <!-- Desktop Nav -->
+        <nav
+          class="hidden md:flex items-center space-x-6 text-sm text-gray-700"
+        >
+          <a
+            href="./products.html"
+            class="hover:text-blue-600 hover:underline underline-offset-4 transition"
+            >Products</a
+          >
+          <a
+            href="#enterprise"
+            class="hover:text-green-600 hover:underline underline-offset-4 transition"
+            >Enterprise</a
+          >
+
+          <!-- Customers -->
+          <div class="relative group">
+            <button
+              class="flex items-center gap-1 hover:text-blue-600 hover:underline underline-offset-4 transition"
+            >
+              <span>Customers</span>
+              <svg
+                class="w-4 h-4 text-gray-500 group-hover:text-blue-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            <div
+              class="absolute left-0 mt-2 w-64 bg-white border border-gray-200 shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
+            >
+              <a href="#customer-stories" class="block p-4 hover:bg-blue-50">
+                <h4 class="font-semibold text-gray-900">Customer Stories</h4>
+                <p class="text-xs text-gray-600">Real impact by real users.</p>
+              </a>
+              <a href="#user-community" class="block p-4 hover:bg-blue-50">
+                <h4 class="font-semibold text-gray-900">User Community</h4>
+                <p class="text-xs text-gray-600">Connect, learn, and grow.</p>
+              </a>
+              <a href="#training" class="block p-4 hover:bg-blue-50">
+                <h4 class="font-semibold text-gray-900">
+                  Training & Certification
+                </h4>
+                <p class="text-xs text-gray-600">Upskill with our resources.</p>
+              </a>
+            </div>
+          </div>
+
+          <!-- Partners -->
+          <div class="relative group">
+            <button
+              class="flex items-center gap-1 hover:text-yellow-600 hover:underline underline-offset-4 transition"
+            >
+              <span>Partners</span>
+              <svg
+                class="w-4 h-4 text-gray-500 group-hover:text-yellow-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            <div
+              class="absolute left-0 mt-2 w-64 bg-white border border-gray-200 shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
+            >
+              <a href="#work-with-partner" class="block p-4 hover:bg-yellow-50">
+                <h4 class="font-semibold text-gray-900">Work With a Partner</h4>
+                <p class="text-xs text-gray-600">
+                  Get expert implementation help.
+                </p>
+              </a>
+              <a href="#become-partner" class="block p-4 hover:bg-yellow-50">
+                <h4 class="font-semibold text-gray-900">Become a Partner</h4>
+                <p class="text-xs text-gray-600">Grow with our network.</p>
+              </a>
+            </div>
+          </div>
+
+          <a
+            href="#resources"
+            class="hover:text-red-500 hover:underline underline-offset-4 transition"
+            >Resources</a
+          >
+          <button class="text-gray-500 hover:text-blue-600">EN</button>
+          <a
+            href="https://auth.albetora.com//signup"
+            class="ml-4 px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-400 text-white rounded-md hover:from-green-500 hover:to-yellow-400 transition shadow-md"
+            >Sign Up for Free</a
+          >
+        </nav>
+
+        <!-- Mobile Toggle -->
+        <button
+          id="mobile-nav-toggle"
+          class="md:hidden text-gray-600 focus:outline-none"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Nav Menu -->
+      <div
+        id="mobile-nav"
+        class="md:hidden hidden px-4 pb-4 bg-white border-t border-gray-200 shadow text-sm text-gray-800 space-y-2"
+      >
+        <a
+          href="./products.html"
+          class="block py-2 hover:text-blue-600 hover:underline underline-offset-4"
+          >Products</a
+        >
+        <a
+          href="#enterprise"
+          class="block py-2 hover:text-green-600 hover:underline underline-offset-4"
+          >Enterprise</a
+        >
+
+        <!-- Customers -->
+        <div>
+          <button
+            onclick="toggleSubmenu('mobile-customers')"
+            class="flex justify-between items-center w-full py-2 hover:text-blue-600 hover:underline underline-offset-4"
+          >
+            <span>Customers</span>
+            <svg
+              id="mobile-customers-arrow"
+              class="w-4 h-4 text-gray-400 transition-transform"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </button>
+          <div id="mobile-customers" class="hidden pl-4 mt-1 space-y-1">
+            <a href="#customer-stories" class="block py-1 hover:text-blue-600"
+              >Customer Stories</a
+            >
+            <a href="#user-community" class="block py-1 hover:text-blue-600"
+              >User Community</a
+            >
+            <a href="#training" class="block py-1 hover:text-blue-600"
+              >Training & Certification</a
+            >
+          </div>
+        </div>
+
+        <!-- Partners -->
+        <div>
+          <button
+            onclick="toggleSubmenu('mobile-partners')"
+            class="flex justify-between items-center w-full py-2 hover:text-yellow-600 hover:underline underline-offset-4"
+          >
+            <span>Partners</span>
+            <svg
+              id="mobile-partners-arrow"
+              class="w-4 h-4 text-gray-400 transition-transform"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </button>
+          <div id="mobile-partners" class="hidden pl-4 mt-1 space-y-1">
+            <a
+              href="#work-with-partner"
+              class="block py-1 hover:text-yellow-600"
+              >Work With a Partner</a
+            >
+            <a href="#become-partner" class="block py-1 hover:text-yellow-600"
+              >Become a Partner</a
+            >
+          </div>
+        </div>
+
+        <a
+          href="#resources"
+          class="block py-2 hover:text-red-500 hover:underline underline-offset-4"
+          >Resources</a
+        >
+        <div class="flex justify-between items-center pt-2">
+          <button class="text-gray-500 hover:text-blue-600">EN</button>
+          <a
+            href="https://auth.albetora.com//signup"
+            class="px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-400 text-white rounded-md hover:from-green-500 hover:to-yellow-400 shadow"
+            >Sign Up for Free</a
+          >
+        </div>
+      </div>
+
+      <script>
+        const navToggle = document.getElementById("mobile-nav-toggle");
+        const mobileNav = document.getElementById("mobile-nav");
+
+        navToggle.addEventListener("click", () => {
+          mobileNav.classList.toggle("hidden");
+        });
+
+        function toggleSubmenu(id) {
+          const menu = document.getElementById(id);
+          const arrow = document.getElementById(`${id}-arrow`);
+          menu.classList.toggle("hidden");
+          arrow.classList.toggle("rotate-180");
+        }
+      </script>
+    </header>
+    <!-- ====== MAIN NAV (PRODUCT NAV) ====== -->
+    <header class="bg-white shadow sticky top-0 z-50">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16"
+      >
+        <!-- Logo -->
+        <a href="#" class="flex items-center space-x-2">
+          <div
+            class="w-8 h-8 bg-gradient-to-br from-indigo-500 to-blue-500 text-white font-bold rounded flex items-center justify-center shadow-sm"
+          >
+            M
+          </div>
+          <span class="text-lg font-semibold text-gray-900"
+            >Agentic NoteTaker</span
+          >
+        </a>
+
+        <!-- Main Nav (Desktop) -->
+        <nav
+          class="hidden md:flex items-center space-x-6 text-sm font-medium text-gray-700"
+        >
+          <a href="#features" class="hover:text-blue-600">Features</a>
+          <a href="./pricing.html" class="hover:text-blue-600">Pricing</a>
+          <a href="#workflow" class="hover:text-blue-600">Solutions</a>
+          <a href="#testimonials" class="hover:text-blue-600">Customers</a>
+          <a href="#partner" class="hover:text-blue-600">Partner with us</a>
+          <a href="#resources" class="hover:text-blue-600">Resources</a>
+        </nav>
+
+        <!-- Hamburger Icon (Mobile) -->
+        <button
+          id="menu-toggle"
+          class="md:hidden flex items-center focus:outline-none"
+        >
+          <svg
+            class="w-6 h-6 text-gray-700"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Menu (Dropdown) -->
+      <div
+        id="mobile-menu"
+        class="md:hidden hidden bg-white border-t border-gray-200 px-4 py-4 space-y-4 text-sm"
+      >
+        <a href="#features" class="block text-gray-700 hover:text-blue-600"
+          >Features</a
+        >
+        <a href="#pricing" class="block text-gray-700 hover:text-blue-600"
+          >Pricing</a
+        >
+        <a href="#workflow" class="block text-gray-700 hover:text-blue-600"
+          >Solutions</a
+        >
+        <a href="#testimonials" class="block text-gray-700 hover:text-blue-600"
+          >Customers</a
+        >
+        <a href="#partner" class="block text-gray-700 hover:text-blue-600"
+          >Partner with us</a
+        >
+        <a href="#resources" class="block text-gray-700 hover:text-blue-600"
+          >Resources</a
+        >
+      </div>
+    </header>
+
+    <!-- ====== JS: Toggle Mobile Menu ====== -->
+    <script>
+      const toggleBtn = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      toggleBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    </script>
+    <!-- ====== SECTION 2: HERO SECTION (Agentic NoteTaker) ====== -->
+    <section
+      class="relative bg-white overflow-hidden py-24 sm:py-32 text-center"
+    >
+      <!-- Subtle glowing radial background -->
+      <div
+        class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-200 via-blue-50 to-transparent opacity-40 pointer-events-none"
+      ></div>
+
+      <div class="relative z-10 max-w-5xl mx-auto px-4">
+        <!-- Hero Title -->
+        <h1
+          class="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-tight mb-6"
+        >
+          Your Meetings,
+          <span
+            class="bg-gradient-to-r from-blue-700 via-blue-500 to-cyan-300 bg-clip-text text-transparent animate-pulse"
+          >
+            Auto-Summarized.
+          </span>
+        </h1>
+
+        <!-- Subheading -->
+        <p class="text-lg sm:text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
+          Agentic NoteTaker listens, writes meeting notes, extracts follow-ups,
+          and sends them to your team — all automatically. Stay focused while it
+          handles the follow-up.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row justify-center gap-4 mb-10">
+          <a
+            href="https://auth.albetora.com/signup"
+            class="px-6 py-3 bg-gradient-to-r from-blue-700 to-cyan-500 text-white font-semibold rounded-md shadow hover:from-purple-600 hover:to-yellow-400 transition"
+          >
+            Start Free – No Card Needed
+          </a>
+          <a
+            href="#demo"
+            class="px-6 py-3 border border-gray-300 text-gray-700 rounded-md hover:bg-gray-100 transition"
+          >
+            Watch Demo
+          </a>
+        </div>
+
+        <!-- Product Tags -->
+        <div
+          class="flex flex-wrap justify-center gap-2 text-sm text-gray-500 mb-12"
+        >
+          <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full"
+            >Zoom</span
+          >
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full"
+            >Google Meet</span
+          >
+          <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full"
+            >Slack</span
+          >
+          <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full"
+            >Trello</span
+          >
+          <span class="bg-black text-white px-3 py-1 rounded-full">Notion</span>
+        </div>
+
+        <!-- Mockup Placeholder (replace with image/video later) -->
+        <div class="relative mx-auto mt-4 max-w-4xl">
+          <div
+            class="aspect-video bg-gradient-to-tr from-gray-100 via-white to-gray-200 border border-dashed border-gray-300 rounded-lg shadow-inner flex items-center justify-center text-gray-400 text-sm"
+          >
+            [ Product Mockup Image or Animated Demo Here ]
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ====== SECTION 3: PRODUCT BENEFITS ====== -->
+    <section id="features" class="relative py-28 bg-gray-50 overflow-hidden">
+      <!-- Decorative glowing background -->
+      <div
+        class="absolute -top-40 -left-40 w-[400px] h-[400px] bg-gradient-to-br from-blue-300 via-blue-100 to-transparent rounded-full blur-3xl opacity-30 pointer-events-none"
+      ></div>
+      <div
+        class="absolute top-20 right-[-150px] w-[300px] h-[300px] bg-gradient-to-tr from-green-100 to-transparent rounded-full blur-3xl opacity-40 pointer-events-none"
+      ></div>
+
+      <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section Header -->
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-extrabold text-gray-900 mb-4">
+            What Agentic NoteTaker Can Do
+          </h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            More than just notes — it turns every meeting into a productive,
+            automated follow-up engine.
+          </p>
+        </div>
+
+        <!-- 3x2 Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+          <!-- Benefit 1 -->
+          <div
+            class="bg-white p-6 rounded-xl shadow-md border-blue-200 bg-blue-50 hover:shadow-xl hover:-translate-y-1 transition"
+          >
+            <div class="text-3xl mb-4">🎧</div>
+            <h3 class="font-semibold text-lg text-gray-800 mb-2">
+              Listens to Meetings
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Connect Zoom or Meet, or upload recordings. Agentic NoteTaker
+              listens and starts processing in real-time.
+            </p>
+          </div>
+
+          <!-- Benefit 2 -->
+          <div
+            class="bg-white p-6 rounded-xl shadow-md border border-green-100 hover:shadow-xl hover:-translate-y-1 transition"
+          >
+            <div class="text-3xl mb-4">🧠</div>
+            <h3 class="font-semibold text-lg text-gray-800 mb-2">
+              AI-Powered Summaries
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Get clean, readable summaries with key points, decisions, and
+              highlights — instantly after the meeting ends.
+            </p>
+          </div>
+
+          <!-- Benefit 3 -->
+          <div
+            class="bg-white p-6 rounded-xl shadow-md border border-yellow-100 hover:shadow-xl hover:-translate-y-1 transition"
+          >
+            <div class="text-3xl mb-4">✅</div>
+            <h3 class="font-semibold text-lg text-gray-800 mb-2">
+              Auto-Extracts Action Items
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Every task, follow-up, or assigned item is captured and tagged to
+              the right teammate, ready to log or send.
+            </p>
+          </div>
+
+          <!-- Benefit 4 -->
+          <div
+            class="bg-white p-6 rounded-xl shadow-md border border-pink-100 hover:shadow-xl hover:-translate-y-1 transition"
+          >
+            <div class="text-3xl mb-4">📤</div>
+            <h3 class="font-semibold text-lg text-gray-800 mb-2">
+              Instant Team Sharing
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Send smart recaps to Slack, email, or shared inboxes — no manual
+              formatting needed.
+            </p>
+          </div>
+
+          <!-- Benefit 5 -->
+          <div
+            class="bg-white p-6 rounded-xl shadow-md border border-purple-100 hover:shadow-xl hover:-translate-y-1 transition"
+          >
+            <div class="text-3xl mb-4">📌</div>
+            <h3 class="font-semibold text-lg text-gray-800 mb-2">
+              Logs Tasks Automatically
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Push next steps directly to Notion, Trello, Asana, or your task
+              manager of choice — seamlessly.
+            </p>
+          </div>
+
+          <!-- Benefit 6 -->
+          <div
+            class="bg-white p-6 rounded-xl shadow-md border border-gray-200 hover:shadow-xl hover:-translate-y-1 transition"
+          >
+            <div class="text-3xl mb-4">🔒</div>
+            <h3 class="font-semibold text-lg text-gray-800 mb-2">
+              Secure & Private
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Meeting data is encrypted and stored securely. You control access,
+              retention, and integrations.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ====== SECTION 4: LIVE WORKFLOW DEMO (How It Works) ====== -->
+    <section id="workflow" class="relative py-28 bg-white overflow-hidden">
+      <!-- Glowing Decorative Background -->
+      <div
+        class="absolute -top-40 -left-40 w-[400px] h-[400px] bg-gradient-to-br from-blue-300 via-blue-100 to-transparent rounded-full blur-3xl opacity-30 pointer-events-none"
+      ></div>
+      <div
+        class="absolute top-20 right-[-150px] w-[300px] h-[300px] bg-gradient-to-tr from-yellow-100 to-transparent rounded-full blur-3xl opacity-40 pointer-events-none"
+      ></div>
+
+      <!-- Container -->
+      <div
+        class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+      >
+        <!-- Header -->
+        <h2 class="text-4xl font-extrabold text-gray-900 mb-6">
+          From Talk to Task — in 3 Simple Steps
+        </h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-16">
+          Here’s how Agentic NoteTaker converts your team’s conversations into
+          actionable, logged summaries.
+        </p>
+
+        <!-- Steps Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-12 text-left">
+          <!-- Step 1 -->
+          <div
+            class="relative group bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition border-blue-200 bg-blue-50"
+          >
+            <div class="text-4xl mb-4">🎥</div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">
+              1. Upload or Connect Meeting
+            </h3>
+            <p class="text-sm text-gray-600">
+              Connect Zoom, Google Meet, or upload a past call recording.
+              NoteTaker starts listening instantly.
+            </p>
+            <!-- Arrow -->
+            <div
+              class="absolute right-[-20px] top-1/2 transform -translate-y-1/2 sm:block hidden"
+            >
+              <svg
+                class="w-6 h-6 text-blue-300"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div
+            class="relative group bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition border border-green-100"
+          >
+            <div class="text-4xl mb-4">🧠</div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">
+              2. AI Summarizes + Extracts Tasks
+            </h3>
+            <p class="text-sm text-gray-600">
+              Your discussion is summarized into key points, decisions, and
+              follow-ups — no fluff, no noise.
+            </p>
+            <!-- Arrow -->
+            <div
+              class="absolute right-[-20px] top-1/2 transform -translate-y-1/2 sm:block hidden"
+            >
+              <svg
+                class="w-6 h-6 text-green-300"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div
+            class="relative group bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition border border-yellow-100"
+          >
+            <div class="text-4xl mb-4">📤</div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">
+              3. Recap Delivered, Tasks Logged
+            </h3>
+            <p class="text-sm text-gray-600">
+              The meeting summary is sent to Slack or Email. Tasks are logged in
+              Trello or Notion — instantly.
+            </p>
+          </div>
+        </div>
+
+        <!-- Optional CTA Below Steps -->
+        <div class="mt-16">
+          <a
+            href="https://auth.albetora.com/signup"
+            class="inline-block px-6 py-3 text-white bg-gradient-to-r from-blue-700 to-cyan-500 font-medium rounded-md shadow hover:from-pink-500 hover:to-yellow-400 transition"
+          >
+            Try It Free – Automate Your Next Meeting
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- ====== SECTION 5: INTEGRATION SHOWCASE ====== -->
+    <section id="integrations" class="py-20 bg-white overflow-hidden relative">
+      <!-- Decorative Glows -->
+      <div
+        class="absolute -top-32 -left-32 w-[400px] h-[400px] bg-gradient-to-br from-blue-200 to-transparent rounded-full blur-3xl opacity-30 pointer-events-none"
+      ></div>
+      <div
+        class="absolute bottom-[-120px] right-[-100px] w-[400px] h-[400px] bg-gradient-to-tr from-yellow-200 to-transparent rounded-full blur-3xl opacity-20 pointer-events-none"
+      ></div>
+
+      <!-- Title + Subtitle -->
+      <div class="text-center mb-10 px-4">
+        <h2 class="text-4xl font-extrabold text-gray-900">
+          Seamlessly Connects With
+          <span
+            class="bg-gradient-to-r from-green-500 via-blue-500 to-yellow-400 bg-clip-text text-transparent"
+            >Your Workflow</span
+          >
+        </h2>
+        <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+          Agentic NoteTaker plugs right into your team’s favorite tools — no
+          setup, no friction.
+        </p>
+      </div>
+
+      <!-- Scrolling Logos -->
+      <div class="relative w-full overflow-hidden">
+        <div class="animate-scroll flex items-center gap-16 w-max px-6 py-4">
+          <!-- Logos with hover glow -->
+          <img
+            src="https://img.icons8.com/?size=256&id=82ewLsKHYlLc&format=png"
+            alt="Zoom"
+            class="h-10 grayscale hover:grayscale-0 transition duration-300 hover:scale-105"
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg"
+            alt="Google Meet"
+            class="h-10 grayscale hover:grayscale-0 transition duration-300 hover:scale-105"
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg"
+            alt="Slack"
+            class="h-10 grayscale hover:grayscale-0 transition duration-300 hover:scale-105"
+          />
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Notion-logo.svg/1024px-Notion-logo.svg.png"
+            alt="Notion"
+            class="h-10 grayscale hover:grayscale-0 transition duration-300 hover:scale-105"
+          />
+          <img
+            src="https://img.icons8.com/?size=256&id=21049&format=png"
+            alt="Trello"
+            class="h-10 grayscale hover:grayscale-0 transition duration-300 hover:scale-105"
+          />
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgyn8Ng8PXWBZX5eLh8orPs-6Ntz65mAJHhg&s"
+            alt="Calendly"
+            class="h-10 grayscale hover:grayscale-0 transition duration-300 hover:scale-105"
+          />
+          <img
+            src="https://img.icons8.com/?size=256&id=24669&format=png"
+            alt="Asana"
+            class="h-10 grayscale hover:grayscale-0 transition duration-300 hover:scale-105"
+          />
+          <img
+            src="https://logos-world.net/wp-content/uploads/2021/03/Stripe-Emblem.png"
+            alt="Stripe"
+            class="h-10 grayscale hover:grayscale-0 transition duration-300 hover:scale-105"
+          />
+
+          <!-- Loop for seamless scroll -->
+          <img
+            src="https://img.icons8.com/?size=256&id=82ewLsKHYlLc&format=png"
+            alt="Zoom"
+            class="h-10 grayscale hover:grayscale-0 transition duration-300 hover:scale-105"
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg"
+            alt="Google Meet"
+            class="h-10 grayscale hover:grayscale-0 transition duration-300 hover:scale-105"
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg"
+            alt="Slack"
+            class="h-10 grayscale hover:grayscale-0 transition duration-300 hover:scale-105"
+          />
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Notion-logo.svg/1024px-Notion-logo.svg.png"
+            alt="Notion"
+            class="h-10 grayscale hover:grayscale-0 transition duration-300 hover:scale-105"
+          />
+          <img
+            src="https://img.icons8.com/?size=256&id=21049&format=png"
+            alt="Trello"
+            class="h-10 grayscale hover:grayscale-0 transition duration-300 hover:scale-105"
+          />
+        </div>
+      </div>
+    </section>
+    <!-- ====== SECTION 6: USE CASE TILES ====== -->
+    <section id="use-cases" class="relative py-28 bg-gray-50 overflow-hidden">
+      <!-- Decorative Gradient Glows -->
+      <div
+        class="absolute -top-32 -left-32 w-[400px] h-[400px] bg-gradient-to-br from-blue-300 via-blue-100 to-transparent rounded-full blur-3xl opacity-30 pointer-events-none"
+      ></div>
+      <div
+        class="absolute bottom-[-120px] right-[-100px] w-[350px] h-[350px] bg-gradient-to-tr from-green-200 to-transparent rounded-full blur-3xl opacity-30 pointer-events-none"
+      ></div>
+
+      <!-- Container -->
+      <div
+        class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+      >
+        <!-- Header -->
+        <h2 class="text-4xl font-extrabold text-gray-900 mb-6">
+          Built for Teams Like Yours
+        </h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-16">
+          Agentic NoteTaker is trusted by fast-moving leaders, from product
+          managers to consultants. Here's how they use it.
+        </p>
+
+        <!-- Grid -->
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 text-left"
+        >
+          <!-- PMs -->
+          <div
+            class="bg-white p-6 rounded-2xl shadow-md border-blue-200 bg-blue-50 hover:shadow-xl hover:-translate-y-1 transition"
+          >
+            <div class="text-3xl mb-4">🗂️</div>
+            <h3 class="text-lg font-semibold text-gray-800 mb-2">
+              Product Managers
+            </h3>
+            <p class="text-sm text-gray-600">
+              Keep product decisions organized and team follow-ups logged
+              instantly in Notion or Trello.
+            </p>
+          </div>
+
+          <!-- Founders -->
+          <div
+            class="bg-white p-6 rounded-2xl shadow-md border border-green-100 hover:shadow-xl hover:-translate-y-1 transition"
+          >
+            <div class="text-3xl mb-4">🚀</div>
+            <h3 class="text-lg font-semibold text-gray-800 mb-2">
+              Startup Founders
+            </h3>
+            <p class="text-sm text-gray-600">
+              Free your brain from meeting clutter — NoteTaker tracks
+              conversations and next steps across ops, hiring, and growth.
+            </p>
+          </div>
+
+          <!-- Consultants -->
+          <div
+            class="bg-white p-6 rounded-2xl shadow-md border border-yellow-100 hover:shadow-xl hover:-translate-y-1 transition"
+          >
+            <div class="text-3xl mb-4">📊</div>
+            <h3 class="text-lg font-semibold text-gray-800 mb-2">
+              Consultants
+            </h3>
+            <p class="text-sm text-gray-600">
+              Auto-generate client summaries and deliverables after every call.
+              No more manual notes or context-switching.
+            </p>
+          </div>
+
+          <!-- Remote Teams -->
+          <div
+            class="bg-white p-6 rounded-2xl shadow-md border border-purple-100 hover:shadow-xl hover:-translate-y-1 transition"
+          >
+            <div class="text-3xl mb-4">🌍</div>
+            <h3 class="text-lg font-semibold text-gray-800 mb-2">
+              Remote Teams
+            </h3>
+            <p class="text-sm text-gray-600">
+              Keep everyone aligned across time zones. Recaps go out instantly
+              so no one’s left guessing.
+            </p>
+          </div>
+
+          <!-- Client Services -->
+          <div
+            class="bg-white p-6 rounded-2xl shadow-md border border-pink-100 hover:shadow-xl hover:-translate-y-1 transition"
+          >
+            <div class="text-3xl mb-4">🤝</div>
+            <h3 class="text-lg font-semibold text-gray-800 mb-2">
+              Client Services
+            </h3>
+            <p class="text-sm text-gray-600">
+              Instantly generate meeting reports and follow-up items for each
+              client interaction — faster, cleaner, and consistent.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ====== SECTION 7: TESTIMONIALS ====== -->
+    <section id="testimonials" class="relative py-28 bg-white overflow-hidden">
+      <!-- Decorative Glows -->
+      <div
+        class="absolute -top-40 -left-40 w-96 h-96 bg-gradient-to-br from-blue-200 via-transparent to-transparent rounded-full blur-3xl opacity-30 pointer-events-none"
+      ></div>
+      <div
+        class="absolute bottom-[-100px] right-[-100px] w-80 h-80 bg-gradient-to-tr from-yellow-200 to-transparent rounded-full blur-3xl opacity-40 pointer-events-none"
+      ></div>
+
+      <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section Header -->
+        <div class="text-center mb-20">
+          <h2 class="text-4xl font-extrabold text-gray-900">
+            What Teams
+            <span
+              class="bg-gradient-to-r from-blue-700 via-blue-500 to-cyan-400 bg-clip-text text-transparent"
+            >
+              Say About NoteTaker
+            </span>
+          </h2>
+          <p class="mt-4 text-lg text-gray-600 max-w-xl mx-auto">
+            Hear from PMs, founders, and ops leaders using Agentic NoteTaker
+            every day.
+          </p>
+        </div>
+
+        <!-- Testimonials Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <!-- Card 1 -->
+          <div
+            class="bg-white/60 backdrop-blur-lg rounded-2xl shadow-xl p-8 border border-blue-200 relative overflow-hidden group transition duration-500 hover:shadow-2xl hover:scale-[1.01]"
+          >
+            <div
+              id="testimonial-1"
+              class="transition-opacity duration-500 ease-in-out"
+            ></div>
+
+            <!-- Progress Bar -->
+            <div class="mt-6 h-1 w-full bg-gray-200 rounded overflow-hidden">
+              <div
+                class="h-full bg-gradient-to-r from-blue-500 to-green-400 animate-progress-7s rounded"
+                id="bar-1"
+              ></div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="bg-white/60 backdrop-blur-lg rounded-2xl shadow-xl p-8 border border-yellow-200 relative overflow-hidden group transition duration-500 hover:shadow-2xl hover:scale-[1.01]"
+          >
+            <div
+              id="testimonial-2"
+              class="transition-opacity duration-500 ease-in-out"
+            ></div>
+
+            <!-- Progress Bar -->
+            <div class="mt-6 h-1 w-full bg-gray-200 rounded overflow-hidden">
+              <div
+                class="h-full bg-gradient-to-r from-yellow-400 to-pink-500 animate-progress-7s rounded"
+                id="bar-2"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CSS: Progress Bar Animation -->
+    <style>
+      @keyframes progress-bar-anim {
+        from {
+          width: 0%;
+        }
+        to {
+          width: 100%;
+        }
+      }
+      .animate-progress-7s {
+        animation: progress-bar-anim 7s linear infinite;
+      }
+    </style>
+
+    <!-- JavaScript: Rotating Testimonials -->
+    <script>
+      const testimonials1 = [
+        {
+          text: "“MarkMind NoteTaker replaced my notebook. Now every meeting auto-logs into Trello!”",
+          name: "Radhika Verma",
+          role: "PM, Razorpay",
+          avatar: "https://randomuser.me/api/portraits/women/42.jpg",
+        },
+        {
+          text: "“Our clients LOVE how fast we send meeting recaps. This is pure ops gold.”",
+          name: "Aniket Kulkarni",
+          role: "Consultant, GrowthJam",
+          avatar: "https://randomuser.me/api/portraits/men/15.jpg",
+        },
+      ];
+
+      const testimonials2 = [
+        {
+          text: "“I no longer take notes during calls. I just focus, and NoteTaker does the rest.”",
+          name: "Sneha Rao",
+          role: "Founder, Launchly",
+          avatar: "https://randomuser.me/api/portraits/women/65.jpg",
+        },
+        {
+          text: "“We scaled onboarding 3x faster by letting NoteTaker track and send follow-ups.”",
+          name: "Abhay Mehta",
+          role: "COO, FinSync",
+          avatar: "https://randomuser.me/api/portraits/men/24.jpg",
+        },
+      ];
+
+      let index1 = 0,
+        index2 = 0;
+
+      function updateTestimonial(id, data) {
+        const el = document.getElementById(id);
+        el.style.opacity = 0;
+        setTimeout(() => {
+          el.innerHTML = `
+        <p class="text-lg text-gray-700 mb-6">"${data.text}"</p>
+        <div class="flex items-center gap-4">
+          <img src="${data.avatar}" alt="${data.name}" class="w-12 h-12 rounded-full object-cover border border-gray-200 shadow-md" />
+          <div>
+            <p class="text-sm font-bold text-gray-900">${data.name}</p>
+            <p class="text-sm text-gray-500">${data.role}</p>
+          </div>
+        </div>
+      `;
+          el.style.opacity = 1;
+        }, 300);
+      }
+
+      function resetProgressBars() {
+        const bar1 = document.getElementById("bar-1");
+        const bar2 = document.getElementById("bar-2");
+        bar1.classList.remove("animate-progress-7s");
+        bar2.classList.remove("animate-progress-7s");
+        void bar1.offsetWidth;
+        void bar2.offsetWidth;
+        bar1.classList.add("animate-progress-7s");
+        bar2.classList.add("animate-progress-7s");
+      }
+
+      function rotateTestimonials() {
+        updateTestimonial("testimonial-1", testimonials1[index1]);
+        updateTestimonial("testimonial-2", testimonials2[index2]);
+        resetProgressBars();
+        index1 = (index1 + 1) % testimonials1.length;
+        index2 = (index2 + 1) % testimonials2.length;
+      }
+
+      rotateTestimonials();
+      setInterval(rotateTestimonials, 7000);
+    </script>
+    <!-- ====== SECTION 8: PRICING ====== -->
+    <section id="pricing" class="relative py-28 bg-white overflow-hidden">
+      <!-- Background Gradient Blobs -->
+      <div
+        class="absolute -top-40 -left-40 w-[400px] h-[400px] bg-gradient-to-br from-blue-200 to-transparent rounded-full blur-3xl opacity-30 pointer-events-none"
+      ></div>
+      <div
+        class="absolute bottom-[-120px] right-[-100px] w-[300px] h-[300px] bg-gradient-to-tr from-yellow-200 to-transparent rounded-full blur-3xl opacity-20 pointer-events-none"
+      ></div>
+
+      <div
+        class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+      >
+        <!-- Header -->
+        <h2 class="text-4xl font-extrabold text-gray-900 mb-6">
+          AI-Powered Meeting Transcription & Insights
+        </h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-16">
+          No subscriptions. No feature limits. Just one flexible plan — plus an
+          enterprise option.
+        </p>
+
+        <!-- Pricing Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 text-left">
+          <!-- Pay-As-You-Go Plan -->
+          <div
+            class="relative bg-white border-2 border-blue-500 rounded-2xl shadow-lg p-8 hover:shadow-2xl transition"
+          >
+            <div
+              class="absolute top-4 right-4 text-xs bg-blue-100 text-blue-600 font-semibold px-3 py-1 rounded-full"
+            >
+              Pay-As-You-Go
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+              One Plan. All Features.
+            </h3>
+            <p class="text-sm text-gray-600 mb-4">
+              Only pay when you use it. Perfect for individuals and teams.
+            </p>
+            <div class="text-2xl font-bold text-blue-600 mb-4">
+              Start with $4.99
+            </div>
+            <p class="text-sm text-gray-500 mb-6">
+              💳 Balance remains yours. Auto-recharges when it runs out unless
+              cancelled.
+            </p>
+            <p class="text-sm font-medium text-gray-700 mb-2">
+              📊 Usage Rate: <strong>$0.07 per minute</strong>
+            </p>
+            <ul class="text-sm text-gray-700 space-y-2 mb-6">
+              <li>✔️ Real-time transcription & summaries</li>
+              <li>✔️ Speaker detection & emotion insights</li>
+              <li>✔️ Upload audio/video files</li>
+              <li>✔️ Export: TXT, PDF, DOCX, SRT</li>
+              <li>✔️ AI Chat Assistant (GPT)</li>
+              <li>✔️ Custom vocabulary & analytics</li>
+              <li>✔️ Full access — no feature tiers</li>
+              <li>✔️ Web + mobile access</li>
+              <li>✔️ Cancel anytime — balance stays with you</li>
+            </ul>
+            <a
+              href="https://auth.albetora.com/signup"
+              class="block text-center px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition"
+            >
+              Get Started
+            </a>
+          </div>
+
+          <!-- Enterprise Plan -->
+          <div
+            class="relative bg-white border border-gray-300 rounded-2xl shadow-md p-8 hover:shadow-xl transition"
+          >
+            <div
+              class="absolute top-4 right-4 text-xs bg-gray-100 text-gray-600 font-semibold px-3 py-1 rounded-full"
+            >
+              Enterprise
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+              Custom Pricing
+            </h3>
+            <p class="text-sm text-gray-600 mb-4">
+              Advanced features, integrations & onboarding for large teams.
+            </p>
+            <div class="text-2xl font-bold text-gray-800 mb-4">Let’s Talk</div>
+            <p class="text-sm text-gray-500 mb-6">
+              Tailored pricing with volume discounts and premium support.
+            </p>
+            <ul class="text-sm text-gray-700 space-y-2 mb-6">
+              <li>✔️ Everything in Pay-As-You-Go</li>
+              <li>✔️ Team workspace & admin tools</li>
+              <li>✔️ Shared vocabulary management</li>
+              <li>✔️ CRM integration: Salesforce, Notion, HubSpot</li>
+              <li>✔️ Single Sign-On (SSO)</li>
+              <li>✔️ Centralized billing & export controls</li>
+              <li>✔️ Audio redaction tools</li>
+              <li>✔️ Priority onboarding & support</li>
+              <li>✔️ HIPAA-ready (coming soon)</li>
+              <li>✔️ Custom domains & branding</li>
+            </ul>
+            <a
+              href="/contact"
+              class="block text-center px-6 py-2 bg-gray-800 text-white rounded-md hover:bg-gray-900 transition"
+            >
+              Schedule a Demo
+            </a>
+          </div>
+        </div>
+
+        <!-- Final CTA -->
+        <div class="mt-16 text-center">
+          <h4 class="text-lg font-semibold text-gray-800 mb-2">
+            One flexible platform. Use it your way.
+          </h4>
+          <p class="text-sm text-gray-600 mb-4">
+            No subscriptions. No commitment. Just smarter, usage-based AI
+            meeting notes.
+          </p>
+          <a
+            href="https://auth.albetora.com/signup"
+            class="inline-block px-8 py-3 bg-gradient-to-r from-blue-600 to-green-500 text-white font-semibold rounded-md shadow hover:from-green-500 hover:to-yellow-400 transition"
+          >
+            Start Now — No Subscription Required
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== SECTION 9: FAQ ====== -->
+    <section id="faq" class="relative py-28 bg-gray-50 overflow-hidden">
+      <!-- Decorative Background Glows -->
+      <div
+        class="absolute -top-32 -left-32 w-[400px] h-[400px] bg-gradient-to-br from-blue-300 via-blue-100 to-transparent rounded-full blur-3xl opacity-30 pointer-events-none"
+      ></div>
+      <div
+        class="absolute bottom-[-120px] right-[-100px] w-[350px] h-[350px] bg-gradient-to-tr from-yellow-200 to-transparent rounded-full blur-3xl opacity-30 pointer-events-none"
+      ></div>
+
+      <!-- Container -->
+      <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Header -->
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-extrabold text-gray-900 mb-4">
+            Frequently Asked Questions
+          </h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            Everything you need to know about Agentic NoteTaker — before you hit
+            “record.”
+          </p>
+        </div>
+
+        <!-- FAQ Accordion -->
+        <div class="space-y-6">
+          <!-- Question 1 -->
+          <div
+            class="border border-gray-200 rounded-lg overflow-hidden shadow-sm"
+          >
+            <button
+              onclick="toggleFAQ(1)"
+              class="w-full text-left px-6 py-4 bg-white flex justify-between items-center hover:bg-gray-50 transition"
+            >
+              <span class="text-sm font-medium text-gray-900"
+                >How does NoteTaker join or capture my meeting?</span
+              >
+              <svg
+                id="faq-arrow-1"
+                class="w-5 h-5 text-gray-400 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            <div
+              id="faq-content-1"
+              class="hidden px-6 pb-4 text-sm text-gray-600"
+            >
+              You can upload a Zoom or Meet recording, or connect your calendar.
+              NoteTaker will auto-join and capture the conversation in real
+              time.
+            </div>
+          </div>
+
+          <!-- Question 2 -->
+          <div
+            class="border border-gray-200 rounded-lg overflow-hidden shadow-sm"
+          >
+            <button
+              onclick="toggleFAQ(2)"
+              class="w-full text-left px-6 py-4 bg-white flex justify-between items-center hover:bg-gray-50 transition"
+            >
+              <span class="text-sm font-medium text-gray-900"
+                >Can I edit the summaries or action items?</span
+              >
+              <svg
+                id="faq-arrow-2"
+                class="w-5 h-5 text-gray-400 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            <div
+              id="faq-content-2"
+              class="hidden px-6 pb-4 text-sm text-gray-600"
+            >
+              Yes. All summaries and tasks are editable before they’re sent out
+              or synced with tools like Notion or Trello.
+            </div>
+          </div>
+
+          <!-- Question 3 -->
+          <div
+            class="border border-gray-200 rounded-lg overflow-hidden shadow-sm"
+          >
+            <button
+              onclick="toggleFAQ(3)"
+              class="w-full text-left px-6 py-4 bg-white flex justify-between items-center hover:bg-gray-50 transition"
+            >
+              <span class="text-sm font-medium text-gray-900"
+                >Which integrations are supported?</span
+              >
+              <svg
+                id="faq-arrow-3"
+                class="w-5 h-5 text-gray-400 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            <div
+              id="faq-content-3"
+              class="hidden px-6 pb-4 text-sm text-gray-600"
+            >
+              NoteTaker connects with Zoom, Google Meet, Slack, Notion, Trello,
+              Calendly, and more. New integrations are added regularly.
+            </div>
+          </div>
+
+          <!-- Question 4 -->
+          <div
+            class="border border-gray-200 rounded-lg overflow-hidden shadow-sm"
+          >
+            <button
+              onclick="toggleFAQ(4)"
+              class="w-full text-left px-6 py-4 bg-white flex justify-between items-center hover:bg-gray-50 transition"
+            >
+              <span class="text-sm font-medium text-gray-900"
+                >Is my data secure and private?</span
+              >
+              <svg
+                id="faq-arrow-4"
+                class="w-5 h-5 text-gray-400 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            <div
+              id="faq-content-4"
+              class="hidden px-6 pb-4 text-sm text-gray-600"
+            >
+              Absolutely. All data is encrypted in transit and at rest. You
+              control what is stored, shared, or deleted. We are GDPR-compliant.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Accordion Toggle Script -->
+    <script>
+      function toggleFAQ(index) {
+        const content = document.getElementById(`faq-content-${index}`);
+        const arrow = document.getElementById(`faq-arrow-${index}`);
+        const isOpen = content.classList.contains("hidden");
+
+        // Close all others
+        for (let i = 1; i <= 4; i++) {
+          document.getElementById(`faq-content-${i}`).classList.add("hidden");
+          document
+            .getElementById(`faq-arrow-${i}`)
+            .classList.remove("rotate-180");
+        }
+
+        // Open this one if it was closed
+        if (isOpen) {
+          content.classList.remove("hidden");
+          arrow.classList.add("rotate-180");
+        }
+      }
+    </script>
+    <!-- ====== SECTION 10: FINAL CTA BANNER ====== -->
+    <section
+      id="get-started"
+      class="relative py-20 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white text-center overflow-hidden"
+    >
+      <!-- Decorative Glow Circles -->
+      <div
+        class="absolute -top-24 -left-24 w-[300px] h-[300px] bg-white/10 rounded-full blur-3xl opacity-30 pointer-events-none"
+      ></div>
+      <div
+        class="absolute bottom-[-80px] right-[-80px] w-[250px] h-[250px] bg-white/10 rounded-full blur-2xl opacity-20 pointer-events-none"
+      ></div>
+
+      <!-- Container -->
+      <div class="relative z-10 max-w-4xl mx-auto px-6">
+        <h2 class="text-3xl sm:text-4xl font-extrabold mb-4">
+          Meetings That Manage Themselves
+        </h2>
+        <p class="text-lg sm:text-xl text-indigo-100 mb-8">
+          Focus on conversations. Let NoteTaker handle the notes, tasks, and
+          follow-ups — all instantly, all for you.
+        </p>
+        <a
+          href="https://auth.albetora.com/signup"
+          class="inline-block px-8 py-3 text-lg font-medium bg-white text-indigo-700 rounded-md shadow hover:bg-indigo-100 transition"
+        >
+          Get Started Free
+        </a>
+      </div>
+    </section>
+    <!-- ====== SECTION 11: FOOTER ====== -->
+    <footer class="bg-gray-900 text-gray-300 py-16">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10"
+      >
+        <!-- Logo + Tagline -->
+        <div class="col-span-2">
+      <div class="flex items-center space-x-2">
+        <img src="./assets/Lo.png" class="w-8 h-8 rounded bg-gradient-to-br from-red-500 via-yellow-400 to-blue-500 flex items-center justify-center text-white font-bold text-sm shadow" />
+        <span class="text-lg font-semibold tracking-tight text-white-900">Albetora</span>
+      </div>
+          <p class="text-sm text-gray-400">
+            Automating your thoughts, notes, and follow-ups — so you can focus
+            on what really matters.
+          </p>
+        </div>
+
+        <!-- Product Links -->
+        <div>
+          <h4 class="text-sm font-semibold text-white mb-4">Product</h4>
+          <ul class="space-y-2 text-sm">
+            <li>
+              <a href="#features" class="hover:text-white transition"
+                >Features</a
+              >
+            </li>
+            <li>
+              <a href="#workflow" class="hover:text-white transition"
+                >How It Works</a
+              >
+            </li>
+            <li>
+              <a href="./pricing.html" class="hover:text-white transition">Pricing</a>
+            </li>
+            <li>
+              <a href="#integrations" class="hover:text-white transition"
+                >Integrations</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Resources -->
+        <div>
+          <h4 class="text-sm font-semibold text-white mb-4">Resources</h4>
+          <ul class="space-y-2 text-sm">
+            <li>
+              <a href="/blog" class="hover:text-white transition">Blog</a>
+            </li>
+            <li><a href="#faq" class="hover:text-white transition">FAQs</a></li>
+            <li>
+              <a href="/help" class="hover:text-white transition"
+                >Help Center</a
+              >
+            </li>
+            <li>
+              <a href="/contact" class="hover:text-white transition">Contact</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Company -->
+        <div>
+          <h4 class="text-sm font-semibold text-white mb-4">Company</h4>
+          <ul class="space-y-2 text-sm">
+            <li>
+              <a href="/about" class="hover:text-white transition">About Us</a>
+            </li>
+            <li>
+              <a href="/careers" class="hover:text-white transition">Careers</a>
+            </li>
+            <li>
+              <a href="/legal" class="hover:text-white transition">Terms</a>
+            </li>
+            <li>
+              <a href="/privacy" class="hover:text-white transition">Privacy</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Line -->
+      <div
+        class="mt-12 border-t border-gray-700 pt-8 text-center text-sm text-gray-500"
+      >
+        <div class="flex justify-center space-x-4 mb-4">
+          <!-- Social Icons (replace with SVGs or links) -->
+          <a href="#" class="hover:text-white transition">🌐</a>
+          <a href="#" class="hover:text-white transition">🐦</a>
+          <a href="#" class="hover:text-white transition">📘</a>
+          <a href="#" class="hover:text-white transition">💼</a>
+        </div>
+        <p>&copy; 2025 by Albetora. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
