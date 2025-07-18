@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Albetora – AI Suite</title>
+      <link rel="icon" type="image/x-icon" href="./assets/Lo.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-white text-gray-800 leading-relaxed">
+    <!-- ===== SECTION 1: NAVIGATION + HERO (ENHANCED ZOHO-THEMED) ===== -->
+   <header class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+      <!-- Logo -->
+      <div class="flex items-center space-x-2">
+        <img src="./assets/Lo.png" class="w-8 h-8 rounded bg-gradient-to-br from-red-500 via-yellow-400 to-blue-500 flex items-center justify-center text-white font-bold text-sm shadow" />
+        <span class="text-lg font-semibold tracking-tight text-gray-900">Albetora</span>
+      </div>
+  
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center space-x-6 text-sm text-gray-700">
+        <a href="./products.html" class="hover:text-blue-600 hover:underline underline-offset-4 transition">Products</a>
+        <a href="#enterprise" class="hover:text-green-600 hover:underline underline-offset-4 transition">Enterprise</a>
+  
+        <!-- Customers -->
+        <div class="relative group">
+          <button class="flex items-center gap-1 hover:text-blue-600 hover:underline underline-offset-4 transition">
+            <span>Customers</span>
+            <svg class="w-4 h-4 text-gray-500 group-hover:text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="absolute left-0 mt-2 w-64 bg-white border border-gray-200 shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+            <a href="#customer-stories" class="block p-4 hover:bg-blue-50">
+              <h4 class="font-semibold text-gray-900">Customer Stories</h4>
+              <p class="text-xs text-gray-600">Real impact by real users.</p>
+            </a>
+            <a href="#user-community" class="block p-4 hover:bg-blue-50">
+              <h4 class="font-semibold text-gray-900">User Community</h4>
+              <p class="text-xs text-gray-600">Connect, learn, and grow.</p>
+            </a>
+            <a href="#training" class="block p-4 hover:bg-blue-50">
+              <h4 class="font-semibold text-gray-900">Training & Certification</h4>
+              <p class="text-xs text-gray-600">Upskill with our resources.</p>
+            </a>
+          </div>
+        </div>
+  
+        <!-- Partners -->
+        <div class="relative group">
+          <button class="flex items-center gap-1 hover:text-yellow-600 hover:underline underline-offset-4 transition">
+            <span>Partners</span>
+            <svg class="w-4 h-4 text-gray-500 group-hover:text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="absolute left-0 mt-2 w-64 bg-white border border-gray-200 shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+            <a href="#work-with-partner" class="block p-4 hover:bg-yellow-50">
+              <h4 class="font-semibold text-gray-900">Work With a Partner</h4>
+              <p class="text-xs text-gray-600">Get expert implementation help.</p>
+            </a>
+            <a href="./partner.html" class="block p-4 hover:bg-yellow-50">
+              <h4 class="font-semibold text-gray-900">Become a Partner</h4>
+              <p class="text-xs text-gray-600">Grow with our network.</p>
+            </a>
+          </div>
+        </div>
+  
+        <a href="#resources" class="hover:text-red-500 hover:underline underline-offset-4 transition">Resources</a>
+        <button class="text-gray-500 hover:text-blue-600">EN</button>
+        <a href="https://auth.albetora.com/signup"  class="ml-4 px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-400 text-white rounded-md hover:from-green-500 hover:to-yellow-400 transition shadow-md">Sign Up </a>
+      </nav>
+  
+      <!-- Mobile Toggle -->
+      <button id="mobile-nav-toggle" class="md:hidden text-gray-600 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  
+    <!-- Mobile Nav Menu -->
+    <div id="mobile-nav" class="md:hidden hidden px-4 pb-4 bg-white border-t border-gray-200 shadow text-sm text-gray-800 space-y-2">
+      <a href="./products.html" class="block py-2 hover:text-blue-600 hover:underline underline-offset-4">Products</a>
+      <a href="#enterprise" class="block py-2 hover:text-green-600 hover:underline underline-offset-4">Enterprise</a>
+  
+      <!-- Customers -->
+      <div>
+        <button onclick="toggleSubmenu('mobile-customers')" class="flex justify-between items-center w-full py-2 hover:text-blue-600 hover:underline underline-offset-4">
+          <span>Customers</span>
+          <svg id="mobile-customers-arrow" class="w-4 h-4 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div id="mobile-customers" class="hidden pl-4 mt-1 space-y-1">
+          <a href="#customer-stories" class="block py-1 hover:text-blue-600">Customer Stories</a>
+          <a href="#user-community" class="block py-1 hover:text-blue-600">User Community</a>
+          <a href="#training" class="block py-1 hover:text-blue-600">Training & Certification</a>
+        </div>
+      </div>
+  
+      <!-- Partners -->
+      <div>
+        <button onclick="toggleSubmenu('mobile-partners')" class="flex justify-between items-center w-full py-2 hover:text-yellow-600 hover:underline underline-offset-4">
+          <span>Partners</span>
+          <svg id="mobile-partners-arrow" class="w-4 h-4 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div id="mobile-partners" class="hidden pl-4 mt-1 space-y-1">
+          <a href="#work-with-partner" class="block py-1 hover:text-yellow-600">Work With a Partner</a>
+          <a href="./partner.html" class="block py-1 hover:text-yellow-600">Become a Partner</a>
+        </div>
+      </div>
+  
+      <a href="#resources" class="block py-2 hover:text-red-500 hover:underline underline-offset-4">Resources</a>
+      <div class="flex justify-between items-center pt-2">
+        <button class="text-gray-500 hover:text-blue-600">EN</button>
+        <a href="https://auth.albetora.com/signup" target="_blank" class="px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-400 text-white rounded-md hover:from-green-500 hover:to-yellow-400 shadow">Sign Up </a>
+      </div>
+    </div>
+  
+    <script>
+      const navToggle = document.getElementById('mobile-nav-toggle');
+      const mobileNav = document.getElementById('mobile-nav');
+  
+      navToggle.addEventListener('click', () => {
+        mobileNav.classList.toggle('hidden');
+      });
+  
+      function toggleSubmenu(id) {
+        const menu = document.getElementById(id);
+        const arrow = document.getElementById(`${id}-arrow`);
+        menu.classList.toggle('hidden');
+        arrow.classList.toggle('rotate-180');
+      }
+    </script>
+  </header>
+    <div class="max-w-3xl mx-auto px-6 py-16">
+      <h1 class="text-4xl font-bold mb-6">Privacy Policy</h1>
+      <p class="mb-4 text-sm text-gray-600">Last updated: 15/07/2025</p>
+
+      <p class="mb-6">
+        This Privacy Policy describes how we collect, use, and protect your
+        personal information when you use our services, including but not
+        limited to our website, web app, mobile app, APIs, and AI-powered tools
+        (collectively, the "Service"). By using our Service, you agree to this
+        Privacy Policy.
+      </p>
+
+      <h2 class="text-2xl font-semibold mb-4">1. Information We Collect</h2>
+      <ul class="list-disc pl-6 space-y-2 mb-6">
+        <li>
+          <strong>Account Information:</strong> Name, email address, phone
+          number, and billing details.
+        </li>
+        <li>
+          <strong>Payment Data:</strong> Collected and processed via third-party
+          payment providers. We do not store your card details.
+        </li>
+        <li>
+          <strong>Usage Data:</strong> Meeting content, uploaded audio/video
+          files, transcripts, summaries, chat queries, interaction history, IP
+          address, device/browser info.
+        </li>
+        <li>
+          <strong>Cookies and Analytics:</strong> We use cookies and third-party
+          analytics to monitor performance and user behavior.
+        </li>
+      </ul>
+
+      <h2 class="text-2xl font-semibold mb-4">
+        2. How We Use Your Information
+      </h2>
+      <ul class="list-disc pl-6 space-y-2 mb-6">
+        <li>To provide and improve the Service</li>
+        <li>To process your transactions and manage billing</li>
+        <li>To personalize summaries, analytics, and recommendations</li>
+        <li>To communicate updates, service notices, or promotions</li>
+        <li>To detect, prevent, and address security or technical issues</li>
+        <li>To comply with legal obligations and respond to lawful requests</li>
+      </ul>
+
+      <h2 class="text-2xl font-semibold mb-4">3. Data Sharing & Disclosure</h2>
+      <ul class="list-disc pl-6 space-y-2 mb-6">
+        <li>We do <strong>not</strong> sell your personal data.</li>
+        <li>
+          We may share data with vetted third-party providers (e.g., payment
+          processors, cloud services) under strict agreements.
+        </li>
+        <li>
+          We may disclose data if required by law, legal process, or to protect
+          rights and safety.
+        </li>
+      </ul>
+
+      <h2 class="text-2xl font-semibold mb-4">
+        4. International Data Transfers
+      </h2>
+      <p class="mb-6">
+        Your data may be stored and processed in servers located outside your
+        country of residence. We comply with data protection laws including
+        GDPR, and implement adequate safeguards such as Standard Contractual
+        Clauses (SCCs).
+      </p>
+
+      <h2 class="text-2xl font-semibold mb-4">5. Data Retention</h2>
+      <p class="mb-6">
+        We retain your data only as long as necessary for providing the service
+        and meeting legal requirements. You may request deletion of your account
+        and associated data anytime by contacting us.
+      </p>
+
+      <h2 class="text-2xl font-semibold mb-4">6. Your Rights</h2>
+      <ul class="list-disc pl-6 space-y-2 mb-6">
+        <li>Access your data</li>
+        <li>Request correction or deletion</li>
+        <li>Export your data (portability)</li>
+        <li>Withdraw consent or object to processing</li>
+      </ul>
+
+      <h2 class="text-2xl font-semibold mb-4">7. Data Security</h2>
+      <p class="mb-6">
+        We use encryption, secure infrastructure, and best practices to protect
+        your information. However, no system is 100% secure, and we cannot
+        guarantee absolute security.
+      </p>
+
+      <h2 class="text-2xl font-semibold mb-4">8. Children’s Privacy</h2>
+      <p class="mb-6">
+        Our service is not intended for children under 13 (or equivalent minimum
+        age in your jurisdiction). We do not knowingly collect personal data
+        from minors.
+      </p>
+
+      <h2 class="text-2xl font-semibold mb-4">9. Changes to This Policy</h2>
+      <p class="mb-6">
+        We may update this policy from time to time. Changes will be posted on
+        this page with an updated revision date. Continued use of the service
+        implies acceptance of the changes.
+      </p>
+
+      <h2 class="text-2xl font-semibold mb-4">10. Contact Us</h2>
+      <p class="mb-6">
+        If you have questions or concerns about this Privacy Policy or how your
+        data is handled, please contact us at:
+      </p>
+      <p class="mb-2"><strong>Email:</strong> codebygs@gmail.com<br /></p>
+    </div>
+    <!-- ===== ENHANCED COLORFUL FOOTER SECTION ===== -->
+<footer class="relative bg-gradient-to-br from-white via-slate-50 to-white pt-20 pb-10 border-t border-gray-200 overflow-hidden">
+  <!-- Background Blobs -->
+  <div class="absolute -top-20 -left-32 w-[400px] h-[400px] bg-gradient-to-br from-blue-300 via-white to-transparent rounded-full blur-3xl opacity-30 pointer-events-none"></div>
+  <div class="absolute bottom-[-100px] right-[-100px] w-[300px] h-[300px] bg-gradient-to-tr from-green-200 to-transparent rounded-full blur-3xl opacity-30 pointer-events-none"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-sm text-gray-700">
+
+      <!-- Logo + Tagline -->
+      <div>
+        <h3 class="text-2xl font-extrabold bg-gradient-to-r from-blue-600 via-red-500 to-yellow-400 bg-clip-text text-transparent mb-3">
+          Albetora
+        </h3>
+        <p class="text-gray-600">
+          Intelligent AI agents that automate your entire business — from sales to support. Built for scale, powered by simplicity.
+        </p>
+      </div>
+
+      <!-- Products -->
+      <div>
+        <h4 class="text-lg font-semibold text-blue-600 mb-3">Products</h4>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:text-blue-500 transition">Sales Agent</a></li>
+          <li><a href="#" class="hover:text-blue-500 transition">Recruitment Agent</a></li>
+          <li><a href="#" class="hover:text-blue-500 transition">Support Agent</a></li>
+          <li><a href="#" class="hover:text-blue-500 transition">Finance Agent</a></li>
+        </ul>
+      </div>
+
+      <!-- Company -->
+      <div>
+        <h4 class="text-lg font-semibold text-green-600 mb-3">Company</h4>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:text-green-500 transition">About Us</a></li>
+          <li><a href="#" class="hover:text-green-500 transition">Blog</a></li>
+          <li><a href="#" class="hover:text-green-500 transition">Careers</a></li>
+          <li><a href="#" class="hover:text-green-500 transition">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Support -->
+      <div>
+        <h4 class="text-lg font-semibold text-yellow-600 mb-3">Support</h4>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:text-yellow-500 transition">Help Center</a></li>
+          <li><a href="#" class="hover:text-yellow-500 transition">Live Chat</a></li>
+          <li><a href="./terms&conditions.html" class="hover:text-yellow-500 transition">Terms of Service</a></li>
+          <li><a href="./privacyPolicy.html" class="hover:text-yellow-500 transition">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Divider -->
+    <div class="mt-10 border-t border-gray-300 pt-6 text-center text-gray-500 text-sm">
+      &copy; 2025 <span class="font-medium text-gray-700">Albetora Technologies</span>. All rights reserved.
+    </div>
+  </div>
+</footer>
+  </body>
+</html>
