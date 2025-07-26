@@ -64,6 +64,35 @@
         <nav
           class="hidden md:flex items-center space-x-6 text-sm text-gray-700"
         >
+         <div class="relative group">
+            <button
+              class="flex items-center gap-1 hover:text-yellow-600 hover:underline underline-offset-4 transition"
+            >
+              <span>Services</span>
+              <svg
+                class="w-4 h-4 text-gray-500 group-hover:text-yellow-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            <div
+              class="absolute left-0 mt-2 w-64 bg-white border border-gray-200 shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
+            >
+              <a href="./shed/shed.pdf" class="block p-4 hover:bg-yellow-50">
+                <h4 class="font-semibold text-gray-900">Shed AI</h4>
+              </a>
+          
+            </div>
+          </div>
+
           <a
             href="./products.html"
             class="hover:text-blue-600 hover:underline underline-offset-4 transition"
@@ -193,6 +222,37 @@
         id="mobile-nav"
         class="md:hidden hidden px-4 pb-4 bg-white border-t border-gray-200 shadow text-sm text-gray-800 space-y-2"
       >
+      
+                <div>
+          <button
+            onclick="toggleSubmenu('mobile-partners')"
+            class="flex justify-between items-center w-full py-2 hover:text-yellow-600 hover:underline underline-offset-4"
+          >
+            <span>Services</span>
+            <svg
+              id="mobile-partners-arrow"
+              class="w-4 h-4 text-gray-400 transition-transform"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </button>
+          <div id="mobile-partners" class="hidden pl-4 mt-1 space-y-1">
+            <a
+              href="./shed/shed.pdf"
+              class="block py-1 hover:text-yellow-600"
+              >Shed AI</a
+            >
+           
+          </div>
+        </div>
         <a
           href="./products.html"
           class="block py-2 hover:text-blue-600 hover:underline underline-offset-4"
