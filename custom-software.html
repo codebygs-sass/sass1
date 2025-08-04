@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CodeByGS powered by Albetora.com</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <!-- ===== NAVIGATION BAR + HERO SECTION START ===== -->
+
+    <!-- Tailwind CSS CDN (Include this in <head> if not already) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- ===== NAVIGATION BAR ===== -->
+    <header
+      class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16"
+      >
+        <!-- Logo & Branding -->
+        <a href="#" class="flex items-center space-x-2">
+          <div
+            class="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-600 text-white font-bold text-sm flex items-center justify-center rounded shadow"
+          >
+            C
+          </div>
+          <div class="flex flex-col leading-tight">
+            <span class="text-lg font-semibold text-gray-900">CodeByGS</span>
+            <span class="text-xs text-gray-500">by Albetora.com</span>
+          </div>
+        </a>
+
+        <!-- Desktop Menu -->
+        <nav
+          class="hidden md:flex items-center space-x-6 text-sm font-medium text-gray-700"
+        >
+          <a href="#services" class="hover:text-blue-600 transition"
+            >Services</a
+          >
+          <a href="#process" class="hover:text-blue-600 transition">Process</a>
+          <a href="#portfolio" class="hover:text-blue-600 transition">Work</a>
+          <a href="#about" class="hover:text-blue-600 transition">About</a>
+          <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
+          <a
+            href="#cta"
+            class="ml-4 px-4 py-2 bg-blue-600 text-white rounded-md shadow hover:bg-purple-600 transition"
+          >
+            Book a Free Call
+          </a>
+        </nav>
+
+        <!-- Mobile Hamburger Icon -->
+        <button
+          id="mobile-nav-toggle"
+          class="md:hidden text-gray-600 focus:outline-none"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <div
+        id="mobile-nav"
+        class="md:hidden hidden px-4 pb-4 bg-white border-t border-gray-100 shadow text-sm text-gray-800 space-y-2"
+      >
+        <a href="#services" class="block py-2 hover:text-blue-600">Services</a>
+        <a href="#process" class="block py-2 hover:text-blue-600">Process</a>
+        <a href="#portfolio" class="block py-2 hover:text-blue-600">Work</a>
+        <a href="#about" class="block py-2 hover:text-blue-600">About</a>
+        <a href="#contact" class="block py-2 hover:text-blue-600">Contact</a>
+        <a
+          href="#cta"
+          class="block mt-2 px-4 py-2 bg-blue-600 text-white rounded-md text-center shadow hover:bg-purple-600"
+        >
+          Book a Free Call
+        </a>
+      </div>
+
+      <!-- JS: Mobile Nav Toggle -->
+      <script>
+        const navToggle = document.getElementById("mobile-nav-toggle");
+        const mobileNav = document.getElementById("mobile-nav");
+        navToggle.addEventListener("click", () => {
+          mobileNav.classList.toggle("hidden");
+        });
+      </script>
+    </header>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section
+      class="relative bg-white overflow-hidden py-24 sm:py-32 text-center"
+    >
+      <!-- Background Glow -->
+      <div
+        class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-100 via-white to-transparent opacity-40 pointer-events-none"
+      ></div>
+
+      <div class="relative z-10 max-w-5xl mx-auto px-4">
+        <!-- Headline -->
+        <h1
+          class="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-tight mb-6"
+        >
+          We Build Custom Software<br class="hidden sm:inline" />
+          <span
+            class="bg-gradient-to-r from-blue-700 via-purple-600 to-cyan-400 bg-clip-text text-transparent"
+          >
+            That Scales with You
+          </span>
+        </h1>
+
+        <!-- Subheadline -->
+        <p class="text-lg sm:text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
+          From MVPs to enterprise-grade platforms — CodeByGS builds software
+          that’s fast, scalable, and built with care.
+        </p>
+
+        <!-- CTA -->
+        <div class="flex flex-col sm:flex-row justify-center gap-4 mb-12">
+          <a
+            href="#contact"
+            class="px-6 py-3 bg-blue-600 text-white font-semibold rounded-md shadow hover:bg-purple-600 transition"
+          >
+            Book a Free Call
+          </a>
+        </div>
+
+        <!-- Video Embed -->
+        <div
+          class="relative mx-auto max-w-4xl aspect-video rounded-xl overflow-hidden shadow-lg border border-gray-200"
+        >
+          <iframe
+            class="w-full h-full"
+            src="https://www.youtube.com/embed/ig5tERkjxMg?si=vLIbDeaS8GK8rK1L"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== NAVIGATION BAR + HERO SECTION END ===== -->
+    <!-- ===== TRUST SECTION: STARTUP CLIENT CARDS WITH EMOJIS ===== -->
+    <section class="bg-gray-50 py-20">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <!-- Section Heading -->
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">
+          Trusted by Builders, Brands & Bold Founders
+        </h2>
+        <p class="text-gray-500 text-sm sm:text-base mb-12">
+          We partner with ambitious teams to bring their digital ideas to life —
+          from idea to scale.
+        </p>
+
+        <!-- Grid of Emojis/Client Cards -->
+        <div
+          class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 text-left"
+        >
+          <!-- Client 1 -->
+          <div
+            class="bg-white shadow-sm rounded-lg p-4 hover:shadow-md hover:-translate-y-1 transition"
+          >
+            <div class="text-3xl mb-2">🤖</div>
+            <h3 class="font-semibold text-gray-800 text-sm">AiPply.io</h3>
+            <p class="text-xs text-gray-500">AI interview assistant</p>
+          </div>
+
+          <!-- Client 2 -->
+          <div
+            class="bg-white shadow-sm rounded-lg p-4 hover:shadow-md hover:-translate-y-1 transition"
+          >
+            <div class="text-3xl mb-2">💬</div>
+            <h3 class="font-semibold text-gray-800 text-sm">ThinkingAI</h3>
+            <p class="text-xs text-gray-500">Chatbot SaaS</p>
+          </div>
+
+          <!-- Client 3 -->
+          <div
+            class="bg-white shadow-sm rounded-lg p-4 hover:shadow-md hover:-translate-y-1 transition"
+          >
+            <div class="text-3xl mb-2">👗</div>
+            <h3 class="font-semibold text-gray-800 text-sm">Elegantera</h3>
+            <p class="text-xs text-gray-500">Fashion dropshipping</p>
+          </div>
+
+          <!-- Client 4 -->
+          <div
+            class="bg-white shadow-sm rounded-lg p-4 hover:shadow-md hover:-translate-y-1 transition"
+          >
+            <div class="text-3xl mb-2">🌿</div>
+            <h3 class="font-semibold text-gray-800 text-sm">Carrynest</h3>
+            <p class="text-xs text-gray-500">Eco home decor</p>
+          </div>
+
+          <!-- Client 5 -->
+          <div
+            class="bg-white shadow-sm rounded-lg p-4 hover:shadow-md hover:-translate-y-1 transition"
+          >
+            <div class="text-3xl mb-2">🍱</div>
+            <h3 class="font-semibold text-gray-800 text-sm">Zland Mobile</h3>
+            <p class="text-xs text-gray-500">Food delivery app</p>
+          </div>
+
+          <!-- Client 6 -->
+          <div
+            class="bg-white shadow-sm rounded-lg p-4 hover:shadow-md hover:-translate-y-1 transition"
+          >
+            <div class="text-3xl mb-2">🛒</div>
+            <h3 class="font-semibold text-gray-800 text-sm">Zland Web</h3>
+            <p class="text-xs text-gray-500">E-commerce redesign</p>
+          </div>
+
+          <!-- Client 7 -->
+          <div
+            class="bg-white shadow-sm rounded-lg p-4 hover:shadow-md hover:-translate-y-1 transition"
+          >
+            <div class="text-3xl mb-2">⚙️</div>
+            <h3 class="font-semibold text-gray-800 text-sm">NeuronTech</h3>
+            <p class="text-xs text-gray-500">ML tool for hiring</p>
+          </div>
+
+          <!-- Client 8 -->
+          <div
+            class="bg-white shadow-sm rounded-lg p-4 hover:shadow-md hover:-translate-y-1 transition"
+          >
+            <div class="text-3xl mb-2">📱</div>
+            <h3 class="font-semibold text-gray-800 text-sm">Expo App</h3>
+            <p class="text-xs text-gray-500">React Native MVP</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ===== TRUST SECTION END ===== -->
+    <!-- ===== SERVICES SECTION START ===== -->
+    <section id="services" class="bg-white py-24">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <!-- Header -->
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">What We Do</h2>
+        <p class="text-gray-600 text-sm sm:text-base max-w-xl mx-auto mb-12">
+          We turn ideas into scalable products — fast, clean, and custom. Here's
+          what we build for startups and businesses like yours:
+        </p>
+
+        <!-- Services Grid -->
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-left"
+        >
+          <!-- Service 1 -->
+          <div
+            class="p-6 bg-gray-50 rounded-xl border border-blue-100 hover:shadow-md hover:-translate-y-1 transition"
+          >
+            <div class="text-4xl mb-4">💻</div>
+            <h3 class="text-lg font-semibold text-gray-800 mb-1">
+              Custom Web Apps
+            </h3>
+            <p class="text-sm text-gray-600">
+              Tailored web platforms built with performance, usability, and
+              growth in mind.
+            </p>
+          </div>
+
+          <!-- Service 2 -->
+          <div
+            class="p-6 bg-gray-50 rounded-xl border border-green-100 hover:shadow-md hover:-translate-y-1 transition"
+          >
+            <div class="text-4xl mb-4">📱</div>
+            <h3 class="text-lg font-semibold text-gray-800 mb-1">
+              Mobile App Development
+            </h3>
+            <p class="text-sm text-gray-600">
+              Launch fast on iOS & Android using Flutter or React Native for
+              maximum reach.
+            </p>
+          </div>
+
+          <!-- Service 3 -->
+          <div
+            class="p-6 bg-gray-50 rounded-xl border border-yellow-100 hover:shadow-md hover:-translate-y-1 transition"
+          >
+            <div class="text-4xl mb-4">🚀</div>
+            <h3 class="text-lg font-semibold text-gray-800 mb-1">SaaS MVPs</h3>
+            <p class="text-sm text-gray-600">
+              Validate your idea quickly with MVPs designed to attract users and
+              investors.
+            </p>
+          </div>
+
+          <!-- Service 4 -->
+          <div
+            class="p-6 bg-gray-50 rounded-xl border border-purple-100 hover:shadow-md hover:-translate-y-1 transition"
+          >
+            <div class="text-4xl mb-4">🎨</div>
+            <h3 class="text-lg font-semibold text-gray-800 mb-1">
+              UI/UX & Prototyping
+            </h3>
+            <p class="text-sm text-gray-600">
+              Clean, user-focused interfaces — wireframes, mockups, and
+              click-ready prototypes.
+            </p>
+          </div>
+
+          <!-- Service 5 -->
+          <div
+            class="p-6 bg-gray-50 rounded-xl border border-pink-100 hover:shadow-md hover:-translate-y-1 transition"
+          >
+            <div class="text-4xl mb-4">🧠</div>
+            <h3 class="text-lg font-semibold text-gray-800 mb-1">
+              AI Integrations
+            </h3>
+            <p class="text-sm text-gray-600">
+              Power your product with GPT, embeddings, or vector search. AI,
+              without the hype.
+            </p>
+          </div>
+
+          <!-- Service 6 -->
+          <div
+            class="p-6 bg-gray-50 rounded-xl border border-red-100 hover:shadow-md hover:-translate-y-1 transition"
+          >
+            <div class="text-4xl mb-4">⚙️</div>
+            <h3 class="text-lg font-semibold text-gray-800 mb-1">
+              Backend & APIs
+            </h3>
+            <p class="text-sm text-gray-600">
+              Secure, scalable infrastructure with Node, Python, or Firebase —
+              ready for scale.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ===== SERVICES SECTION END ===== -->
+    <!-- ===== HOW WE WORK SECTION START ===== -->
+    <section id="process" class="bg-gray-100 py-24">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <!-- Heading -->
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">How We Work</h2>
+        <p class="text-gray-600 text-sm sm:text-base max-w-2xl mx-auto mb-12">
+          From idea to launch — our process keeps you in the loop and your
+          project moving fast.
+        </p>
+
+        <!-- Steps Grid -->
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-left"
+        >
+          <!-- Step 1 -->
+          <div
+            class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-1 transition border-l-4 border-blue-500"
+          >
+            <div class="text-3xl mb-3">🔍</div>
+            <h3 class="font-semibold text-gray-800 mb-1">1. Discovery</h3>
+            <p class="text-sm text-gray-600">
+              We listen, ask questions, and dive into your vision and business
+              goals.
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div
+            class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-1 transition border-l-4 border-green-500"
+          >
+            <div class="text-3xl mb-3">🧩</div>
+            <h3 class="font-semibold text-gray-800 mb-1">
+              2. Design & Prototype
+            </h3>
+            <p class="text-sm text-gray-600">
+              We create wireframes and high-fidelity designs to visualize your
+              product early.
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div
+            class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-1 transition border-l-4 border-yellow-500"
+          >
+            <div class="text-3xl mb-3">💻</div>
+            <h3 class="font-semibold text-gray-800 mb-1">3. Build</h3>
+            <p class="text-sm text-gray-600">
+              Frontend, backend, APIs — we write clean code and keep you updated
+              every week.
+            </p>
+          </div>
+
+          <!-- Step 4 -->
+          <div
+            class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-1 transition border-l-4 border-purple-500"
+          >
+            <div class="text-3xl mb-3">🚀</div>
+            <h3 class="font-semibold text-gray-800 mb-1">4. Launch</h3>
+            <p class="text-sm text-gray-600">
+              We deploy your product live — stress-tested, mobile-ready, and
+              scalable.
+            </p>
+          </div>
+
+          <!-- Step 5 -->
+          <div
+            class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-1 transition border-l-4 border-red-400"
+          >
+            <div class="text-3xl mb-3">📈</div>
+            <h3 class="font-semibold text-gray-800 mb-1">5. Support & Scale</h3>
+            <p class="text-sm text-gray-600">
+              Need iterations? Growth features? We’re here to scale with your
+              users.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ===== HOW WE WORK SECTION END ===== -->
+    <!-- ===== PORTFOLIO SECTION START ===== -->
+    <section id="portfolio" class="bg-white py-24">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <!-- Header -->
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Selected Work</h2>
+        <p class="text-gray-600 text-sm sm:text-base max-w-xl mx-auto mb-12">
+          A few examples of products we've helped design, build, and launch —
+          across industries and platforms.
+        </p>
+
+        <!-- Projects Grid -->
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-left"
+        >
+          <!-- Project 1 -->
+          <div
+            class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition bg-gray-50 border"
+          >
+            <img
+              src="./assets/project.png"
+              alt="Project 1"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-4">
+              <h3 class="font-semibold text-gray-800 mb-1">AiPply.io</h3>
+              <p class="text-sm text-gray-600 mb-2">
+                AI Interview platform MVP — launched in 6 weeks.
+              </p>
+              <a href="#" class="text-blue-600 text-sm hover:underline"
+                >Read Full Case Study</a
+              >
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div
+            class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition bg-gray-50 border"
+          >
+            <img
+              src="./assets/project.png"
+              alt="Project 2"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-4">
+              <h3 class="font-semibold text-gray-800 mb-1">Zland Mobile</h3>
+              <p class="text-sm text-gray-600 mb-2">
+                Built & deployed a React Native food delivery app.
+              </p>
+              <a href="#" class="text-blue-600 text-sm hover:underline"
+                >Read Full Case Study</a
+              >
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div
+            class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition bg-gray-50 border"
+          >
+            <img
+              src="./assets/project.png"
+              alt="Project 3"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-4">
+              <h3 class="font-semibold text-gray-800 mb-1">Carrynest</h3>
+              <p class="text-sm text-gray-600 mb-2">
+                E-commerce dashboard revamp for a home decor brand.
+              </p>
+              <a href="#" class="text-blue-600 text-sm hover:underline"
+                >Read Full Case Study</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Optional CTA -->
+        <div class="mt-12">
+          <a
+            href="#contact"
+            class="inline-block px-6 py-3 bg-blue-600 text-white rounded-md font-semibold shadow hover:bg-purple-600 transition"
+          >
+            Book a Free Call to Discuss Your Project
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- ===== PORTFOLIO SECTION END ===== -->
+    <!-- ===== TESTIMONIALS SECTION START ===== -->
+    <section id="testimonials" class="bg-gray-50 py-24">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">
+          What Our Clients Say
+        </h2>
+
+        <!-- Testimonial 1 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-16">
+          <!-- Photo -->
+          <div class="flex justify-center md:justify-end">
+            <img
+              src="https://randomuser.me/api/portraits/women/44.jpg"
+              alt="Client 1"
+              class="w-32 h-32 rounded-full shadow-md border-2 border-white"
+            />
+          </div>
+          <!-- Quote -->
+          <div>
+            <p class="text-lg text-gray-700 italic mb-4">
+              “CodeByGS took our messy idea and turned it into a working MVP in
+              record time. We had investor demos within weeks.”
+            </p>
+            <div class="text-sm font-semibold text-gray-800">
+              Radhika Verma – Co-founder, AiPply.io
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-16 md:flex-row-reverse"
+        >
+          <!-- Photo -->
+          <div class="flex justify-center md:justify-start">
+            <img
+              src="https://randomuser.me/api/portraits/men/36.jpg"
+              alt="Client 2"
+              class="w-32 h-32 rounded-full shadow-md border-2 border-white"
+            />
+          </div>
+          <!-- Quote -->
+          <div>
+            <p class="text-lg text-gray-700 italic mb-4">
+              “These folks move fast and communicate clearly. Code quality is
+              solid and support after launch has been excellent.”
+            </p>
+            <div class="text-sm font-semibold text-gray-800">
+              Aniket Kulkarni – CTO, Carrynest
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <!-- Photo -->
+          <div class="flex justify-center md:justify-end">
+            <img
+              src="https://randomuser.me/api/portraits/women/68.jpg"
+              alt="Client 3"
+              class="w-32 h-32 rounded-full shadow-md border-2 border-white"
+            />
+          </div>
+          <!-- Quote -->
+          <div>
+            <p class="text-lg text-gray-700 italic mb-4">
+              “They treated our small app idea like a real business. The UI/UX
+              and tech decisions helped us grow to 10K users.”
+            </p>
+            <div class="text-sm font-semibold text-gray-800">
+              Sneha Rao – Product Lead, Zland Mobile
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ===== TESTIMONIALS SECTION END ===== -->
+    <!-- ===== TECH STACK / TOOLS SECTION START ===== -->
+    <section id="tech-stack" class="bg-white py-24">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <!-- Heading -->
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">
+          Technologies We Love
+        </h2>
+        <p class="text-gray-600 text-sm sm:text-base max-w-xl mx-auto mb-12">
+          We use battle-tested modern tools to build fast, scalable, and
+          maintainable products — the right stack for your vision.
+        </p>
+
+        <!-- Tech Icons Grid -->
+        <div
+          class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-8 items-center justify-center text-center"
+        >
+          <!-- React -->
+          <div class="flex flex-col items-center gap-2">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+              alt="React"
+              class="h-10"
+            />
+            <span class="text-sm text-gray-600">React</span>
+          </div>
+
+          <!-- Next.js -->
+          <div class="flex flex-col items-center gap-2">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
+              alt="Next.js"
+              class="h-10 invert"
+            />
+            <span class="text-sm text-gray-600">Next.js</span>
+          </div>
+
+          <!-- Node.js -->
+          <div class="flex flex-col items-center gap-2">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+              alt="Node.js"
+              class="h-10"
+            />
+            <span class="text-sm text-gray-600">Node.js</span>
+          </div>
+
+          <!-- Python -->
+          <div class="flex flex-col items-center gap-2">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+              alt="Python"
+              class="h-10"
+            />
+            <span class="text-sm text-gray-600">Python</span>
+          </div>
+
+          <!-- Firebase -->
+          <div class="flex flex-col items-center gap-2">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg"
+              alt="Firebase"
+              class="h-10"
+            />
+            <span class="text-sm text-gray-600">Firebase</span>
+          </div>
+
+          <!-- Tailwind -->
+          <div class="flex flex-col items-center gap-2">
+            <img
+              src="./assets/tailwind.png"
+              alt="Tailwind CSS"
+              class="h-10"
+            />
+            <span class="text-sm text-gray-600">Tailwind CSS</span>
+          </div>
+
+          <!-- MongoDB -->
+          <div class="flex flex-col items-center gap-2">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+              alt="MongoDB"
+              class="h-10"
+            />
+            <span class="text-sm text-gray-600">MongoDB</span>
+          </div>
+
+          <!-- PostgreSQL -->
+          <div class="flex flex-col items-center gap-2">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+              alt="PostgreSQL"
+              class="h-10"
+            />
+            <span class="text-sm text-gray-600">PostgreSQL</span>
+          </div>
+
+          <!-- AWS -->
+          <div class="flex flex-col items-center gap-2">
+            <img
+              src="./assets/aws.png"
+              alt="AWS"
+              class="h-10"
+            />
+            <span class="text-sm text-gray-600">AWS</span>
+          </div>
+
+          <!-- GitHub -->
+          <div class="flex flex-col items-center gap-2">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+              alt="GitHub"
+              class="h-10"
+            />
+            <span class="text-sm text-gray-600">GitHub</span>
+          </div>
+
+          <!-- Docker -->
+          <div class="flex flex-col items-center gap-2">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+              alt="Docker"
+              class="h-10"
+            />
+            <span class="text-sm text-gray-600">Docker</span>
+          </div>
+
+          <!-- OpenAI / GPT -->
+          <div class="flex flex-col items-center gap-2">
+            <img
+              src="./assets/chatgpt.png"
+              alt="OpenAI"
+              class="h-10"
+            />
+            <span class="text-sm text-gray-600">OpenAI API</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ===== TECH STACK / TOOLS SECTION END ===== -->
+    <!-- ===== ABOUT US SECTION START ===== -->
+    <section id="about" class="bg-gray-50 py-24">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <!-- Text Column -->
+          <div>
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Why CodeByGS?</h2>
+            <p class="text-gray-600 text-base mb-6">
+              We’re not just developers — we’re product thinkers, problem
+              solvers, and your startup’s silent tech co-founder.
+            </p>
+
+            <!-- Mission / Founder Blurb -->
+            <p class="text-sm text-gray-500 mb-6">
+              Founded by a team from Albetora.com, we’ve worked with 40+ clients
+              worldwide, delivering scalable, clean, and user-focused software
+              for businesses of all sizes.
+            </p>
+
+            <!-- Differentiator List -->
+            <ul class="space-y-3 text-sm text-gray-700">
+              <li class="flex items-start gap-2">
+                <span class="text-blue-600 text-xl">✅</span>
+                Always 1:1 communication with senior devs
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-blue-600 text-xl">✅</span>
+                Fast iterations, weekly sprints, zero fluff
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-blue-600 text-xl">✅</span>
+                Clean code, scalable stack, no tech debt
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-blue-600 text-xl">✅</span>
+                100% ownership — no lock-in or hidden terms
+              </li>
+            </ul>
+          </div>
+
+          <!-- Image Column -->
+          <div class="relative w-full h-72 md:h-full">
+            <img
+              src="./assets/teams.jpg"
+              alt="Our Team"
+              class="rounded-xl object-cover shadow-md w-full h-full"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ===== ABOUT US SECTION END ===== -->
+    <!-- ===== FAQ SECTION START ===== -->
+    <section id="faqs" class="bg-white py-24">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Heading -->
+        <h2 class="text-3xl font-bold text-center text-gray-900 mb-10">FAQs</h2>
+
+        <!-- Accordion -->
+        <div class="space-y-4">
+          <!-- FAQ 1 -->
+          <div class="border rounded-lg overflow-hidden">
+            <button
+              class="w-full flex justify-between items-center p-4 text-left text-gray-800 font-medium bg-gray-100 hover:bg-gray-200 faq-toggle"
+            >
+              <span>How much does a typical project cost?</span>
+              <svg
+                class="w-5 h-5 transform transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            <div class="hidden px-4 pb-4 text-sm text-gray-600 faq-content">
+              Pricing depends on scope. Most MVPs range from $3k–$10k. We also
+              offer fixed-fee packages and retainers.
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="border rounded-lg overflow-hidden">
+            <button
+              class="w-full flex justify-between items-center p-4 text-left text-gray-800 font-medium bg-gray-100 hover:bg-gray-200 faq-toggle"
+            >
+              <span>How long does it take to launch?</span>
+              <svg
+                class="w-5 h-5 transform transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            <div class="hidden px-4 pb-4 text-sm text-gray-600 faq-content">
+              MVPs typically take 3–6 weeks. Larger apps may take 2–3 months.
+              Timelines depend on features, feedback, and clarity.
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="border rounded-lg overflow-hidden">
+            <button
+              class="w-full flex justify-between items-center p-4 text-left text-gray-800 font-medium bg-gray-100 hover:bg-gray-200 faq-toggle"
+            >
+              <span>What if I don't have a full spec yet?</span>
+              <svg
+                class="w-5 h-5 transform transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            <div class="hidden px-4 pb-4 text-sm text-gray-600 faq-content">
+              No problem! We’ll guide you through a discovery session to define
+              the scope, goals, and key features before we code.
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="border rounded-lg overflow-hidden">
+            <button
+              class="w-full flex justify-between items-center p-4 text-left text-gray-800 font-medium bg-gray-100 hover:bg-gray-200 faq-toggle"
+            >
+              <span>Do you offer post-launch support?</span>
+              <svg
+                class="w-5 h-5 transform transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            <div class="hidden px-4 pb-4 text-sm text-gray-600 faq-content">
+              Yes! We offer ongoing support, feature iterations, and monthly
+              retainers depending on your growth stage and needs.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Accordion Script -->
+    <script>
+      document.querySelectorAll(".faq-toggle").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const content = btn.nextElementSibling;
+          content.classList.toggle("hidden");
+          btn.querySelector("svg").classList.toggle("rotate-180");
+        });
+      });
+    </script>
+    <!-- ===== FAQ SECTION END ===== -->
+    <!-- ===== FINAL CTA SECTION START ===== -->
+    <section id="cta" class="bg-blue-600 text-white py-20 text-center">
+      <div class="max-w-3xl mx-auto px-4">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+          Let’s Build Something Great Together
+        </h2>
+        <p class="text-sm sm:text-base mb-8 opacity-90">
+          Whether you're launching your first MVP or scaling to thousands of
+          users — we're your tech partner.
+        </p>
+        <a
+          href="#contact"
+          class="inline-block px-6 py-3 bg-white text-blue-700 font-semibold rounded-md shadow hover:bg-gray-100 transition"
+        >
+          Book a Free Discovery Call
+        </a>
+      </div>
+    </section>
+    <!-- ===== FINAL CTA SECTION END ===== -->
+    <!-- ===== CONTACT SECTION START ===== -->
+    <section id="contact" class="bg-gray-100 py-24">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center text-gray-900 mb-10">
+          Get in Touch
+        </h2>
+
+        <!-- Contact Form -->
+        <form
+          class="bg-white shadow-sm rounded-xl p-6 space-y-6"
+          action="#"
+          method="POST"
+        >
+          <div>
+            <label for="name" class="block text-sm font-medium text-gray-700"
+              >Name</label
+            >
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              class="mt-1 block w-full border border-gray-300 rounded-md p-2"
+            />
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-700"
+              >Email</label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="mt-1 block w-full border border-gray-300 rounded-md p-2"
+            />
+          </div>
+          <div>
+            <label for="message" class="block text-sm font-medium text-gray-700"
+              >Message</label
+            >
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              required
+              class="mt-1 block w-full border border-gray-300 rounded-md p-2"
+            ></textarea>
+          </div>
+          <div>
+            <button
+              type="submit"
+              class="bg-blue-600 text-white px-6 py-3 rounded-md font-semibold hover:bg-blue-700 transition"
+            >
+              Send Message
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <!-- ===== CONTACT SECTION END ===== -->
+
+    <!-- ===== FOOTER START ===== -->
+    <footer
+      class="bg-white border-t border-gray-200 py-10 text-center text-sm text-gray-500"
+    >
+      <div
+        class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0"
+      >
+        <p>© 2025 CodeByGS powered by Albetora.com. All rights reserved.</p>
+        <div class="space-x-4">
+          <a href="#" class="hover:text-gray-900">Privacy Policy</a>
+          <a href="#" class="hover:text-gray-900">Terms of Use</a>
+          <a href="mailto:hello@codebygs.com" class="hover:text-gray-900"
+            >hello@codebygs.com</a
+          >
+        </div>
+      </div>
+    </footer>
+    <!-- ===== FOOTER END ===== -->
+  </body>
+</html>
