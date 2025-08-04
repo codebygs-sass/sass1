@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Albetora NoteTaker Meeting Joiner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 p-8">
+    <main class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+      <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">
+        Join the Meeting with Albetora AI NoteTaker
+      </h1>
+
+      <!-- Zoom Link Input Section -->
+      <div class="mb-6">
+        <label
+          for="zoomLink"
+          class="block text-lg font-semibold text-gray-700 mb-2"
+          >Enter Zoom Meeting Link (Optional):</label
+        >
+        <input
+          type="text"
+          id="zoomLink"
+          placeholder="Paste the Zoom link here"
+          class="w-full p-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+
+      <!-- Meeting Number Input Section -->
+      <div class="mb-6">
+        <label
+          for="meetingNumber"
+          class="block text-lg font-semibold text-gray-700 mb-2"
+          >Enter Meeting Number:</label
+        >
+        <input
+          type="text"
+          id="meetingNumber"
+          placeholder="Enter Meeting Number"
+          class="w-full p-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+
+      <!-- Password Input Section -->
+      <div class="mb-6">
+        <label
+          for="password"
+          class="block text-lg font-semibold text-gray-700 mb-2"
+          >Enter Meeting Password:</label
+        >
+        <input
+          type="text"
+          id="password"
+          placeholder="Enter Meeting Password"
+          class="w-full p-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+
+      <!-- Join Button -->
+      <button
+        onClick="getMeetingDetails()"
+        class="w-full py-3 bg-blue-600 text-white font-semibold text-lg rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 mb-6"
+      >
+        Join Meeting
+      </button>
+
+      <!-- Zoom SDK Element -->
+      <div
+        id="meetingSDKElement"
+        class="border border-gray-300 rounded-lg h-[500px] bg-gray-50"
+      ></div>
+
+      <!-- Error Message -->
+      <div id="errorMessage" class="mt-4 text-red-600 text-center hidden">
+        <p>
+          Please provide either a valid Zoom link or meeting number and
+          password.
+        </p>
+      </div>
+    </main>
+
+    <script src="https://source.zoom.us/4.0.0/lib/vendor/react.min.js"></script>
+    <script src="https://source.zoom.us/4.0.0/lib/vendor/react-dom.min.js"></script>
+    <script src="https://source.zoom.us/4.0.0/lib/vendor/redux.min.js"></script>
+    <script src="https://source.zoom.us/4.0.0/lib/vendor/redux-thunk.min.js"></script>
+    <script src="https://source.zoom.us/4.0.0/lib/vendor/lodash.min.js"></script>
+
+    <script src="https://source.zoom.us/4.0.0/zoom-meeting-embedded-4.0.0.min.js"></script>
+    <script type="text/javascript" src="component-view.js"></script>
+
+    <script>
+      // Function to extract meeting number and password from the Zoom link
+      function extractMeetingDetails(url) {
+        const regex = /zoom\.us\/j\/(\d+)\?pwd=([a-zA-Z0-9]+)/;
+        const match = url.match(regex);
+        if (match) {
+          return { meetingNumber: match[1], password: match[2] };
+        } else {
+          alert("Invalid Zoom link. Please try again.");
+          return null;
+        }
+      }
+
+      // Function to get meeting details and start the Zoom meeting
+      function getMeetingDetails() {
+        const zoomLink = document.getElementById("zoomLink").value;
+        const meetingNumber = document.getElementById("meetingNumber").value;
+        const password = document.getElementById("password").value;
+
+        let meetingDetails = null;
+        const errorMessageElement = document.getElementById("errorMessage");
+
+        // Clear previous error message
+        errorMessageElement.classList.add("hidden");
+
+        // If a Zoom link is provided, extract details
+        if (zoomLink) {
+          meetingDetails = extractMeetingDetails(zoomLink);
+        }
+
+        // Otherwise, use manually entered meeting number and password
+        if (!meetingDetails && meetingNumber && password) {
+          meetingDetails = { meetingNumber, password };
+        }
+
+        // If no valid input is provided, show error message
+        if (!meetingDetails) {
+          errorMessageElement.classList.remove("hidden");
+          return;
+        }
+
+        // Fetch signature and join meeting
+        const { meetingNumber: validMeetingNumber, password: validPassword } =
+          meetingDetails;
+        getSignature(validMeetingNumber, validPassword);
+      }
+
+      // Function to fetch the meeting signature from the backend
+      function getSignature(meetingNumber, passWord) {
+        fetch("server-nextjs.vercel.app/api/zoom", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            meetingNumber: meetingNumber,
+            password: passWord,
+            role: 0,
+          }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            startMeeting(data.signature, meetingNumber, passWord);
+          })
+          .catch((error) => {
+            console.error("Error fetching signature:", error);
+          });
+      }
+
+      // Function to start the Zoom meeting after getting the signature
+      function startMeeting(signature, meetingNumber, passWord) {
+        const client = ZoomMtgEmbedded.createClient();
+        let meetingSDKElement = document.getElementById("meetingSDKElement");
+        console.log(signature,"singnature");
+
+        client
+          .init({
+            zoomAppRoot: meetingSDKElement,
+            language: "en-US",
+            patchJsMedia: true,
+            leaveOnPageUnload: true,
+          })
+          .then(() => {
+            client
+              .join({
+                signature: signature,
+                meetingNumber: meetingNumber,
+                password: passWord,
+                userName: "Dhanasekar",
+                userEmail: "codebygs@gmail.com",
+                tk: "", // Add registrantToken if needed
+                zak: "", // Add zakToken if needed
+              })
+              .then(() => {
+                console.log("Joined successfully");
+              })
+              .catch((error) => {
+                console.error("Error joining meeting:", error);
+              });
+          })
+          .catch((error) => {
+            console.error("Error initializing Zoom client:", error);
+          });
+      }
+    </script>
+  </body>
+</html>
