@@ -3,3 +3,5 @@
   X-Content-Type-Options: nosniff
   Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none';
   Referrer-Policy: no-referrer
+  X-Frame-Options: SAMEORIGIN
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
