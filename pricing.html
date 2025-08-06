@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Albetora Pricing</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
     <style>
       /* Custom CSS for animation */
       .fade-in {
@@ -93,11 +94,41 @@
               </p>
             </div>
             
-            <a
-              href="https://rzp.io/rzp/0sJndXo1"
-              class="inline-block px-6 py-3 bg-yellow-500 text-lg font-semibold rounded-lg hover:bg-yellow-400 transition duration-300 text-white mt-auto"
-              >Start Your Journey</a
+            <span
+              id="subscribe-btn"
+              class="inline-block pointer px-6 py-3 bg-yellow-500 text-lg font-semibold rounded-lg hover:bg-yellow-400 transition duration-300 text-white mt-auto"
+              >Start Your Journey</span
             >
+             <script>
+        document.getElementById('subscribe-btn').onclick = async function () {
+            // Fetch subscription from backend
+            const response = await fetch('http://localhost:3001/api/razorpay?plan_id=Business_Essential', { method: 'POST' });
+            const data = await response.json(); // data.id = subscription_id
+
+            var options = {
+                "key": "rzp_test_kOmC1KvkPYySRT",
+                "subscription_id": data.id, // subscription_id from backend
+                "name": "THICKING AI",
+                "description": "Business Essential",
+                "handler": function (response) {
+                    console.log(response);
+                    alert("Payment Successful! Payment ID: " + response.razorpay_payment_id);
+                },
+                "prefill": {
+                    "name": "John Doe",
+                    "email": "john@example.com",
+                    "contact": "9876543210"
+                },
+                "theme": {
+                    "color": "#3399cc"
+                }
+            };
+
+            var rzp = new Razorpay(options);
+            rzp.open();
+        }
+    </script>
+
           </div>
 
           <!-- Medium Companies Plan (Blue Theme) -->
@@ -121,11 +152,40 @@
                 30-Day Money-Back Guarantee
               </p>
             </div>
-            <a
-              href="https://rzp.io/rzp/2ZaJlAJ"
-              class="inline-block px-6 py-3 bg-yellow-500 text-lg font-semibold rounded-lg hover:bg-yellow-400 transition duration-300 text-white mt-auto"
+            <span
+              id="subscribe-scale"
+              class="inline-block pointer px-6 py-3 bg-yellow-500 text-lg font-semibold rounded-lg hover:bg-yellow-400 transition duration-300 text-white mt-auto"
               >Scale Your Business</a
             >
+               <script>
+        document.getElementById('subscribe-scale').onclick = async function () {
+            // Fetch subscription from backend
+            const response = await fetch('http://localhost:3001/api/razorpay?plan_id=Growth_Genius', { method: 'POST' });
+            const data = await response.json(); // data.id = subscription_id
+
+            var options = {
+                "key": "rzp_test_kOmC1KvkPYySRT",
+                "subscription_id": data.id, // subscription_id from backend
+                "name": "THICKING AI",
+                "description": "Scale Your Business",
+                "handler": function (response) {
+                    console.log(response);
+                    alert("Payment Successful! Payment ID: " + response.razorpay_payment_id);
+                },
+                "prefill": {
+                    "name": "John Doe",
+                    "email": "john@example.com",
+                    "contact": "9876543210"
+                },
+                "theme": {
+                    "color": "#3399cc"
+                }
+            };
+
+            var rzp = new Razorpay(options);
+            rzp.open();
+        }
+    </script>
           </div>
 
           <!-- Large Companies Plan (Green Theme) -->
@@ -150,14 +210,43 @@
                 <b>30-Day Money-Back Guarantee</b>
               </p>
             </div>
-            <a
-              href="https://rzp.io/rzp/EAAyhKD"
-              class="inline-block px-6 py-3 bg-yellow-500 text-lg font-semibold rounded-lg hover:bg-yellow-400 transition duration-300 text-white mt-auto"
-              >Lead the Market</a
+            <span
+              id="subscribe-lead"
+              class="inline-block pointer px-6 py-3 bg-yellow-500 text-lg font-semibold rounded-lg hover:bg-yellow-400 transition duration-300 text-white mt-auto"
+              >Lead the Market</span
             >
           </div>
         </div>
       </div>
+      <script>
+        document.getElementById('subscribe-lead').onclick = async function () {
+            // Fetch subscription from backend
+            const response = await fetch('http://localhost:3001/api/razorpay?plan_id=Lead_the_Market', { method: 'POST' });
+            const data = await response.json(); // data.id = subscription_id
+
+            var options = {
+                "key": "rzp_test_kOmC1KvkPYySRT",
+                "subscription_id": data.id, // subscription_id from backend
+                "name": "THICKING AI",
+                "description": "Lead the Market",
+                "handler": function (response) {
+                    console.log(response);
+                    alert("Payment Successful! Payment ID: " + response.razorpay_payment_id);
+                },
+                "prefill": {
+                    "name": "John Doe",
+                    "email": "john@example.com",
+                    "contact": "9876543210"
+                },
+                "theme": {
+                    "color": "#3399cc"
+                }
+            };
+
+            var rzp = new Razorpay(options);
+            rzp.open();
+        }
+    </script>
     </section>
 
     <section class="py-16 bg-white">
