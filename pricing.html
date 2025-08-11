@@ -102,8 +102,26 @@
             >
              <script>
         document.getElementById('subscribe-btn').onclick = async function () {
+
+             const token = sessionStorage.getItem('token') ?? '';
+          console.log(token,"token");
+
+          if(!token){
+           window.location.href = 'https://auth.albetora.com/signup'
+           
+          }
+
+          const storedUser = sessionStorage.getItem("firebase_user") ?? '';
+
+          if (storedUser) {
+  const userObject = JSON.parse(storedUser);
+  console.log(userObject.name);  // John Doe
+  console.log(userObject.email); // john@example.com
+
+
+          
             // Fetch subscription from backend
-            const response = await fetch('http://localhost:3001/api/razorpay?plan_id=Business_Essential', { method: 'POST' });
+            const response = await fetch('https://server.albetora.com/api/razorpay?plan_id=Business_Essential', { method: 'POST' });
             const data = await response.json(); // data.id = subscription_id
 
             var options = {
@@ -114,11 +132,20 @@
                 "handler": function (response) {
                     console.log(response);
                     alert("Payment Successful! Payment ID: " + response.razorpay_payment_id);
+
+                           fetch('https://server.albetora.com/api/payment',{
+                      token:token,
+                      paymentId: response.razorpay_payment_id,
+                      paymentPlan: "Scale Your Business"
+                    }).then(res => res.json()).then((res) => {
+                       console.log(res);
+                       
+                    })
+
                 },
                 "prefill": {
-                    "name": "John Doe",
-                    "email": "john@example.com",
-                    "contact": "9876543210"
+                    "name": userObject.name,
+                    "email": userObject.email,
                 },
                 "theme": {
                     "color": "#3399cc"
@@ -128,6 +155,7 @@
             var rzp = new Razorpay(options);
             rzp.open();
         }
+      }
     </script>
 
           </div>
@@ -161,8 +189,23 @@
             >
                <script>
         document.getElementById('subscribe-scale').onclick = async function () {
+             const token = sessionStorage.getItem('token') ?? '';
+          console.log(token,"token");
+
+          if(!token){
+           window.location.href = 'https://auth.albetora.com/signup'
+           
+          }
+
+            const storedUser = sessionStorage.getItem("firebase_user") ?? '';
+
+          if (storedUser) {
+  const userObject = JSON.parse(storedUser);
+  console.log(userObject.name);  // John Doe
+  console.log(userObject.email); // john@example.com
+
             // Fetch subscription from backend
-            const response = await fetch('http://localhost:3001/api/razorpay?plan_id=Growth_Genius', { method: 'POST' });
+            const response = await fetch('https://server.albetora.com/api/razorpay?plan_id=Growth_Genius', { method: 'POST' });
             const data = await response.json(); // data.id = subscription_id
 
             var options = {
@@ -173,11 +216,20 @@
                 "handler": function (response) {
                     console.log(response);
                     alert("Payment Successful! Payment ID: " + response.razorpay_payment_id);
+
+                    fetch('https://server.albetora.com/api/payment',{
+                      token:token,
+                      paymentId: response.razorpay_payment_id,
+                      paymentPlan: "Scale Your Business"
+                    }).then(res => res.json()).then((res) => {
+                       console.log(res);
+                       
+                    })
+                    
                 },
-                "prefill": {
-                    "name": "John Doe",
-                    "email": "john@example.com",
-                    "contact": "9876543210"
+ "prefill": {
+                    "name": userObject.name,
+                    "email": userObject.email,
                 },
                 "theme": {
                     "color": "#3399cc"
@@ -187,6 +239,7 @@
             var rzp = new Razorpay(options);
             rzp.open();
         }
+      }
     </script>
           </div>
 
@@ -223,8 +276,23 @@
       </div>
       <script>
         document.getElementById('subscribe-lead').onclick = async function () {
+
+          const token = sessionStorage.getItem('token') ?? '';
+          console.log(token,"token");
+
+          if(!token){
+           window.location.href = 'https://auth.albetora.com/signup'
+           
+          }
+
+             const storedUser = sessionStorage.getItem("firebase_user") ?? '';
+
+          if (storedUser) {
+  const userObject = JSON.parse(storedUser);
+  console.log(userObject.name);  // John Doe
+  console.log(userObject.email); // john@example.com
             // Fetch subscription from backend
-            const response = await fetch('http://localhost:3001/api/razorpay?plan_id=Lead_the_Market', { method: 'POST' });
+            const response = await fetch('https://server.albetora.com/api/razorpay?plan_id=Lead_the_Market', { method: 'POST' });
             const data = await response.json(); // data.id = subscription_id
 
             var options = {
@@ -235,11 +303,20 @@
                 "handler": function (response) {
                     console.log(response);
                     alert("Payment Successful! Payment ID: " + response.razorpay_payment_id);
+
+                           fetch('https://server.albetora.com/api/payment',{
+                      token:token,
+                      paymentId: response.razorpay_payment_id,
+                      paymentPlan: "Scale Your Business"
+                    }).then(res => res.json()).then((res) => {
+                       console.log(res);
+                       
+                    })
+                    
                 },
-                "prefill": {
-                    "name": "John Doe",
-                    "email": "john@example.com",
-                    "contact": "9876543210"
+ "prefill": {
+                    "name": userObject.name,
+                    "email": userObject.email,
                 },
                 "theme": {
                     "color": "#3399cc"
@@ -249,6 +326,7 @@
             var rzp = new Razorpay(options);
             rzp.open();
         }
+      }
     </script>
     </section>
 
