@@ -133,7 +133,7 @@
                     console.log(response);
                     alert("Payment Successful! Payment ID: " + response.razorpay_payment_id);
 
-                           fetch('https://server.albetora.com/api/payment',{
+                      fetch('https://server.albetora.com/api/payment',{
                       token:token,
                       paymentId: response.razorpay_payment_id,
                       paymentPlan: "Scale Your Business"
