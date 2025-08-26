@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Page 10 – Calendar | Voice Notes AI</title>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { brand: {50:'#eff6ff',100:'#dbeafe',200:'#bfdbfe',300:'#93c5fd',400:'#60a5fa',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',800:'#1e40af',900:'#1e3a8a'} },
+          boxShadow: { soft: '0 10px 30px -10px rgba(0,0,0,0.15)'}
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    html { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial; }
+    .scroll-slim { scrollbar-width: thin; }
+    .scroll-slim::-webkit-scrollbar { height: 8px; width: 8px; }
+    .scroll-slim::-webkit-scrollbar-thumb { background: rgba(30,64,175,.35); border-radius: 8px; }
+    .dot { width: 6px; height: 6px; border-radius: 9999px; }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-brand-50/70 via-white to-brand-100/40 text-slate-800">
+  <div class="min-h-screen grid grid-cols-1 lg:grid-cols-[280px_1fr]">
+    <!-- Sidebar -->
+    <aside class="bg-white/80 backdrop-blur sticky top-0 h-full lg:h-screen border-r border-slate-200 shadow-soft hidden lg:flex flex-col">
+      <div class="px-5 pt-6 pb-4 flex items-center gap-3">
+        <div class="h-10 w-10 grid place-items-center rounded-xl bg-brand-600 text-white font-bold">VN</div>
+        <div>
+          <div class="text-sm uppercase tracking-wider text-brand-700 font-semibold">Voice Notes AI</div>
+          <div class="text-xs text-slate-500">Otter-like Transcription</div>
+        </div>
+      </div>
+      <nav class="mt-4 flex-1 overflow-y-auto scroll-slim">
+        <ul class="px-3 space-y-1 text-sm">
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="02-dashboard.html">Dashboard</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="03-record.html">Record</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="04-transcript.html">Transcript</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="05-search.html">Search</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="06-uploads.html">Uploads</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="07-settings.html">Settings</a></li>
+          <li class="pt-2"><div class="px-3 text-xs uppercase tracking-wide text-slate-400">More</div></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="08-billing.html">Billing</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="09-team.html">Team</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-brand-50 text-brand-700 font-medium" href="10-calendar.html">Calendar</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="11-integrations.html">Integrations</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="12-bot.html">Meeting Bot</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="13-analytics.html">Analytics</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="14-admin.html">Admin</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="15-help.html">Help</a></li>
+          <li class="pt-2"><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="01-auth.html">Sign in / out</a></li>
+        </ul>
+      </nav>
+      <div class="p-4 mt-auto">
+        <div class="rounded-xl bg-gradient-to-br from-brand-600 to-brand-800 text-white p-4">
+          <div class="text-sm opacity-90">Minutes used</div>
+          <div class="mt-1 flex items-end gap-2"><div class="text-2xl font-semibold">382</div><div class="text-xs opacity-80">/ 600</div></div>
+          <div class="mt-3 h-2 bg-white/20 rounded-full overflow-hidden"><div class="h-full w-[64%] bg-white/90"></div></div>
+          <a href="08-billing.html" class="mt-3 inline-flex items-center gap-2 text-xs font-medium underline">Upgrade plan →</a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="flex flex-col min-h-screen">
+      <!-- Topbar -->
+      <header class="sticky top-0 z-10 backdrop-blur bg-white/70 border-b border-slate-200">
+        <div class="px-4 lg:px-8 py-3 flex items-center gap-3">
+          <h1 class="text-lg md:text-xl font-semibold text-slate-900">Calendar</h1>
+          <div class="ml-auto flex items-center gap-2 text-sm">
+            <button id="newEventOpen" class="px-3 py-1.5 rounded-lg bg-brand-600 text-white shadow-soft hover:bg-brand-700">New event</button>
+            <a href="12-bot.html" class="px-3 py-1.5 rounded-lg border">Meeting Bot</a>
+            <a href="07-settings.html" class="inline-flex items-center gap-2 p-1.5 rounded-full border border-slate-200 hover:bg-brand-50"><img alt="avatar" src="https://i.pravatar.cc/40?img=5" class="h-8 w-8 rounded-full" /></a>
+          </div>
+        </div>
+      </header>
+
+      <!-- Content -->
+      <section class="flex-1 px-4 lg:px-8 py-6">
+        <div class="grid grid-cols-1 xl:grid-cols-[1fr_360px] gap-6">
+          <!-- Calendar area -->
+          <div class="rounded-2xl border border-slate-200 bg-white/80 shadow-soft">
+            <div class="px-4 py-3 border-b flex flex-wrap items-center gap-2">
+              <div class="flex items-center gap-2">
+                <button id="prev" class="px-3 py-1.5 rounded-lg border">◀</button>
+                <button id="today" class="px-3 py-1.5 rounded-lg border">Today</button>
+                <button id="next" class="px-3 py-1.5 rounded-lg border">▶</button>
+              </div>
+              <div id="title" class="ml-2 text-lg font-semibold"></div>
+              <div class="ml-auto flex items-center gap-2 text-sm">
+                <button class="view px-3 py-1.5 rounded-lg border" data-view="month">Month</button>
+                <button class="view px-3 py-1.5 rounded-lg border" data-view="week">Week</button>
+                <button class="view px-3 py-1.5 rounded-lg border" data-view="day">Day</button>
+                <div class="px-2 py-1.5 rounded-lg border bg-slate-50">IST (Asia/Kolkata)</div>
+              </div>
+            </div>
+
+            <!-- Month view -->
+            <div id="monthView" class="p-4">
+              <div class="grid grid-cols-7 text-xs text-slate-500 mb-2">
+                <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+              </div>
+              <div id="monthGrid" class="grid grid-cols-7 gap-2"></div>
+            </div>
+
+            <!-- Week view -->
+            <div id="weekView" class="hidden p-4">
+              <div class="grid grid-cols-[60px_repeat(7,1fr)] gap-2 text-xs text-slate-500 mb-2">
+                <div></div><div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+              </div>
+              <div id="weekGrid" class="grid grid-cols-[60px_repeat(7,1fr)] gap-2"></div>
+            </div>
+
+            <!-- Day view -->
+            <div id="dayView" class="hidden p-4">
+              <div id="dayTitle" class="text-sm text-slate-600"></div>
+              <div id="dayGrid" class="mt-2 grid grid-cols-[80px_1fr] gap-2"></div>
+            </div>
+          </div>
+
+          <!-- Right rail: Agenda + Calendars -->
+          <aside class="space-y-4">
+            <div class="rounded-2xl border border-slate-200 bg-white/80 shadow-soft p-4">
+              <h3 class="font-semibold">Upcoming</h3>
+              <ul id="agenda" class="mt-3 space-y-3 text-sm">
+                <!-- agenda items injected -->
+              </ul>
+              <div class="mt-3 text-xs text-slate-500">Connected: Google Calendar, Outlook (see <a href="11-integrations.html" class="underline">Integrations</a>).</div>
+            </div>
+
+            <div class="rounded-2xl border border-slate-200 bg-white/80 shadow-soft p-4">
+              <h3 class="font-semibold">Calendars</h3>
+              <div class="mt-2 space-y-1 text-sm">
+                <label class="flex items-center gap-2"><span class="dot bg-brand-600"></span><input class="cal-toggle" type="checkbox" data-cal="team" checked> Team meetings</label>
+                <label class="flex items-center gap-2"><span class="dot bg-emerald-600"></span><input class="cal-toggle" type="checkbox" data-cal="interview" checked> Interviews</label>
+                <label class="flex items-center gap-2"><span class="dot bg-amber-600"></span><input class="cal-toggle" type="checkbox" data-cal="demo" checked> Demos</label>
+                <label class="flex items-center gap-2"><span class="dot bg-rose-600"></span><input class="cal-toggle" type="checkbox" data-cal="personal" checked> Personal</label>
+              </div>
+              <div class="mt-3 text-xs text-slate-500">Toggle to show/hide on the calendar.</div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <footer class="px-4 lg:px-8 py-6 text-xs text-slate-500">
+        <div class="flex flex-col sm:flex-row gap-2 sm:items-center sm:justify-between">
+          <div>© 2025 Voice Notes AI</div>
+          <div class="flex items-center gap-3">
+            <a href="15-help.html" class="hover:underline">Help</a>
+            <a href="#" class="hover:underline">Privacy</a>
+            <a href="#" class="hover:underline">Terms</a>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <!-- New Event Modal -->
+  <div id="eventModal" class="hidden fixed inset-0 z-20 grid place-items-center bg-black/30 p-4">
+    <div class="w-full max-w-2xl rounded-2xl bg-white shadow-soft border p-4">
+      <div class="flex items-center justify-between">
+        <h3 class="font-semibold">Create event</h3>
+        <button id="eventClose" class="p-2 rounded-lg hover:bg-slate-100">✕</button>
+      </div>
+      <div class="mt-3 grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+        <label class="block">
+          <span class="text-slate-600">Title</span>
+          <input id="evTitle" class="mt-1 w-full rounded-lg border px-3 py-2" placeholder="e.g., Sprint planning"/>
+        </label>
+        <label class="block">
+          <span class="text-slate-600">Calendar</span>
+          <select id="evCal" class="mt-1 w-full rounded-lg border px-3 py-2">
+            <option value="team" selected>Team meetings</option>
+            <option value="interview">Interviews</option>
+            <option value="demo">Demos</option>
+            <option value="personal">Personal</option>
+          </select>
+        </label>
+        <label class="block">
+          <span class="text-slate-600">Date</span>
+          <input id="evDate" type="date" class="mt-1 w-full rounded-lg border px-3 py-2" />
+        </label>
+        <div class="grid grid-cols-2 gap-2">
+          <label class="block">
+            <span class="text-slate-600">Start time (IST)</span>
+            <input id="evStart" type="time" class="mt-1 w-full rounded-lg border px-3 py-2" value="10:00" />
+          </label>
+          <label class="block">
+            <span class="text-slate-600">Duration</span>
+            <select id="evDur" class="mt-1 w-full rounded-lg border px-3 py-2">
+              <option>30</option><option selected>60</option><option>90</option><option>120</option>
+            </select>
+          </label>
+        </div>
+        <label class="block md:col-span-2">
+          <span class="text-slate-600">Participants (emails)</span>
+          <input id="evGuests" class="mt-1 w-full rounded-lg border px-3 py-2" placeholder="a@company.com, b@company.com"/>
+        </label>
+        <label class="block md:col-span-2">
+          <span class="text-slate-600">Meeting link</span>
+          <input id="evLink" class="mt-1 w-full rounded-lg border px-3 py-2" placeholder="https://meet.google.com/..."/>
+        </label>
+        <div class="md:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-3">
+          <label class="flex items-center gap-2"><input id="evAutoRecord" type="checkbox" checked> Auto-record & transcribe</label>
+          <label class="flex items-center gap-2"><input id="evBot" type="checkbox" checked> Auto-join with Meeting Bot</label>
+          <label class="flex items-center gap-2"><input id="evRem" type="checkbox" checked> Remind me 10 mins before</label>
+        </div>
+        <label class="block md:col-span-2">
+          <span class="text-slate-600">Notes</span>
+          <textarea id="evNotes" rows="3" class="mt-1 w-full rounded-lg border px-3 py-2" placeholder="Agenda, goals…"></textarea>
+        </label>
+      </div>
+      <div class="mt-4 flex items-center gap-2">
+        <button id="evSave" class="px-4 py-2 rounded-xl bg-brand-600 text-white">Save</button>
+        <button id="evIcs" class="px-4 py-2 rounded-xl border">Export .ics</button>
+        <button id="eventCancel" class="px-4 py-2 rounded-xl border">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Minimal JS: views, rendering, demo data, event modal, ICS export -->
+  <script>
+    // Utilities
+    const pad = n => String(n).padStart(2,'0');
+    function formatDate(d){ return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`; }
+
+    // Demo event data
+    const colors = { team:'bg-brand-600', interview:'bg-emerald-600', demo:'bg-amber-600', personal:'bg-rose-600' };
+    let events = [
+      { id:'e1', cal:'team', title:'Sprint Planning', start:'2025-08-24T10:00:00+05:30', dur:60, link:'', bot:true, record:true },
+      { id:'e2', cal:'interview', title:'Interview – S. Rao', start:'2025-08-25T15:00:00+05:30', dur:45, link:'', bot:true, record:true },
+      { id:'e3', cal:'demo', title:'Release Demo', start:'2025-08-27T11:30:00+05:30', dur:30, link:'', bot:false, record:true },
+      { id:'e4', cal:'personal', title:'Focus block', start:'2025-08-28T09:00:00+05:30', dur:120, link:'', bot:false, record:false },
+    ];
+
+    // View state
+    let view = 'month';
+    let cursor = new Date(); // today in local tz
+
+    // Elements
+    const titleEl = document.getElementById('title');
+    const monthGrid = document.getElementById('monthGrid');
+    const weekGrid = document.getElementById('weekGrid');
+    const dayGrid = document.getElementById('dayGrid');
+    const dayTitle = document.getElementById('dayTitle');
+    const agenda = document.getElementById('agenda');
+
+    // Renderers
+    function render(){
+      document.getElementById('monthView').classList.toggle('hidden', view!=='month');
+      document.getElementById('weekView').classList.toggle('hidden', view!=='week');
+      document.getElementById('dayView').classList.toggle('hidden', view!=='day');
+      if(view==='month') renderMonth();
+      if(view==='week') renderWeek();
+      if(view==='day') renderDay();
+      renderAgenda();
+    }
+
+    function renderMonth(){
+      const y = cursor.getFullYear(); const m = cursor.getMonth();
+      titleEl.textContent = cursor.toLocaleString(undefined,{month:'long', year:'numeric'});
+      const first = new Date(y,m,1); const startIdx = first.getDay();
+      const days = new Date(y, m+1, 0).getDate();
+      monthGrid.innerHTML='';
+      // fill leading blanks
+      for(let i=0;i<startIdx;i++) monthGrid.appendChild(cell(null));
+      for(let d=1; d<=days; d++) monthGrid.appendChild(cell(new Date(y,m,d)));
+      // fill trailing blanks to complete the grid
+      const total = startIdx + days; const tail = (7 - (total % 7)) % 7; for(let i=0;i<tail;i++) monthGrid.appendChild(cell(null));
+    }
+
+    function cell(date){
+      const wrap = document.createElement('div');
+      wrap.className = 'h-28 rounded-xl border bg-white p-2 overflow-hidden';
+      if(!date){ wrap.classList.add('bg-slate-50'); return wrap; }
+      const dstr = formatDate(date);
+      const head = document.createElement('div');
+      head.className = 'flex items-center justify-between text-xs';
+      const isToday = new Date().toDateString() === date.toDateString();
+      head.innerHTML = `<div class="${isToday?'px-2 py-0.5 rounded-full bg-brand-50 text-brand-700 border border-brand-200':''}">${date.getDate()}</div>`;
+      wrap.appendChild(head);
+
+      // events on this date
+      const dayEvents = visibleEvents().filter(ev => ev.start.startsWith(dstr));
+      const list = document.createElement('div');
+      list.className = 'mt-1 space-y-1';
+      dayEvents.forEach(ev=>{
+        const a = document.createElement('a');
+        a.href = '#';
+        a.className = `block text-xs rounded px-2 py-1 text-white truncate ${colors[ev.cal]}`;
+        const time = ev.start.substring(11,16);
+        a.textContent = `${time} ${ev.title}`;
+        a.title = ev.title;
+        a.addEventListener('click', (e)=>{ e.preventDefault(); openEvent(ev); });
+        list.appendChild(a);
+      });
+      wrap.appendChild(list);
+      return wrap;
+    }
+
+    function renderWeek(){
+      const start = startOfWeek(cursor);
+      titleEl.textContent = `${start.toLocaleDateString(undefined,{month:'short', day:'numeric'})} – ${new Date(start.getFullYear(), start.getMonth(), start.getDate()+6).toLocaleDateString(undefined,{month:'short', day:'numeric', year:'numeric'})}`;
+      weekGrid.innerHTML='';
+      // time column
+      const times = []; for(let h=8; h<=18; h++){ times.push(`${pad(h)}:00`); }
+      times.forEach(t=>{
+        const cell = document.createElement('div'); cell.className='text-xs text-slate-500 pt-1'; cell.textContent=t; weekGrid.appendChild(cell);
+        for(let d=0; d<7; d++){
+          const slot = document.createElement('div'); slot.className='h-14 rounded-lg border bg-white/90'; weekGrid.appendChild(slot);
+        }
+      });
+      // events
+      visibleEvents().forEach(ev=>{
+        const dt = new Date(ev.start);
+        const dayIdx = (dt.getDay());
+        const hourIdx = dt.getHours()-8; if(hourIdx<0||hourIdx>10) return;
+        const idx = hourIdx*(8) + 1 + dayIdx + hourIdx; // translate to grid position after time col
+        const target = weekGrid.children[idx + hourIdx]; // rough placement
+        if(!target) return;
+        const chip = document.createElement('div');
+        chip.className = `m-1 rounded px-2 py-1 text-xs text-white ${colors[ev.cal]}`;
+        chip.textContent = `${dt.toTimeString().slice(0,5)} ${ev.title}`;
+        chip.addEventListener('click', ()=>openEvent(ev));
+        target.appendChild(chip);
+      });
+    }
+
+    function renderDay(){
+      dayTitle.textContent = cursor.toLocaleDateString(undefined,{weekday:'long', month:'long', day:'numeric', year:'numeric'});
+      dayGrid.innerHTML='';
+      for(let h=8; h<=18; h++){
+        const t = document.createElement('div'); t.className='text-xs text-slate-500 pt-1'; t.textContent=`${pad(h)}:00`; dayGrid.appendChild(t);
+        const slot = document.createElement('div'); slot.className='h-14 rounded-lg border bg-white'; dayGrid.appendChild(slot);
+      }
+      visibleEvents().filter(ev=> new Date(ev.start).toDateString()===cursor.toDateString()).forEach(ev=>{
+        const dt = new Date(ev.start); const hourIdx = dt.getHours()-8; if(hourIdx<0||hourIdx>10) return;
+        const target = dayGrid.children[hourIdx*2+1];
+        const chip = document.createElement('div'); chip.className=`m-1 rounded px-2 py-1 text-xs text-white ${colors[ev.cal]}`; chip.textContent=`${dt.toTimeString().slice(0,5)} ${ev.title}`; chip.addEventListener('click', ()=>openEvent(ev));
+        target.appendChild(chip);
+      });
+    }
+
+    function startOfWeek(d){ const c = new Date(d); const day=c.getDay(); c.setDate(c.getDate()-day); c.setHours(0,0,0,0); return c; }
+
+    function visibleEvents(){
+      const toggled = [...document.querySelectorAll('.cal-toggle')].filter(x=>x.checked).map(x=>x.dataset.cal);
+      return events.filter(e=>toggled.includes(e.cal));
+    }
+
+    // Agenda
+    function renderAgenda(){
+      const now = new Date();
+      const upcoming = visibleEvents().map(e=>({ ...e, dt:new Date(e.start)})).filter(x=> x.dt >= new Date(now.getFullYear(), now.getMonth(), now.getDate()))
+        .sort((a,b)=>a.dt-b.dt).slice(0,6);
+      agenda.innerHTML = upcoming.map(ev=>{
+        const t = ev.dt.toLocaleString(undefined,{weekday:'short', month:'short', day:'numeric', hour:'2-digit', minute:'2-digit'});
+        const rec = ev.record?'<span class="ml-2 text-[10px] px-1.5 py-0.5 rounded-full bg-rose-50 text-rose-700 border border-rose-200">rec</span>':'';
+        const bot = ev.bot?'<span class="ml-1 text-[10px] px-1.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">bot</span>':'';
+        return `<li class="rounded-xl border p-3 bg-white flex items-start gap-2">
+          <span class="mt-1 dot ${colors[ev.cal]} inline-block"></span>
+          <div class="flex-1">
+            <div class="font-medium">${ev.title}</div>
+            <div class="text-xs text-slate-500">${t}${rec}${bot}</div>
+          </div>
+          <div class="flex items-center gap-2">
+            <a class="px-3 py-1.5 rounded-lg border text-xs" href="#" onclick="openEventById('${ev.id}')">Open</a>
+            <a class="px-3 py-1.5 rounded-lg border text-xs" href="12-bot.html">Bot</a>
+          </div>
+        </li>`;
+      }).join('');
+    }
+
+    // Controls
+    document.querySelectorAll('.view').forEach(btn=> btn.addEventListener('click', ()=>{ view=btn.dataset.view; render(); }));
+    document.getElementById('prev').addEventListener('click', ()=>{ if(view==='month'){ cursor.setMonth(cursor.getMonth()-1); } else { cursor.setDate(cursor.getDate()-(view==='week'?7:1)); } render(); });
+    document.getElementById('next').addEventListener('click', ()=>{ if(view==='month'){ cursor.setMonth(cursor.getMonth()+1); } else { cursor.setDate(cursor.getDate()+(view==='week'?7:1)); } render(); });
+    document.getElementById('today').addEventListener('click', ()=>{ cursor = new Date(); render(); });
+    document.querySelectorAll('.cal-toggle').forEach(cb=> cb.addEventListener('change', render));
+
+    // Event modal open from calendar
+    function openEvent(ev){
+      document.getElementById('eventModal').classList.remove('hidden');
+      document.getElementById('evTitle').value = ev.title;
+      document.getElementById('evCal').value = ev.cal;
+      const dt = new Date(ev.start);
+      document.getElementById('evDate').value = formatDate(dt);
+      document.getElementById('evStart').value = dt.toTimeString().slice(0,5);
+      document.getElementById('evDur').value = ev.dur;
+      document.getElementById('evGuests').value = '';
+      document.getElementById('evLink').value = ev.link || '';
+      document.getElementById('evAutoRecord').checked = !!ev.record;
+      document.getElementById('evBot').checked = !!ev.bot;
+      document.getElementById('evRem').checked = true;
+      document.getElementById('evNotes').value = '';
+      document.getElementById('evSave').dataset.editId = ev.id;
+      document.getElementById('evIcs').dataset.editId = ev.id;
+    }
+    window.openEventById = id => { const ev = events.find(e=>e.id===id); if(ev) openEvent(ev); };
+
+    // New event
+    document.getElementById('newEventOpen').addEventListener('click', ()=>{
+      document.getElementById('eventModal').classList.remove('hidden');
+      document.getElementById('evTitle').value = '';
+      document.getElementById('evCal').value = 'team';
+      document.getElementById('evDate').value = formatDate(cursor);
+      document.getElementById('evStart').value = '10:00';
+      document.getElementById('evDur').value = '60';
+      document.getElementById('evGuests').value = '';
+      document.getElementById('evLink').value = '';
+      document.getElementById('evAutoRecord').checked = true;
+      document.getElementById('evBot').checked = true;
+      document.getElementById('evRem').checked = true;
+      document.getElementById('evNotes').value = '';
+      delete document.getElementById('evSave').dataset.editId;
+      delete document.getElementById('evIcs').dataset.editId;
+    });
+
+    // Close modal
+    document.getElementById('eventClose').addEventListener('click', ()=> document.getElementById('eventModal').classList.add('hidden'));
+    document.getElementById('eventCancel').addEventListener('click', ()=> document.getElementById('eventModal').classList.add('hidden'));
+
+    // Save event (create or update in-memory)
+    document.getElementById('evSave').addEventListener('click', ()=>{
+      const id = document.getElementById('evSave').dataset.editId || ('e'+Math.random().toString(36).slice(2,7));
+      const date = document.getElementById('evDate').value;
+      const start = document.getElementById('evStart').value;
+      const iso = `${date}T${start}:00+05:30`;
+      const ev = {
+        id,
+        cal: document.getElementById('evCal').value,
+        title: document.getElementById('evTitle').value || 'Untitled',
+        start: iso,
+        dur: parseInt(document.getElementById('evDur').value,10),
+        link: document.getElementById('evLink').value,
+        bot: document.getElementById('evBot').checked,
+        record: document.getElementById('evAutoRecord').checked,
+      };
+      const existing = events.findIndex(e=>e.id===id);
+      if(existing>-1) events[existing]=ev; else events.push(ev);
+      document.getElementById('eventModal').classList.add('hidden');
+      render();
+      alert('Saved!');
+    });
+
+    // Export ICS for current edit
+    document.getElementById('evIcs').addEventListener('click', ()=>{
+      const id = document.getElementById('evIcs').dataset.editId;
+      let ev;
+      if(id){ ev = events.find(e=>e.id===id); }
+      else {
+        // build from form
+        const date = document.getElementById('evDate').value; const start = document.getElementById('evStart').value;
+        ev = { title: document.getElementById('evTitle').value||'Untitled', start: `${date}T${start}:00+05:30`, dur: parseInt(document.getElementById('evDur').value,10) };
+      }
+      const dt = new Date(ev.start);
+      const dtEnd = new Date(dt.getTime()+ev.dur*60000);
+      function fmtICS(d){ return d.toISOString().replace(/[-:]/g,'').split('.')[0]+'Z'; }
+      const ics = `BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//VoiceNotesAI//EN\nBEGIN:VEVENT\nUID:${Math.random().toString(36).slice(2,10)}@voicenotes.ai\nDTSTAMP:${fmtICS(new Date())}\nDTSTART:${fmtICS(dt)}\nDTEND:${fmtICS(dtEnd)}\nSUMMARY:${ev.title}\nEND:VEVENT\nEND:VCALENDAR`;
+      const blob = new Blob([ics], {type:'text/calendar'});
+      const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = (ev.title||'event')+'.ics'; a.click();
+    });
+
+    // Initial
+    render();
+  </script>
+</body>
+</html>

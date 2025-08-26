@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Page 9 – Team | Voice Notes AI</title>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { brand: {50:'#eff6ff',100:'#dbeafe',200:'#bfdbfe',300:'#93c5fd',400:'#60a5fa',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',800:'#1e40af',900:'#1e3a8a'} },
+          boxShadow: { soft: '0 10px 30px -10px rgba(0,0,0,0.15)' }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    html { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial; }
+    .scroll-slim { scrollbar-width: thin; }
+    .scroll-slim::-webkit-scrollbar { height: 8px; width: 8px; }
+    .scroll-slim::-webkit-scrollbar-thumb { background: rgba(30,64,175,.35); border-radius: 8px; }
+    .badge { font-size: .75rem; padding: .25rem .5rem; border-radius: 9999px; border: 1px solid; }
+    .modal-enter { animation: pop .12s ease-out; }
+    @keyframes pop { from{ transform: scale(.98); opacity: 0 } to{ transform: scale(1); opacity: 1 } }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-brand-50/70 via-white to-brand-100/40 text-slate-800">
+  <div class="min-h-screen grid grid-cols-1 lg:grid-cols-[280px_1fr]">
+    <!-- Sidebar -->
+    <aside class="bg-white/80 backdrop-blur sticky top-0 h-full lg:h-screen border-r border-slate-200 shadow-soft hidden lg:flex flex-col">
+      <div class="px-5 pt-6 pb-4 flex items-center gap-3">
+        <div class="h-10 w-10 grid place-items-center rounded-xl bg-brand-600 text-white font-bold">VN</div>
+        <div>
+          <div class="text-sm uppercase tracking-wider text-brand-700 font-semibold">Voice Notes AI</div>
+          <div class="text-xs text-slate-500">Otter-like Transcription</div>
+        </div>
+      </div>
+      <nav class="mt-4 flex-1 overflow-y-auto scroll-slim">
+        <ul class="px-3 space-y-1 text-sm">
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="02-dashboard.html">Dashboard</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="03-record.html">Record</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="04-transcript.html">Transcript</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="05-search.html">Search</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="06-uploads.html">Uploads</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="07-settings.html">Settings</a></li>
+          <li class="pt-2"><div class="px-3 text-xs uppercase tracking-wide text-slate-400">More</div></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="08-billing.html">Billing</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-brand-50 text-brand-700 font-medium" href="09-team.html">Team</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="10-calendar.html">Calendar</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="11-integrations.html">Integrations</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="12-bot.html">Meeting Bot</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="13-analytics.html">Analytics</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="14-admin.html">Admin</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="15-help.html">Help</a></li>
+          <li class="pt-2"><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="01-auth.html">Sign in / out</a></li>
+        </ul>
+      </nav>
+      <div class="p-4 mt-auto">
+        <div class="rounded-xl bg-gradient-to-br from-brand-600 to-brand-800 text-white p-4">
+          <div class="text-sm opacity-90">Minutes used</div>
+          <div class="mt-1 flex items-end gap-2"><div class="text-2xl font-semibold">382</div><div class="text-xs opacity-80">/ 600</div></div>
+          <div class="mt-3 h-2 bg-white/20 rounded-full overflow-hidden"><div class="h-full w-[64%] bg-white/90"></div></div>
+          <a href="08-billing.html" class="mt-3 inline-flex items-center gap-2 text-xs font-medium underline">Upgrade plan →</a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="flex flex-col min-h-screen">
+      <!-- Topbar -->
+      <header class="sticky top-0 z-10 backdrop-blur bg-white/70 border-b border-slate-200">
+        <div class="px-4 lg:px-8 py-3 flex items-center gap-3">
+          <h1 class="text-lg md:text-xl font-semibold text-slate-900">Team</h1>
+          <div class="ml-auto flex items-center gap-2 text-sm">
+            <button id="inviteOpen" class="px-3 py-1.5 rounded-lg bg-brand-600 text-white shadow-soft hover:bg-brand-700">Invite members</button>
+            <button id="importOpen" class="px-3 py-1.5 rounded-lg border">Import CSV</button>
+            <a href="07-settings.html" class="inline-flex items-center gap-2 p-1.5 rounded-full border border-slate-200 hover:bg-brand-50"><img alt="avatar" src="https://i.pravatar.cc/40?img=5" class="h-8 w-8 rounded-full" /></a>
+          </div>
+        </div>
+      </header>
+
+      <!-- Content -->
+      <section class="flex-1 px-4 lg:px-8 py-6 space-y-6">
+        <!-- Workspace selector & defaults -->
+        <div class="rounded-2xl border border-slate-200 bg-white/80 shadow-soft p-4">
+          <div class="flex flex-wrap items-center gap-3">
+            <div class="flex items-center gap-2">
+              <span class="text-sm text-slate-600">Workspace</span>
+              <select id="ws" class="rounded-xl border px-3 py-1.5 text-sm">
+                <option selected>Product Team</option>
+                <option>Marketing</option>
+                <option>Support</option>
+              </select>
+            </div>
+            <div class="ml-auto flex items-center gap-2 text-sm">
+              <label class="flex items-center gap-2"><input id="defaultShare" type="checkbox"> Share new transcripts to team by default</label>
+              <label class="flex items-center gap-2"><input id="joinDomain" type="checkbox" checked> Allow anyone with @company.com to join</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Members table -->
+        <div class="rounded-2xl border border-slate-200 bg-white/80 shadow-soft overflow-hidden">
+          <div class="px-4 py-3 border-b flex flex-wrap items-center gap-3">
+            <h2 class="font-semibold">Members</h2>
+            <div class="ml-auto flex items-center gap-2 text-sm">
+              <div class="relative">
+                <input id="search" class="rounded-xl border pl-9 pr-3 py-1.5" placeholder="Search name or email" />
+                <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M10 2a8 8 0 1 0 4.9 14.32l4.39 4.39 1.41-1.41-4.39-4.39A8 8 0 0 0 10 2z"/></svg></span>
+              </div>
+              <select id="roleFilter" class="rounded-xl border px-3 py-1.5">
+                <option value="all">All roles</option>
+                <option value="Owner">Owner</option>
+                <option value="Admin">Admin</option>
+                <option value="Member">Member</option>
+                <option value="Viewer">Viewer</option>
+              </select>
+              <button id="exportBtn" class="px-3 py-1.5 rounded-lg border">Export CSV</button>
+            </div>
+          </div>
+
+          <div class="overflow-x-auto scroll-slim">
+            <table class="min-w-full text-sm" id="tbl">
+              <thead class="bg-brand-50/60 text-slate-600">
+                <tr>
+                  <th class="px-4 py-3"><input id="selAll" type="checkbox"></th>
+                  <th class="text-left font-medium px-4 py-3">Name</th>
+                  <th class="text-left font-medium px-4 py-3">Email</th>
+                  <th class="text-left font-medium px-4 py-3">Role</th>
+                  <th class="text-left font-medium px-4 py-3">Status</th>
+                  <th class="text-left font-medium px-4 py-3">Joined</th>
+                  <th class="text-right font-medium px-4 py-3">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="rows" class="divide-y">
+                <!-- rows injected by JS -->
+              </tbody>
+            </table>
+          </div>
+
+          <div class="px-4 py-3 border-t flex flex-wrap items-center gap-3 text-sm">
+            <div id="selCount">0 selected</div>
+            <button id="bulkRole" class="px-3 py-1.5 rounded-lg border" disabled>Change role</button>
+            <button id="bulkRemove" class="px-3 py-1.5 rounded-lg border" disabled>Remove</button>
+            <div class="ml-auto flex items-center gap-1">
+              <button class="px-3 py-1.5 rounded-lg border">Prev</button>
+              <div class="px-3 py-1.5">1 / 3</div>
+              <button class="px-3 py-1.5 rounded-lg border">Next</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pending invites & Activity -->
+        <div class="grid grid-cols-1 xl:grid-cols-3 gap-4">
+          <div class="xl:col-span-2 rounded-2xl border border-slate-200 bg-white/80 shadow-soft">
+            <div class="px-4 py-3 border-b flex items-center justify-between">
+              <h3 class="font-semibold">Pending invites</h3>
+              <button id="resendAll" class="px-3 py-1.5 rounded-lg border text-sm">Resend all</button>
+            </div>
+            <div class="p-4 space-y-2 text-sm" id="invites">
+              <div class="rounded-xl border p-3 flex items-center justify-between bg-white">
+                <div class="flex items-center gap-3">
+                  <img class="h-8 w-8 rounded-full" src="https://i.pravatar.cc/32?img=10" alt="av"/>
+                  <div>
+                    <div class="font-medium">Priya Menon</div>
+                    <div class="text-xs text-slate-500">priya.menon@company.com · Invited 2d ago · Role: Member</div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2">
+                  <button class="px-3 py-1.5 rounded-lg border">Copy link</button>
+                  <button class="px-3 py-1.5 rounded-lg border">Resend</button>
+                  <button class="px-3 py-1.5 rounded-lg border">Cancel</button>
+                </div>
+              </div>
+              <div class="rounded-xl border p-3 flex items-center justify-between bg-white">
+                <div class="flex items-center gap-3">
+                  <img class="h-8 w-8 rounded-full" src="https://i.pravatar.cc/32?img=15" alt="av"/>
+                  <div>
+                    <div class="font-medium">Rohit Gupta</div>
+                    <div class="text-xs text-slate-500">rohit.gupta@company.com · Invited 3h ago · Role: Viewer</div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2">
+                  <button class="px-3 py-1.5 rounded-lg border">Copy link</button>
+                  <button class="px-3 py-1.5 rounded-lg border">Resend</button>
+                  <button class="px-3 py-1.5 rounded-lg border">Cancel</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-slate-200 bg-white/80 shadow-soft p-4">
+            <h3 class="font-semibold">Recent activity</h3>
+            <ul class="mt-2 space-y-2 text-sm">
+              <li class="rounded-lg border p-2 bg-white">Alice changed Bob's role to Admin <span class="text-xs text-slate-500">· 1d</span></li>
+              <li class="rounded-lg border p-2 bg-white">Carol invited Priya Menon <span class="text-xs text-slate-500">· 2d</span></li>
+              <li class="rounded-lg border p-2 bg-white">New workspace “Support” created <span class="text-xs text-slate-500">· 3d</span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <footer class="px-4 lg:px-8 py-6 text-xs text-slate-500">
+        <div class="flex flex-col sm:flex-row gap-2 sm:items-center sm:justify-between">
+          <div>© 2025 Voice Notes AI</div>
+          <div class="flex items-center gap-3">
+            <a href="15-help.html" class="hover:underline">Help</a>
+            <a href="#" class="hover:underline">Privacy</a>
+            <a href="#" class="hover:underline">Terms</a>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Invite Modal -->
+  <div id="inviteModal" class="hidden fixed inset-0 z-20 grid place-items-center bg-black/30 p-4">
+    <div class="modal-enter w-full max-w-lg rounded-2xl bg-white shadow-soft border p-4">
+      <div class="flex items-center justify-between">
+        <h3 class="font-semibold">Invite members</h3>
+        <button id="inviteClose" class="p-2 rounded-lg hover:bg-slate-100">✕</button>
+      </div>
+      <div class="mt-3 text-sm space-y-3">
+        <textarea id="inviteEmails" class="w-full rounded-lg border px-3 py-2" rows="3" placeholder="Enter emails separated by commas"></textarea>
+        <div class="flex items-center gap-2">
+          <span>Role</span>
+          <select id="inviteRole" class="rounded-lg border px-2 py-1">
+            <option>Member</option>
+            <option>Viewer</option>
+            <option>Admin</option>
+          </select>
+        </div>
+        <label class="flex items-center gap-2"><input id="inviteLinkOnly" type="checkbox"> Create invite link only</label>
+      </div>
+      <div class="mt-4 flex items-center gap-2">
+        <button id="inviteSend" class="px-4 py-2 rounded-xl bg-brand-600 text-white">Send invites</button>
+        <button id="inviteCancel" class="px-4 py-2 rounded-xl border">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Import Modal -->
+  <div id="importModal" class="hidden fixed inset-0 z-20 grid place-items-center bg-black/30 p-4">
+    <div class="modal-enter w-full max-w-lg rounded-2xl bg-white shadow-soft border p-4">
+      <div class="flex items-center justify-between">
+        <h3 class="font-semibold">Import CSV</h3>
+        <button id="importClose" class="p-2 rounded-lg hover:bg-slate-100">✕</button>
+      </div>
+      <div class="mt-3 text-sm space-y-3">
+        <input id="csvFile" type="file" accept="text/csv" class="w-full rounded-lg border px-3 py-2" />
+        <div class="text-xs text-slate-500">Expected columns: name,email,role</div>
+        <a class="text-xs underline" href="#">Download sample.csv</a>
+      </div>
+      <div class="mt-4 flex items-center gap-2">
+        <button id="importRun" class="px-4 py-2 rounded-xl bg-brand-600 text-white">Import</button>
+        <button id="importCancel" class="px-4 py-2 rounded-xl border">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="fixed bottom-4 left-1/2 -translate-x-1/2 hidden">
+    <div class="rounded-xl bg-slate-900 text-white px-4 py-2 shadow-soft">Done ✔️</div>
+  </div>
+
+  <!-- Minimal JS: table data, filters, bulk actions, dialogs -->
+  <script>
+    // Mock data
+    const data = [
+      {name:'You', email:'you@company.com', role:'Owner', status:'Active', joined:'Jan 12, 2025'},
+      {name:'Alice', email:'alice@company.com', role:'Admin', status:'Active', joined:'Feb 3, 2025'},
+      {name:'Bob', email:'bob@company.com', role:'Member', status:'Active', joined:'Mar 20, 2025'},
+      {name:'Carol', email:'carol@company.com', role:'Member', status:'Suspended', joined:'Apr 10, 2025'},
+      {name:'Dev', email:'dev@company.com', role:'Viewer', status:'Active', joined:'May 1, 2025'},
+    ];
+
+    const rows = document.getElementById('rows');
+    const search = document.getElementById('search');
+    const roleFilter = document.getElementById('roleFilter');
+    const selAll = document.getElementById('selAll');
+    const selCount = document.getElementById('selCount');
+    const bulkRole = document.getElementById('bulkRole');
+    const bulkRemove = document.getElementById('bulkRemove');
+
+    function badgeRole(role){
+      const map = {Owner:['bg-purple-50','text-purple-700','border-purple-200'], Admin:['bg-amber-50','text-amber-700','border-amber-200'], Member:['bg-brand-50','text-brand-700','border-brand-200'], Viewer:['bg-slate-50','text-slate-700','border-slate-200']};
+      return `<span class="badge ${map[role].join(' ')}">${role}</span>`;
+    }
+    function badgeStatus(st){
+      const map = {Active:['bg-emerald-50','text-emerald-700','border-emerald-200'], Suspended:['bg-rose-50','text-rose-700','border-rose-200']};
+      return `<span class="badge ${map[st].join(' ')}">${st}</span>`;
+    }
+
+    function render(){
+      const q = search.value.toLowerCase();
+      const rf = roleFilter.value;
+      const filtered = data.filter(d => (rf==='all'||d.role===rf) && (d.name.toLowerCase().includes(q) || d.email.toLowerCase().includes(q)) );
+      rows.innerHTML = '';
+      filtered.forEach((d, i)=>{
+        const id = 'r'+i;
+        rows.insertAdjacentHTML('beforeend', `
+          <tr data-email="${d.email}">
+            <td class="px-4 py-3"><input class="rowSel" type="checkbox"></td>
+            <td class="px-4 py-3">
+              <div class="flex items-center gap-3">
+                <img class="h-8 w-8 rounded-full" src="https://i.pravatar.cc/32?u=${encodeURIComponent(d.email)}" alt="av"/>
+                <div>
+                  <div class="font-medium text-slate-900">${d.name}</div>
+                  <div class="text-xs text-slate-500">${d.email}</div>
+                </div>
+              </div>
+            </td>
+            <td class="px-4 py-3">${d.email}</td>
+            <td class="px-4 py-3">${badgeRole(d.role)}</td>
+            <td class="px-4 py-3">${badgeStatus(d.status)}</td>
+            <td class="px-4 py-3">${d.joined}</td>
+            <td class="px-4 py-3 text-right">
+              <div class="inline-flex gap-2">
+                <button class="roleBtn px-3 py-1.5 rounded-lg border text-sm" data-email="${d.email}">Change role</button>
+                <button class="suspendBtn px-3 py-1.5 rounded-lg border text-sm" data-email="${d.email}">${d.status==='Active'?'Suspend':'Activate'}</button>
+                <button class="removeBtn px-3 py-1.5 rounded-lg border text-sm" data-email="${d.email}">Remove</button>
+              </div>
+            </td>
+          </tr>
+        `);
+      });
+      updateSelState();
+    }
+
+    function updateSelState(){
+      const sels = rows.querySelectorAll('.rowSel:checked');
+      selCount.textContent = sels.length + ' selected';
+      const en = sels.length>0; bulkRole.disabled = !en; bulkRemove.disabled = !en; selAll.checked = en && sels.length === rows.querySelectorAll('.rowSel').length;
+    }
+
+    // Export CSV (mock)
+    document.getElementById('exportBtn').addEventListener('click', ()=>{
+      const header = 'name,email,role,status,joined\n';
+      const lines = data.map(d=>[d.name,d.email,d.role,d.status,d.joined].join(','));
+      const blob = new Blob([header+lines.join('\n')], {type:'text/csv'});
+      const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'team.csv'; a.click();
+    });
+
+    // Search & filter
+    search.addEventListener('input', render);
+    roleFilter.addEventListener('change', render);
+    selAll.addEventListener('change', ()=>{ rows.querySelectorAll('.rowSel').forEach(cb=>cb.checked = selAll.checked); updateSelState(); });
+    rows.addEventListener('change', (e)=>{ if(e.target.classList.contains('rowSel')) updateSelState(); });
+
+    // Row actions
+    rows.addEventListener('click', (e)=>{
+      const email = e.target.dataset.email; if(!email) return;
+      if(e.target.classList.contains('roleBtn')){
+        const cur = data.find(x=>x.email===email); const next = prompt('Set role: Owner/Admin/Member/Viewer', cur.role);
+        if(next && ['Owner','Admin','Member','Viewer'].includes(next)){ cur.role = next; toast('Role updated'); render(); }
+      }
+      if(e.target.classList.contains('suspendBtn')){
+        const cur = data.find(x=>x.email===email); cur.status = cur.status==='Active'?'Suspended':'Active'; toast(cur.status==='Active'?'Activated':'Suspended'); render();
+      }
+      if(e.target.classList.contains('removeBtn')){
+        const i = data.findIndex(x=>x.email===email); if(i>-1){ data.splice(i,1); toast('Member removed'); render(); }
+      }
+    });
+
+    // Bulk actions
+    bulkRole.addEventListener('click', ()=>{
+      const sels = [...rows.querySelectorAll('.rowSel:checked')].map(cb=>cb.closest('tr').dataset.email);
+      const next = prompt('Bulk set role: Owner/Admin/Member/Viewer','Member');
+      if(!next || !['Owner','Admin','Member','Viewer'].includes(next)) return;
+      data.forEach(d=>{ if(sels.includes(d.email)) d.role = next; });
+      toast('Roles updated for '+sels.length);
+      render();
+    });
+    bulkRemove.addEventListener('click', ()=>{
+      const sels = [...rows.querySelectorAll('.rowSel:checked')].map(cb=>cb.closest('tr').dataset.email);
+      for(const em of sels){ const i = data.findIndex(x=>x.email===em); if(i>-1) data.splice(i,1); }
+      toast('Removed '+sels.length+' members');
+      render();
+    });
+
+    // Dialogs: Invite & Import
+    const inviteModal = document.getElementById('inviteModal');
+    const inviteOpen = document.getElementById('inviteOpen');
+    const inviteClose = document.getElementById('inviteClose');
+    const inviteCancel = document.getElementById('inviteCancel');
+    const inviteSend = document.getElementById('inviteSend');
+    function toggleInvite(v){ inviteModal.classList.toggle('hidden', !v); if(v) document.getElementById('inviteEmails').focus(); }
+    inviteOpen.addEventListener('click', ()=>toggleInvite(true));
+    inviteClose.addEventListener('click', ()=>toggleInvite(false));
+    inviteCancel.addEventListener('click', ()=>toggleInvite(false));
+    inviteSend.addEventListener('click', ()=>{ toggleInvite(false); toast('Invites sent'); });
+
+    const importModal = document.getElementById('importModal');
+    document.getElementById('importOpen').addEventListener('click', ()=>importModal.classList.remove('hidden'));
+    document.getElementById('importClose').addEventListener('click', ()=>importModal.classList.add('hidden'));
+    document.getElementById('importCancel').addEventListener('click', ()=>importModal.classList.add('hidden'));
+    document.getElementById('importRun').addEventListener('click', ()=>{ importModal.classList.add('hidden'); toast('CSV imported'); });
+
+    // Simple toast
+    const toastEl = document.getElementById('toast');
+    function toast(msg){ toastEl.firstElementChild.textContent = msg; toastEl.classList.remove('hidden'); setTimeout(()=>toastEl.classList.add('hidden'), 1400); }
+
+    // Initial render
+    render();
+  </script>
+</body>
+</html>

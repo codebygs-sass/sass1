@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Voice Notes AI – Otter‑style transcription, summaries, and meeting bot</title>
+  <meta name="description" content="Record, transcribe, and summarize meetings. Auto-join bot, powerful search, calendar, and integrations.">
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { brand: {50:'#eff6ff',100:'#dbeafe',200:'#bfdbfe',300:'#93c5fd',400:'#60a5fa',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',800:'#1e40af',900:'#1e3a8a'} },
+          boxShadow: { soft: '0 10px 30px -10px rgba(0,0,0,0.15)'}
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    html { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial; }
+    .scroll-slim { scrollbar-width: thin; }
+    .scroll-slim::-webkit-scrollbar { height: 8px; width: 8px; }
+    .scroll-slim::-webkit-scrollbar-thumb { background: rgba(30,64,175,.35); border-radius: 8px; }
+    .glow { box-shadow: 0 0 0 8px rgba(37,99,235,.08); }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-brand-50 via-white to-white text-slate-800">
+  <!-- Header -->
+  <header class="sticky top-0 z-30 backdrop-blur bg-white/70 border-b border-slate-200">
+    <div class="mx-auto max-w-7xl px-4 lg:px-8 h-16 flex items-center gap-4">
+      <a href="index.html" class="flex items-center gap-3">
+        <span class="h-9 w-9 grid place-items-center rounded-xl bg-brand-600 text-white font-bold">VN</span>
+        <span class="text-slate-900 font-semibold">Voice Notes AI</span>
+      </a>
+      <nav class="ml-8 hidden md:flex items-center gap-6 text-sm">
+        <a class="hover:text-brand-700" href="#features">Features</a>
+        <a class="hover:text-brand-700" href="#how">How it works</a>
+        <a class="hover:text-brand-700" href="#integrations">Integrations</a>
+        <a class="hover:text-brand-700" href="#pricing">Pricing</a>
+        <a class="hover:text-brand-700" href="15-help.html">Help</a>
+      </nav>
+      <div class="ml-auto hidden md:flex items-center gap-2 text-sm">
+        <a href="01-auth.html" class="px-3 py-1.5 rounded-lg border">Sign in</a>
+        <a href="01-auth.html#signup" class="px-3 py-1.5 rounded-lg bg-brand-600 text-white shadow-soft hover:bg-brand-700">Get started</a>
+      </div>
+      <button id="menuOpen" class="ml-auto md:hidden p-2 rounded-lg border">☰</button>
+    </div>
+    <!-- mobile menu -->
+    <div id="mMenu" class="md:hidden hidden border-t border-slate-200 bg-white">
+      <div class="mx-auto max-w-7xl px-4 lg:px-8 py-3 grid grid-cols-1 gap-2 text-sm">
+        <a class="px-3 py-2 rounded-lg hover:bg-brand-50" href="#features">Features</a>
+        <a class="px-3 py-2 rounded-lg hover:bg-brand-50" href="#how">How it works</a>
+        <a class="px-3 py-2 rounded-lg hover:bg-brand-50" href="#integrations">Integrations</a>
+        <a class="px-3 py-2 rounded-lg hover:bg-brand-50" href="#pricing">Pricing</a>
+        <a class="px-3 py-2 rounded-lg hover:bg-brand-50" href="15-help.html">Help</a>
+        <div class="flex items-center gap-2 pt-2">
+          <a href="01-auth.html" class="flex-1 px-3 py-2 rounded-lg border text-center">Sign in</a>
+          <a href="01-auth.html#signup" class="flex-1 px-3 py-2 rounded-lg bg-brand-600 text-white text-center">Get started</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 -z-10 opacity-70 bg-gradient-to-b from-brand-50 via-white to-white"></div>
+    <div class="mx-auto max-w-7xl px-4 lg:px-8 py-16 lg:py-24 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <div>
+        <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 leading-tight">Transcribe. Summarize. <span class="text-brand-700">Remember</span> every meeting.</h1>
+        <p class="mt-4 text-slate-600 text-lg">An Otter-style workspace with live recording, AI summaries, searchable transcripts, and a meeting bot that auto‑joins Zoom/Meet.</p>
+        <div class="mt-6 flex flex-wrap items-center gap-3">
+          <a href="02-dashboard.html" class="px-5 py-3 rounded-xl bg-brand-600 text-white shadow-soft hover:bg-brand-700">Try the demo</a>
+          <a href="03-record.html" class="px-5 py-3 rounded-xl border hover:bg-brand-50">Record now</a>
+        </div>
+        <div class="mt-4 flex items-center gap-4 text-sm text-slate-500">
+          <div class="flex -space-x-2">
+            <img class="h-8 w-8 rounded-full border" src="https://i.pravatar.cc/32?img=1"/>
+            <img class="h-8 w-8 rounded-full border" src="https://i.pravatar.cc/32?img=2"/>
+            <img class="h-8 w-8 rounded-full border" src="https://i.pravatar.cc/32?img=3"/>
+          </div>
+          Trusted by teams for interviews, standups, and sales calls.
+        </div>
+      </div>
+      <div class="relative">
+        <div class="rounded-2xl border bg-white shadow-soft glow overflow-hidden">
+          <div class="p-3 bg-brand-50/60 border-b text-sm text-brand-800">Live preview</div>
+          <div class="p-4 grid grid-cols-1 gap-3 text-sm">
+            <div class="rounded-xl border p-3">
+              <div class="text-slate-500">Now Recording</div>
+              <div class="mt-1 font-semibold">Sprint Planning – Product</div>
+              <div class="mt-1 text-xs text-slate-500">00:14:23 • English (IN) • 3 speakers</div>
+            </div>
+            <div class="rounded-xl border p-3">
+              <div class="text-slate-500">AI Summary</div>
+              <ul class="mt-1 list-disc pl-5 space-y-1">
+                <li>Agreed scope for Q3 release plan</li>
+                <li>Action: finalize hiring plan by Wed</li>
+                <li>Risk: API latency on uploads</li>
+              </ul>
+            </div>
+            <div class="rounded-xl border p-3 flex items-center justify-between">
+              <div>
+                <div class="text-slate-500">Meeting Bot</div>
+                <div class="text-xs text-slate-500">Auto‑join on keywords & calendar</div>
+              </div>
+              <a class="px-3 py-1.5 rounded-lg border" href="12-bot.html">Configure</a>
+            </div>
+          </div>
+          <div class="p-3 border-t flex items-center gap-2">
+            <a class="px-3 py-1.5 rounded-lg border" href="05-search.html">Search</a>
+            <a class="px-3 py-1.5 rounded-lg border" href="11-integrations.html">Integrations</a>
+            <a class="px-3 py-1.5 rounded-lg border" href="10-calendar.html">Calendar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Logos -->
+  <section id="integrations" class="py-10 border-t">
+    <div class="mx-auto max-w-7xl px-4 lg:px-8">
+      <div class="text-center text-slate-500 text-sm">Works with your tools</div>
+      <div class="mt-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 place-items-center opacity-80">
+        <div class="rounded-xl border bg-white px-3 py-2">Zoom</div>
+        <div class="rounded-xl border bg-white px-3 py-2">Google Meet</div>
+        <div class="rounded-xl border bg-white px-3 py-2">Teams</div>
+        <div class="rounded-xl border bg-white px-3 py-2">Slack</div>
+        <div class="rounded-xl border bg-white px-3 py-2">Notion</div>
+        <div class="rounded-xl border bg-white px-3 py-2">Trello</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="py-14">
+    <div class="mx-auto max-w-7xl px-4 lg:px-8">
+      <h2 class="text-2xl font-bold text-slate-900">Everything you need</h2>
+      <div class="mt-6 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+        <div class="rounded-2xl border bg-white p-4">
+          <div class="text-brand-700 font-semibold">Live recording</div>
+          <p class="mt-1 text-sm text-slate-600">Low‑latency capture, markers, speaker labels, and noise reduction.</p>
+          <a href="03-record.html" class="mt-2 inline-flex text-sm underline">Open recorder →</a>
+        </div>
+        <div class="rounded-2xl border bg-white p-4">
+          <div class="text-brand-700 font-semibold">Searchable transcripts</div>
+          <p class="mt-1 text-sm text-slate-600">Semantic search, highlights, and shareable snippets.</p>
+          <a href="05-search.html" class="mt-2 inline-flex text-sm underline">Try search →</a>
+        </div>
+        <div class="rounded-2xl border bg-white p-4">
+          <div class="text-brand-700 font-semibold">AI summaries & action items</div>
+          <p class="mt-1 text-sm text-slate-600">One‑click MOM, tasks, and follow‑ups to Slack/Notion/Trello.</p>
+          <a href="04-transcript.html" class="mt-2 inline-flex text-sm underline">See transcript →</a>
+        </div>
+        <div class="rounded-2xl border bg-white p-4">
+          <div class="text-brand-700 font-semibold">Meeting bot</div>
+          <p class="mt-1 text-sm text-slate-600">Auto‑joins Zoom/Meet/Teams on your rules with consent banner.</p>
+          <a href="12-bot.html" class="mt-2 inline-flex text-sm underline">Configure bot →</a>
+        </div>
+        <div class="rounded-2xl border bg-white p-4">
+          <div class="text-brand-700 font-semibold">Calendar & scheduling</div>
+          <p class="mt-1 text-sm text-slate-600">Month/week/day views, ICS export, and upcoming agenda.</p>
+          <a href="10-calendar.html" class="mt-2 inline-flex text-sm underline">Open calendar →</a>
+        </div>
+        <div class="rounded-2xl border bg-white p-4">
+          <div class="text-brand-700 font-semibold">Admin & security</div>
+          <p class="mt-1 text-sm text-slate-600">SSO/SCIM, roles, audit log, data region & retention controls.</p>
+          <a href="14-admin.html" class="mt-2 inline-flex text-sm underline">Explore controls →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section id="how" class="py-14 bg-gradient-to-br from-brand-50/70 via-white to-brand-100/40 border-y">
+    <div class="mx-auto max-w-7xl px-4 lg:px-8">
+      <h2 class="text-2xl font-bold text-slate-900">From call to summary in minutes</h2>
+      <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+        <div class="rounded-2xl border bg-white p-4">
+          <div class="text-slate-500">1</div>
+          <div class="font-medium">Capture</div>
+          <p class="text-slate-600 mt-1">Record live or let the bot join automatically based on your calendar and keywords.</p>
+          <a href="03-record.html" class="underline">Start recording</a>
+        </div>
+        <div class="rounded-2xl border bg-white p-4">
+          <div class="text-slate-500">2</div>
+          <div class="font-medium">Transcribe</div>
+          <p class="text-slate-600 mt-1">Accurate transcripts with speaker labels in English, Hindi, Tamil, and more.</p>
+          <a href="06-uploads.html" class="underline">Upload a file</a>
+        </div>
+        <div class="rounded-2xl border bg-white p-4">
+          <div class="text-slate-500">3</div>
+          <div class="font-medium">Summarize & share</div>
+          <p class="text-slate-600 mt-1">Get bullet points, action items, and send to Slack/Notion with one click.</p>
+          <a href="11-integrations.html" class="underline">Connect apps</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="py-14">
+    <div class="mx-auto max-w-7xl px-4 lg:px-8">
+      <div class="flex items-end justify-between flex-wrap gap-2">
+        <h2 class="text-2xl font-bold text-slate-900">Simple pricing</h2>
+        <a href="08-billing.html" class="text-sm underline">Manage billing →</a>
+      </div>
+      <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="rounded-2xl border bg-white p-5">
+          <div class="text-slate-500">Starter</div>
+          <div class="mt-1 text-3xl font-extrabold">Free</div>
+          <ul class="mt-3 text-sm space-y-2">
+            <li>• 300 mins / month</li>
+            <li>• Basic summaries</li>
+            <li>• 1 workspace</li>
+          </ul>
+          <a href="01-auth.html#signup" class="mt-4 inline-flex px-4 py-2 rounded-xl border">Get started</a>
+        </div>
+        <div class="rounded-2xl border-2 border-brand-600 bg-white p-5 shadow-soft">
+          <div class="text-slate-500">Pro</div>
+          <div class="mt-1 text-3xl font-extrabold">₹799<span class="text-base font-semibold text-slate-500">/mo</span></div>
+          <ul class="mt-3 text-sm space-y-2">
+            <li>• 3,000 mins / month</li>
+            <li>• Advanced summaries</li>
+            <li>• Meeting bot</li>
+          </ul>
+          <a href="08-billing.html" class="mt-4 inline-flex px-4 py-2 rounded-xl bg-brand-600 text-white">Upgrade</a>
+        </div>
+        <div class="rounded-2xl border bg-white p-5">
+          <div class="text-slate-500">Business</div>
+          <div class="mt-1 text-3xl font-extrabold">Custom</div>
+          <ul class="mt-3 text-sm space-y-2">
+            <li>• SSO/SCIM</li>
+            <li>• Data residency</li>
+            <li>• Priority support</li>
+          </ul>
+          <a href="15-help.html" class="mt-4 inline-flex px-4 py-2 rounded-xl border">Contact sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-14 bg-gradient-to-br from-white to-brand-50/60 border-t">
+    <div class="mx-auto max-w-7xl px-4 lg:px-8">
+      <h2 class="text-2xl font-bold text-slate-900">What teams say</h2>
+      <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+        <div class="rounded-2xl border bg-white p-4">
+          “We ship faster because every decision is captured.”
+          <div class="mt-2 text-slate-500">— Priya, PM</div>
+        </div>
+        <div class="rounded-2xl border bg-white p-4">
+          “The bot nails summaries and action items.”
+          <div class="mt-2 text-slate-500">— Arjun, Eng Lead</div>
+        </div>
+        <div class="rounded-2xl border bg-white p-4">
+          “Search across calls is a superpower.”
+          <div class="mt-2 text-slate-500">— Neha, Recruiter</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-10 border-t">
+    <div class="mx-auto max-w-7xl px-4 lg:px-8 text-sm">
+      <div class="flex flex-col md:flex-row gap-6 md:items-start md:justify-between">
+        <div class="max-w-sm">
+          <div class="flex items-center gap-2">
+            <span class="h-8 w-8 grid place-items-center rounded-xl bg-brand-600 text-white font-bold">VN</span>
+            <span class="font-semibold text-slate-900">Voice Notes AI</span>
+          </div>
+          <p class="mt-2 text-slate-600">Transcription and summaries for modern teams. Built with privacy controls and great integrations.</p>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-6">
+          <div>
+            <div class="font-medium text-slate-900">Product</div>
+            <ul class="mt-2 space-y-1">
+              <li><a class="hover:underline" href="02-dashboard.html">Dashboard</a></li>
+              <li><a class="hover:underline" href="03-record.html">Recorder</a></li>
+              <li><a class="hover:underline" href="04-transcript.html">Transcript</a></li>
+              <li><a class="hover:underline" href="05-search.html">Search</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="font-medium text-slate-900">Company</div>
+            <ul class="mt-2 space-y-1">
+              <li><a class="hover:underline" href="15-help.html">Help</a></li>
+              <li><a class="hover:underline" href="08-billing.html">Billing</a></li>
+              <li><a class="hover:underline" href="14-admin.html">Admin</a></li>
+              <li><a class="hover:underline" href="11-integrations.html">Integrations</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="font-medium text-slate-900">Account</div>
+            <ul class="mt-2 space-y-1">
+              <li><a class="hover:underline" href="01-auth.html">Sign in</a></li>
+              <li><a class="hover:underline" href="01-auth.html#signup">Create account</a></li>
+              <li><a class="hover:underline" href="07-settings.html">Settings</a></li>
+              <li><a class="hover:underline" href="09-team.html">Team</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="mt-8 flex items-center justify-between text-xs text-slate-500">
+        <div>© 2025 Voice Notes AI</div>
+        <div class="flex items-center gap-3">
+          <a href="#" class="hover:underline">Privacy</a>
+          <a href="#" class="hover:underline">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Minimal JS -->
+  <script>
+    document.getElementById('menuOpen')?.addEventListener('click', ()=>{
+      document.getElementById('mMenu').classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>

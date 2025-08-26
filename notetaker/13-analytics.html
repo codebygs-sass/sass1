@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Page 13 – Analytics | Voice Notes AI</title>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { brand: {50:'#eff6ff',100:'#dbeafe',200:'#bfdbfe',300:'#93c5fd',400:'#60a5fa',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',800:'#1e40af',900:'#1e3a8a'} },
+          boxShadow: { soft: '0 10px 30px -10px rgba(0,0,0,0.15)'}
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    html { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial; }
+    .scroll-slim { scrollbar-width: thin; }
+    .scroll-slim::-webkit-scrollbar { height: 8px; width: 8px; }
+    .scroll-slim::-webkit-scrollbar-thumb { background: rgba(30,64,175,.35); border-radius: 8px; }
+    .chip { display:inline-flex; align-items:center; gap:.4rem; padding:.25rem .6rem; border:1px solid rgb(191 219 254); border-radius:9999px; background:#eff6ff; color:#1e40af; font-size:.75rem; }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-brand-50/70 via-white to-brand-100/40 text-slate-800">
+  <div class="min-h-screen grid grid-cols-1 lg:grid-cols-[280px_1fr]">
+    <!-- Sidebar -->
+    <aside class="bg-white/80 backdrop-blur sticky top-0 h-full lg:h-screen border-r border-slate-200 shadow-soft hidden lg:flex flex-col">
+      <div class="px-5 pt-6 pb-4 flex items-center gap-3">
+        <div class="h-10 w-10 grid place-items-center rounded-xl bg-brand-600 text-white font-bold">VN</div>
+        <div>
+          <div class="text-sm uppercase tracking-wider text-brand-700 font-semibold">Voice Notes AI</div>
+          <div class="text-xs text-slate-500">Otter-like Transcription</div>
+        </div>
+      </div>
+      <nav class="mt-4 flex-1 overflow-y-auto scroll-slim">
+        <ul class="px-3 space-y-1 text-sm">
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="02-dashboard.html">Dashboard</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="03-record.html">Record</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="04-transcript.html">Transcript</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="05-search.html">Search</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="06-uploads.html">Uploads</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="07-settings.html">Settings</a></li>
+          <li class="pt-2"><div class="px-3 text-xs uppercase tracking-wide text-slate-400">More</div></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="08-billing.html">Billing</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="09-team.html">Team</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="10-calendar.html">Calendar</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="11-integrations.html">Integrations</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="12-bot.html">Meeting Bot</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-brand-50 text-brand-700 font-medium" href="13-analytics.html">Analytics</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="14-admin.html">Admin</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="15-help.html">Help</a></li>
+          <li class="pt-2"><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="01-auth.html">Sign in / out</a></li>
+        </ul>
+      </nav>
+      <div class="p-4 mt-auto">
+        <div class="rounded-xl bg-gradient-to-br from-brand-600 to-brand-800 text-white p-4">
+          <div class="text-sm opacity-90">Minutes used</div>
+          <div class="mt-1 flex items-end gap-2"><div class="text-2xl font-semibold">382</div><div class="text-xs opacity-80">/ 600</div></div>
+          <div class="mt-3 h-2 bg-white/20 rounded-full overflow-hidden"><div class="h-full w-[64%] bg-white/90"></div></div>
+          <a href="08-billing.html" class="mt-3 inline-flex items-center gap-2 text-xs font-medium underline">Upgrade plan →</a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="flex flex-col min-h-screen">
+      <!-- Topbar -->
+      <header class="sticky top-0 z-10 backdrop-blur bg-white/70 border-b border-slate-200">
+        <div class="px-4 lg:px-8 py-3 flex items-center gap-3">
+          <h1 class="text-lg md:text-xl font-semibold text-slate-900">Analytics</h1>
+          <div class="ml-auto flex items-center gap-2 text-sm">
+            <button id="exportPNG" class="px-3 py-1.5 rounded-lg border">Export PNG</button>
+            <button id="exportCSV" class="px-3 py-1.5 rounded-lg border">Export CSV</button>
+            <a href="05-search.html" class="px-3 py-1.5 rounded-lg border">Search</a>
+            <a href="07-settings.html" class="inline-flex items-center gap-2 p-1.5 rounded-full border border-slate-200 hover:bg-brand-50"><img alt="avatar" src="https://i.pravatar.cc/40?img=5" class="h-8 w-8 rounded-full" /></a>
+          </div>
+        </div>
+      </header>
+
+      <!-- Content -->
+      <section class="flex-1 px-4 lg:px-8 py-6 space-y-6">
+        <!-- Filters -->
+        <div class="rounded-2xl border border-slate-200 bg-white/80 shadow-soft p-4">
+          <div class="flex flex-wrap items-center gap-2 text-sm">
+            <div class="flex items-center gap-2">
+              <span class="text-slate-600">Range</span>
+              <div class="grid grid-flow-col auto-cols-max gap-1">
+                <button class="range px-3 py-1.5 rounded-lg border bg-brand-50 text-brand-700" data-range="7d">7d</button>
+                <button class="range px-3 py-1.5 rounded-lg border" data-range="30d">30d</button>
+                <button class="range px-3 py-1.5 rounded-lg border" data-range="q">Quarter</button>
+                <button class="range px-3 py-1.5 rounded-lg border" data-range="y">Year</button>
+                <label class="px-2 py-1.5 rounded-lg border bg-white flex items-center gap-2"><input id="from" type="date" class="outline-none"><span>→</span><input id="to" type="date" class="outline-none"></label>
+              </div>
+            </div>
+            <div class="ml-auto flex items-center gap-2">
+              <select id="ws" class="rounded-lg border px-3 py-1.5"><option>All workspaces</option><option>Product</option><option>Marketing</option></select>
+              <select id="user" class="rounded-lg border px-3 py-1.5"><option>All users</option><option>You</option><option>Alice</option><option>Bob</option></select>
+              <select id="source" class="rounded-lg border px-3 py-1.5"><option value="all">All sources</option><option value="live">Live</option><option value="upload">Uploads</option><option value="bot">Bot</option></select>
+            </div>
+          </div>
+        </div>
+
+        <!-- KPI cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+          <div class="rounded-2xl border bg-white/80 shadow-soft p-4">
+            <div class="text-slate-500 text-sm">Minutes transcribed</div>
+            <div class="mt-1 text-2xl font-semibold"><span id="kpiMin">2,146</span> <span class="text-sm text-emerald-600">▲ 12%</span></div>
+            <div class="mt-2 h-2 bg-slate-100 rounded-full overflow-hidden"><div id="barMin" class="h-full w-[68%] bg-brand-600"></div></div>
+          </div>
+          <div class="rounded-2xl border bg-white/80 shadow-soft p-4">
+            <div class="text-slate-500 text-sm">Meetings</div>
+            <div class="mt-1 text-2xl font-semibold"><span id="kpiMeet">86</span> <span class="text-sm text-emerald-600">▲ 5%</span></div>
+            <div class="mt-2 h-2 bg-slate-100 rounded-full overflow-hidden"><div class="h-full w-[52%] bg-brand-600"></div></div>
+          </div>
+          <div class="rounded-2xl border bg-white/80 shadow-soft p-4">
+            <div class="text-slate-500 text-sm">Avg words / min</div>
+            <div class="mt-1 text-2xl font-semibold"><span id="kpiWpm">142</span> <span class="text-sm text-rose-600">▼ 3%</span></div>
+            <div class="mt-2 h-2 bg-slate-100 rounded-full overflow-hidden"><div class="h-full w-[40%] bg-brand-600"></div></div>
+          </div>
+          <div class="rounded-2xl border bg-white/80 shadow-soft p-4">
+            <div class="text-slate-500 text-sm">Summaries generated</div>
+            <div class="mt-1 text-2xl font-semibold"><span id="kpiSum">74</span> <span class="text-sm text-emerald-600">▲ 21%</span></div>
+            <div class="mt-2 h-2 bg-slate-100 rounded-full overflow-hidden"><div class="h-full w-[77%] bg-brand-600"></div></div>
+          </div>
+        </div>
+
+        <!-- Charts row 1 -->
+        <div class="grid grid-cols-1 xl:grid-cols-[1.2fr_.8fr] gap-4">
+          <div class="rounded-2xl border bg-white/80 shadow-soft p-4">
+            <div class="flex items-center justify-between">
+              <h3 class="font-semibold">Minutes per day</h3>
+              <div class="text-xs text-slate-500">IST</div>
+            </div>
+            <div id="lineChart" class="mt-2 overflow-hidden rounded-xl border bg-white"></div>
+          </div>
+          <div class="rounded-2xl border bg-white/80 shadow-soft p-4">
+            <h3 class="font-semibold">By source</h3>
+            <div id="barChart" class="mt-2 overflow-hidden rounded-xl border bg-white"></div>
+          </div>
+        </div>
+
+        <!-- Charts row 2 -->
+        <div class="grid grid-cols-1 xl:grid-cols-[.9fr_1.1fr] gap-4">
+          <div class="rounded-2xl border bg-white/80 shadow-soft p-4">
+            <h3 class="font-semibold">Languages</h3>
+            <div id="donutChart" class="mt-2 grid place-items-center overflow-hidden rounded-xl border bg-white" style="min-height:260px"></div>
+          </div>
+          <div class="rounded-2xl border bg-white/80 shadow-soft p-4">
+            <div class="flex items-center justify-between">
+              <h3 class="font-semibold">Funnel</h3>
+              <span class="text-xs text-slate-500">Recorded → Transcribed → Summarized → Shared</span>
+            </div>
+            <div id="funnel" class="mt-2 grid grid-cols-4 gap-2"></div>
+          </div>
+        </div>
+
+        <!-- Topics & heatmap -->
+        <div class="grid grid-cols-1 xl:grid-cols-[1fr_1fr] gap-4">
+          <div class="rounded-2xl border bg-white/80 shadow-soft p-4">
+            <h3 class="font-semibold">Top topics</h3>
+            <div id="topics" class="mt-2 flex flex-wrap gap-2"></div>
+          </div>
+          <div class="rounded-2xl border bg-white/80 shadow-soft p-4">
+            <div class="flex items-center justify-between"><h3 class="font-semibold">Activity heatmap</h3><span class="text-xs text-slate-500">by day of week × hour</span></div>
+            <div id="heatmap" class="mt-3 grid grid-cols-[60px_repeat(24,1fr)] gap-1 text-xs"></div>
+          </div>
+        </div>
+
+        <!-- Recent transcripts table -->
+        <div class="rounded-2xl border bg-white/80 shadow-soft overflow-hidden">
+          <div class="px-4 py-3 border-b flex items-center justify-between">
+            <h3 class="font-semibold">Recent transcripts</h3>
+            <a href="05-search.html" class="text-sm underline">Open Search</a>
+          </div>
+          <div class="overflow-x-auto scroll-slim">
+            <table class="min-w-full text-sm">
+              <thead class="bg-brand-50/60 text-slate-600">
+                <tr>
+                  <th class="text-left font-medium px-4 py-3">Title</th>
+                  <th class="text-left font-medium px-4 py-3">Date</th>
+                  <th class="text-left font-medium px-4 py-3">Duration</th>
+                  <th class="text-left font-medium px-4 py-3">Source</th>
+                  <th class="text-left font-medium px-4 py-3">Language</th>
+                  <th class="text-left font-medium px-4 py-3">Words</th>
+                  <th class="text-left font-medium px-4 py-3">Summary</th>
+                  <th class="text-right font-medium px-4 py-3">Open</th>
+                </tr>
+              </thead>
+              <tbody id="tblBody" class="divide-y"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <footer class="px-4 lg:px-8 py-6 text-xs text-slate-500">
+        <div class="flex flex-col sm:flex-row gap-2 sm:items-center sm:justify-between">
+          <div>© 2025 Voice Notes AI</div>
+          <div class="flex items-center gap-3">
+            <a href="15-help.html" class="hover:underline">Help</a>
+            <a href="#" class="hover:underline">Privacy</a>
+            <a href="#" class="hover:underline">Terms</a>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Minimal JS: mock data + SVG charts + exports -->
+  <script>
+    // ---- Mock data (replace via API later) ----
+    const rng = (n, s=1) => Array.from({length:n}, (_,i)=> Math.round((Math.sin(i*0.35+s)+1)*50 + Math.random()*20));
+    const days = 30;
+    const today = new Date();
+    const series = rng(days, 2.3);
+    const labels = Array.from({length:days}, (_,i)=> { const d=new Date(today); d.setDate(d.getDate()-(days-1-i)); return d.toLocaleDateString(undefined,{month:'short', day:'numeric'}); });
+
+    const bySource = { live: 720, upload: 980, bot: 446 };
+    const langs = [ ['English (India)',56], ['Hindi',22], ['Tamil',12], ['Spanish',6], ['Other',4] ];
+    const funnelData = [ ['Recorded', 120], ['Transcribed', 110], ['Summarized', 88], ['Shared', 42] ];
+    const topicsData = [ ['roadmap',62], ['hiring',38], ['bugfix',29], ['pricing',25], ['go-to-market',21], ['invoices',18], ['latency',16], ['design review',14], ['partner call',12] ];
+
+    const recents = [
+      {title:'Standup – Product', date:'2025-08-24 10:01', dur:'28m', src:'Live', lang:'English (IN)', words:3800, sum:true, id:'t1'},
+      {title:'Interview – S. Rao', date:'2025-08-23 15:02', dur:'46m', src:'Bot', lang:'English (IN)', words:6200, sum:true, id:'t2'},
+      {title:'Sprint planning', date:'2025-08-22 11:33', dur:'62m', src:'Live', lang:'English (IN)', words:8400, sum:true, id:'t3'},
+      {title:'Release demo', date:'2025-08-21 12:02', dur:'31m', src:'Upload', lang:'English (IN)', words:4000, sum:false, id:'t4'},
+      {title:'Quarterly review', date:'2025-08-20 14:18', dur:'78m', src:'Bot', lang:'English (IN)', words:9100, sum:true, id:'t5'}
+    ];
+
+    // ---- Simple chart helpers (SVG) ----
+    const toSVG = (w,h,content) => `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 ${w} ${h}'>${content}</svg>`;
+
+    function lineChart(target, data, labels){
+      const w=720,h=220,p=28; const max=Math.max(...data)*1.15; const min=0;
+      const x = i => p + i*( (w-2*p)/(data.length-1) );
+      const y = v => h-p - ( (v-min)/(max-min) * (h-2*p) );
+      const grid = Array.from({length:4},(_,i)=>{ const yy = p + i*((h-2*p)/4); return `<line x1='${p}' y1='${yy}' x2='${w-p}' y2='${yy}' stroke='rgba(148,163,184,.35)' stroke-width='1'/>`; }).join('');
+      const path = data.map((v,i)=> `${i?'L':'M'} ${x(i).toFixed(1)} ${y(v).toFixed(1)}`).join(' ');
+      const area = `${path} L ${w-p} ${h-p} L ${p} ${h-p} Z`;
+      const dots = data.filter((_,i)=> i%5===0 || i===data.length-1).map((v,i,arr)=>{ const idx = i===arr.length-1? data.length-1 : i*5; return `<circle cx='${x(idx)}' cy='${y(data[idx])}' r='2.8' fill='#2563eb'/>`; }).join('');
+      const xlabels = data.filter((_,i)=> i%5===0 || i===data.length-1).map((v,i,arr)=>{ const idx = i===arr.length-1? data.length-1 : i*5; return `<text x='${x(idx)}' y='${h-6}' text-anchor='middle' font-size='10' fill='#64748b'>${labels[idx]}</text>`; }).join('');
+      const svg = toSVG(w,h,`
+        <rect x='0' y='0' width='${w}' height='${h}' fill='white' />
+        ${grid}
+        <path d='${area}' fill='rgba(37, 99, 235, .12)' />
+        <path d='${path}' fill='none' stroke='#2563eb' stroke-width='2.5' />
+        ${dots}
+        ${xlabels}
+      `);
+      target.innerHTML = svg;
+    }
+
+    function barChart(target, entries){
+      const w=420,h=220,p=28; const keys=Object.keys(entries); const vals=Object.values(entries); const max=Math.max(...vals)*1.2; const bw= (w-2*p)/keys.length - 16;
+      let x=p; let bars=''; let labels='';
+      keys.forEach((k,i)=>{
+        const v=vals[i]; const bh = (v/max)*(h-2*p); const y = h-p-bh;
+        bars += `<rect x='${x}' y='${y}' width='${bw}' height='${bh}' fill='#60a5fa' rx='6'/>`;
+        labels += `<text x='${x + bw/2}' y='${h-6}' text-anchor='middle' font-size='10' fill='#64748b'>${k}</text>`;
+        x += bw + 16;
+      });
+      const svg = toSVG(w,h,`<rect width='${w}' height='${h}' fill='white'/>${bars}${labels}`);
+      target.innerHTML = svg;
+    }
+
+    function donutChart(target, entries){
+      const size=240, r=90, cx=size/2, cy=size/2; const sum = entries.reduce((a,[,v])=>a+v,0);
+      let start=0; let segs=''; let legend='';
+      const colors=['#2563eb','#22c55e','#f59e0b','#ef4444','#64748b'];
+      entries.forEach(([label,val],i)=>{
+        const frac = val/sum; const end = start + frac*2*Math.PI;
+        const x1 = cx + r*Math.cos(start); const y1 = cy + r*Math.sin(start);
+        const x2 = cx + r*Math.cos(end);   const y2 = cy + r*Math.sin(end);
+        const large = frac>0.5 ? 1 : 0;
+        segs += `<path d='M ${cx} ${cy} L ${x1} ${y1} A ${r} ${r} 0 ${large} 1 ${x2} ${y2} Z' fill='${colors[i%colors.length]}' opacity='.9'/>`;
+        legend += `<div class='flex items-center gap-2 text-sm'><span class='inline-block w-3 h-3 rounded' style='background:${colors[i%colors.length]}'></span>${label} <span class='text-slate-500 ml-1'>${val}%</span></div>`;
+        start=end;
+      });
+      target.innerHTML = `<div class='grid grid-cols-[${size}px_1fr] gap-4 items-center p-3 w-full'><div>${toSVG(size,size,segs+`<circle cx='${cx}' cy='${cy}' r='55' fill='white'/>`)}</div><div class='space-y-1'>${legend}</div></div>`;
+    }
+
+    function renderFunnel(target, data){
+      target.innerHTML = '';
+      const max = Math.max(...data.map(d=>d[1]));
+      data.forEach(([label,val],i)=>{
+        const w = Math.round((val/max)*100);
+        const card = document.createElement('div');
+        card.className = 'rounded-xl border bg-white p-3 flex flex-col gap-1';
+        card.innerHTML = `<div class='text-slate-500 text-xs'>${label}</div><div class='text-lg font-semibold'>${val}</div><div class='mt-1 h-2 bg-slate-100 rounded-full overflow-hidden'><div class='h-full bg-brand-600' style='width:${w}%'></div></div>`;
+        target.appendChild(card);
+      });
+    }
+
+    function renderTopics(target, data){
+      target.innerHTML = data.map(([t,n])=>`<span class='chip'>${t}<span class='text-slate-500'>${n}</span></span>`).join(' ');
+    }
+
+    function renderHeatmap(target){
+      const hours = Array.from({length:24},(_,i)=> i);
+      const days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+      target.innerHTML = `<div></div>${hours.map(h=>`<div class='text-center text-slate-400'>${(''+h).padStart(2,'0')}</div>`).join('')}` +
+        days.map((d,di)=>{
+          const row = [`<div class='h-6 flex items-center text-slate-500'>${d}</div>`];
+          hours.forEach(h=>{
+            const v = Math.max(0, Math.round((Math.sin((h+di)*0.7)+1)*5 + (Math.random()*2-1)) );
+            const opacity = Math.min(1, v/10);
+            row.push(`<div title='${d} ${h}:00 – ${v} events' class='h-6 rounded' style='background: rgba(37,99,235,${opacity});'></div>`);
+          });
+          return row.join('');
+        }).join('');
+    }
+
+    function renderTable(){
+      const tbody = document.getElementById('tblBody');
+      tbody.innerHTML = '';
+      recents.forEach(r=>{
+        const tr = document.createElement('tr');
+        tr.innerHTML = `<td class='px-4 py-3'>${r.title}</td><td class='px-4 py-3'>${r.date}</td><td class='px-4 py-3'>${r.dur}</td><td class='px-4 py-3'>${r.src}</td><td class='px-4 py-3'>${r.lang}</td><td class='px-4 py-3'>${r.words.toLocaleString()}</td><td class='px-4 py-3'>${r.sum? 'Yes':'No'}</td><td class='px-4 py-3 text-right'><a class='px-3 py-1.5 rounded-lg border' href='04-transcript.html?id=${r.id}'>Open</a></td>`;
+        tbody.appendChild(tr);
+      });
+    }
+
+    // Render initial
+    lineChart(document.getElementById('lineChart'), series, labels);
+    barChart(document.getElementById('barChart'), bySource);
+    donutChart(document.getElementById('donutChart'), langs);
+    renderFunnel(document.getElementById('funnel'), funnelData);
+    renderTopics(document.getElementById('topics'), topicsData);
+    renderHeatmap(document.getElementById('heatmap'));
+    renderTable();
+
+    // Range buttons (demo: just style)
+    document.querySelectorAll('.range').forEach(btn=> btn.addEventListener('click', ()=>{
+      document.querySelectorAll('.range').forEach(b=>{ b.classList.remove('bg-brand-50','text-brand-700'); });
+      btn.classList.add('bg-brand-50','text-brand-700');
+    }));
+
+    // -- Export PNG of charts region (line+bar+donut+funnel+heatmap)
+    document.getElementById('exportPNG').addEventListener('click', async ()=>{
+      const svgs = [...document.querySelectorAll('#lineChart svg, #barChart svg, #donutChart svg')].map(el=> new XMLSerializer().serializeToString(el));
+      const canvas = document.createElement('canvas'); const w=1200,h=900; canvas.width=w; canvas.height=h; const ctx=canvas.getContext('2d');
+      ctx.fillStyle='white'; ctx.fillRect(0,0,w,h);
+      // draw charts stacked
+      let y=10;
+      for(const s of svgs){
+        const img = new Image(); const b64 = 'data:image/svg+xml;base64,'+btoa(unescape(encodeURIComponent(s)));
+        await new Promise(res=>{ img.onload=res; img.src=b64; });
+        const ratio = 1100/img.width; const dw = img.width*ratio; const dh = img.height*ratio; ctx.drawImage(img,50,y,dw,dh); y+=dh+20;
+      }
+      const a = document.createElement('a'); a.href = canvas.toDataURL('image/png'); a.download='analytics.png'; a.click();
+    });
+
+    // -- Export CSV of table
+    document.getElementById('exportCSV').addEventListener('click', ()=>{
+      const header = 'title,date,duration,source,language,words,summary\n';
+      const lines = recents.map(r=>[r.title,r.date,r.dur,r.src,r.lang,r.words,r.sum?'yes':'no'].join(','));
+      const blob = new Blob([header+lines.join('\n')], {type:'text/csv'});
+      const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download='transcripts.csv'; a.click();
+    });
+  </script>
+</body>
+</html>

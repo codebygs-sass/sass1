@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Page 3 – Record | Voice Notes AI</title>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {50:'#eff6ff',100:'#dbeafe',200:'#bfdbfe',300:'#93c5fd',400:'#60a5fa',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',800:'#1e40af',900:'#1e3a8a'}
+          },
+          boxShadow: { soft: '0 10px 30px -10px rgba(0,0,0,0.15)'}
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    html { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial; }
+    .scroll-slim { scrollbar-width: thin; }
+    .scroll-slim::-webkit-scrollbar { height: 8px; width: 8px; }
+    .scroll-slim::-webkit-scrollbar-thumb { background: rgba(30,64,175,.35); border-radius: 8px; }
+    /* Simple fake waveform stripes */
+    .wf-stripe { background-image: repeating-linear-gradient(90deg, rgba(37,99,235,.25) 0 2px, transparent 2px 6px); }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-brand-50/70 via-white to-brand-100/40 text-slate-800">
+  <div class="min-h-screen grid grid-cols-1 lg:grid-cols-[280px_1fr]">
+    <!-- Sidebar -->
+    <aside class="bg-white/80 backdrop-blur sticky top-0 h-full lg:h-screen border-r border-slate-200 shadow-soft hidden lg:flex flex-col">
+      <div class="px-5 pt-6 pb-4 flex items-center gap-3">
+        <div class="h-10 w-10 grid place-items-center rounded-xl bg-brand-600 text-white font-bold">VN</div>
+        <div>
+          <div class="text-sm uppercase tracking-wider text-brand-700 font-semibold">Voice Notes AI</div>
+          <div class="text-xs text-slate-500">Otter-like Transcription</div>
+        </div>
+      </div>
+      <nav class="mt-4 flex-1 overflow-y-auto scroll-slim">
+        <ul class="px-3 space-y-1 text-sm">
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="02-dashboard.html"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg>Dashboard</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-brand-50 text-brand-700 font-medium" href="03-record.html"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 1 0-6 0v5a3 3 0 0 0 3 3zm-7-3a7 7 0 0 0 14 0h-2a5 5 0 1 1-10 0H5zM4 13a8 8 0 1 0 16 0h-2a6 6 0 1 1-12 0H4z"/></svg>Record</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="05-search.html"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M10 2a8 8 0 1 0 4.9 14.32l4.39 4.39 1.41-1.41-4.39-4.39A8 8 0 0 0 10 2zm0 2a6 6 0 1 1 0 12 6 6 0 0 1 0-12z"/></svg>Search</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="06-uploads.html"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M5 20h14v-2H5v2zM11 4v7.17L8.41 8.59 7 10l5 5 5-5-1.41-1.41L13 11.17V4h-2z"/></svg>Uploads</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="07-settings.html"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M19.14 12.94a7.025 7.025 0 0 0 .05-.94 7.025 7.025 0 0 0-.05-.94l2.03-1.58a.5.5 0 0 0 .12-.64l-1.92-3.32a.5.5 0 0 0-.6-.22l-2.39.96a7.028 7.028 0 0 0-1.63-.94l-.36-2.54A.5.5 0 0 0 12.93 1h-3.86a.5.5 0 0 0-.5.42l-.36 2.54c-.58.22-1.12.52-1.63.94l-2.39-.96a.5.5 0 0 0-.6.22L1.67 7.98a.5.5 0 0 0 .12.64l2.03 1.58c-.03.31-.05.63-.05.94s.02.63.05.94L1.79 13.66a.5.5 0 0 0-.12.64l1.92 3.32c.14.24.43.34.69.22l2.39-.96c.51.42 1.05.72 1.63.94l.36 2.54c.06.26.28.42.5.42h3.86c.26 0 .46-.18.5-.42l.36-2.54c.58-.22 1.12-.52 1.63-.94l2.39.96c.26.11.55.02.69-.22l1.92-3.32a.5.5 0 0 0-.12-.64l-2.03-1.58zM11 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8z"/></svg>Settings</a></li>
+          <li class="pt-2"><div class="px-3 text-xs uppercase tracking-wide text-slate-400">More</div></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="08-billing.html">Billing</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="09-team.html">Team</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="10-calendar.html">Calendar</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="11-integrations.html">Integrations</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="12-bot.html">Meeting Bot</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="13-analytics.html">Analytics</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="14-admin.html">Admin</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="15-help.html">Help</a></li>
+          <li class="pt-2"><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="01-auth.html">Sign in / out</a></li>
+        </ul>
+      </nav>
+      <div class="p-4 mt-auto">
+        <div class="rounded-xl bg-gradient-to-br from-brand-600 to-brand-800 text-white p-4">
+          <div class="text-sm opacity-90">Minutes used</div>
+          <div class="mt-1 flex items-end gap-2"><div class="text-2xl font-semibold">382</div><div class="text-xs opacity-80">/ 600</div></div>
+          <div class="mt-3 h-2 bg-white/20 rounded-full overflow-hidden">
+            <div class="h-full w-[64%] bg-white/90"></div>
+          </div>
+          <a href="08-billing.html" class="mt-3 inline-flex items-center gap-2 text-xs font-medium underline">Upgrade plan →</a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="flex flex-col min-h-screen">
+      <!-- Topbar -->
+      <header class="sticky top-0 z-10 backdrop-blur bg-white/70 border-b border-slate-200">
+        <div class="px-4 lg:px-8 py-3 flex items-center gap-3">
+          <!-- Mobile menu -->
+          <details class="lg:hidden mr-1">
+            <summary class="list-none cursor-pointer p-2 rounded-lg hover:bg-brand-50 text-brand-700" title="Open menu">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor"><path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/></svg>
+            </summary>
+            <div class="absolute left-3 right-3 mt-2 rounded-xl border border-slate-200 bg-white shadow-soft p-3">
+              <a class="block px-3 py-2 rounded-lg hover:bg-brand-50" href="02-dashboard.html">Dashboard</a>
+              <a class="block px-3 py-2 rounded-lg hover:bg-brand-50" href="03-record.html">Record</a>
+              <a class="block px-3 py-2 rounded-lg hover:bg-brand-50" href="05-search.html">Search</a>
+              <a class="block px-3 py-2 rounded-lg hover:bg-brand-50" href="06-uploads.html">Uploads</a>
+              <a class="block px-3 py-2 rounded-lg hover:bg-brand-50" href="07-settings.html">Settings</a>
+            </div>
+          </details>
+
+          <h1 class="text-lg md:text-xl font-semibold text-slate-900">Recording Studio</h1>
+          <div class="ml-auto flex items-center gap-2">
+            <a href="05-search.html" class="hidden sm:inline-flex items-center gap-2 rounded-xl border border-brand-200 text-brand-700 bg-brand-50 px-3 py-1.5 text-sm">Open transcripts</a>
+            <a href="06-uploads.html" class="hidden sm:inline-flex items-center gap-2 rounded-xl border px-3 py-1.5 text-sm">Upload audio</a>
+            <a href="07-settings.html" class="inline-flex items-center gap-2 p-1.5 rounded-full border border-slate-200 hover:bg-brand-50">
+              <img alt="avatar" src="https://i.pravatar.cc/40?img=5" class="h-8 w-8 rounded-full" />
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <!-- Content -->
+      <section class="flex-1 px-4 lg:px-8 py-6">
+        <div class="grid grid-cols-1 xl:grid-cols-[1fr_380px] gap-6">
+          <!-- Left: Controls + Live transcript -->
+          <div class="space-y-6">
+            <!-- Session Card -->
+            <div class="rounded-2xl border border-slate-200 bg-white/80 shadow-soft">
+              <div class="px-4 py-3 border-b flex flex-wrap items-center gap-3">
+                <div class="flex items-center gap-2">
+                  <div class="h-2 w-2 rounded-full bg-rose-500 animate-pulse" id="recDot" aria-hidden="true"></div>
+                  <span class="text-sm text-slate-600">Status:</span>
+                  <span class="text-sm font-medium text-slate-900" id="recStatus">Idle</span>
+                </div>
+                <div class="ml-auto flex items-center gap-2">
+                  <button id="bookmarkBtn" class="px-3 py-1.5 rounded-lg border text-sm">Add bookmark</button>
+                  <button id="highlightBtn" class="px-3 py-1.5 rounded-lg border text-sm">Highlight</button>
+                </div>
+              </div>
+
+              <div class="p-4 grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-4">
+                <!-- Inputs -->
+                <div class="space-y-4">
+                  <div>
+                    <label class="text-sm text-slate-600">Input source</label>
+                    <select class="mt-1 w-full rounded-xl border border-slate-200 bg-white/80 px-3 py-2">
+                      <option>Default microphone</option>
+                      <option>External USB mic</option>
+                      <option>System audio (virtual)</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="text-sm text-slate-600">Language & accent</label>
+                    <select class="mt-1 w-full rounded-xl border border-slate-200 bg-white/80 px-3 py-2">
+                      <option>English (US)</option>
+                      <option>English (India)</option>
+                      <option>Hindi (India)</option>
+                      <option>Tamil (India)</option>
+                      <option>Spanish (Spain)</option>
+                    </select>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <label class="text-sm text-slate-600">Noise reduction</label>
+                    <label class="inline-flex items-center cursor-pointer select-none">
+                      <input type="checkbox" class="peer sr-only" checked>
+                      <span class="w-11 h-6 bg-slate-200 rounded-full peer-checked:bg-brand-600 relative transition">
+                        <span class="absolute top-0.5 left-0.5 h-5 w-5 bg-white rounded-full shadow transition peer-checked:translate-x-5"></span>
+                      </span>
+                    </label>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-sm text-slate-600">Auto-punctuation</span>
+                    <input type="checkbox" class="toggle">
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-sm text-slate-600">Speaker diarization</span>
+                    <input type="checkbox" class="toggle" checked>
+                  </div>
+                </div>
+
+                <!-- Recorder -->
+                <div class="flex flex-col gap-4">
+                  <!-- Levels + Timer -->
+                  <div class="rounded-xl border bg-white/70 p-4">
+                    <div class="flex items-center justify-between">
+                      <div class="flex items-center gap-3">
+                        <div class="w-24 h-3 bg-slate-200 rounded-full overflow-hidden">
+                          <div class="h-full w-1/3 bg-brand-600 animate-pulse" id="vuA"></div>
+                        </div>
+                        <div class="w-24 h-3 bg-slate-200 rounded-full overflow-hidden">
+                          <div class="h-full w-1/5 bg-brand-400 animate-pulse" id="vuB"></div>
+                        </div>
+                        <div class="text-xs text-slate-500">Input levels</div>
+                      </div>
+                      <div class="text-sm text-slate-600">Elapsed <span class="font-medium text-slate-900" id="timer">00:00</span></div>
+                    </div>
+                    <div class="mt-4 h-16 rounded-lg bg-brand-50 wf-stripe"></div>
+                  </div>
+
+                  <!-- Controls -->
+                  <div class="flex flex-wrap items-center gap-3">
+                    <button id="recBtn" class="inline-flex items-center gap-2 rounded-2xl bg-brand-600 text-white px-5 py-3 font-medium shadow-soft hover:bg-brand-700">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 1 0-6 0v5a3 3 0 0 0 3 3zm-7-3a7 7 0 0 0 14 0h-2a5 5 0 1 1-10 0H5zM4 13a8 8 0 1 0 16 0h-2a6 6 0 1 1-12 0H4z"/></svg>
+                      Start recording
+                    </button>
+                    <button id="pauseBtn" class="inline-flex items-center gap-2 rounded-2xl border px-5 py-3 font-medium" disabled>
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M6 5h4v14H6V5zm8 0h4v14h-4V5z"/></svg>
+                      Pause
+                    </button>
+                    <button id="stopBtn" class="inline-flex items-center gap-2 rounded-2xl border px-5 py-3 font-medium" disabled>
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h12v12H6z"/></svg>
+                      Stop & save
+                    </button>
+                    <div class="ml-auto flex items-center gap-2 text-sm">
+                      <kbd class="px-2 py-1 rounded bg-slate-100 border">Space</kbd>
+                      to start/stop ·
+                      <kbd class="px-2 py-1 rounded bg-slate-100 border">B</kbd>
+                      to bookmark
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Live Transcript -->
+            <div class="rounded-2xl border border-slate-200 bg-white/80 shadow-soft overflow-hidden">
+              <div class="px-4 py-3 border-b flex items-center justify-between">
+                <h2 class="font-semibold">Live transcript</h2>
+                <div class="flex items-center gap-2 text-sm">
+                  <button id="clearLive" class="px-3 py-1.5 rounded-lg border">Clear</button>
+                  <label class="flex items-center gap-2 text-slate-600 text-sm"><input type="checkbox" checked> Show timestamps</label>
+                </div>
+              </div>
+              <div id="liveFeed" class="max-h-[48vh] overflow-auto scroll-slim p-4 space-y-2">
+                <div class="text-slate-400 text-sm">Start recording to see live captions here…</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Rail: Session details / AI notes -->
+          <aside class="space-y-4">
+            <div class="rounded-2xl border border-slate-200 bg-white/80 shadow-soft p-4">
+              <h3 class="font-semibold">Session details</h3>
+              <div class="mt-3 space-y-2 text-sm">
+                <div class="flex items-center justify-between"><span class="text-slate-600">Title</span><input class="ml-3 flex-1 rounded-lg border px-2 py-1.5" placeholder="Untitled recording" /></div>
+                <div class="flex items-center justify-between"><span class="text-slate-600">Auto-save</span><input type="checkbox" class="toggle" checked></div>
+                <div class="flex items-center justify-between"><span class="text-slate-600">Split by silence</span><input type="checkbox" class="toggle"></div>
+                <div class="flex items-center justify-between"><span class="text-slate-600">Confidence heatmap</span><input type="checkbox" class="toggle"></div>
+              </div>
+              <div class="mt-4 text-xs text-slate-500">Your audio stays private unless you share it. See <a href="#" class="underline">privacy</a>.</div>
+            </div>
+
+            <div class="rounded-2xl border border-slate-200 bg-white/80 shadow-soft p-4">
+              <h3 class="font-semibold">AI Assist (after save)</h3>
+              <p class="text-sm text-slate-600 mt-1">After you stop & save, we’ll create a summary, action items, and keywords automatically.</p>
+              <ul class="mt-3 text-sm list-disc pl-5 text-slate-700">
+                <li>Bulleted summary</li>
+                <li>Decisions & action items</li>
+                <li>Chapters & topics</li>
+                <li>Keywords & entities</li>
+              </ul>
+              <a href="04-transcript.html" class="mt-4 inline-flex items-center gap-2 rounded-xl bg-brand-600 text-white px-3 py-2 text-sm font-medium hover:bg-brand-700">Preview transcript layout</a>
+            </div>
+
+            <div class="rounded-2xl border border-slate-200 bg-white/80 shadow-soft p-4">
+              <h3 class="font-semibold">Shortcuts</h3>
+              <div class="grid grid-cols-2 gap-2 text-sm">
+                <div class="flex items-center justify-between border rounded-lg px-3 py-2"><span>Start/Stop</span><kbd class="px-2 py-1 rounded bg-slate-100 border">Space</kbd></div>
+                <div class="flex items-center justify-between border rounded-lg px-3 py-2"><span>Pause</span><kbd class="px-2 py-1 rounded bg-slate-100 border">P</kbd></div>
+                <div class="flex items-center justify-between border rounded-lg px-3 py-2"><span>Bookmark</span><kbd class="px-2 py-1 rounded bg-slate-100 border">B</kbd></div>
+                <div class="flex items-center justify-between border rounded-lg px-3 py-2"><span>Highlight</span><kbd class="px-2 py-1 rounded bg-slate-100 border">H</kbd></div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <footer class="px-4 lg:px-8 py-6 text-xs text-slate-500">
+        <div class="flex flex-col sm:flex-row gap-2 sm:items-center sm:justify-between">
+          <div>© 2025 Voice Notes AI</div>
+          <div class="flex items-center gap-3">
+            <a href="15-help.html" class="hover:underline">Help</a>
+            <a href="#" class="hover:underline">Privacy</a>
+            <a href="#" class="hover:underline">Terms</a>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Minimal JS to simulate UI states (no real recording) -->
+  <script>
+    const recBtn = document.getElementById('recBtn');
+    const pauseBtn = document.getElementById('pauseBtn');
+    const stopBtn = document.getElementById('stopBtn');
+    const recStatus = document.getElementById('recStatus');
+    const recDot = document.getElementById('recDot');
+    const timerEl = document.getElementById('timer');
+    const liveFeed = document.getElementById('liveFeed');
+    const bookmarkBtn = document.getElementById('bookmarkBtn');
+    const highlightBtn = document.getElementById('highlightBtn');
+
+    let rec=false, paused=false, t=0, intv=null;
+
+    function fmt(s){const m=Math.floor(s/60).toString().padStart(2,'0');const r=(s%60).toString().padStart(2,'0');return `${m}:${r}`}
+
+    function tick(){t++; timerEl.textContent = fmt(t); if(t%4===0){appendLine()} }
+
+    function appendLine(kind){
+      const row=document.createElement('div');
+      const ts=fmt(t);
+      row.className = 'text-sm';
+      if(kind==='bookmark') { row.innerHTML = `<span class="text-amber-700 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded-full text-xs mr-2">Bookmark</span> <span class="text-slate-400">[${ts}]</span> Marked important point.`; }
+      else if(kind==='highlight'){ row.innerHTML = `<span class="text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full text-xs mr-2">Highlight</span> <span class="text-slate-400">[${ts}]</span> Section highlighted.`; }
+      else { row.innerHTML = `<span class="text-slate-400">[${ts}]</span> Live words streaming…`; }
+      liveFeed.appendChild(row); liveFeed.scrollTop = liveFeed.scrollHeight;
+    }
+
+    function start(){
+      if(rec) return; rec=true; paused=false; recStatus.textContent='Recording'; recDot.classList.remove('bg-rose-500','animate-pulse'); recDot.classList.add('bg-rose-600');
+      recBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M6 5h4v14H6V5zm8 0h4v14h-4V5z"/></svg>Pause';
+      pauseBtn.disabled=false; stopBtn.disabled=false;
+      intv=setInterval(tick,1000);
+    }
+
+    function pause(){
+      if(!rec) return; paused = !paused;
+      if(paused){clearInterval(intv); recStatus.textContent='Paused'; recBtn.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4l8 8-8 8-1.41-1.41L16.17 12 10.59 6.41 12 4z"/></svg>Resume';}
+      else {recStatus.textContent='Recording'; intv=setInterval(tick,1000); recBtn.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M6 5h4v14H6V5zm8 0h4v14h-4V5z"/></svg>Pause';}
+    }
+
+    function stop(){ if(!rec) return; clearInterval(intv); rec=false; paused=false; recStatus.textContent='Saved'; recDot.classList.add('animate-pulse'); recBtn.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 1 0-6 0v5a3 3 0 0 0 3 3zm-7-3a7 7 0 0 0 14 0h-2a5 5 0 1 1-10 0H5zM4 13a8 8 0 1 0 16 0h-2a6 6 0 1 1-12 0H4z"/></svg>Start recording'; pauseBtn.disabled=true; stopBtn.disabled=true; }
+
+    recBtn.addEventListener('click', ()=>{ if(!rec) start(); else pause(); });
+    pauseBtn.addEventListener('click', pause);
+    stopBtn.addEventListener('click', stop);
+    document.addEventListener('keydown', (e)=>{
+      if(e.target.tagName==='INPUT' || e.target.tagName==='TEXTAREA') return;
+      if(e.code==='Space'){ e.preventDefault(); if(!rec) start(); else stop(); }
+      if(e.key==='b' || e.key==='B'){ appendLine('bookmark'); }
+      if(e.key==='h' || e.key==='H'){ appendLine('highlight'); }
+      if(e.key==='p' || e.key==='P'){ pause(); }
+    });
+    bookmarkBtn.addEventListener('click', ()=>appendLine('bookmark'));
+    highlightBtn.addEventListener('click', ()=>appendLine('highlight'));
+    document.getElementById('clearLive').addEventListener('click', ()=>{ liveFeed.innerHTML=''; });
+  </script>
+</body>
+</html>

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Page 15 – Help & Support | Voice Notes AI</title>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { brand: {50:'#eff6ff',100:'#dbeafe',200:'#bfdbfe',300:'#93c5fd',400:'#60a5fa',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',800:'#1e40af',900:'#1e3a8a'} },
+          boxShadow: { soft: '0 10px 30px -10px rgba(0,0,0,0.15)'}
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    html { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial; }
+    .scroll-slim { scrollbar-width: thin; }
+    .scroll-slim::-webkit-scrollbar { height: 8px; width: 8px; }
+    .scroll-slim::-webkit-scrollbar-thumb { background: rgba(30,64,175,.35); border-radius: 8px; }
+    .kbd { padding: .1rem .35rem; border: 1px solid rgb(226 232 240); border-bottom-width:2px; border-radius:.375rem; background:white; font-size:.75rem }
+    .badge { font-size:.75rem; padding:.2rem .5rem; border:1px solid; border-radius:9999px; }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-brand-50/70 via-white to-brand-100/40 text-slate-800">
+  <div class="min-h-screen grid grid-cols-1 lg:grid-cols-[280px_1fr]">
+    <!-- Sidebar -->
+    <aside class="bg-white/80 backdrop-blur sticky top-0 h-full lg:h-screen border-r border-slate-200 shadow-soft hidden lg:flex flex-col">
+      <div class="px-5 pt-6 pb-4 flex items-center gap-3">
+        <div class="h-10 w-10 grid place-items-center rounded-xl bg-brand-600 text-white font-bold">VN</div>
+        <div>
+          <div class="text-sm uppercase tracking-wider text-brand-700 font-semibold">Voice Notes AI</div>
+          <div class="text-xs text-slate-500">Otter-like Transcription</div>
+        </div>
+      </div>
+      <nav class="mt-4 flex-1 overflow-y-auto scroll-slim">
+        <ul class="px-3 space-y-1 text-sm">
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="02-dashboard.html">Dashboard</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="03-record.html">Record</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="04-transcript.html">Transcript</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="05-search.html">Search</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="06-uploads.html">Uploads</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="07-settings.html">Settings</a></li>
+          <li class="pt-2"><div class="px-3 text-xs uppercase tracking-wide text-slate-400">More</div></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="08-billing.html">Billing</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="09-team.html">Team</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="10-calendar.html">Calendar</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="11-integrations.html">Integrations</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="12-bot.html">Meeting Bot</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="13-analytics.html">Analytics</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="14-admin.html">Admin</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-brand-50 text-brand-700 font-medium" href="15-help.html">Help</a></li>
+          <li class="pt-2"><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="01-auth.html">Sign in / out</a></li>
+        </ul>
+      </nav>
+      <div class="p-4 mt-auto">
+        <div class="rounded-xl bg-gradient-to-br from-brand-600 to-brand-800 text-white p-4">
+          <div class="text-sm opacity-90">Minutes used</div>
+          <div class="mt-1 flex items-end gap-2"><div class="text-2xl font-semibold">382</div><div class="text-xs opacity-80">/ 600</div></div>
+          <div class="mt-3 h-2 bg-white/20 rounded-full overflow-hidden"><div class="h-full w-[64%] bg-white/90"></div></div>
+          <a href="08-billing.html" class="mt-3 inline-flex items-center gap-2 text-xs font-medium underline">Upgrade plan →</a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="flex flex-col min-h-screen">
+      <!-- Topbar -->
+      <header class="sticky top-0 z-10 backdrop-blur bg-white/70 border-b border-slate-200">
+        <div class="px-4 lg:px-8 py-3 flex items-center gap-3">
+          <h1 class="text-lg md:text-xl font-semibold text-slate-900">Help & Support</h1>
+          <div class="ml-auto flex items-center gap-2 text-sm">
+            <button id="newTicketOpen" class="px-3 py-1.5 rounded-lg bg-brand-600 text-white">New ticket</button>
+            <a href="07-settings.html" class="inline-flex items-center gap-2 p-1.5 rounded-full border border-slate-200 hover:bg-brand-50"><img alt="avatar" src="https://i.pravatar.cc/40?img=5" class="h-8 w-8 rounded-full" /></a>
+          </div>
+        </div>
+      </header>
+
+      <!-- Content -->
+      <section class="flex-1 px-4 lg:px-8 py-6 space-y-6">
+        <!-- Search & quick links -->
+        <div class="rounded-2xl border border-slate-200 bg-white/80 shadow-soft p-4">
+          <div class="grid grid-cols-1 xl:grid-cols-[1fr_360px] gap-4">
+            <div>
+              <label class="block text-sm">
+                <span class="text-slate-600">Search docs & FAQs</span>
+                <div class="relative mt-1">
+                  <input id="docSearch" class="w-full rounded-xl border pl-10 pr-3 py-2" placeholder="Type a question (e.g., 'auto-join bot')"/>
+                  <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">🔎</span>
+                </div>
+              </label>
+              <div id="searchResults" class="mt-3 hidden text-sm">
+                <div class="text-slate-500">Results</div>
+                <ul class="mt-1 space-y-1" id="searchList"></ul>
+              </div>
+            </div>
+            <aside class="space-y-2 text-sm">
+              <div class="rounded-xl border bg-white p-3 flex items-center justify-between">
+                <div>
+                  <div class="font-medium">System status</div>
+                  <div class="text-xs text-slate-500">All systems operational</div>
+                </div>
+                <span class="badge bg-emerald-50 text-emerald-700 border-emerald-200">99.98% 30d</span>
+              </div>
+              <div class="rounded-xl border bg-white p-3">
+                <div class="font-medium">Contact us</div>
+                <div class="mt-1 text-sm space-x-2">
+                  <button id="copyEmail" class="px-3 py-1.5 rounded-lg border">support@voicenotes.ai</button>
+                  <button id="openChat" class="px-3 py-1.5 rounded-lg border">Live chat</button>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+
+        <!-- Guides & videos -->
+        <div class="grid grid-cols-1 xl:grid-cols-3 gap-4">
+          <div class="xl:col-span-2 rounded-2xl border border-slate-200 bg-white/80 shadow-soft p-4">
+            <div class="flex items-center justify-between">
+              <h2 class="font-semibold">Starter guides</h2>
+              <a href="#" class="text-sm underline">View all</a>
+            </div>
+            <div id="guides" class="mt-3 grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+              <a href="03-record.html" class="rounded-xl border bg-white p-3 hover:border-brand-300">
+                <div class="font-medium">Record & transcribe live</div>
+                <div class="text-xs text-slate-500">Mic setup, hotkeys, auto-save</div>
+              </a>
+              <a href="12-bot.html" class="rounded-xl border bg-white p-3 hover:border-brand-300">
+                <div class="font-medium">Meeting Bot auto-join</div>
+                <div class="text-xs text-slate-500">Calendar rules, consent, tips</div>
+              </a>
+              <a href="06-uploads.html" class="rounded-xl border bg-white p-3 hover:border-brand-300">
+                <div class="font-medium">Upload & batch process</div>
+                <div class="text-xs text-slate-500">Supported formats, limits</div>
+              </a>
+              <a href="11-integrations.html" class="rounded-xl border bg-white p-3 hover:border-brand-300">
+                <div class="font-medium">Connect Slack & Notion</div>
+                <div class="text-xs text-slate-500">Post summaries, map DBs</div>
+              </a>
+            </div>
+          </div>
+          <div class="rounded-2xl border border-slate-200 bg-white/80 shadow-soft p-4">
+            <h2 class="font-semibold">Video tutorials</h2>
+            <div class="mt-3 space-y-2">
+              <div class="rounded-xl border bg-white p-2">
+                <div class="aspect-video rounded-lg bg-slate-100 grid place-items-center">🎬</div>
+                <div class="p-2 text-sm">
+                  <div class="font-medium">From recording to summary</div>
+                  <div class="text-xs text-slate-500">3m overview</div>
+                </div>
+              </div>
+              <div class="rounded-xl border bg-white p-2">
+                <div class="aspect-video rounded-lg bg-slate-100 grid place-items-center">🎬</div>
+                <div class="p-2 text-sm">
+                  <div class="font-medium">Auto-join bot best practices</div>
+                  <div class="text-xs text-slate-500">4m walkthrough</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ & troubleshooting -->
+        <div class="grid grid-cols-1 xl:grid-cols-[1fr_360px] gap-6">
+          <section class="rounded-2xl border border-slate-200 bg-white/80 shadow-soft p-4">
+            <div class="flex items-center justify-between">
+              <h2 class="font-semibold">Frequently asked questions</h2>
+              <select id="faqFilter" class="rounded-lg border px-2 py-1 text-sm"><option value="all">All</option><option value="recording">Recording</option><option value="bot">Meeting Bot</option><option value="billing">Billing</option><option value="privacy">Privacy</option></select>
+            </div>
+            <div id="faq" class="mt-3 divide-y">
+              <!-- items injected -->
+            </div>
+          </section>
+
+          <aside class="space-y-4">
+            <div class="rounded-2xl border border-slate-200 bg-white/80 shadow-soft p-4">
+              <h3 class="font-semibold">Release notes</h3>
+              <div class="mt-2 space-y-2 text-sm" id="changelog">
+                <!-- changelog injected -->
+              </div>
+            </div>
+
+            <div class="rounded-2xl border border-slate-200 bg-white/80 shadow-soft p-4">
+              <h3 class="font-semibold">Keyboard shortcuts</h3>
+              <table class="mt-2 w-full text-xs">
+                <tbody>
+                  <tr><td class="py-1 text-slate-600">Start/Stop recording</td><td class="py-1 text-right"><span class="kbd">R</span></td></tr>
+                  <tr><td class="py-1 text-slate-600">Toggle pause</td><td class="py-1 text-right"><span class="kbd">P</span></td></tr>
+                  <tr><td class="py-1 text-slate-600">Search</td><td class="py-1 text-right"><span class="kbd">/</span></td></tr>
+                  <tr><td class="py-1 text-slate-600">Add marker</td><td class="py-1 text-right"><span class="kbd">M</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="rounded-2xl border border-slate-200 bg-white/80 shadow-soft p-4">
+              <h3 class="font-semibold">Community</h3>
+              <ul class="mt-2 text-sm space-y-1">
+                <li><a class="underline" href="#">Forum</a></li>
+                <li><a class="underline" href="#">Discord</a></li>
+                <li><a class="underline" href="#">Twitter</a></li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+
+        <!-- Submit a ticket & chat -->
+        <div class="grid grid-cols-1 xl:grid-cols-[1fr_360px] gap-6">
+          <section class="rounded-2xl border border-slate-200 bg-white/80 shadow-soft p-4">
+            <div class="flex items-center justify-between"><h2 class="font-semibold">Submit a ticket</h2><span class="text-xs text-slate-500">Avg. response: &lt; 24h</span></div>
+            <div class="mt-3 grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+              <label class="block"><span class="text-slate-600">Subject</span><input id="tSub" class="mt-1 w-full rounded-lg border px-3 py-2" placeholder="Describe your issue"/></label>
+              <label class="block"><span class="text-slate-600">Category</span><select id="tCat" class="mt-1 w-full rounded-lg border px-3 py-2"><option>Bug</option><option>Billing</option><option>Feature request</option><option>Other</option></select></label>
+              <label class="block md:col-span-2"><span class="text-slate-600">Details</span><textarea id="tBody" rows="4" class="mt-1 w-full rounded-lg border px-3 py-2" placeholder="Steps to reproduce, expected vs actual…"></textarea></label>
+              <div class="md:col-span-2 flex items-center justify-between">
+                <label class="flex items-center gap-2"><input id="tIncludeLogs" type="checkbox" checked> Include diagnostic logs</label>
+                <div class="space-x-2"><button id="tAttach" class="px-3 py-1.5 rounded-lg border">Attach file</button><input id="tFile" type="file" class="hidden"></div>
+              </div>
+              <div class="md:col-span-2 flex items-center gap-2">
+                <button id="tSend" class="px-4 py-2 rounded-xl bg-brand-600 text-white">Send</button>
+                <button id="tDraft" class="px-4 py-2 rounded-xl border">Save draft</button>
+              </div>
+            </div>
+          </section>
+
+          <aside class="rounded-2xl border border-slate-200 bg-white/80 shadow-soft p-4">
+            <div class="flex items-center justify-between"><h3 class="font-semibold">Live chat</h3><span class="text-xs text-slate-500">Mon–Fri</span></div>
+            <div id="chatBox" class="mt-2 h-64 overflow-y-auto scroll-slim rounded-xl border bg-white p-3 text-sm space-y-2">
+              <div class="flex items-end gap-2"><div class="rounded-xl bg-slate-100 px-3 py-2">Hi! How can we help?</div></div>
+            </div>
+            <div class="mt-2 flex items-center gap-2">
+              <input id="chatInput" class="flex-1 rounded-lg border px-3 py-2 text-sm" placeholder="Type a message"/>
+              <button id="chatSend" class="px-3 py-1.5 rounded-lg bg-brand-600 text-white">Send</button>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <footer class="px-4 lg:px-8 py-6 text-xs text-slate-500">
+        <div class="flex flex-col sm:flex-row gap-2 sm:items-center sm:justify-between">
+          <div>© 2025 Voice Notes AI</div>
+          <div class="flex items-center gap-3">
+            <a href="#" class="hover:underline">Docs</a>
+            <a href="#" class="hover:underline">Privacy</a>
+            <a href="#" class="hover:underline">Terms</a>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <!-- New Ticket Modal -->
+  <div id="ticketModal" class="hidden fixed inset-0 z-20 grid place-items-center bg-black/30 p-4">
+    <div class="w-full max-w-md rounded-2xl bg-white shadow-soft border p-4">
+      <div class="flex items-center justify-between"><h3 class="font-semibold">New support ticket</h3><button id="tmClose" class="p-2 rounded-lg hover:bg-slate-100">✕</button></div>
+      <div class="mt-3 text-sm space-y-3">
+        <label class="block"><span class="text-slate-600">Subject</span><input id="tmSub" class="mt-1 w-full rounded-lg border px-3 py-2"/></label>
+        <label class="block"><span class="text-slate-600">Description</span><textarea id="tmBody" rows="3" class="mt-1 w-full rounded-lg border px-3 py-2"></textarea></label>
+      </div>
+      <div class="mt-4 flex items-center gap-2"><button id="tmSend" class="px-4 py-2 rounded-xl bg-brand-600 text-white">Create</button><button id="tmCancel" class="px-4 py-2 rounded-xl border">Cancel</button></div>
+    </div>
+  </div>
+
+  <!-- Minimal JS: docs search, FAQ, tickets, chat, changelog -->
+  <script>
+    const $ = (s, r=document) => r.querySelector(s);
+    const $$ = (s, r=document) => [...r.querySelectorAll(s)];
+
+    // --- Docs/FAQ index (demo) ---
+    const INDEX = [
+      {title:'How to record meetings', href:'03-record.html', tag:'recording'},
+      {title:'Auto-join bot rules', href:'12-bot.html', tag:'bot'},
+      {title:'Uploading audio/video', href:'06-uploads.html', tag:'recording'},
+      {title:'Integrate with Slack', href:'11-integrations.html', tag:'integrations'},
+      {title:'Billing & invoices', href:'08-billing.html', tag:'billing'},
+      {title:'Privacy & data control', href:'14-admin.html', tag:'privacy'},
+    ];
+
+    // --- Search ---
+    const sInput = $('#docSearch');
+    const sWrap = $('#searchResults');
+    const sList = $('#searchList');
+    sInput.addEventListener('input', ()=>{
+      const q = sInput.value.trim().toLowerCase();
+      if(!q){ sWrap.classList.add('hidden'); return; }
+      const hits = INDEX.filter(i=> i.title.toLowerCase().includes(q));
+      sList.innerHTML = hits.map(h=> `<li><a class='underline' href='${h.href}'>${h.title}</a> <span class='text-xs text-slate-500'>#${h.tag}</span></li>`).join('');
+      sWrap.classList.toggle('hidden', hits.length===0);
+    });
+
+    // --- FAQ items ---
+    const FAQ = [
+      {cat:'recording', q:'Why is my mic not detected?', a:'Check browser permissions (mic), then select the device in Record → Input. Try refreshing. On macOS, also allow the browser in System Settings → Privacy & Security → Microphone.'},
+      {cat:'bot', q:'Bot didn’t join my meeting', a:'Ensure the event has a supported Zoom/Meet/Teams link, the host allows external participants, and your auto-join rules include its title/host.'},
+      {cat:'billing', q:'How do I download invoices?', a:'Go to Billing → Invoices and click Download. If your company needs a GST invoice, set your billing address and GSTIN first.'},
+      {cat:'privacy', q:'Can we keep data in India only?', a:'Yes. In Admin → Organization, set Data region to “Asia (India)” and enable Data residency lock.'},
+      {cat:'recording', q:'What formats can I upload?', a:'MP3, WAV, M4A, MP4, MKV, WebM. Max 2GB per file on Pro.'},
+      {cat:'bot', q:'How to show a consent banner?', a:'Enable “Consent & safety → Show consent banner” in Meeting Bot.'}
+    ];
+
+    function renderFAQ(cat='all'){
+      const box = $('#faq'); box.innerHTML='';
+      FAQ.filter(f=> cat==='all' || f.cat===cat).forEach((f,i)=>{
+        const row = document.createElement('div');
+        row.className = 'py-2';
+        row.innerHTML = `<details class='rounded-xl border bg-white p-3'>
+          <summary class='cursor-pointer font-medium'>${f.q} <span class='ml-2 text-xs text-slate-500'>#${f.cat}</span></summary>
+          <div class='mt-2 text-sm text-slate-700'>${f.a}</div>
+        </details>`;
+        box.appendChild(row);
+      });
+    }
+    renderFAQ();
+    $('#faqFilter').addEventListener('change', e=> renderFAQ(e.target.value));
+
+    // --- Changelog (demo data) ---
+    const CHANGES = [
+      {v:'v1.12.0', d:'2025-08-20', items:['Calendar week/day views','Bot: domain allowlist','Analytics heatmap','Bugfix: Safari mic prompt']},
+      {v:'v1.11.0', d:'2025-07-30', items:['Integrations page','Slack action items','SSO/SCIM basics']},
+      {v:'v1.10.2', d:'2025-07-10', items:['Hotfix: billing GST on INR','Improved diarization']},
+    ];
+    const clog = $('#changelog');
+    CHANGES.forEach(c=>{
+      const card = document.createElement('div');
+      card.className = 'rounded-xl border bg-white p-3';
+      card.innerHTML = `<div class='flex items-center justify-between'><div class='font-medium'>${c.v}</div><div class='text-xs text-slate-500'>${c.d}</div></div><ul class='mt-2 list-disc pl-5 text-sm'>${c.items.map(i=>`<li>${i}</li>`).join('')}</ul>`;
+      clog.appendChild(card);
+    });
+
+    // --- Ticket modal ---
+    const tModal = $('#ticketModal');
+    $('#newTicketOpen').addEventListener('click', ()=> tModal.classList.remove('hidden'));
+    $('#tmClose').addEventListener('click', ()=> tModal.classList.add('hidden'));
+    $('#tmCancel').addEventListener('click', ()=> tModal.classList.add('hidden'));
+    $('#tmSend').addEventListener('click', ()=>{
+      const s = $('#tmSub').value.trim(); const b = $('#tmBody').value.trim();
+      if(!s || !b) return alert('Please fill subject and description');
+      tModal.classList.add('hidden'); alert('Ticket created! (#'+ Math.random().toString(36).slice(2,7).toUpperCase()+')');
+    });
+
+    // --- Submit ticket form ---
+    $('#tAttach').addEventListener('click', ()=> $('#tFile').click());
+    $('#tSend').addEventListener('click', ()=>{
+      const sub = $('#tSub').value.trim(); const body = $('#tBody').value.trim(); if(!sub||!body){ alert('Subject and details required'); return; }
+      alert('Ticket submitted. We\'ll email you shortly.');
+      $('#tSub').value=''; $('#tBody').value='';
+    });
+    $('#tDraft').addEventListener('click', ()=> alert('Draft saved'));
+
+    // --- Chat box ---
+    function pushChat(text, me=false){
+      const row = document.createElement('div');
+      row.className = 'flex items-end gap-2 ' + (me?'justify-end':'');
+      row.innerHTML = me ? `<div class='rounded-xl bg-brand-600 text-white px-3 py-2'>${text}</div>` : `<div class='rounded-xl bg-slate-100 px-3 py-2'>${text}</div>`;
+      $('#chatBox').appendChild(row); $('#chatBox').scrollTop = $('#chatBox').scrollHeight;
+    }
+    $('#chatSend').addEventListener('click', ()=>{
+      const v = $('#chatInput').value.trim(); if(!v) return; pushChat(v, true); $('#chatInput').value='';
+      setTimeout(()=> pushChat('Thanks! A human will join shortly.'), 600);
+    });
+    $('#openChat').addEventListener('click', ()=> pushChat('Starting a new chat…'));
+
+    // --- Contact copy ---
+    $('#copyEmail').addEventListener('click', ()=>{ navigator.clipboard.writeText('support@voicenotes.ai'); alert('Email copied'); });
+  </script>
+</body>
+</html>

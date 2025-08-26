@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Page 12 – Meeting Bot | Voice Notes AI</title>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { brand: {50:'#eff6ff',100:'#dbeafe',200:'#bfdbfe',300:'#93c5fd',400:'#60a5fa',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',800:'#1e40af',900:'#1e3a8a'} },
+          boxShadow: { soft: '0 10px 30px -10px rgba(0,0,0,0.15)' }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    html { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial; }
+    .scroll-slim { scrollbar-width: thin; }
+    .scroll-slim::-webkit-scrollbar { height: 8px; width: 8px; }
+    .scroll-slim::-webkit-scrollbar-thumb { background: rgba(30,64,175,.35); border-radius: 8px; }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-brand-50/70 via-white to-brand-100/40 text-slate-800">
+  <div class="min-h-screen grid grid-cols-1 lg:grid-cols-[280px_1fr]">
+    <!-- Sidebar -->
+    <aside class="bg-white/80 backdrop-blur sticky top-0 h-full lg:h-screen border-r border-slate-200 shadow-soft hidden lg:flex flex-col">
+      <div class="px-5 pt-6 pb-4 flex items-center gap-3">
+        <div class="h-10 w-10 grid place-items-center rounded-xl bg-brand-600 text-white font-bold">VN</div>
+        <div>
+          <div class="text-sm uppercase tracking-wider text-brand-700 font-semibold">Voice Notes AI</div>
+          <div class="text-xs text-slate-500">Otter-like Transcription</div>
+        </div>
+      </div>
+      <nav class="mt-4 flex-1 overflow-y-auto scroll-slim">
+        <ul class="px-3 space-y-1 text-sm">
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="02-dashboard.html">Dashboard</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="03-record.html">Record</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="04-transcript.html">Transcript</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="05-search.html">Search</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="06-uploads.html">Uploads</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="07-settings.html">Settings</a></li>
+          <li class="pt-2"><div class="px-3 text-xs uppercase tracking-wide text-slate-400">More</div></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="08-billing.html">Billing</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="09-team.html">Team</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="10-calendar.html">Calendar</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="11-integrations.html">Integrations</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-brand-50 text-brand-700 font-medium" href="12-bot.html">Meeting Bot</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="13-analytics.html">Analytics</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="14-admin.html">Admin</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="15-help.html">Help</a></li>
+          <li class="pt-2"><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="01-auth.html">Sign in / out</a></li>
+        </ul>
+      </nav>
+      <div class="p-4 mt-auto">
+        <div class="rounded-xl bg-gradient-to-br from-brand-600 to-brand-800 text-white p-4">
+          <div class="text-sm opacity-90">Minutes used</div>
+          <div class="mt-1 flex items-end gap-2"><div class="text-2xl font-semibold">382</div><div class="text-xs opacity-80">/ 600</div></div>
+          <div class="mt-3 h-2 bg-white/20 rounded-full overflow-hidden"><div class="h-full w-[64%] bg-white/90"></div></div>
+          <a href="08-billing.html" class="mt-3 inline-flex items-center gap-2 text-xs font-medium underline">Upgrade plan →</a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="flex flex-col min-h-screen">
+      <!-- Topbar -->
+      <header class="sticky top-0 z-10 backdrop-blur bg-white/70 border-b border-slate-200">
+        <div class="px-4 lg:px-8 py-3 flex items-center gap-3">
+          <h1 class="text-lg md:text-xl font-semibold text-slate-900">Meeting Bot</h1>
+          <div class="ml-auto flex items-center gap-2 text-sm">
+            <button id="testJoin" class="px-3 py-1.5 rounded-lg bg-brand-600 text-white shadow-soft hover:bg-brand-700">Test bot now</button>
+            <a href="11-integrations.html" class="px-3 py-1.5 rounded-lg border">Manage integrations</a>
+            <a href="07-settings.html" class="inline-flex items-center gap-2 p-1.5 rounded-full border border-slate-200 hover:bg-brand-50"><img alt="avatar" src="https://i.pravatar.cc/40?img=5" class="h-8 w-8 rounded-full" /></a>
+          </div>
+        </div>
+      </header>
+
+      <!-- Content -->
+      <section class="flex-1 px-4 lg:px-8 py-6 space-y-6">
+        <!-- Status & checklist -->
+        <div class="grid grid-cols-1 xl:grid-cols-3 gap-4">
+          <div class="xl:col-span-2 rounded-2xl border border-slate-200 bg-white/80 shadow-soft p-4">
+            <div class="flex items-center justify-between">
+              <h2 class="font-semibold">Bot status</h2>
+              <label class="inline-flex items-center cursor-pointer select-none">
+                <input id="botEnabled" type="checkbox" class="peer sr-only" checked>
+                <span class="w-12 h-7 bg-slate-200 rounded-full peer-checked:bg-brand-600 relative transition"><span class="absolute top-1 left-1 h-5 w-5 bg-white rounded-full shadow transition peer-checked:translate-x-5"></span></span>
+                <span class="ml-2 text-sm text-slate-600" id="botLabel">Enabled</span>
+              </label>
+            </div>
+            <div class="mt-3 grid grid-cols-1 md:grid-cols-3 gap-3 text-sm">
+              <div class="rounded-xl border bg-white p-3">
+                <div class="text-slate-500">Connected apps</div>
+                <div class="mt-1 font-semibold">Zoom, Google Meet</div>
+                <a href="11-integrations.html" class="text-xs underline">Edit</a>
+              </div>
+              <div class="rounded-xl border bg-white p-3">
+                <div class="text-slate-500">Auto-join</div>
+                <div class="mt-1 font-semibold">On · calendar & keywords</div>
+                <a href="#rules" class="text-xs underline">Manage rules</a>
+              </div>
+              <div class="rounded-xl border bg-white p-3">
+                <div class="text-slate-500">Compliance</div>
+                <div class="mt-1 font-semibold">Consent banner + chime</div>
+                <a href="#compliance" class="text-xs underline">Configure</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-slate-200 bg-white/80 shadow-soft p-4">
+            <h3 class="font-semibold">Getting started</h3>
+            <ol class="mt-2 list-decimal pl-5 text-sm space-y-1">
+              <li>Connect Zoom/Meet/Teams in <a class="underline" href="11-integrations.html">Integrations</a>.</li>
+              <li>Enable auto-join rules below.</li>
+              <li>Invite <code class="px-1 bg-slate-100 rounded">bot@voicenotes.ai</code> if needed.</li>
+              <li>Customize consent banner & intro.</li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- Rules & identity -->
+        <div class="grid grid-cols-1 xl:grid-cols-[1fr_360px] gap-6" id="rules">
+          <!-- Left: rules -->
+          <section class="rounded-2xl border border-slate-200 bg-white/80 shadow-soft p-4">
+            <div class="flex items-center justify-between">
+              <h3 class="font-semibold">Auto-join rules</h3>
+              <div class="text-xs text-slate-500">IST timezone</div>
+            </div>
+            <div class="mt-3 grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+              <div class="rounded-xl border bg-white p-4 space-y-3">
+                <div class="font-medium">Calendars</div>
+                <label class="flex items-center justify-between"><span>Join events on Google Calendar</span><input type="checkbox" class="rCal" data-key="gcal" checked></label>
+                <label class="flex items-center justify-between"><span>Join events on Outlook</span><input type="checkbox" class="rCal" data-key="outlook"></label>
+                <label class="flex items-center justify-between"><span>Only join when I'm attending</span><input type="checkbox" id="rAttending" checked></label>
+                <label class="flex items-center justify-between"><span>Skip if marked “Focus”</span><input type="checkbox" id="rSkipFocus"></label>
+              </div>
+              <div class="rounded-xl border bg-white p-4 space-y-3">
+                <div class="font-medium">Meeting links</div>
+                <label class="flex items-center justify-between"><span>Zoom</span><input type="checkbox" class="rPlat" data-key="zoom" checked></label>
+                <label class="flex items-center justify-between"><span>Google Meet</span><input type="checkbox" class="rPlat" data-key="meet" checked></label>
+                <label class="flex items-center justify-between"><span>Microsoft Teams</span><input type="checkbox" class="rPlat" data-key="teams"></label>
+                <label class="flex items-center justify-between"><span>Skype</span><input type="checkbox" class="rPlat" data-key="skype"></label>
+              </div>
+              <div class="rounded-xl border bg-white p-4 space-y-3 md:col-span-2">
+                <div class="font-medium">Keywords & participants</div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  <label class="block"><span class="text-slate-600">Join if title/agenda contains</span><input id="rKeywords" class="mt-1 w-full rounded-lg border px-3 py-2" placeholder="standup, planning, interview" value="standup, planning, demo"></label>
+                  <label class="block"><span class="text-slate-600">Do NOT join if contains</span><input id="rBlock" class="mt-1 w-full rounded-lg border px-3 py-2" placeholder="1:1, confidential" value="1:1, confidential"></label>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mt-2">
+                  <label class="block"><span class="text-slate-600">Always join when host is</span><input id="rHosts" class="mt-1 w-full rounded-lg border px-3 py-2" placeholder="alice@company.com, bob@company.com"></label>
+                  <label class="block"><span class="text-slate-600">Do not join when attendees include</span><input id="rDeny" class="mt-1 w-full rounded-lg border px-3 py-2" placeholder="legal@, finance@"></label>
+                  <label class="block"><span class="text-slate-600">Earliest join before start</span><select id="rEarly" class="mt-1 w-full rounded-lg border px-2 py-2"><option>0 min</option><option selected>2 min</option><option>5 min</option><option>10 min</option></select></label>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Right: identity & safety -->
+          <aside class="space-y-4">
+            <div class="rounded-2xl border border-slate-200 bg-white/80 shadow-soft p-4">
+              <div class="font-semibold">Bot identity</div>
+              <div class="mt-3 flex items-center gap-3">
+                <img id="botAvatar" class="h-12 w-12 rounded-full" src="https://i.pravatar.cc/80?u=bot" alt="avatar"/>
+                <div class="flex-1">
+                  <label class="block text-sm"><span class="text-slate-600">Display name</span><input id="botName" class="mt-1 w-full rounded-lg border px-3 py-2" value="Voice Notes Bot"></label>
+                </div>
+              </div>
+              <label class="block text-sm mt-3"><span class="text-slate-600">Entrance message</span><textarea id="botIntro" class="mt-1 w-full rounded-lg border px-3 py-2" rows="3">Hi everyone! I'm Voice Notes Bot, here to transcribe and summarize with your permission.</textarea></label>
+              <div class="mt-3 flex items-center gap-2 text-sm">
+                <button id="playChime" class="px-3 py-1.5 rounded-lg border">Play chime</button>
+                <button id="copyIntro" class="px-3 py-1.5 rounded-lg border">Copy intro</button>
+              </div>
+            </div>
+
+            <div id="compliance" class="rounded-2xl border border-slate-200 bg-white/80 shadow-soft p-4">
+              <div class="font-semibold">Consent & safety</div>
+              <div class="mt-3 space-y-3 text-sm">
+                <label class="flex items-center justify-between"><span>Show consent banner on join</span><input id="cBanner" type="checkbox" checked></label>
+                <label class="flex items-center justify-between"><span>DM host for approval</span><input id="cDMHost" type="checkbox" checked></label>
+                <label class="flex items-center justify-between"><span>Leave if denied or no speech 5m</span><input id="cTimeout" type="checkbox" checked></label>
+                <label class="block"><span class="text-slate-600">Allowed domains</span><input id="cDomains" class="mt-1 w-full rounded-lg border px-3 py-2" placeholder="company.com; partner.com" value="company.com"></label>
+                <label class="block"><span class="text-slate-600">Do-not-record rooms</span><input id="cRooms" class="mt-1 w-full rounded-lg border px-3 py-2" placeholder="#legal, #hr"></label>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <!-- Upcoming & recent activity -->
+        <div class="grid grid-cols-1 xl:grid-cols-3 gap-4">
+          <section class="xl:col-span-2 rounded-2xl border border-slate-200 bg-white/80 shadow-soft">
+            <div class="px-4 py-3 border-b flex items-center justify-between">
+              <h3 class="font-semibold">Upcoming auto-joins</h3>
+              <a href="10-calendar.html" class="text-sm underline">Open Calendar</a>
+            </div>
+            <div id="upcoming" class="p-4 grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+              <!-- cards injected -->
+            </div>
+          </section>
+
+          <aside class="rounded-2xl border border-slate-200 bg-white/80 shadow-soft">
+            <div class="px-4 py-3 border-b flex items-center justify-between">
+              <h3 class="font-semibold">Recent activity</h3>
+              <select id="actFilter" class="rounded-lg border px-2 py-1 text-sm"><option>All</option><option>Joined</option><option>Skipped</option><option>Error</option></select>
+            </div>
+            <div id="activity" class="p-3 space-y-2 text-sm">
+              <!-- items injected -->
+            </div>
+          </aside>
+        </div>
+
+        <!-- Troubleshooting -->
+        <div class="rounded-2xl border border-slate-200 bg-white/80 shadow-soft p-4">
+          <div class="flex items-center justify-between flex-wrap gap-2">
+            <h3 class="font-semibold">Troubleshooting</h3>
+            <div class="text-xs text-slate-500">Bot email: <code>bot@voicenotes.ai</code></div>
+          </div>
+          <div class="mt-3 grid grid-cols-1 md:grid-cols-3 gap-3 text-sm">
+            <div class="rounded-xl border p-3 bg-white">
+              <div class="font-medium">Bot didn’t join?</div>
+              <ul class="mt-1 list-disc pl-5 text-slate-700 space-y-1">
+                <li>Check calendar invite includes a supported meeting link.</li>
+                <li>Ensure host allows external participants.</li>
+                <li>Confirm keywords & domain rules.</li>
+              </ul>
+            </div>
+            <div class="rounded-xl border p-3 bg-white">
+              <div class="font-medium">Audio issues</div>
+              <ul class="mt-1 list-disc pl-5 text-slate-700 space-y-1">
+                <li>Make sure “Join with audio” is allowed for guests.</li>
+                <li>Verify no mute-on-join policy.</li>
+                <li>Try a <button id="audioTest" class="underline">loopback test</button>.</li>
+              </ul>
+            </div>
+            <div class="rounded-xl border p-3 bg-white">
+              <div class="font-medium">Compliance</div>
+              <ul class="mt-1 list-disc pl-5 text-slate-700 space-y-1">
+                <li>Always announce recording and get consent.</li>
+                <li>Use banner + DM host options above.</li>
+                <li>Disable auto-join for sensitive meetings.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="px-4 lg:px-8 py-6 text-xs text-slate-500">
+        <div class="flex flex-col sm:flex-row gap-2 sm:items-center sm:justify-between">
+          <div>© 2025 Voice Notes AI</div>
+          <div class="flex items-center gap-3">
+            <a href="15-help.html" class="hover:underline">Help</a>
+            <a href="#" class="hover:underline">Privacy</a>
+            <a href="#" class="hover:underline">Terms</a>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Minimal JS: fake upcoming, activity log, toggles -->
+  <script>
+    // Sample upcoming from calendar (IST)
+    const upcomingData = [
+      { id:'u1', when:'2025-08-25 15:00', title:'Interview – S. Rao', plat:'meet', link:'https://meet.google.com/abc-defg', willJoin:true },
+      { id:'u2', when:'2025-08-27 11:30', title:'Release Demo', plat:'zoom', link:'https://zoom.us/j/123456', willJoin:true },
+      { id:'u3', when:'2025-08-28 09:00', title:'Focus block', plat:'calendar', link:'', willJoin:false },
+    ];
+    const platBadge = p => ({zoom:'bg-brand-50 text-brand-700 border-brand-200',meet:'bg-emerald-50 text-emerald-700 border-emerald-200',teams:'bg-amber-50 text-amber-700 border-amber-200',calendar:'bg-slate-50 text-slate-700 border-slate-200'})[p]||'bg-slate-50 text-slate-700 border-slate-200';
+
+    const upEl = document.getElementById('upcoming');
+    function renderUpcoming(){
+      upEl.innerHTML = '';
+      upcomingData.forEach(ev=>{
+        const card = document.createElement('div');
+        card.className = 'rounded-xl border bg-white p-3 flex flex-col gap-2';
+        card.innerHTML = `
+          <div class="flex items-center justify-between">
+            <div class="font-medium">${ev.title}</div>
+            <span class="text-xs px-2 py-1 rounded-full border ${platBadge(ev.plat)}">${ev.plat}</span>
+          </div>
+          <div class="text-xs text-slate-500">${ev.when} IST</div>
+          <div class="flex items-center gap-2 text-sm">
+            <label class="inline-flex items-center gap-2"><input type="checkbox" ${ev.willJoin?'checked':''} data-id="${ev.id}" class="willJoin"> Auto-join</label>
+            ${ev.link?`<a class="px-3 py-1.5 rounded-lg border" href="${ev.link}">Open link</a>`:''}
+          </div>`;
+        upEl.appendChild(card);
+      });
+    }
+
+    // Activity log
+    const activity = [];
+    const actEl = document.getElementById('activity');
+    function addAct(kind, text){
+      const row = { ts: new Date(), kind, text };
+      activity.unshift(row); renderAct();
+    }
+    function renderAct(){
+      const filter = document.getElementById('actFilter').value.toLowerCase();
+      actEl.innerHTML = activity.filter(a=> filter==='all' || a.kind===filter).map(a=>`<div class="rounded-lg border p-2 bg-white flex items-center justify-between"><div><div class="font-medium">${a.text}</div><div class="text-xs text-slate-500">${a.ts.toLocaleString()}</div></div><span class="text-xs px-2 py-1 rounded-full border ${a.kind==='joined'?'bg-emerald-50 text-emerald-700 border-emerald-200': a.kind==='error'?'bg-rose-50 text-rose-700 border-rose-200':'bg-slate-50 text-slate-700 border-slate-200'}">${a.kind}</span></div>`).join('');
+    }
+
+    document.getElementById('actFilter').addEventListener('change', renderAct);
+
+    // Toggles and buttons
+    document.getElementById('botEnabled').addEventListener('change', (e)=>{
+      document.getElementById('botLabel').textContent = e.target.checked ? 'Enabled' : 'Disabled';
+      addAct('info', `Bot ${e.target.checked? 'enabled' : 'disabled'}`);
+    });
+
+    document.getElementById('testJoin').addEventListener('click', ()=>{
+      addAct('joined', 'Test room joined · summary will appear on transcript');
+      alert('Bot test: joined a sandbox meeting.');
+    });
+
+    document.getElementById('copyIntro').addEventListener('click', ()=>{
+      const t = document.getElementById('botIntro').value; navigator.clipboard.writeText(t); alert('Intro copied');
+    });
+    document.getElementById('playChime').addEventListener('click', ()=>{
+      const a = new Audio('https://upload.wikimedia.org/wikipedia/commons/8/8e/Windows_95_Startup.ogg'); a.play();
+    });
+
+    document.getElementById('audioTest').addEventListener('click', ()=> alert('Loopback OK (simulated)'));
+
+    document.getElementById('upcoming').addEventListener('change', (e)=>{
+      if(e.target.classList.contains('willJoin')){
+        const id = e.target.dataset.id; const ev = upcomingData.find(x=>x.id===id); if(ev){ ev.willJoin = e.target.checked; addAct('info', `${ev.title}: auto-join ${ev.willJoin?'on':'off'}`); }
+      }
+    });
+
+    // init
+    renderUpcoming(); addAct('info', 'Bot enabled');
+  </script>
+</body>
+</html>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Page 5 – Search | Voice Notes AI</title>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { brand: {50:'#eff6ff',100:'#dbeafe',200:'#bfdbfe',300:'#93c5fd',400:'#60a5fa',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',800:'#1e40af',900:'#1e3a8a'} },
+          boxShadow: { soft: '0 10px 30px -10px rgba(0,0,0,0.15)' }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    html { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial; }
+    .scroll-slim { scrollbar-width: thin; }
+    .scroll-slim::-webkit-scrollbar { height: 8px; width: 8px; }
+    .scroll-slim::-webkit-scrollbar-thumb { background: rgba(30,64,175,.35); border-radius: 8px; }
+    mark { background-color: #bfdbfe; color: #1e3a8a; }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-brand-50/70 via-white to-brand-100/40 text-slate-800">
+  <div class="min-h-screen grid grid-cols-1 lg:grid-cols-[280px_1fr]">
+    <!-- Sidebar -->
+    <aside class="bg-white/80 backdrop-blur sticky top-0 h-full lg:h-screen border-r border-slate-200 shadow-soft hidden lg:flex flex-col">
+      <div class="px-5 pt-6 pb-4 flex items-center gap-3">
+        <div class="h-10 w-10 grid place-items-center rounded-xl bg-brand-600 text-white font-bold">VN</div>
+        <div>
+          <div class="text-sm uppercase tracking-wider text-brand-700 font-semibold">Voice Notes AI</div>
+          <div class="text-xs text-slate-500">Otter-like Transcription</div>
+        </div>
+      </div>
+      <nav class="mt-4 flex-1 overflow-y-auto scroll-slim">
+        <ul class="px-3 space-y-1 text-sm">
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="02-dashboard.html">Dashboard</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="03-record.html">Record</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="04-transcript.html">Transcript</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-brand-50 text-brand-700 font-medium" href="05-search.html">Search</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="06-uploads.html">Uploads</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="07-settings.html">Settings</a></li>
+          <li class="pt-2"><div class="px-3 text-xs uppercase tracking-wide text-slate-400">More</div></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="08-billing.html">Billing</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="09-team.html">Team</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="10-calendar.html">Calendar</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="11-integrations.html">Integrations</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="12-bot.html">Meeting Bot</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="13-analytics.html">Analytics</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="14-admin.html">Admin</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="15-help.html">Help</a></li>
+          <li class="pt-2"><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="01-auth.html">Sign in / out</a></li>
+        </ul>
+      </nav>
+      <div class="p-4 mt-auto">
+        <div class="rounded-xl bg-gradient-to-br from-brand-600 to-brand-800 text-white p-4">
+          <div class="text-sm opacity-90">Minutes used</div>
+          <div class="mt-1 flex items-end gap-2"><div class="text-2xl font-semibold">382</div><div class="text-xs opacity-80">/ 600</div></div>
+          <div class="mt-3 h-2 bg-white/20 rounded-full overflow-hidden"><div class="h-full w-[64%] bg-white/90"></div></div>
+          <a href="08-billing.html" class="mt-3 inline-flex items-center gap-2 text-xs font-medium underline">Upgrade plan →</a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="flex flex-col min-h-screen">
+      <!-- Topbar -->
+      <header class="sticky top-0 z-10 backdrop-blur bg-white/70 border-b border-slate-200">
+        <div class="px-4 lg:px-8 py-3 flex items-center gap-3">
+          <h1 class="text-lg md:text-xl font-semibold text-slate-900">Search</h1>
+          <div class="ml-auto flex items-center gap-2">
+            <a href="03-record.html" class="hidden sm:inline-flex items-center gap-2 rounded-xl bg-brand-600 text-white px-3 py-1.5 text-sm shadow-soft hover:bg-brand-700">New recording</a>
+            <a href="06-uploads.html" class="hidden sm:inline-flex items-center gap-2 rounded-xl border px-3 py-1.5 text-sm">Upload</a>
+            <a href="07-settings.html" class="inline-flex items-center gap-2 p-1.5 rounded-full border border-slate-200 hover:bg-brand-50"><img alt="avatar" src="https://i.pravatar.cc/40?img=5" class="h-8 w-8 rounded-full" /></a>
+          </div>
+        </div>
+      </header>
+
+      <!-- Content -->
+      <section class="flex-1 px-4 lg:px-8 py-6">
+        <!-- Global search bar -->
+        <div class="rounded-2xl border border-slate-200 bg-white/80 shadow-soft p-3">
+          <form id="searchForm" class="flex flex-wrap items-center gap-2">
+            <div class="relative flex-1 min-w-[260px]">
+              <input id="q" type="text" class="w-full rounded-xl border border-slate-200 bg-white/80 pl-10 pr-28 py-2.5 placeholder-slate-400 focus:outline-none focus:ring-4 focus:ring-brand-200" placeholder="Search transcripts, speakers, keywords…" value="sprint blockers" />
+              <span class="absolute inset-y-0 left-3 grid place-items-center text-slate-400"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M10 2a8 8 0 1 0 4.9 14.32l4.39 4.39 1.41-1.41-4.39-4.39A8 8 0 0 0 10 2zm0 2a6 6 0 1 1 0 12 6 6 0 0 1 0-12z"/></svg></span>
+              <div class="absolute right-2 top-1/2 -translate-y-1/2 flex items-center gap-2">
+                <button type="button" id="saveSearch" class="px-3 py-1.5 rounded-lg border text-sm">Save</button>
+                <button type="submit" class="px-3 py-1.5 rounded-lg bg-brand-600 text-white text-sm">Search</button>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 text-sm">
+              <label class="inline-flex items-center gap-2"><input type="checkbox" checked> Fuzzy</label>
+              <label class="inline-flex items-center gap-2"><input type="checkbox"> Exact phrase</label>
+            </div>
+          </form>
+        </div>
+
+        <!-- Layout: Facets + Results + Preview -->
+        <div class="mt-4 grid grid-cols-1 xl:grid-cols-[280px_1fr_360px] gap-4">
+          <!-- Facets -->
+          <aside class="rounded-2xl border border-slate-200 bg-white/80 shadow-soft p-4 space-y-4">
+            <div>
+              <div class="text-xs uppercase text-slate-500">Date range</div>
+              <div class="mt-2 grid grid-cols-2 gap-2 text-sm">
+                <input id="from" type="date" class="rounded-lg border px-2 py-1" value="2025-08-01"/>
+                <input id="to" type="date" class="rounded-lg border px-2 py-1" value="2025-08-24"/>
+                <button id="applyDate" class="col-span-2 px-3 py-1.5 rounded-lg border">Apply</button>
+              </div>
+            </div>
+            <div>
+              <div class="text-xs uppercase text-slate-500">Speakers</div>
+              <div class="mt-2 space-y-1 text-sm">
+                <label class="flex items-center gap-2"><input type="checkbox" checked> Alice</label>
+                <label class="flex items-center gap-2"><input type="checkbox"> Bob</label>
+                <label class="flex items-center gap-2"><input type="checkbox"> Carol</label>
+                <label class="flex items-center gap-2"><input type="checkbox"> External guest</label>
+              </div>
+            </div>
+            <div>
+              <div class="text-xs uppercase text-slate-500">Tags</div>
+              <div class="mt-2 flex flex-wrap gap-2 text-sm">
+                <button class="px-2 py-1 rounded-full bg-brand-50 text-brand-700 border border-brand-200">release</button>
+                <button class="px-2 py-1 rounded-full bg-white border">blockers</button>
+                <button class="px-2 py-1 rounded-full bg-white border">estimates</button>
+                <button class="px-2 py-1 rounded-full bg-white border">action-items</button>
+              </div>
+            </div>
+            <div>
+              <div class="text-xs uppercase text-slate-500">Confidence</div>
+              <input type="range" min="50" max="100" value="80" class="w-full">
+              <div class="text-xs text-slate-500 mt-1">≥ 80%</div>
+            </div>
+            <div>
+              <div class="text-xs uppercase text-slate-500">Duration</div>
+              <select class="mt-1 w-full rounded-lg border px-2 py-1 text-sm">
+                <option>Any length</option>
+                <option>&lt; 10 min</option>
+                <option>10–30 min</option>
+                <option>30–60 min</option>
+                <option>&gt; 60 min</option>
+              </select>
+            </div>
+            <div>
+              <div class="text-xs uppercase text-slate-500">Shared</div>
+              <label class="flex items-center gap-2 mt-1 text-sm"><input type="checkbox"> Shared with me</label>
+              <label class="flex items-center gap-2 text-sm"><input type="checkbox"> Starred</label>
+            </div>
+            <div>
+              <button class="w-full px-3 py-2 rounded-xl border">Reset filters</button>
+            </div>
+          </aside>
+
+          <!-- Results -->
+          <section class="rounded-2xl border border-slate-200 bg-white/80 shadow-soft">
+            <div class="px-4 py-3 border-b flex flex-wrap items-center gap-3">
+              <div class="text-sm text-slate-600">Results for <span class="font-medium text-slate-900">“sprint blockers”</span></div>
+              <div class="ml-auto flex items-center gap-2 text-sm">
+                <label>Sort</label>
+                <select class="rounded-lg border px-2 py-1">
+                  <option>Relevance</option>
+                  <option>Newest</option>
+                  <option>Oldest</option>
+                  <option>Duration</option>
+                </select>
+                <label class="flex items-center gap-2"><input type="checkbox"> Group by meeting</label>
+              </div>
+            </div>
+            <div class="divide-y">
+              <!-- row 1 -->
+              <article class="p-4 hover:bg-brand-50/40 cursor-pointer" data-preview="mtg-240824">
+                <div class="flex items-start gap-3">
+                  <input type="checkbox" class="mt-1"/>
+                  <div class="flex-1 min-w-0">
+                    <div class="flex items-center gap-2 flex-wrap">
+                      <a href="04-transcript.html?id=mtg-240824" class="font-medium text-slate-900 hover:underline">Sprint Planning – Aug 24</a>
+                      <span class="text-xs text-slate-500">24 Aug 2025 · 48:12 · 5 speakers</span>
+                      <span class="text-xs px-2 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">Completed</span>
+                    </div>
+                    <p class="mt-1 text-sm text-slate-700 line-clamp-2">…we discussed <mark>blockers</mark> around backend capacity and device lab access. Decisions: defer onboarding, prioritize analytics. Action items created…</p>
+                    <div class="mt-2 flex flex-wrap items-center gap-2 text-xs">
+                      <span class="px-2 py-1 rounded-full bg-brand-50 text-brand-700 border border-brand-200">blockers</span>
+                      <span class="px-2 py-1 rounded-full bg-white border">analytics</span>
+                      <span class="px-2 py-1 rounded-full bg-white border">QA</span>
+                      <span class="text-slate-500">Matches at 07:45, 18:21</span>
+                    </div>
+                  </div>
+                  <div class="text-right text-xs text-slate-500">Confidence 92%</div>
+                </div>
+              </article>
+              <!-- row 2 -->
+              <article class="p-4 hover:bg-brand-50/40 cursor-pointer" data-preview="standup-58">
+                <div class="flex items-start gap-3">
+                  <input type="checkbox" class="mt-1"/>
+                  <div class="flex-1 min-w-0">
+                    <div class="flex items-center gap-2 flex-wrap">
+                      <a href="04-transcript.html?id=standup-58" class="font-medium text-slate-900 hover:underline">Daily Standup #58</a>
+                      <span class="text-xs text-slate-500">22 Aug 2025 · 09:31 · 6 speakers</span>
+                      <span class="text-xs px-2 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">Completed</span>
+                    </div>
+                    <p class="mt-1 text-sm text-slate-700 line-clamp-2">…no major <mark>blockers</mark> today; FE progressing on auth refactor, BE notes some rate-limit constraints…</p>
+                    <div class="mt-2 flex flex-wrap items-center gap-2 text-xs">
+                      <span class="px-2 py-1 rounded-full bg-white border">auth</span>
+                      <span class="px-2 py-1 rounded-full bg-white border">rate-limits</span>
+                      <span class="text-slate-500">Matches at 02:03</span>
+                    </div>
+                  </div>
+                  <div class="text-right text-xs text-slate-500">Confidence 90%</div>
+                </div>
+              </article>
+              <!-- row 3 -->
+              <article class="p-4 hover:bg-brand-50/40 cursor-pointer" data-preview="demo-yt">
+                <div class="flex items-start gap-3">
+                  <input type="checkbox" class="mt-1"/>
+                  <div class="flex-1 min-w-0">
+                    <div class="flex items-center gap-2 flex-wrap">
+                      <a href="04-transcript.html?id=demo-yt" class="font-medium text-slate-900 hover:underline">YouTube Demo Voiceover</a>
+                      <span class="text-xs text-slate-500">23 Aug 2025 · 12:06 · 1 speaker</span>
+                      <span class="text-xs px-2 py-1 rounded-full bg-amber-50 text-amber-700 border border-amber-200">Reviewing</span>
+                    </div>
+                    <p class="mt-1 text-sm text-slate-700 line-clamp-2">…call out common <mark>blockers</mark> that users face when getting started; keep the CTA clear and concise…</p>
+                    <div class="mt-2 flex flex-wrap items-center gap-2 text-xs">
+                      <span class="px-2 py-1 rounded-full bg-white border">script</span>
+                      <span class="px-2 py-1 rounded-full bg-white border">cta</span>
+                      <span class="text-slate-500">Matches at 05:41</span>
+                    </div>
+                  </div>
+                  <div class="text-right text-xs text-slate-500">Confidence 87%</div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Bulk actions + pagination -->
+            <div class="px-4 py-3 border-t flex flex-wrap items-center gap-3 text-sm">
+              <button class="px-3 py-1.5 rounded-lg border">Select all</button>
+              <button class="px-3 py-1.5 rounded-lg border">Add tag</button>
+              <button class="px-3 py-1.5 rounded-lg border">Share</button>
+              <button class="px-3 py-1.5 rounded-lg border">Export</button>
+              <div class="ml-auto flex items-center gap-1">
+                <button class="px-3 py-1.5 rounded-lg border">Prev</button>
+                <div class="px-3 py-1.5">1 / 12</div>
+                <button class="px-3 py-1.5 rounded-lg border">Next</button>
+              </div>
+            </div>
+          </section>
+
+          <!-- Preview Panel -->
+          <aside class="rounded-2xl border border-slate-200 bg-white/80 shadow-soft p-0 overflow-hidden">
+            <div class="px-4 py-3 border-b flex items-center justify-between">
+              <h3 class="font-semibold">Preview</h3>
+              <a id="openFull" href="04-transcript.html" class="text-sm text-brand-700 hover:underline">Open full →</a>
+            </div>
+            <div id="previewBody" class="p-4 space-y-3 text-sm">
+              <div class="text-slate-500">Select a result to see details.</div>
+            </div>
+          </aside>
+        </div>
+
+        <!-- Saved searches -->
+        <div class="mt-6 rounded-2xl border border-slate-200 bg-white/80 shadow-soft p-4">
+          <div class="flex items-center justify-between">
+            <h3 class="font-semibold">Saved searches</h3>
+            <button class="px-3 py-1.5 rounded-lg border text-sm">Manage</button>
+          </div>
+          <div id="savedBar" class="mt-3 flex flex-wrap gap-2 text-sm">
+            <a href="#" class="px-3 py-1.5 rounded-full bg-brand-50 text-brand-700 border border-brand-200">this week · blockers</a>
+            <a href="#" class="px-3 py-1.5 rounded-full bg-white border">high confidence · shared</a>
+            <a href="#" class="px-3 py-1.5 rounded-full bg-white border">Alice + Bob · 30–60m</a>
+          </div>
+        </div>
+      </section>
+
+      <footer class="px-4 lg:px-8 py-6 text-xs text-slate-500">
+        <div class="flex flex-col sm:flex-row gap-2 sm:items-center sm:justify-between">
+          <div>© 2025 Voice Notes AI</div>
+          <div class="flex items-center gap-3">
+            <a href="15-help.html" class="hover:underline">Help</a>
+            <a href="#" class="hover:underline">Privacy</a>
+            <a href="#" class="hover:underline">Terms</a>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Minimal JS to simulate preview + saved searches -->
+  <script>
+    const previewBody = document.getElementById('previewBody');
+    const openFull = document.getElementById('openFull');
+    const rows = document.querySelectorAll('[data-preview]');
+
+    const previews = {
+      'mtg-240824': {
+        link: '04-transcript.html?id=mtg-240824',
+        title: 'Sprint Planning – Aug 24',
+        meta: '24 Aug 2025 · 48:12 · Speakers: Alice, Bob, Carol, Dev, QA',
+        html: `
+          <div class="rounded-xl border p-3 bg-white">
+            <div class="font-medium">Matches</div>
+            <ul class="mt-2 space-y-2">
+              <li>[07:45] Carol: Regarding scope, analytics instrumentation is in. The only question is whether we include the new onboarding flow this sprint.</li>
+              <li>[18:21] Alice: Main <mark>blockers</mark> are backend capacity and mobile testing devices.</li>
+            </ul>
+          </div>
+          <div class="rounded-xl border p-3 bg-white">
+            <div class="font-medium">Summary</div>
+            <ul class="mt-2 list-disc pl-5">
+              <li>Aligned on sprint goals and deliverables.</li>
+              <li>Defer onboarding; prioritize analytics.</li>
+              <li>Track BE capacity and device lab access.</li>
+            </ul>
+          </div>`
+      },
+      'standup-58': {
+        link: '04-transcript.html?id=standup-58',
+        title: 'Daily Standup #58',
+        meta: '22 Aug 2025 · 09:31 · Speakers: 6',
+        html: `
+          <div class="rounded-xl border p-3 bg-white"><div class="font-medium">Matches</div><ul class="mt-2 space-y-2"><li>[02:03] Bob: No major <mark>blockers</mark> today.</li></ul></div>
+          <div class="rounded-xl border p-3 bg-white"><div class="font-medium">Summary</div><p class="mt-2">Routine updates; auth refactor progressing.</p></div>`
+      },
+      'demo-yt': {
+        link: '04-transcript.html?id=demo-yt',
+        title: 'YouTube Demo Voiceover',
+        meta: '23 Aug 2025 · 12:06 · Solo',
+        html: `
+          <div class="rounded-xl border p-3 bg-white"><div class="font-medium">Matches</div><ul class="mt-2 space-y-2"><li>[05:41] Script: call out common <mark>blockers</mark>.</li></ul></div>
+          <div class="rounded-xl border p-3 bg-white"><div class="font-medium">Summary</div><p class="mt-2">Draft voiceover script mentioning user hurdles and CTA.</p></div>`
+      }
+    };
+
+    rows.forEach(row => {
+      row.addEventListener('click', () => {
+        const id = row.getAttribute('data-preview');
+        const p = previews[id];
+        if(!p) return;
+        openFull.href = p.link;
+        previewBody.innerHTML = `
+          <div class="pb-2 border-b">
+            <div class="text-sm text-slate-500">${p.meta}</div>
+            <div class="text-lg font-semibold">${p.title}</div>
+          </div>
+          <div class="mt-3 space-y-3">${p.html}</div>
+        `;
+      })
+    });
+
+    // Save search chip into the saved bar
+    document.getElementById('saveSearch').addEventListener('click', ()=>{
+      const q = document.getElementById('q').value.trim();
+      if(!q) return;
+      const chip = document.createElement('a');
+      chip.href = '#';
+      chip.className = 'px-3 py-1.5 rounded-full bg-white border text-sm';
+      chip.textContent = q;
+      document.getElementById('savedBar').appendChild(chip);
+    });
+
+    document.getElementById('searchForm').addEventListener('submit', (e)=>{
+      e.preventDefault();
+      // In your app, execute a search here.
+      // We just highlight the query term in the first row description.
+      const q = document.getElementById('q').value.trim();
+      document.querySelectorAll('article p').forEach(p=>{
+        p.innerHTML = p.textContent.replace(new RegExp(q,'ig'), (m)=>`<mark>${m}</mark>`);
+      })
+    });
+  </script>
+</body>
+</html>

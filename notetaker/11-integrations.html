@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Page 11 – Integrations | Voice Notes AI</title>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { brand: {50:'#eff6ff',100:'#dbeafe',200:'#bfdbfe',300:'#93c5fd',400:'#60a5fa',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',800:'#1e40af',900:'#1e3a8a'} },
+          boxShadow: { soft: '0 10px 30px -10px rgba(0,0,0,0.15)'}
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    html { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial; }
+    .scroll-slim { scrollbar-width: thin; }
+    .scroll-slim::-webkit-scrollbar { height: 8px; width: 8px; }
+    .scroll-slim::-webkit-scrollbar-thumb { background: rgba(30,64,175,.35); border-radius: 8px; }
+    .badge { font-size: .75rem; padding: .25rem .5rem; border-radius: 9999px; border: 1px solid; }
+    .modal-enter { animation: pop .12s ease-out; }
+    @keyframes pop { from{ transform: scale(.98); opacity: 0 } to{ transform: scale(1); opacity: 1 } }
+    .kbd { padding: .1rem .35rem; border: 1px solid rgb(226 232 240); border-bottom-width:2px; border-radius:.375rem; background:white; font-size:.75rem }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-brand-50/70 via-white to-brand-100/40 text-slate-800">
+  <div class="min-h-screen grid grid-cols-1 lg:grid-cols:[280px_1fr] lg:grid-cols-[280px_1fr]">
+    <!-- Sidebar -->
+    <aside class="bg-white/80 backdrop-blur sticky top-0 h-full lg:h-screen border-r border-slate-200 shadow-soft hidden lg:flex flex-col">
+      <div class="px-5 pt-6 pb-4 flex items-center gap-3">
+        <div class="h-10 w-10 grid place-items-center rounded-xl bg-brand-600 text-white font-bold">VN</div>
+        <div>
+          <div class="text-sm uppercase tracking-wider text-brand-700 font-semibold">Voice Notes AI</div>
+          <div class="text-xs text-slate-500">Otter-like Transcription</div>
+        </div>
+      </div>
+      <nav class="mt-4 flex-1 overflow-y-auto scroll-slim">
+        <ul class="px-3 space-y-1 text-sm">
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="02-dashboard.html">Dashboard</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="03-record.html">Record</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="04-transcript.html">Transcript</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="05-search.html">Search</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="06-uploads.html">Uploads</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="07-settings.html">Settings</a></li>
+          <li class="pt-2"><div class="px-3 text-xs uppercase tracking-wide text-slate-400">More</div></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="08-billing.html">Billing</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="09-team.html">Team</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="10-calendar.html">Calendar</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-brand-50 text-brand-700 font-medium" href="11-integrations.html">Integrations</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="12-bot.html">Meeting Bot</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="13-analytics.html">Analytics</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="14-admin.html">Admin</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="15-help.html">Help</a></li>
+          <li class="pt-2"><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="01-auth.html">Sign in / out</a></li>
+        </ul>
+      </nav>
+      <div class="p-4 mt-auto">
+        <div class="rounded-xl bg-gradient-to-br from-brand-600 to-brand-800 text-white p-4">
+          <div class="text-sm opacity-90">Minutes used</div>
+          <div class="mt-1 flex items-end gap-2"><div class="text-2xl font-semibold">382</div><div class="text-xs opacity-80">/ 600</div></div>
+          <div class="mt-3 h-2 bg-white/20 rounded-full overflow-hidden"><div class="h-full w-[64%] bg-white/90"></div></div>
+          <a href="08-billing.html" class="mt-3 inline-flex items-center gap-2 text-xs font-medium underline">Upgrade plan →</a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="flex flex-col min-h-screen">
+      <!-- Topbar -->
+      <header class="sticky top-0 z-10 backdrop-blur bg-white/70 border-b border-slate-200">
+        <div class="px-4 lg:px-8 py-3 flex items-center gap-3">
+          <h1 class="text-lg md:text-xl font-semibold text-slate-900">Integrations</h1>
+          <div class="ml-auto flex items-center gap-2 text-sm">
+            <button id="connectAll" class="px-3 py-1.5 rounded-lg border">Connect all (demo)</button>
+            <a href="10-calendar.html" class="px-3 py-1.5 rounded-lg border">Calendar</a>
+            <a href="07-settings.html" class="inline-flex items-center gap-2 p-1.5 rounded-full border border-slate-200 hover:bg-brand-50"><img alt="avatar" src="https://i.pravatar.cc/40?img=5" class="h-8 w-8 rounded-full" /></a>
+          </div>
+        </div>
+      </header>
+
+      <!-- Content -->
+      <section class="flex-1 px-4 lg:px-8 py-6 space-y-6">
+        <!-- Quick connect tiles -->
+        <div class="rounded-2xl border border-slate-200 bg-white/80 shadow-soft p-4">
+          <h2 class="font-semibold">Popular integrations</h2>
+          <div class="mt-3 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
+            <!-- Tile template: logo + status + actions -->
+            <div class="tile rounded-2xl border bg-white p-4 flex items-center gap-3" data-key="zoom">
+              <div class="h-10 w-10 grid place-items-center rounded-xl bg-slate-100">📹</div>
+              <div class="flex-1 min-w-0">
+                <div class="font-medium">Zoom</div>
+                <div class="text-xs text-slate-500 status">Not connected</div>
+              </div>
+              <div class="flex items-center gap-2">
+                <button class="btn-connect px-3 py-1.5 rounded-lg bg-brand-600 text-white">Connect</button>
+                <button class="btn-config px-3 py-1.5 rounded-lg border hidden">Configure</button>
+              </div>
+            </div>
+            <div class="tile rounded-2xl border bg-white p-4 flex items-center gap-3" data-key="google">
+              <div class="h-10 w-10 grid place-items-center rounded-xl bg-slate-100">📆</div>
+              <div class="flex-1 min-w-0">
+                <div class="font-medium">Google Calendar</div>
+                <div class="text-xs text-slate-500 status">Not connected</div>
+              </div>
+              <div class="flex items-center gap-2">
+                <button class="btn-connect px-3 py-1.5 rounded-lg bg-brand-600 text-white">Connect</button>
+                <button class="btn-config px-3 py-1.5 rounded-lg border hidden">Configure</button>
+              </div>
+            </div>
+            <div class="tile rounded-2xl border bg-white p-4 flex items-center gap-3" data-key="slack">
+              <div class="h-10 w-10 grid place-items-center rounded-xl bg-slate-100">💬</div>
+              <div class="flex-1 min-w-0">
+                <div class="font-medium">Slack</div>
+                <div class="text-xs text-slate-500 status">Not connected</div>
+              </div>
+              <div class="flex items-center gap-2">
+                <button class="btn-connect px-3 py-1.5 rounded-lg bg-brand-600 text-white">Connect</button>
+                <button class="btn-config px-3 py-1.5 rounded-lg border hidden">Configure</button>
+              </div>
+            </div>
+            <div class="tile rounded-2xl border bg-white p-4 flex items-center gap-3" data-key="notion">
+              <div class="h-10 w-10 grid place-items-center rounded-xl bg-slate-100">📒</div>
+              <div class="flex-1 min-w-0">
+                <div class="font-medium">Notion</div>
+                <div class="text-xs text-slate-500 status">Not connected</div>
+              </div>
+              <div class="flex items-center gap-2">
+                <button class="btn-connect px-3 py-1.5 rounded-lg bg-brand-600 text-white">Connect</button>
+                <button class="btn-config px-3 py-1.5 rounded-lg border hidden">Configure</button>
+              </div>
+            </div>
+            <div class="tile rounded-2xl border bg-white p-4 flex items-center gap-3" data-key="trello">
+              <div class="h-10 w-10 grid place-items-center rounded-xl bg-slate-100">🗂️</div>
+              <div class="flex-1 min-w-0">
+                <div class="font-medium">Trello</div>
+                <div class="text-xs text-slate-500 status">Not connected</div>
+              </div>
+              <div class="flex items-center gap-2">
+                <button class="btn-connect px-3 py-1.5 rounded-lg bg-brand-600 text-white">Connect</button>
+                <button class="btn-config px-3 py-1.5 rounded-lg border hidden">Configure</button>
+              </div>
+            </div>
+            <div class="tile rounded-2xl border bg-white p-4 flex items-center gap-3" data-key="asana">
+              <div class="h-10 w-10 grid place-items-center rounded-xl bg-slate-100">✅</div>
+              <div class="flex-1 min-w-0">
+                <div class="font-medium">Asana</div>
+                <div class="text-xs text-slate-500 status">Not connected</div>
+              </div>
+              <div class="flex items-center gap-2">
+                <button class="btn-connect px-3 py-1.5 rounded-lg bg-brand-600 text-white">Connect</button>
+                <button class="btn-config px-3 py-1.5 rounded-lg border hidden">Configure</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Config panels -->
+        <div class="grid grid-cols-1 xl:grid-cols-[1fr_360px] gap-6">
+          <!-- Left: detailed config -->
+          <section class="rounded-2xl border border-slate-200 bg-white/80 shadow-soft">
+            <div class="px-4 py-3 border-b flex items-center gap-2">
+              <h3 class="font-semibold">Configuration</h3>
+              <span class="text-xs text-slate-500">Select an app to configure.</span>
+              <div class="ml-auto text-xs text-slate-500">Tip: Press <span class="kbd">/</span> to jump to search</div>
+            </div>
+            <div class="p-4 grid grid-cols-1 md:grid-cols-2 gap-4 text-sm" id="configPanels">
+              <!-- Zoom -->
+              <div class="panel rounded-xl border bg-white p-4 hidden" data-key="zoom">
+                <div class="flex items-center justify-between">
+                  <div class="font-medium">Zoom settings</div>
+                  <button class="disconnect px-3 py-1.5 rounded-lg border" data-key="zoom">Disconnect</button>
+                </div>
+                <div class="mt-3 space-y-3">
+                  <label class="flex items-center justify-between"><span>Auto-join Meeting Bot</span><input type="checkbox" checked></label>
+                  <label class="flex items-center justify-between"><span>Record cloud meetings</span><input type="checkbox" checked></label>
+                  <label class="flex items-center justify-between"><span>Sync past meetings</span><input type="checkbox"></label>
+                  <div>
+                    <div class="text-slate-600">Map to workspace</div>
+                    <select class="mt-1 w-full rounded-lg border px-2 py-1"><option>Product Team</option><option>Marketing</option></select>
+                  </div>
+                </div>
+              </div>
+              <!-- Google Calendar -->
+              <div class="panel rounded-xl border bg-white p-4 hidden" data-key="google">
+                <div class="flex items-center justify-between"><div class="font-medium">Google Calendar</div><button class="disconnect px-3 py-1.5 rounded-lg border" data-key="google">Disconnect</button></div>
+                <div class="mt-3 space-y-3">
+                  <label class="flex items-center justify-between"><span>Two-way sync</span><input type="checkbox" checked></label>
+                  <label class="flex items-center justify-between"><span>Add “Voice Notes AI” to titles</span><input type="checkbox" checked></label>
+                  <div>
+                    <div class="text-slate-600">Default reminders</div>
+                    <select class="mt-1 w-full rounded-lg border px-2 py-1"><option>10 minutes</option><option>15 minutes</option><option>30 minutes</option></select>
+                  </div>
+                </div>
+              </div>
+              <!-- Slack -->
+              <div class="panel rounded-xl border bg-white p-4 hidden" data-key="slack">
+                <div class="flex items-center justify-between"><div class="font-medium">Slack workspace</div><button class="disconnect px-3 py-1.5 rounded-lg border" data-key="slack">Disconnect</button></div>
+                <div class="mt-3 space-y-3">
+                  <div>
+                    <div class="text-slate-600">Notify channel</div>
+                    <select class="mt-1 w-full rounded-lg border px-2 py-1"><option>#general</option><option selected>#standups</option><option>#eng</option></select>
+                  </div>
+                  <label class="flex items-center justify-between"><span>Post summary on transcript ready</span><input type="checkbox" checked></label>
+                  <label class="flex items-center justify-between"><span>Post action items</span><input type="checkbox" checked></label>
+                </div>
+              </div>
+              <!-- Notion -->
+              <div class="panel rounded-xl border bg-white p-4 hidden" data-key="notion">
+                <div class="flex items-center justify-between"><div class="font-medium">Notion database mapping</div><button class="disconnect px-3 py-1.5 rounded-lg border" data-key="notion">Disconnect</button></div>
+                <div class="mt-3 space-y-3">
+                  <div>
+                    <div class="text-slate-600">Database</div>
+                    <select class="mt-1 w-full rounded-lg border px-2 py-1"><option selected>Meetings</option><option>Notes</option></select>
+                  </div>
+                  <div class="grid grid-cols-2 gap-2">
+                    <label class="block"><span class="text-slate-600">Title →</span><select class="mt-1 w-full rounded-lg border px-2 py-1"><option>Title</option></select></label>
+                    <label class="block"><span class="text-slate-600">Date →</span><select class="mt-1 w-full rounded-lg border px-2 py-1"><option>Date</option></select></label>
+                    <label class="block col-span-2"><span class="text-slate-600">Summary →</span><select class="mt-1 w-full rounded-lg border px-2 py-1"><option>Summary</option></select></label>
+                  </div>
+                </div>
+              </div>
+              <!-- Trello -->
+              <div class="panel rounded-xl border bg-white p-4 hidden" data-key="trello">
+                <div class="flex items-center justify-between"><div class="font-medium">Trello board mapping</div><button class="disconnect px-3 py-1.5 rounded-lg border" data-key="trello">Disconnect</button></div>
+                <div class="mt-3 space-y-3">
+                  <div class="grid grid-cols-2 gap-2">
+                    <label class="block"><span class="text-slate-600">Board</span><select class="mt-1 w-full rounded-lg border px-2 py-1"><option>Product</option><option>Marketing</option></select></label>
+                    <label class="block"><span class="text-slate-600">List</span><select class="mt-1 w-full rounded-lg border px-2 py-1"><option>To Do</option><option selected>Action Items</option></select></label>
+                  </div>
+                  <label class="flex items-center justify-between"><span>Attach transcript link</span><input type="checkbox" checked></label>
+                </div>
+              </div>
+              <!-- Asana -->
+              <div class="panel rounded-xl border bg-white p-4 hidden" data-key="asana">
+                <div class="flex items-center justify-between"><div class="font-medium">Asana project mapping</div><button class="disconnect px-3 py-1.5 rounded-lg border" data-key="asana">Disconnect</button></div>
+                <div class="mt-3 space-y-3">
+                  <div class="grid grid-cols-2 gap-2">
+                    <label class="block"><span class="text-slate-600">Workspace</span><select class="mt-1 w-full rounded-lg border px-2 py-1"><option>Product</option><option selected>Web Team</option></select></label>
+                    <label class="block"><span class="text-slate-600">Project</span><select class="mt-1 w-full rounded-lg border px-2 py-1"><option selected>Release Q3</option><option>Bugs</option></select></label>
+                  </div>
+                  <label class="flex items-center justify-between"><span>Create tasks from action items</span><input type="checkbox" checked></label>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Right: API / Webhooks / Logs -->
+          <aside class="space-y-4">
+            <div class="rounded-2xl border border-slate-200 bg-white/80 shadow-soft p-4">
+              <div class="flex items-center justify-between">
+                <h3 class="font-semibold">API keys</h3>
+                <button id="regenKey" class="px-3 py-1.5 rounded-lg border text-sm">Regenerate</button>
+              </div>
+              <div class="mt-2 text-sm">
+                <div class="rounded-xl border bg-white px-3 py-2 flex items-center justify-between"><code id="apiKey">sk_live_51Jx...h2W</code><button id="copyKey" class="px-2 py-1 rounded-lg border">Copy</button></div>
+                <div class="mt-2 text-xs text-slate-500">Keep your key secret. Rate limit: 60 req/min.</div>
+              </div>
+            </div>
+
+            <div class="rounded-2xl border border-slate-200 bg-white/80 shadow-soft p-4">
+              <div class="flex items-center justify-between">
+                <h3 class="font-semibold">Webhooks</h3>
+                <button id="newHookOpen" class="px-3 py-1.5 rounded-lg border text-sm">New endpoint</button>
+              </div>
+              <div id="hooks" class="mt-2 space-y-2 text-sm">
+                <div class="rounded-xl border bg-white px-3 py-2 flex items-center justify-between">
+                  <div>
+                    <div class="font-medium">https://example.com/webhooks/voicenotes</div>
+                    <div class="text-xs text-slate-500">Events: transcript.ready, action_items.created · Secret: whsec_***4F9</div>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <button class="testHook px-3 py-1.5 rounded-lg border text-sm">Send test</button>
+                    <button class="removeHook px-3 py-1.5 rounded-lg border text-sm">Remove</button>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-2 text-xs text-slate-500">Tip: verify signatures via <code>Voice-Signature</code> header.</div>
+            </div>
+
+            <div class="rounded-2xl border border-slate-200 bg-white/80 shadow-soft p-4">
+              <h3 class="font-semibold">Integration logs</h3>
+              <div class="mt-2 overflow-hidden rounded-xl border bg-white">
+                <table class="w-full text-xs">
+                  <thead class="bg-brand-50/60 text-slate-600">
+                    <tr><th class="text-left px-2 py-2">Time</th><th class="text-left px-2 py-2">Integration</th><th class="text-left px-2 py-2">Event</th><th class="text-left px-2 py-2">Status</th></tr>
+                  </thead>
+                  <tbody id="logBody" class="divide-y">
+                    <tr><td class="px-2 py-2">2025-08-24 09:32</td><td class="px-2 py-2">Slack</td><td class="px-2 py-2">posted.summary</td><td class="px-2 py-2">200</td></tr>
+                    <tr><td class="px-2 py-2">2025-08-24 08:11</td><td class="px-2 py-2">Google</td><td class="px-2 py-2">calendar.sync</td><td class="px-2 py-2">200</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <footer class="px-4 lg:px-8 py-6 text-xs text-slate-500">
+        <div class="flex flex-col sm:flex-row gap-2 sm:items-center sm:justify-between">
+          <div>© 2025 Voice Notes AI</div>
+          <div class="flex items-center gap-3">
+            <a href="15-help.html" class="hover:underline">Help</a>
+            <a href="#" class="hover:underline">Privacy</a>
+            <a href="#" class="hover:underline">Terms</a>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Connect Modal (generic OAuth-ish) -->
+  <div id="connectModal" class="hidden fixed inset-0 z-20 grid place-items-center bg-black/30 p-4">
+    <div class="modal-enter w-full max-w-md rounded-2xl bg-white shadow-soft border p-4">
+      <div class="flex items-center justify-between">
+        <h3 class="font-semibold">Connect <span id="cName"></span></h3>
+        <button id="cClose" class="p-2 rounded-lg hover:bg-slate-100">✕</button>
+      </div>
+      <div class="mt-3 text-sm space-y-3">
+        <div class="rounded-xl border bg-white p-3">You'll be redirected to <span id="cName2" class="font-medium"></span> to grant access. Scopes: read meetings, manage webhooks.</div>
+        <label class="flex items-center gap-2"><input id="cPast" type="checkbox"> Import past 30 days</label>
+        <label class="flex items-center gap-2"><input id="cAuto" type="checkbox" checked> Auto-sync going forward</label>
+      </div>
+      <div class="mt-4 flex items-center gap-2">
+        <button id="cConnect" class="px-4 py-2 rounded-xl bg-brand-600 text-white">Connect</button>
+        <button id="cCancel" class="px-4 py-2 rounded-xl border">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- New Webhook Modal -->
+  <div id="hookModal" class="hidden fixed inset-0 z-20 grid place-items-center bg-black/30 p-4">
+    <div class="modal-enter w-full max-w-md rounded-2xl bg-white shadow-soft border p-4">
+      <div class="flex items-center justify-between">
+        <h3 class="font-semibold">Create webhook endpoint</h3>
+        <button id="hClose" class="p-2 rounded-lg hover:bg-slate-100">✕</button>
+      </div>
+      <div class="mt-3 text-sm space-y-3">
+        <input id="hUrl" class="w-full rounded-lg border px-3 py-2" placeholder="https://yourapp.com/webhooks/voicenotes"/>
+        <div>
+          <div class="text-slate-600">Events</div>
+          <div class="mt-1 grid grid-cols-2 gap-2">
+            <label class="flex items-center gap-2"><input type="checkbox" class="hEv" value="transcript.ready" checked> transcript.ready</label>
+            <label class="flex items-center gap-2"><input type="checkbox" class="hEv" value="action_items.created" checked> action_items.created</label>
+            <label class="flex items-center gap-2"><input type="checkbox" class="hEv" value="recording.completed"> recording.completed</label>
+            <label class="flex items-center gap-2"><input type="checkbox" class="hEv" value="mention.created"> mention.created</label>
+          </div>
+        </div>
+      </div>
+      <div class="mt-4 flex items-center gap-2">
+        <button id="hCreate" class="px-4 py-2 rounded-xl bg-brand-600 text-white">Create</button>
+        <button id="hCancel" class="px-4 py-2 rounded-xl border">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Minimal JS: connect flow, config panels, API/webhooks, logs -->
+  <script>
+    // Helpers
+    const $ = (s, r=document) => r.querySelector(s);
+    const $$ = (s, r=document) => [...r.querySelectorAll(s)];
+
+    // Quick search focus with '/'
+    window.addEventListener('keydown', (e)=>{ if(e.key === '/' && !/input|textarea/i.test(document.activeElement.tagName)){ e.preventDefault(); const f = document.createElement('input'); f.placeholder='Search integrations…'; f.className='fixed top-3 left-1/2 -translate-x-1/2 w-[90%] max-w-lg rounded-xl border bg-white/80 px-3 py-2 shadow-soft'; document.body.appendChild(f); f.focus(); f.addEventListener('blur',()=>f.remove()); } });
+
+    // Tiles connect/config
+    const panels = $('#configPanels');
+    let currentKey = null;
+
+    function setTileState(tile, connected){
+      tile.querySelector('.status').textContent = connected ? 'Connected' : 'Not connected';
+      tile.querySelector('.btn-connect').classList.toggle('hidden', connected);
+      tile.querySelector('.btn-config').classList.toggle('hidden', !connected);
+      const panel = panels.querySelector(`[data-key="${tile.dataset.key}"]`);
+      if(panel){ panel.classList.toggle('hidden', !connected); if(connected) currentKey = tile.dataset.key; }
+    }
+
+    $$('#connectAll').forEach?.(() => {}); // noop for safety
+    $('#connectAll').addEventListener('click', ()=>{
+      $$('.tile').forEach(t => setTileState(t, true)); toast('Connected all (demo)');
+    });
+
+    $$('.tile .btn-connect').forEach(btn=>{
+      btn.addEventListener('click', (e)=>{
+        const tile = e.target.closest('.tile');
+        openConnect(tile.dataset.key);
+      });
+    });
+
+    $$('.tile .btn-config').forEach(btn=>{
+      btn.addEventListener('click', (e)=>{
+        const tile = e.target.closest('.tile');
+        showPanel(tile.dataset.key);
+      });
+    });
+
+    function showPanel(key){
+      $$('#configPanels .panel').forEach(p=>p.classList.add('hidden'));
+      panels.querySelector(`[data-key="${key}"]`)?.classList.remove('hidden');
+      currentKey = key;
+    }
+
+    // Connect modal
+    const cModal = $('#connectModal');
+    function openConnect(key){ cModal.classList.remove('hidden'); $('#cName').textContent = keyName(key); $('#cName2').textContent = keyName(key); cModal.dataset.key = key; }
+    $('#cClose').addEventListener('click', ()=>cModal.classList.add('hidden'));
+    $('#cCancel').addEventListener('click', ()=>cModal.classList.add('hidden'));
+    $('#cConnect').addEventListener('click', ()=>{
+      const key = cModal.dataset.key; cModal.classList.add('hidden');
+      // simulate oauth
+      const tile = $(`.tile[data-key="${key}"]`); setTileState(tile, true); showPanel(key); toast(keyName(key)+' connected');
+      // log
+      addLog(new Date(), keyName(key), 'oauth.connect', '200');
+    });
+
+    function keyName(key){ return ({zoom:'Zoom', google:'Google Calendar', slack:'Slack', notion:'Notion', trello:'Trello', asana:'Asana'})[key] || key; }
+
+    // Disconnect buttons
+    $$('.disconnect').forEach(btn=> btn.addEventListener('click', (e)=>{
+      const key = e.target.dataset.key; const tile = $(`.tile[data-key="${key}"]`); setTileState(tile, false); showPanel(null); toast(keyName(key)+' disconnected'); addLog(new Date(), keyName(key), 'oauth.disconnect', '200'); }));
+
+    // API keys
+    $('#copyKey').addEventListener('click', ()=>{ const t=$('#apiKey').textContent; navigator.clipboard.writeText(t); toast('API key copied'); });
+    $('#regenKey').addEventListener('click', ()=>{ $('#apiKey').textContent = 'sk_live_' + Math.random().toString(36).slice(2,6) + '...' + Math.random().toString(36).slice(2,4).toUpperCase(); toast('API key regenerated'); addLog(new Date(),'API','key.regen','200'); });
+
+    // Webhooks
+    const hModal = $('#hookModal');
+    $('#newHookOpen').addEventListener('click', ()=> hModal.classList.remove('hidden'));
+    $('#hClose').addEventListener('click', ()=> hModal.classList.add('hidden'));
+    $('#hCancel').addEventListener('click', ()=> hModal.classList.add('hidden'));
+    $('#hCreate').addEventListener('click', ()=>{
+      const url = $('#hUrl').value.trim(); if(!url) return alert('Enter a URL');
+      const evs = $$('.hEv:checked').map(x=>x.value);
+      const secret = 'whsec_' + Math.random().toString(36).slice(2,5).toUpperCase() + Math.random().toString(36).slice(2,4);
+      const row = document.createElement('div');
+      row.className = 'rounded-xl border bg-white px-3 py-2 flex items-center justify-between';
+      row.innerHTML = `<div><div class="font-medium">${url}</div><div class="text-xs text-slate-500">Events: ${evs.join(', ')} · Secret: ${secret.slice(0,6)}***</div></div><div class="flex items-center gap-2"><button class="testHook px-3 py-1.5 rounded-lg border text-sm">Send test</button><button class="removeHook px-3 py-1.5 rounded-lg border text-sm">Remove</button></div>`;
+      $('#hooks').prepend(row); hModal.classList.add('hidden'); toast('Webhook created'); addLog(new Date(),'Webhooks','endpoint.create','200');
+    });
+
+    $('#hooks').addEventListener('click', (e)=>{
+      if(e.target.classList.contains('removeHook')){ e.target.closest('div.rounded-xl').remove(); toast('Webhook removed'); addLog(new Date(),'Webhooks','endpoint.delete','200'); }
+      if(e.target.classList.contains('testHook')){ toast('Test event sent'); addLog(new Date(),'Webhooks','event.send','200'); }
+    });
+
+    // Logs
+    const logBody = $('#logBody');
+    function addLog(date, integration, event, status){
+      const row = document.createElement('tr');
+      row.innerHTML = `<td class="px-2 py-2">${date.toISOString().slice(0,16).replace('T',' ')}</td><td class="px-2 py-2">${integration}</td><td class="px-2 py-2">${event}</td><td class="px-2 py-2">${status}</td>`;
+      logBody.prepend(row);
+    }
+
+    // Toast
+    const toastEl = document.createElement('div'); toastEl.className = 'fixed bottom-4 left-1/2 -translate-x-1/2 hidden'; toastEl.innerHTML = '<div class="rounded-xl bg-slate-900 text-white px-4 py-2 shadow-soft">Done ✔️</div>'; document.body.appendChild(toastEl);
+    function toast(msg){ toastEl.firstElementChild.textContent = msg; toastEl.classList.remove('hidden'); setTimeout(()=>toastEl.classList.add('hidden'), 1400); }
+  </script>
+</body>
+</html>

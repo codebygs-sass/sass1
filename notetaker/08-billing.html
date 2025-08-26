@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Page 8 – Billing | Voice Notes AI</title>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { brand: {50:'#eff6ff',100:'#dbeafe',200:'#bfdbfe',300:'#93c5fd',400:'#60a5fa',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',800:'#1e40af',900:'#1e3a8a'} },
+          boxShadow: { soft: '0 10px 30px -10px rgba(0,0,0,0.15)' },
+          gridTemplateColumns: { plans: 'repeat(auto-fit, minmax(260px, 1fr))' }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    html { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial; }
+    .scroll-slim { scrollbar-width: thin; }
+    .scroll-slim::-webkit-scrollbar { height: 8px; width: 8px; }
+    .scroll-slim::-webkit-scrollbar-thumb { background: rgba(30,64,175,.35); border-radius: 8px; }
+    .badge { @apply text-xs px-2 py-1 rounded-full border; }
+    .modal-enter { animation: pop .12s ease-out; }
+    @keyframes pop { from{ transform: scale(.98); opacity: 0 } to{ transform: scale(1); opacity: 1 } }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-brand-50/70 via-white to-brand-100/40 text-slate-800">
+  <div class="min-h-screen grid grid-cols-1 lg:grid-cols-[280px_1fr]">
+    <!-- Sidebar -->
+    <aside class="bg-white/80 backdrop-blur sticky top-0 h-full lg:h-screen border-r border-slate-200 shadow-soft hidden lg:flex flex-col">
+      <div class="px-5 pt-6 pb-4 flex items-center gap-3">
+        <div class="h-10 w-10 grid place-items-center rounded-xl bg-brand-600 text-white font-bold">VN</div>
+        <div>
+          <div class="text-sm uppercase tracking-wider text-brand-700 font-semibold">Voice Notes AI</div>
+          <div class="text-xs text-slate-500">Otter-like Transcription</div>
+        </div>
+      </div>
+      <nav class="mt-4 flex-1 overflow-y-auto scroll-slim">
+        <ul class="px-3 space-y-1 text-sm">
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="02-dashboard.html">Dashboard</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="03-record.html">Record</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="04-transcript.html">Transcript</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="05-search.html">Search</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="06-uploads.html">Uploads</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="07-settings.html">Settings</a></li>
+          <li class="pt-2"><div class="px-3 text-xs uppercase tracking-wide text-slate-400">More</div></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-brand-50 text-brand-700 font-medium" href="08-billing.html">Billing</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="09-team.html">Team</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="10-calendar.html">Calendar</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="11-integrations.html">Integrations</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="12-bot.html">Meeting Bot</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="13-analytics.html">Analytics</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="14-admin.html">Admin</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="15-help.html">Help</a></li>
+          <li class="pt-2"><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="01-auth.html">Sign in / out</a></li>
+        </ul>
+      </nav>
+      <div class="p-4 mt-auto">
+        <div class="rounded-xl bg-gradient-to-br from-brand-600 to-brand-800 text-white p-4">
+          <div class="text-sm opacity-90">Minutes used</div>
+          <div class="mt-1 flex items-end gap-2"><div class="text-2xl font-semibold">382</div><div class="text-xs opacity-80">/ 600</div></div>
+          <div class="mt-3 h-2 bg-white/20 rounded-full overflow-hidden"><div class="h-full w-[64%] bg-white/90"></div></div>
+          <a href="08-billing.html" class="mt-3 inline-flex items-center gap-2 text-xs font-medium underline">Upgrade plan →</a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="flex flex-col min-h-screen">
+      <!-- Topbar -->
+      <header class="sticky top-0 z-10 backdrop-blur bg-white/70 border-b border-slate-200">
+        <div class="px-4 lg:px-8 py-3 flex items-center gap-3">
+          <h1 class="text-lg md:text-xl font-semibold text-slate-900">Billing</h1>
+          <div class="ml-auto flex items-center gap-2 text-sm">
+            <button id="couponOpen" class="px-3 py-1.5 rounded-lg border">Have a coupon?</button>
+            <a href="03-record.html" class="hidden sm:inline-flex items-center gap-2 rounded-xl bg-brand-600 text-white px-3 py-1.5 shadow-soft hover:bg-brand-700">New recording</a>
+            <a href="07-settings.html" class="inline-flex items-center gap-2 p-1.5 rounded-full border border-slate-200 hover:bg-brand-50"><img alt="avatar" src="https://i.pravatar.cc/40?img=5" class="h-8 w-8 rounded-full" /></a>
+          </div>
+        </div>
+      </header>
+
+      <!-- Content -->
+      <section class="flex-1 px-4 lg:px-8 py-6 space-y-6">
+        <!-- Plans -->
+        <div class="rounded-2xl border border-slate-200 bg-white/80 shadow-soft p-4">
+          <div class="flex items-center justify-between flex-wrap gap-2">
+            <h2 class="font-semibold">Choose a plan</h2>
+            <label class="flex items-center gap-2 text-sm text-slate-600"><input type="checkbox" id="toggleYearly"> Bill yearly <span class="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs">Save 20%</span></label>
+          </div>
+          <div class="mt-4 grid grid-cols-plans gap-4">
+            <!-- Free -->
+            <article class="rounded-2xl border bg-white overflow-hidden">
+              <div class="p-4 border-b">
+                <div class="flex items-baseline gap-2"><h3 class="font-semibold">Free</h3><span class="badge bg-slate-50 text-slate-700 border-slate-200">Current</span></div>
+                <div class="mt-2 text-3xl font-semibold"><span class="price" data-m="0" data-y="0">₹0</span><span class="text-sm text-slate-500">/mo</span></div>
+                <div class="text-xs text-slate-500">Up to 600 min/mo</div>
+              </div>
+              <ul class="p-4 text-sm space-y-2">
+                <li>✔️ Real-time transcription</li>
+                <li>✔️ Searchable transcripts</li>
+                <li>— Limited integrations</li>
+                <li>— Basic export formats</li>
+              </ul>
+              <div class="p-4 pt-0"><button class="w-full px-4 py-2 rounded-xl border" disabled>Current plan</button></div>
+            </article>
+            <!-- Pro -->
+            <article class="rounded-2xl border bg-white overflow-hidden ring-2 ring-brand-200">
+              <div class="p-4 border-b">
+                <div class="flex items-baseline gap-2"><h3 class="font-semibold">Pro</h3><span class="badge bg-brand-50 text-brand-700 border-brand-200">Popular</span></div>
+                <div class="mt-2 text-3xl font-semibold"><span class="price" data-m="699" data-y="559">₹699</span><span class="text-sm text-slate-500">/mo</span></div>
+                <div class="text-xs text-slate-500">Up to 3,000 min/mo</div>
+              </div>
+              <ul class="p-4 text-sm space-y-2">
+                <li>✔️ Everything in Free</li>
+                <li>✔️ AI summaries & action items</li>
+                <li>✔️ Zoom/Meet recording bot</li>
+                <li>✔️ Advanced export (PDF, SRT)</li>
+              </ul>
+              <div class="p-4 pt-0"><button class="w-full px-4 py-2 rounded-xl bg-brand-600 text-white hover:bg-brand-700 upgrade" data-plan="Pro">Upgrade to Pro</button></div>
+            </article>
+            <!-- Team -->
+            <article class="rounded-2xl border bg-white overflow-hidden">
+              <div class="p-4 border-b">
+                <div class="flex items-baseline gap-2"><h3 class="font-semibold">Team</h3><span class="badge bg-slate-50 text-slate-700 border-slate-200">Best for teams</span></div>
+                <div class="mt-2 text-3xl font-semibold"><span class="price" data-m="1299" data-y="1039">₹1,299</span><span class="text-sm text-slate-500">/mo</span></div>
+                <div class="text-xs text-slate-500">Per user · 5,000 min/mo</div>
+              </div>
+              <ul class="p-4 text-sm space-y-2">
+                <li>✔️ Everything in Pro</li>
+                <li>✔️ Team workspaces & roles</li>
+                <li>✔️ Centralized billing</li>
+                <li>✔️ SSO & SCIM (enterprise)</li>
+              </ul>
+              <div class="p-4 pt-0"><button class="w-full px-4 py-2 rounded-xl border upgrade" data-plan="Team">Start Team trial</button></div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Usage & Limits -->
+        <div class="grid grid-cols-1 xl:grid-cols-3 gap-4">
+          <div class="xl:col-span-2 rounded-2xl border border-slate-200 bg-white/80 shadow-soft p-4">
+            <h3 class="font-semibold">Usage this cycle</h3>
+            <div class="mt-3 grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div class="rounded-xl border p-4 bg-white">
+                <div class="text-sm text-slate-500">Transcription minutes</div>
+                <div class="mt-2 text-2xl font-semibold">382 <span class="text-sm text-slate-500">/ 600</span></div>
+                <div class="mt-3 h-2 bg-slate-100 rounded-full overflow-hidden"><div class="h-full w-[64%] bg-brand-600"></div></div>
+                <div class="mt-2 text-xs text-slate-500">Renews Sep 1, 2025</div>
+              </div>
+              <div class="rounded-xl border p-4 bg-white">
+                <div class="text-sm text-slate-500">Storage</div>
+                <div class="mt-2 text-2xl font-semibold">7.4 GB <span class="text-sm text-slate-500">/ 20 GB</span></div>
+                <div class="mt-3 h-2 bg-slate-100 rounded-full overflow-hidden"><div class="h-full w-[37%] bg-brand-600"></div></div>
+                <div class="mt-2 text-xs text-slate-500">Manage in Uploads</div>
+              </div>
+              <div class="rounded-xl border p-4 bg-white">
+                <div class="text-sm text-slate-500">Seats</div>
+                <div class="mt-2 text-2xl font-semibold">1 <span class="text-sm text-slate-500">/ 5</span></div>
+                <div class="mt-3 text-xs text-slate-500">Upgrade for more seats</div>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-2xl border border-slate-200 bg-white/80 shadow-soft p-4">
+            <h3 class="font-semibold">Billing summary</h3>
+            <div class="mt-3 text-sm space-y-2">
+              <div class="flex items-center justify-between"><span>Current plan</span><span class="font-medium">Free</span></div>
+              <div class="flex items-center justify-between"><span>Cycle</span><span>Monthly</span></div>
+              <div class="flex items-center justify-between"><span>Next charge</span><span>₹0 on Sep 1, 2025</span></div>
+              <div class="pt-2 border-t flex items-center justify-between"><span>GST (IN)</span><span>18% (on paid plans)</span></div>
+              <button id="cancelOpen" class="mt-3 w-full px-3 py-2 rounded-xl border">Cancel plan</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Payment Methods & Address -->
+        <div class="grid grid-cols-1 xl:grid-cols-3 gap-4">
+          <div class="xl:col-span-2 rounded-2xl border border-slate-200 bg-white/80 shadow-soft p-4">
+            <div class="flex items-center justify-between">
+              <h3 class="font-semibold">Payment methods</h3>
+              <button id="addCard" class="px-3 py-1.5 rounded-lg border text-sm">Add card</button>
+            </div>
+            <div id="cards" class="mt-3 space-y-2 text-sm">
+              <div class="rounded-xl border p-3 flex items-center justify-between bg-white">
+                <div class="flex items-center gap-3">
+                  <div class="h-8 w-12 rounded bg-slate-100 grid place-items-center">💳</div>
+                  <div>
+                    <div class="font-medium">Visa •••• 4242</div>
+                    <div class="text-xs text-slate-500">Exp 10/27 · Default</div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2">
+                  <button class="px-3 py-1.5 rounded-lg border">Make default</button>
+                  <button class="px-3 py-1.5 rounded-lg border">Remove</button>
+                </div>
+              </div>
+            </div>
+            <div class="mt-4">
+              <h3 class="font-semibold">Billing address</h3>
+              <div class="mt-2 grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+                <input class="rounded-lg border px-3 py-2" placeholder="Full name" value="You"/>
+                <input class="rounded-lg border px-3 py-2" placeholder="Email" value="you@example.com"/>
+                <input class="md:col-span-2 rounded-lg border px-3 py-2" placeholder="Address line 1"/>
+                <input class="md:col-span-2 rounded-lg border px-3 py-2" placeholder="Address line 2"/>
+                <input class="rounded-lg border px-3 py-2" placeholder="City"/>
+                <input class="rounded-lg border px-3 py-2" placeholder="State / Province"/>
+                <input class="rounded-lg border px-3 py-2" placeholder="Postal code"/>
+                <select class="rounded-lg border px-3 py-2"><option>India</option><option>United States</option><option>United Kingdom</option></select>
+                <input class="rounded-lg border px-3 py-2" placeholder="GSTIN (optional)"/>
+              </div>
+              <div class="mt-3 flex items-center gap-2">
+                <button class="px-4 py-2 rounded-xl bg-brand-600 text-white">Save</button>
+                <button class="px-4 py-2 rounded-xl border">Cancel</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Invoices -->
+          <div class="rounded-2xl border border-slate-200 bg-white/80 shadow-soft p-4">
+            <div class="flex items-center justify-between">
+              <h3 class="font-semibold">Invoices</h3>
+              <button class="px-3 py-1.5 rounded-lg border text-sm">Download all</button>
+            </div>
+            <div class="mt-3 overflow-hidden rounded-xl border bg-white">
+              <table class="w-full text-sm">
+                <thead class="bg-brand-50/60 text-slate-600">
+                  <tr>
+                    <th class="text-left font-medium px-3 py-2">Date</th>
+                    <th class="text-left font-medium px-3 py-2">Invoice</th>
+                    <th class="text-left font-medium px-3 py-2">Amount</th>
+                    <th class="text-right font-medium px-3 py-2">Action</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y">
+                  <tr>
+                    <td class="px-3 py-2">Aug 1, 2025</td>
+                    <td class="px-3 py-2">INV-2025-0801</td>
+                    <td class="px-3 py-2">₹0.00</td>
+                    <td class="px-3 py-2 text-right"><a class="px-3 py-1.5 rounded-lg border" href="#">View</a></td>
+                  </tr>
+                  <tr>
+                    <td class="px-3 py-2">Jul 1, 2025</td>
+                    <td class="px-3 py-2">INV-2025-0701</td>
+                    <td class="px-3 py-2">₹0.00</td>
+                    <td class="px-3 py-2 text-right"><a class="px-3 py-1.5 rounded-lg border" href="#">View</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="px-4 lg:px-8 py-6 text-xs text-slate-500">
+        <div class="flex flex-col sm:flex-row gap-2 sm:items-center sm:justify-between">
+          <div>© 2025 Voice Notes AI</div>
+          <div class="flex items-center gap-3">
+            <a href="15-help.html" class="hover:underline">Help</a>
+            <a href="#" class="hover:underline">Privacy</a>
+            <a href="#" class="hover:underline">Terms</a>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Dialogs -->
+  <div id="couponModal" class="hidden fixed inset-0 z-20 grid place-items-center bg-black/30 p-4">
+    <div class="modal-enter w-full max-w-md rounded-2xl bg-white shadow-soft border p-4">
+      <div class="flex items-center justify-between">
+        <h3 class="font-semibold">Apply coupon</h3>
+        <button id="couponClose" class="p-2 rounded-lg hover:bg-slate-100">✕</button>
+      </div>
+      <div class="mt-3 text-sm">
+        <input id="couponCode" class="w-full rounded-lg border px-3 py-2" placeholder="Enter code e.g., SAVE20"/>
+        <div class="mt-2 text-xs text-slate-500">Discounts apply to the next invoice.</div>
+      </div>
+      <div class="mt-4 flex items-center gap-2">
+        <button id="couponApply" class="px-4 py-2 rounded-xl bg-brand-600 text-white">Apply</button>
+        <button id="couponCancel" class="px-4 py-2 rounded-xl border">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="cancelModal" class="hidden fixed inset-0 z-20 grid place-items-center bg-black/30 p-4">
+    <div class="modal-enter w-full max-w-md rounded-2xl bg-white shadow-soft border p-4">
+      <div class="flex items-center justify-between">
+        <h3 class="font-semibold">Cancel plan</h3>
+        <button id="cancelClose" class="p-2 rounded-lg hover:bg-slate-100">✕</button>
+      </div>
+      <p class="mt-2 text-sm text-slate-700">Your plan will remain active until the end of the current billing period. Are you sure you want to cancel?</p>
+      <div class="mt-4 flex items-center gap-2">
+        <button id="cancelConfirm" class="px-4 py-2 rounded-xl bg-rose-600 text-white">Yes, cancel</button>
+        <button id="cancelAbort" class="px-4 py-2 rounded-xl border">Keep plan</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Minimal JS: pricing toggle, dialogs, fake upgrade flow -->
+  <script>
+    // Yearly toggle changes displayed price to the data-y attribute
+    const yearly = document.getElementById('toggleYearly');
+    const prices = document.querySelectorAll('.price');
+    yearly?.addEventListener('change', ()=>{
+      prices.forEach(p=>{ const m = p.dataset.m, y = p.dataset.y; p.textContent = '₹' + (yearly.checked? y : m); });
+    });
+
+    // Coupon dialog
+    const couponOpen = document.getElementById('couponOpen');
+    const couponModal = document.getElementById('couponModal');
+    const couponClose = document.getElementById('couponClose');
+    const couponCancel = document.getElementById('couponCancel');
+    const couponApply = document.getElementById('couponApply');
+    const couponCode = document.getElementById('couponCode');
+    function toggleCoupon(show){ couponModal.classList.toggle('hidden', !show); if(show){ couponCode.focus(); } }
+    couponOpen.addEventListener('click', ()=>toggleCoupon(true));
+    couponClose.addEventListener('click', ()=>toggleCoupon(false));
+    couponCancel.addEventListener('click', ()=>toggleCoupon(false));
+    couponApply.addEventListener('click', ()=>{ alert('Coupon applied: ' + (couponCode.value||'—')); toggleCoupon(false); });
+
+    // Cancel plan dialog
+    const cancelOpen = document.getElementById('cancelOpen');
+    const cancelModal = document.getElementById('cancelModal');
+    const cancelClose = document.getElementById('cancelClose');
+    const cancelAbort = document.getElementById('cancelAbort');
+    const cancelConfirm = document.getElementById('cancelConfirm');
+    function toggleCancel(show){ cancelModal.classList.toggle('hidden', !show); }
+    cancelOpen.addEventListener('click', ()=>toggleCancel(true));
+    cancelClose.addEventListener('click', ()=>toggleCancel(false));
+    cancelAbort.addEventListener('click', ()=>toggleCancel(false));
+    cancelConfirm.addEventListener('click', ()=>{ alert('Your plan will be cancelled at period end.'); toggleCancel(false); });
+
+    // Fake upgrade flow
+    document.querySelectorAll('.upgrade').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const plan = btn.dataset.plan; alert('Proceeding to checkout for '+plan+' plan…');
+      });
+    });
+  </script>
+</body>
+</html>

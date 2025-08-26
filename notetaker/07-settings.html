@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Page 7 – Settings | Voice Notes AI</title>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { brand: {50:'#eff6ff',100:'#dbeafe',200:'#bfdbfe',300:'#93c5fd',400:'#60a5fa',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',800:'#1e40af',900:'#1e3a8a'} },
+          boxShadow: { soft: '0 10px 30px -10px rgba(0,0,0,0.15)' }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    html { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial; }
+    .scroll-slim { scrollbar-width: thin; }
+    .scroll-slim::-webkit-scrollbar { height: 8px; width: 8px; }
+    .scroll-slim::-webkit-scrollbar-thumb { background: rgba(30,64,175,.35); border-radius: 8px; }
+    .tab-btn[aria-selected="true"]{ background:#eef2ff; color:#1e40af; border-color:#bfdbfe; }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-brand-50/70 via-white to-brand-100/40 text-slate-800">
+  <div class="min-h-screen grid grid-cols-1 lg:grid-cols-[280px_1fr]">
+    <!-- Sidebar -->
+    <aside class="bg-white/80 backdrop-blur sticky top-0 h-full lg:h-screen border-r border-slate-200 shadow-soft hidden lg:flex flex-col">
+      <div class="px-5 pt-6 pb-4 flex items-center gap-3">
+        <div class="h-10 w-10 grid place-items-center rounded-xl bg-brand-600 text-white font-bold">VN</div>
+        <div>
+          <div class="text-sm uppercase tracking-wider text-brand-700 font-semibold">Voice Notes AI</div>
+          <div class="text-xs text-slate-500">Otter-like Transcription</div>
+        </div>
+      </div>
+      <nav class="mt-4 flex-1 overflow-y-auto scroll-slim">
+        <ul class="px-3 space-y-1 text-sm">
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="02-dashboard.html">Dashboard</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="03-record.html">Record</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="04-transcript.html">Transcript</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="05-search.html">Search</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="06-uploads.html">Uploads</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-brand-50 text-brand-700 font-medium" href="07-settings.html">Settings</a></li>
+          <li class="pt-2"><div class="px-3 text-xs uppercase tracking-wide text-slate-400">More</div></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="08-billing.html">Billing</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="09-team.html">Team</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="10-calendar.html">Calendar</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="11-integrations.html">Integrations</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="12-bot.html">Meeting Bot</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="13-analytics.html">Analytics</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="14-admin.html">Admin</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="15-help.html">Help</a></li>
+          <li class="pt-2"><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="01-auth.html">Sign in / out</a></li>
+        </ul>
+      </nav>
+      <div class="p-4 mt-auto">
+        <div class="rounded-xl bg-gradient-to-br from-brand-600 to-brand-800 text-white p-4">
+          <div class="text-sm opacity-90">Minutes used</div>
+          <div class="mt-1 flex items-end gap-2"><div class="text-2xl font-semibold">382</div><div class="text-xs opacity-80">/ 600</div></div>
+          <div class="mt-3 h-2 bg-white/20 rounded-full overflow-hidden"><div class="h-full w-[64%] bg-white/90"></div></div>
+          <a href="08-billing.html" class="mt-3 inline-flex items-center gap-2 text-xs font-medium underline">Upgrade plan →</a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="flex flex-col min-h-screen">
+      <!-- Topbar -->
+      <header class="sticky top-0 z-10 backdrop-blur bg-white/70 border-b border-slate-200">
+        <div class="px-4 lg:px-8 py-3 flex items-center gap-3">
+          <h1 class="text-lg md:text-xl font-semibold text-slate-900">Settings</h1>
+          <div class="ml-auto flex items-center gap-2 text-sm">
+            <a href="03-record.html" class="hidden sm:inline-flex items-center gap-2 rounded-xl bg-brand-600 text-white px-3 py-1.5 shadow-soft hover:bg-brand-700">New recording</a>
+            <a href="07-settings.html" class="inline-flex items-center gap-2 p-1.5 rounded-full border border-slate-200 hover:bg-brand-50"><img alt="avatar" src="https://i.pravatar.cc/40?img=5" class="h-8 w-8 rounded-full" /></a>
+          </div>
+        </div>
+      </header>
+
+      <!-- Content -->
+      <section class="flex-1 px-4 lg:px-8 py-6">
+        <!-- Tabs -->
+        <div class="rounded-2xl border border-slate-200 bg-white/80 shadow-soft">
+          <div class="px-4 py-3 border-b flex flex-wrap items-center gap-2">
+            <button class="tab-btn px-3 py-1.5 rounded-lg border text-sm" data-tab="profile" aria-selected="true">Profile</button>
+            <button class="tab-btn px-3 py-1.5 rounded-lg border text-sm" data-tab="preferences">Preferences</button>
+            <button class="tab-btn px-3 py-1.5 rounded-lg border text-sm" data-tab="vocab">Custom vocabulary</button>
+            <button class="tab-btn px-3 py-1.5 rounded-lg border text-sm" data-tab="notifications">Notifications</button>
+            <button class="tab-btn px-3 py-1.5 rounded-lg border text-sm" data-tab="shortcuts">Shortcuts</button>
+            <button class="tab-btn px-3 py-1.5 rounded-lg border text-sm" data-tab="devices">Devices</button>
+            <button class="tab-btn px-3 py-1.5 rounded-lg border text-sm" data-tab="privacy">Privacy</button>
+          </div>
+
+          <!-- Panels -->
+          <div class="p-4 space-y-6">
+            <!-- Profile -->
+            <section id="panel-profile">
+              <h2 class="font-semibold">Profile</h2>
+              <div class="mt-3 grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="md:col-span-2 rounded-xl border p-4 bg-white">
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+                    <label class="block">
+                      <span class="text-slate-600">Full name</span>
+                      <input class="mt-1 w-full rounded-lg border px-3 py-2" value="You"/>
+                    </label>
+                    <label class="block">
+                      <span class="text-slate-600">Email</span>
+                      <input class="mt-1 w-full rounded-lg border px-3 py-2" value="you@example.com"/>
+                    </label>
+                    <label class="block">
+                      <span class="text-slate-600">Organization</span>
+                      <input class="mt-1 w-full rounded-lg border px-3 py-2" placeholder="Company"/>
+                    </label>
+                    <label class="block">
+                      <span class="text-slate-600">Time zone</span>
+                      <select class="mt-1 w-full rounded-lg border px-3 py-2">
+                        <option>Asia/Kolkata (IST)</option>
+                        <option>UTC</option>
+                        <option>America/Los_Angeles (PT)</option>
+                      </select>
+                    </label>
+                  </div>
+                  <div class="mt-4 flex items-center gap-2">
+                    <button class="px-4 py-2 rounded-xl bg-brand-600 text-white">Save</button>
+                    <button class="px-4 py-2 rounded-xl border">Cancel</button>
+                  </div>
+                </div>
+                <div class="rounded-xl border p-4 bg-white">
+                  <div class="flex items-center gap-3">
+                    <img class="h-12 w-12 rounded-full" src="https://i.pravatar.cc/80?img=5" alt="avatar"/>
+                    <div>
+                      <div class="font-medium">Your avatar</div>
+                      <div class="text-xs text-slate-500">PNG/JPG up to 2MB</div>
+                    </div>
+                  </div>
+                  <div class="mt-3 flex items-center gap-2 text-sm">
+                    <button class="px-3 py-1.5 rounded-lg border">Upload</button>
+                    <button class="px-3 py-1.5 rounded-lg border">Remove</button>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Preferences -->
+            <section id="panel-preferences" class="hidden">
+              <h2 class="font-semibold">Preferences</h2>
+              <div class="mt-3 grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="rounded-xl border p-4 bg-white space-y-3 text-sm">
+                  <div class="flex items-center justify-between">
+                    <span class="text-slate-700">Default language</span>
+                    <select class="rounded-lg border px-2 py-1">
+                      <option>English (US)</option>
+                      <option selected>English (India)</option>
+                      <option>Hindi (India)</option>
+                      <option>Tamil (India)</option>
+                    </select>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-slate-700">Auto-punctuation</span>
+                    <input type="checkbox" class="toggle" checked>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-slate-700">Speaker diarization</span>
+                    <input type="checkbox" class="toggle" checked>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-slate-700">Show word timestamps</span>
+                    <input type="checkbox" class="toggle" checked>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-slate-700">Theme</span>
+                    <select class="rounded-lg border px-2 py-1">
+                      <option selected>Light (Blue)</option>
+                      <option>Dark</option>
+                      <option>System</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="rounded-xl border p-4 bg-white text-sm space-y-3">
+                  <div class="flex items-center justify-between">
+                    <span class="text-slate-700">Skip silence on playback</span>
+                    <input type="checkbox" class="toggle">
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-slate-700">Auto-start recording page</span>
+                    <input type="checkbox" class="toggle">
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-slate-700">Auto-open summary panel</span>
+                    <input type="checkbox" class="toggle" checked>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-slate-700">Default export format</span>
+                    <select class="rounded-lg border px-2 py-1">
+                      <option>.txt</option>
+                      <option selected>.docx</option>
+                      <option>.pdf</option>
+                      <option>.srt</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Vocabulary -->
+            <section id="panel-vocab" class="hidden">
+              <h2 class="font-semibold">Custom vocabulary</h2>
+              <div class="mt-3 grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-4">
+                <div class="rounded-xl border p-4 bg-white">
+                  <div class="flex items-center gap-2">
+                    <input id="termInput" class="flex-1 rounded-lg border px-3 py-2 text-sm" placeholder="Add names, jargon, product terms… e.g., Zoho, Urapakkam, raga"/>
+                    <button id="addTerm" class="px-3 py-2 rounded-xl bg-brand-600 text-white text-sm">Add</button>
+                  </div>
+                  <div id="terms" class="mt-3 flex flex-wrap gap-2 text-sm">
+                    <span class="term px-2 py-1 rounded-full bg-brand-50 text-brand-700 border border-brand-200">Otter</span>
+                    <span class="term px-2 py-1 rounded-full bg-brand-50 text-brand-700 border border-brand-200">diarization</span>
+                    <span class="term px-2 py-1 rounded-full bg-brand-50 text-brand-700 border border-brand-200">IST</span>
+                  </div>
+                  <div class="mt-4 flex items-center gap-2 text-sm">
+                    <button id="exportTerms" class="px-3 py-1.5 rounded-lg border">Export .json</button>
+                    <label class="px-3 py-1.5 rounded-lg border cursor-pointer">Import .json
+                      <input id="importTerms" type="file" accept="application/json" class="hidden" />
+                    </label>
+                    <button id="clearTerms" class="px-3 py-1.5 rounded-lg border">Clear all</button>
+                  </div>
+                </div>
+                <div class="rounded-xl border p-4 bg-white">
+                  <div class="font-medium">Tips</div>
+                  <ul class="mt-2 list-disc pl-5 text-sm text-slate-700">
+                    <li>One word or short phrase per entry.</li>
+                    <li>Add names and domain-specific terms to boost accuracy.</li>
+                    <li>Case-insensitive; avoid duplicates.</li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            <!-- Notifications -->
+            <section id="panel-notifications" class="hidden">
+              <h2 class="font-semibold">Notifications</h2>
+              <div class="mt-3 grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                <div class="rounded-xl border p-4 bg-white space-y-3">
+                  <div class="flex items-center justify-between"><span>Recording finished</span><input type="checkbox" class="toggle" checked></div>
+                  <div class="flex items-center justify-between"><span>Transcript ready</span><input type="checkbox" class="toggle" checked></div>
+                  <div class="flex items-center justify-between"><span>Mentions in comments</span><input type="checkbox" class="toggle" checked></div>
+                  <div class="flex items-center justify-between"><span>Shared with you</span><input type="checkbox" class="toggle"></div>
+                </div>
+                <div class="rounded-xl border p-4 bg-white space-y-3">
+                  <div class="flex items-center justify-between"><span>Email</span><input type="checkbox" class="toggle" checked></div>
+                  <div class="flex items-center justify-between"><span>Push (mobile)</span><input type="checkbox" class="toggle" checked></div>
+                  <div class="flex items-center justify-between"><span>Desktop</span><input type="checkbox" class="toggle"></div>
+                  <div class="flex items-center justify-between"><span>Weekly summary</span><input type="checkbox" class="toggle"></div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Shortcuts -->
+            <section id="panel-shortcuts" class="hidden">
+              <h2 class="font-semibold">Keyboard shortcuts</h2>
+              <div class="mt-3 grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="rounded-xl border p-4 bg-white">
+                  <div class="grid grid-cols-2 gap-2 text-sm">
+                    <div class="flex items-center justify-between border rounded-lg px-3 py-2"><span>Start/Stop</span><kbd class="px-2 py-1 rounded bg-slate-100 border">Space</kbd></div>
+                    <div class="flex items-center justify-between border rounded-lg px-3 py-2"><span>Pause</span><kbd class="px-2 py-1 rounded bg-slate-100 border">P</kbd></div>
+                    <div class="flex items-center justify-between border rounded-lg px-3 py-2"><span>Bookmark</span><kbd class="px-2 py-1 rounded bg-slate-100 border">B</kbd></div>
+                    <div class="flex items-center justify-between border rounded-lg px-3 py-2"><span>Highlight</span><kbd class="px-2 py-1 rounded bg-slate-100 border">H</kbd></div>
+                    <div class="flex items-center justify-between border rounded-lg px-3 py-2"><span>Find</span><kbd class="px-2 py-1 rounded bg-slate-100 border">Ctrl/⌘ F</kbd></div>
+                    <div class="flex items-center justify-between border rounded-lg px-3 py-2"><span>Replace</span><kbd class="px-2 py-1 rounded bg-slate-100 border">Ctrl/⌘ R</kbd></div>
+                  </div>
+                </div>
+                <div class="rounded-xl border p-4 bg-white">
+                  <div class="font-medium">Try it</div>
+                  <p class="text-sm text-slate-600">Focus the box and press a key combo. We'll show what we detected.</p>
+                  <div id="tester" tabindex="0" class="mt-2 h-28 rounded-xl border-2 border-dashed grid place-items-center text-slate-500">Click here, then press keys</div>
+                  <div id="pressed" class="mt-2 text-sm text-slate-700">—</div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Devices -->
+            <section id="panel-devices" class="hidden">
+              <h2 class="font-semibold">Devices</h2>
+              <div class="mt-3 grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                <div class="rounded-xl border p-4 bg-white space-y-3">
+                  <div class="text-slate-700 font-medium">Microphone</div>
+                  <select class="w-full rounded-lg border px-3 py-2">
+                    <option>Default microphone</option>
+                    <option>External USB mic</option>
+                  </select>
+                  <div class="mt-2 h-3 rounded-full bg-slate-200 overflow-hidden"><div id="vu" class="h-full w-1/3 bg-brand-600"></div></div>
+                  <div class="text-xs text-slate-500">Speak to test input levels.</div>
+                </div>
+                <div class="rounded-xl border p-4 bg-white space-y-3">
+                  <div class="text-slate-700 font-medium">Speaker</div>
+                  <select class="w-full rounded-lg border px-3 py-2">
+                    <option>Default output</option>
+                    <option>Headphones</option>
+                  </select>
+                  <button class="px-3 py-1.5 rounded-lg border">Play test sound</button>
+                </div>
+              </div>
+            </section>
+
+            <!-- Privacy -->
+            <section id="panel-privacy" class="hidden">
+              <h2 class="font-semibold">Privacy & data</h2>
+              <div class="mt-3 grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                <div class="rounded-xl border p-4 bg-white space-y-3">
+                  <div class="flex items-center justify-between"><span>Make new recordings private</span><input type="checkbox" class="toggle" checked></div>
+                  <div class="flex items-center justify-between"><span>Allow link sharing by default</span><input type="checkbox" class="toggle"></div>
+                  <div class="flex items-center justify-between"><span>Auto-delete trashed items</span><select class="rounded-lg border px-2 py-1"><option>Never</option><option>30 days</option><option>60 days</option></select></div>
+                </div>
+                <div class="rounded-xl border p-4 bg-white space-y-3">
+                  <div class="font-medium">Account data</div>
+                  <button class="px-3 py-1.5 rounded-lg border">Export account data</button>
+                  <button class="px-3 py-1.5 rounded-lg border">Delete account</button>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <footer class="px-4 lg:px-8 py-6 text-xs text-slate-500">
+        <div class="flex flex-col sm:flex-row gap-2 sm:items-center sm:justify-between">
+          <div>© 2025 Voice Notes AI</div>
+          <div class="flex items-center gap-3">
+            <a href="15-help.html" class="hover:underline">Help</a>
+            <a href="#" class="hover:underline">Privacy</a>
+            <a href="#" class="hover:underline">Terms</a>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Minimal JS: tab switch, vocab chips, tester, fake VU -->
+  <script>
+    // Tab switching
+    const tabs = document.querySelectorAll('.tab-btn');
+    const panels = {
+      profile: document.getElementById('panel-profile'),
+      preferences: document.getElementById('panel-preferences'),
+      vocab: document.getElementById('panel-vocab'),
+      notifications: document.getElementById('panel-notifications'),
+      shortcuts: document.getElementById('panel-shortcuts'),
+      devices: document.getElementById('panel-devices'),
+      privacy: document.getElementById('panel-privacy'),
+    };
+    function showTab(key){
+      Object.values(panels).forEach(p=>p.classList.add('hidden'));
+      panels[key].classList.remove('hidden');
+      tabs.forEach(t=>t.setAttribute('aria-selected', String(t.dataset.tab===key)));
+    }
+    tabs.forEach(t=> t.addEventListener('click', ()=>showTab(t.dataset.tab)) );
+
+    // Vocabulary chips
+    const termInput = document.getElementById('termInput');
+    const terms = document.getElementById('terms');
+    document.getElementById('addTerm').addEventListener('click', ()=>{
+      const val = termInput.value.trim(); if(!val) return; termInput.value='';
+      const chip = document.createElement('span');
+      chip.className = 'term px-2 py-1 rounded-full bg-brand-50 text-brand-700 border border-brand-200';
+      chip.textContent = val;
+      chip.title = 'Click to remove';
+      chip.addEventListener('click', ()=>chip.remove());
+      terms.appendChild(chip);
+    });
+    document.getElementById('clearTerms').addEventListener('click', ()=>{ terms.innerHTML=''; });
+    document.getElementById('exportTerms').addEventListener('click', ()=>{
+      const data = [...terms.querySelectorAll('.term')].map(x=>x.textContent);
+      const blob = new Blob([JSON.stringify(data, null, 2)], {type:'application/json'});
+      const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'vocabulary.json'; a.click();
+    });
+    document.getElementById('importTerms').addEventListener('change', (e)=>{
+      const file = e.target.files[0]; if(!file) return;
+      const reader = new FileReader();
+      reader.onload = ()=>{
+        try { const arr = JSON.parse(reader.result);
+          arr.forEach(val=>{ const chip = document.createElement('span'); chip.className='term px-2 py-1 rounded-full bg-brand-50 text-brand-700 border border-brand-200'; chip.textContent = val; chip.title='Click to remove'; chip.addEventListener('click', ()=>chip.remove()); terms.appendChild(chip); });
+        } catch(err){ alert('Invalid JSON'); }
+      };
+      reader.readAsText(file);
+    });
+
+    // Shortcuts tester
+    const tester = document.getElementById('tester');
+    const pressed = document.getElementById('pressed');
+    tester.addEventListener('keydown', (e)=>{
+      e.preventDefault();
+      const parts=[]; if(e.ctrlKey||e.metaKey) parts.push(navigator.platform.includes('Mac')?'⌘':'Ctrl'); if(e.altKey) parts.push('Alt'); if(e.shiftKey) parts.push('Shift');
+      const key = e.key.length===1 ? e.key.toUpperCase() : e.key; parts.push(key);
+      pressed.textContent = 'Detected: ' + parts.join(' + ');
+    });
+
+    // Fake input level animation
+    const vu = document.getElementById('vu');
+    setInterval(()=>{ vu.style.width = (20 + Math.random()*60) + '%'; }, 500);
+
+    // Default to Profile tab on load
+    showTab('profile');
+  </script>
+</body>
+</html>

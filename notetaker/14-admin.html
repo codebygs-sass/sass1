@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Page 14 – Admin | Voice Notes AI</title>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { brand: {50:'#eff6ff',100:'#dbeafe',200:'#bfdbfe',300:'#93c5fd',400:'#60a5fa',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',800:'#1e40af',900:'#1e3a8a'} },
+          boxShadow: { soft: '0 10px 30px -10px rgba(0,0,0,0.15)' }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    html { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial; }
+    .scroll-slim { scrollbar-width: thin; }
+    .scroll-slim::-webkit-scrollbar { height: 8px; width: 8px; }
+    .scroll-slim::-webkit-scrollbar-thumb { background: rgba(30,64,175,.35); border-radius: 8px; }
+    .badge { font-size:.75rem; padding:.2rem .5rem; border:1px solid; border-radius:9999px; }
+    .kbd { padding:.1rem .35rem; border:1px solid rgb(226 232 240); border-bottom-width:2px; border-radius:.375rem; background:white; font-size:.75rem }
+    .modal-enter { animation: pop .12s ease-out; }
+    @keyframes pop { from{ transform: scale(.98); opacity:0 } to{ transform: scale(1); opacity:1 } }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-brand-50/70 via-white to-brand-100/40 text-slate-800">
+  <div class="min-h-screen grid grid-cols-1 lg:grid-cols-[280px_1fr]">
+    <!-- Sidebar -->
+    <aside class="bg-white/80 backdrop-blur sticky top-0 h-full lg:h-screen border-r border-slate-200 shadow-soft hidden lg:flex flex-col">
+      <div class="px-5 pt-6 pb-4 flex items-center gap-3">
+        <div class="h-10 w-10 grid place-items-center rounded-xl bg-brand-600 text-white font-bold">VN</div>
+        <div>
+          <div class="text-sm uppercase tracking-wider text-brand-700 font-semibold">Voice Notes AI</div>
+          <div class="text-xs text-slate-500">Otter-like Transcription</div>
+        </div>
+      </div>
+      <nav class="mt-4 flex-1 overflow-y-auto scroll-slim">
+        <ul class="px-3 space-y-1 text-sm">
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="02-dashboard.html">Dashboard</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="03-record.html">Record</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="04-transcript.html">Transcript</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="05-search.html">Search</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="06-uploads.html">Uploads</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="07-settings.html">Settings</a></li>
+          <li class="pt-2"><div class="px-3 text-xs uppercase tracking-wide text-slate-400">More</div></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="08-billing.html">Billing</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="09-team.html">Team</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="10-calendar.html">Calendar</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="11-integrations.html">Integrations</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="12-bot.html">Meeting Bot</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="13-analytics.html">Analytics</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-brand-50 text-brand-700 font-medium" href="14-admin.html">Admin</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="15-help.html">Help</a></li>
+          <li class="pt-2"><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-brand-50" href="01-auth.html">Sign in / out</a></li>
+        </ul>
+      </nav>
+      <div class="p-4 mt-auto">
+        <div class="rounded-xl bg-gradient-to-br from-brand-600 to-brand-800 text-white p-4">
+          <div class="text-sm opacity-90">Minutes used</div>
+          <div class="mt-1 flex items-end gap-2"><div class="text-2xl font-semibold">382</div><div class="text-xs opacity-80">/ 600</div></div>
+          <div class="mt-3 h-2 bg-white/20 rounded-full overflow-hidden"><div class="h-full w-[64%] bg-white/90"></div></div>
+          <a href="08-billing.html" class="mt-3 inline-flex items-center gap-2 text-xs font-medium underline">Upgrade plan →</a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="flex flex-col min-h-screen">
+      <!-- Topbar -->
+      <header class="sticky top-0 z-10 backdrop-blur bg-white/70 border-b border-slate-200">
+        <div class="px-4 lg:px-8 py-3 flex items-center gap-3">
+          <h1 class="text-lg md:text-xl font-semibold text-slate-900">Admin</h1>
+          <div class="ml-auto flex items-center gap-2 text-sm">
+            <button id="exportAudit" class="px-3 py-1.5 rounded-lg border">Export audit CSV</button>
+            <button id="addDomainOpen" class="px-3 py-1.5 rounded-lg border">Add domain</button>
+            <button id="setupSSO" class="px-3 py-1.5 rounded-lg bg-brand-600 text-white">Configure SSO</button>
+            <a href="07-settings.html" class="inline-flex items-center gap-2 p-1.5 rounded-full border border-slate-200 hover:bg-brand-50"><img alt="avatar" src="https://i.pravatar.cc/40?img=5" class="h-8 w-8 rounded-full" /></a>
+          </div>
+        </div>
+      </header>
+
+      <!-- Content -->
+      <section class="flex-1 px-4 lg:px-8 py-6 space-y-6">
+        <!-- Org profile -->
+        <div class="grid grid-cols-1 xl:grid-cols-[1fr_360px] gap-4">
+          <div class="rounded-2xl border border-slate-200 bg-white/80 shadow-soft p-4">
+            <div class="flex items-center justify-between">
+              <h2 class="font-semibold">Organization</h2>
+              <span class="text-xs text-slate-500">Org ID: <code>org_7f3k92</code></span>
+            </div>
+            <div class="mt-3 grid grid-cols-1 md:grid-cols-3 gap-3 text-sm">
+              <label class="block md:col-span-2"><span class="text-slate-600">Organization name</span><input class="mt-1 w-full rounded-lg border px-3 py-2" value="Acme Corp"></label>
+              <label class="block"><span class="text-slate-600">Slug</span><input class="mt-1 w-full rounded-lg border px-3 py-2" value="acme"/></label>
+              <div class="md:col-span-2 flex items-center gap-3">
+                <img id="orgLogo" class="h-12 w-12 rounded-lg border" src="https://placehold.co/96x96?text=Logo" alt="logo"/>
+                <div class="space-x-2"><button class="px-3 py-1.5 rounded-lg border">Upload</button><button class="px-3 py-1.5 rounded-lg border">Remove</button></div>
+              </div>
+              <label class="block"><span class="text-slate-600">Data region</span><select class="mt-1 w-full rounded-lg border px-3 py-2"><option selected>Asia (India)</option><option>US</option><option>EU</option></select></label>
+              <label class="block"><span class="text-slate-600">Data residency lock</span><select class="mt-1 w-full rounded-lg border px-3 py-2"><option>Off</option><option selected>Hard lock</option><option>Soft lock</option></select></label>
+              <div class="md:col-span-3 flex items-center gap-3">
+                <label class="flex items-center gap-2"><input type="checkbox" checked> Show consent banner by default</label>
+                <label class="flex items-center gap-2"><input type="checkbox"> Allow public share links</label>
+              </div>
+              <div class="md:col-span-3">
+                <button class="px-4 py-2 rounded-xl bg-brand-600 text-white">Save changes</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Domains & SSO quick -->
+          <aside class="rounded-2xl border border-slate-200 bg-white/80 shadow-soft p-4">
+            <div class="flex items-center justify-between">
+              <h3 class="font-semibold">Domains & SSO</h3>
+              <a href="#sso" class="text-xs underline">Advanced</a>
+            </div>
+            <ul id="domainList" class="mt-3 space-y-2 text-sm">
+              <li class="rounded-xl border bg-white p-3 flex items-center justify-between"><div><div class="font-medium">company.com</div><div class="text-xs text-slate-500">Verified</div></div><div class="flex items-center gap-2"><span class="badge bg-emerald-50 text-emerald-700 border-emerald-200">primary</span><button class="px-3 py-1.5 rounded-lg border">Remove</button></div></li>
+              <li class="rounded-xl border bg-white p-3 flex items-center justify-between"><div><div class="font-medium">contractors.dev</div><div class="text-xs text-slate-500">Pending DNS</div></div><div class="flex items-center gap-2"><button class="px-3 py-1.5 rounded-lg border">Verify</button><button class="px-3 py-1.5 rounded-lg border">Remove</button></div></li>
+            </ul>
+            <button id="addDomainOpen2" class="mt-3 w-full px-3 py-2 rounded-lg border">Add domain</button>
+            <div class="mt-4 grid grid-cols-1 gap-2 text-sm">
+              <div class="rounded-xl border bg-white p-3">
+                <div class="flex items-center justify-between"><div>SSO</div><div class="text-xs text-slate-500">SAML / OIDC</div></div>
+                <div class="mt-2 flex items-center gap-2"><button class="px-3 py-1.5 rounded-lg bg-brand-600 text-white" id="quickSSO">Enable</button><button class="px-3 py-1.5 rounded-lg border">Test</button></div>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <!-- Roles & permissions -->
+        <div class="rounded-2xl border border-slate-200 bg-white/80 shadow-soft">
+          <div class="px-4 py-3 border-b flex items-center justify-between">
+            <h3 class="font-semibold">Roles & permissions</h3>
+            <div class="text-xs text-slate-500">Preset mappings · drag or click to toggle</div>
+          </div>
+          <div class="p-4 overflow-x-auto scroll-slim">
+            <table class="min-w-full text-sm">
+              <thead class="bg-brand-50/60 text-slate-600">
+                <tr>
+                  <th class="text-left px-3 py-2">Permission</th>
+                  <th class="text-center px-3 py-2">Owner</th>
+                  <th class="text-center px-3 py-2">Admin</th>
+                  <th class="text-center px-3 py-2">Member</th>
+                  <th class="text-center px-3 py-2">Viewer</th>
+                </tr>
+              </thead>
+              <tbody id="permBody" class="divide-y">
+                <!-- rows injected by JS -->
+              </tbody>
+            </table>
+            <div class="mt-3 flex items-center gap-2">
+              <button id="savePerms" class="px-4 py-2 rounded-xl bg-brand-600 text-white">Save</button>
+              <button id="resetPerms" class="px-4 py-2 rounded-xl border">Reset to defaults</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Security policies -->
+        <div class="grid grid-cols-1 xl:grid-cols-3 gap-4">
+          <div class="rounded-2xl border border-slate-200 bg-white/80 shadow-soft p-4">
+            <h3 class="font-semibold">Security</h3>
+            <div class="mt-3 space-y-3 text-sm">
+              <label class="flex items-center justify-between"><span>Require 2FA for all members</span><input id="sec2fa" type="checkbox" checked></label>
+              <label class="flex items-center justify-between"><span>Session timeout</span>
+                <select id="secSess" class="rounded-lg border px-2 py-1"><option>24h</option><option>12h</option><option selected>8h</option><option>1h</option></select>
+              </label>
+              <div>
+                <div class="text-slate-600">IP allowlist</div>
+                <textarea id="secIP" rows="3" class="mt-1 w-full rounded-lg border px-3 py-2" placeholder="203.0.113.0/24
+198.51.100.25"></textarea>
+                <div class="mt-1 text-xs text-slate-500">One CIDR or IP per line.</div>
+              </div>
+              <div>
+                <div class="text-slate-600">DLP patterns</div>
+                <label class="flex items-center justify-between"><span>Detect credit card numbers</span><input type="checkbox" checked></label>
+                <label class="flex items-center justify-between"><span>Detect government IDs</span><input type="checkbox"></label>
+                <label class="flex items-center justify-between"><span>Mask PII in exports</span><input type="checkbox" checked></label>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-slate-200 bg-white/80 shadow-soft p-4" id="sso">
+            <h3 class="font-semibold">SSO / SCIM</h3>
+            <div class="mt-3 space-y-3 text-sm">
+              <label class="block"><span class="text-slate-600">Provider</span><select id="ssoProv" class="mt-1 w-full rounded-lg border px-3 py-2"><option selected>SAML</option><option>OIDC</option></select></label>
+              <label class="block"><span class="text-slate-600">Entity ID / Issuer</span><input id="ssoIss" class="mt-1 w-full rounded-lg border px-3 py-2" placeholder="https://idp.example.com/metadata"></label>
+              <label class="block"><span class="text-slate-600">ACS URL</span><input id="ssoACS" class="mt-1 w-full rounded-lg border px-3 py-2" value="https://app.voicenotes.ai/sso/assert"></label>
+              <label class="block"><span class="text-slate-600">X.509 Certificate</span><textarea id="ssoCert" rows="3" class="mt-1 w-full rounded-lg border px-3 py-2" placeholder="-----BEGIN CERTIFICATE-----"></textarea></label>
+              <label class="flex items-center justify-between"><span>Just-in-time (JIT) provisioning</span><input id="scimJit" type="checkbox" checked></label>
+              <div class="rounded-xl border bg-white p-3">
+                <div class="flex items-center justify-between"><div>SCIM token</div><div class="text-xs text-slate-500">/scim/v2</div></div>
+                <div class="mt-2 rounded-lg border bg-slate-50 px-3 py-2 flex items-center justify-between"><code id="scimTok">scim_live_A1B2...9Z</code><div class="space-x-2"><button id="copyScim" class="px-2 py-1 rounded-lg border">Copy</button><button id="regenScim" class="px-2 py-1 rounded-lg border">Regenerate</button></div></div>
+              </div>
+              <div class="flex items-center gap-2">
+                <button id="testSSO" class="px-4 py-2 rounded-xl border">Test</button>
+                <button id="saveSSO" class="px-4 py-2 rounded-xl bg-brand-600 text-white">Save</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-slate-200 bg-white/80 shadow-soft p-4">
+            <h3 class="font-semibold">Data & retention</h3>
+            <div class="mt-3 space-y-3 text-sm">
+              <label class="block"><span class="text-slate-600">Transcript retention</span>
+                <div class="mt-1 flex items-center gap-2"><input id="retDays" type="range" min="7" max="365" value="180" class="w-full"><span id="retLabel" class="text-slate-600 min-w-[60px] text-right">180d</span></div>
+              </label>
+              <label class="block"><span class="text-slate-600">Recording retention</span>
+                <div class="mt-1 flex items-center gap-2"><input id="recDays" type="range" min="7" max="365" value="90" class="w-full"><span id="recLabel" class="text-slate-600 min-w-[60px] text-right">90d</span></div>
+              </label>
+              <div class="flex items-center gap-2">
+                <button id="exportData" class="px-3 py-1.5 rounded-lg border">Export data</button>
+                <button id="legalHold" class="px-3 py-1.5 rounded-lg border">Place legal hold</button>
+              </div>
+              <div class="rounded-xl border border-rose-200 bg-rose-50 p-3">
+                <div class="font-medium text-rose-700">Danger zone</div>
+                <div class="text-xs text-rose-700/80">Delete workspace and all data. This cannot be undone.</div>
+                <button id="deleteOpen" class="mt-2 px-3 py-1.5 rounded-lg bg-rose-600 text-white">Delete workspace</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Audit log -->
+        <div class="rounded-2xl border border-slate-200 bg-white/80 shadow-soft overflow-hidden">
+          <div class="px-4 py-3 border-b flex flex-wrap items-center gap-2">
+            <h3 class="font-semibold">Audit log</h3>
+            <div class="ml-auto flex items-center gap-2 text-sm">
+              <input id="qAudit" class="rounded-xl border px-3 py-1.5" placeholder="Search actor or event"/>
+              <select id="fResult" class="rounded-xl border px-3 py-1.5"><option value="all">All results</option><option>200</option><option>401</option><option>403</option><option>429</option><option>500</option></select>
+              <label class="px-2 py-1.5 rounded-xl border bg-white flex items-center gap-2"><input id="from" type="date" class="outline-none"><span>→</span><input id="to" type="date" class="outline-none"></label>
+            </div>
+          </div>
+          <div class="overflow-x-auto scroll-slim">
+            <table class="min-w-full text-sm">
+              <thead class="bg-brand-50/60 text-slate-600">
+                <tr><th class="text-left px-3 py-2">Time</th><th class="text-left px-3 py-2">Actor</th><th class="text-left px-3 py-2">IP</th><th class="text-left px-3 py-2">Event</th><th class="text-left px-3 py-2">Target</th><th class="text-left px-3 py-2">Result</th><th class="text-right px-3 py-2">Action</th></tr>
+              </thead>
+              <tbody id="auditBody" class="divide-y"></tbody>
+            </table>
+          </div>
+          <div class="px-4 py-3 border-t flex items-center gap-2 text-sm">
+            <div id="auditCount">0 events</div>
+            <div class="ml-auto flex items-center gap-1">
+              <button class="px-3 py-1.5 rounded-lg border">Prev</button>
+              <div class="px-3 py-1.5">1 / 5</div>
+              <button class="px-3 py-1.5 rounded-lg border">Next</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature flags -->
+        <div class="rounded-2xl border border-slate-200 bg-white/80 shadow-soft p-4">
+          <div class="flex items-center justify-between"><h3 class="font-semibold">Feature flags</h3><span class="text-xs text-slate-500">Beta controls</span></div>
+          <div class="mt-3 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3 text-sm" id="flags">
+            <label class="rounded-xl border bg-white p-3 flex items-center justify-between"><div><div class="font-medium">Enhanced diarization</div><div class="text-xs text-slate-500">Better speaker turns</div></div><input type="checkbox" checked></label>
+            <label class="rounded-xl border bg-white p-3 flex items-center justify-between"><div><div class="font-medium">Real-time translation</div><div class="text-xs text-slate-500">Live EN↔HI</div></div><input type="checkbox"></label>
+            <label class="rounded-xl border bg-white p-3 flex items-center justify-between"><div><div class="font-medium">Auto redact PII</div><div class="text-xs text-slate-500">Client-side</div></div><input type="checkbox" checked></label>
+            <label class="rounded-xl border bg-white p-3 flex items-center justify-between"><div><div class="font-medium">Advanced summaries</div><div class="text-xs text-slate-500">OKR & MOM</div></div><input type="checkbox"></label>
+            <label class="rounded-xl border bg-white p-3 flex items-center justify-between"><div><div class="font-medium">Audio denoise v2</div><div class="text-xs text-slate-500">Beta</div></div><input type="checkbox"></label>
+            <label class="rounded-xl border bg-white p-3 flex items-center justify-between"><div><div class="font-medium">Offline mode</div><div class="text-xs text-slate-500">Edge transcription</div></div><input type="checkbox"></label>
+          </div>
+        </div>
+      </section>
+
+      <footer class="px-4 lg:px-8 py-6 text-xs text-slate-500">
+        <div class="flex flex-col sm:flex-row gap-2 sm:items-center sm:justify-between">
+          <div>© 2025 Voice Notes AI</div>
+          <div class="flex items-center gap-3">
+            <a href="15-help.html" class="hover:underline">Help</a>
+            <a href="#" class="hover:underline">Privacy</a>
+            <a href="#" class="hover:underline">Terms</a>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Modals -->
+  <div id="domainModal" class="hidden fixed inset-0 z-20 grid place-items-center bg-black/30 p-4">
+    <div class="modal-enter w-full max-w-md rounded-2xl bg-white shadow-soft border p-4">
+      <div class="flex items-center justify-between"><h3 class="font-semibold">Add domain</h3><button id="domClose" class="p-2 rounded-lg hover:bg-slate-100">✕</button></div>
+      <div class="mt-3 text-sm space-y-3">
+        <input id="domName" class="w-full rounded-lg border px-3 py-2" placeholder="example.com"/>
+        <div class="rounded-xl border bg-white p-3 text-xs">
+          <div class="font-medium">DNS verification</div>
+          <div class="mt-1">Create a TXT record: <code>voicenotes-verification=abcdef123456</code></div>
+        </div>
+      </div>
+      <div class="mt-4 flex items-center gap-2"><button id="domAdd" class="px-4 py-2 rounded-xl bg-brand-600 text-white">Add</button><button id="domCancel" class="px-4 py-2 rounded-xl border">Cancel</button></div>
+    </div>
+  </div>
+
+  <div id="deleteModal" class="hidden fixed inset-0 z-20 grid place-items-center bg-black/30 p-4">
+    <div class="modal-enter w-full max-w-md rounded-2xl bg-white shadow-soft border p-4">
+      <div class="flex items-center justify-between"><h3 class="font-semibold text-rose-700">Delete workspace</h3><button id="delClose" class="p-2 rounded-lg hover:bg-slate-100">✕</button></div>
+      <p class="mt-2 text-sm">Type <span class="font-semibold">DELETE</span> to confirm. This permanently removes all data.</p>
+      <input id="delConf" class="mt-2 w-full rounded-lg border px-3 py-2" placeholder="DELETE"/>
+      <div class="mt-4 flex items-center gap-2"><button id="delBtn" class="px-4 py-2 rounded-xl bg-rose-600 text-white" disabled>Delete</button><button id="delCancel" class="px-4 py-2 rounded-xl border">Cancel</button></div>
+    </div>
+  </div>
+
+  <div id="auditModal" class="hidden fixed inset-0 z-20 grid place-items-center bg-black/30 p-4">
+    <div class="modal-enter w-full max-w-lg rounded-2xl bg-white shadow-soft border p-4">
+      <div class="flex items-center justify-between"><h3 class="font-semibold">Audit event</h3><button id="aClose" class="p-2 rounded-lg hover:bg-slate-100">✕</button></div>
+      <pre id="aJson" class="mt-3 text-xs bg-slate-50 rounded-lg p-3 overflow-auto max-h-[50vh]"></pre>
+      <div class="mt-4 flex items-center gap-2"><button id="aCopy" class="px-3 py-1.5 rounded-lg border">Copy JSON</button><button id="aDone" class="px-3 py-1.5 rounded-lg border">Close</button></div>
+    </div>
+  </div>
+
+  <!-- Minimal JS -->
+  <script>
+    const $ = (s, r=document) => r.querySelector(s);
+    const $$ = (s, r=document) => [...r.querySelectorAll(s)];
+
+    // ----- Roles & permissions (demo matrix) -----
+    const perms = [
+      { key:'record.start', label:'Start recordings', vals:[1,1,1,0] },
+      { key:'record.delete', label:'Delete recordings', vals:[1,1,0,0] },
+      { key:'transcript.edit', label:'Edit transcripts', vals:[1,1,1,0] },
+      { key:'transcript.share', label:'Share transcripts', vals:[1,1,1,1] },
+      { key:'team.invite', label:'Invite members', vals:[1,1,0,0] },
+      { key:'team.manage', label:'Manage roles', vals:[1,1,0,0] },
+      { key:'billing.manage', label:'Manage billing', vals:[1,1,0,0] },
+      { key:'security.manage', label:'Security & SSO', vals:[1,1,0,0] },
+    ];
+    function renderPerms(){
+      const body = $('#permBody'); body.innerHTML='';
+      perms.forEach((p,i)=>{
+        const tr = document.createElement('tr');
+        tr.innerHTML = `<td class='px-3 py-2'>${p.label}<div class='text-xs text-slate-500'>${p.key}</div></td>`+
+          [0,1,2,3].map(ix=>`<td class='px-3 py-2 text-center'><input type='checkbox' data-i='${i}' data-r='${ix}' ${p.vals[ix]?'checked':''}></td>`).join('');
+        body.appendChild(tr);
+      });
+    }
+    $('#permBody')?.addEventListener('change', (e)=>{
+      const i = +e.target.dataset.i; const r = +e.target.dataset.r; perms[i].vals[r] = e.target.checked?1:0;
+    });
+    $('#savePerms').addEventListener('click', ()=> alert('Permissions saved'));
+    $('#resetPerms').addEventListener('click', ()=>{ perms.forEach(p=>p.vals=[1,1,1,0]); renderPerms(); });
+
+    // ----- Domains -----
+    const domainModal = $('#domainModal');
+    const openDomain = ()=> domainModal.classList.remove('hidden');
+    $('#addDomainOpen').addEventListener('click', openDomain);
+    $('#addDomainOpen2').addEventListener('click', openDomain);
+    $('#domClose').addEventListener('click', ()=> domainModal.classList.add('hidden'));
+    $('#domCancel').addEventListener('click', ()=> domainModal.classList.add('hidden'));
+    $('#domAdd').addEventListener('click', ()=>{
+      const d = $('#domName').value.trim(); if(!d) return alert('Enter a domain');
+      const li = document.createElement('li');
+      li.className = 'rounded-xl border bg-white p-3 flex items-center justify-between';
+      li.innerHTML = `<div><div class='font-medium'>${d}</div><div class='text-xs text-slate-500'>Pending DNS</div></div><div class='flex items-center gap-2'><button class='px-3 py-1.5 rounded-lg border'>Verify</button><button class='px-3 py-1.5 rounded-lg border'>Remove</button></div>`;
+      $('#domainList').appendChild(li); domainModal.classList.add('hidden');
+    });
+
+    // ----- SSO / SCIM -----
+    $('#quickSSO').addEventListener('click', ()=>{ alert('SSO enabled (demo)'); });
+    $('#testSSO').addEventListener('click', ()=> alert('SSO test successful (demo)'));
+    $('#saveSSO').addEventListener('click', ()=> alert('SSO settings saved'));
+    $('#copyScim').addEventListener('click', ()=>{ navigator.clipboard.writeText($('#scimTok').textContent); alert('SCIM token copied'); });
+    $('#regenScim').addEventListener('click', ()=>{ $('#scimTok').textContent = 'scim_live_' + Math.random().toString(36).slice(2,6).toUpperCase() + '...' + Math.random().toString(36).slice(2,4).toUpperCase(); alert('SCIM token regenerated'); });
+
+    // ----- Data & retention -----
+    const upd = ()=>{ $('#retLabel').textContent = $('#retDays').value + 'd'; $('#recLabel').textContent = $('#recDays').value + 'd'; };
+    ['input','change'].forEach(ev=> $('#retDays').addEventListener(ev, upd));
+    ['input','change'].forEach(ev=> $('#recDays').addEventListener(ev, upd));
+    upd();
+    $('#exportData').addEventListener('click', ()=> alert('Export started (you will receive an email)'));
+    $('#legalHold').addEventListener('click', ()=> alert('Legal hold placed for all transcripts'));
+
+    // Delete workspace
+    const deleteModal = $('#deleteModal');
+    $('#deleteOpen').addEventListener('click', ()=> deleteModal.classList.remove('hidden'));
+    $('#delClose').addEventListener('click', ()=> deleteModal.classList.add('hidden'));
+    $('#delCancel').addEventListener('click', ()=> deleteModal.classList.add('hidden'));
+    $('#delConf').addEventListener('input', (e)=> $('#delBtn').disabled = e.target.value !== 'DELETE');
+    $('#delBtn').addEventListener('click', ()=>{ deleteModal.classList.add('hidden'); alert('Workspace deleted (demo)'); });
+
+    // ----- Audit log -----
+    const audit = [
+      {ts:'2025-08-24 09:32', actor:'alice', ip:'203.0.113.10', event:'transcript.share', tgt:'t_7x92', res:200, meta:{link:'public', ttl:7}},
+      {ts:'2025-08-24 08:11', actor:'system', ip:'-', event:'calendar.sync', tgt:'gcal', res:200, meta:{events:4}},
+      {ts:'2025-08-23 18:55', actor:'bob', ip:'198.51.100.25', event:'login', tgt:'web', res:200, meta:{mfa:true}},
+      {ts:'2025-08-23 18:02', actor:'carol', ip:'198.51.100.31', event:'team.invite', tgt:'priya@company.com', res:200, meta:{role:'Member'}},
+      {ts:'2025-08-23 16:40', actor:'carol', ip:'198.51.100.31', event:'record.delete', tgt:'r_44jk', res:403, meta:{reason:'forbidden'}},
+    ];
+    function renderAudit(){
+      const q = $('#qAudit').value.toLowerCase(); const fr = $('#fResult').value;
+      const rows = audit.filter(a=> (fr==='all'||String(a.res)===fr) && (a.actor.includes(q) || a.event.includes(q)));
+      const body = $('#auditBody'); body.innerHTML='';
+      rows.forEach((a,i)=>{
+        const tr = document.createElement('tr');
+        tr.innerHTML = `<td class='px-3 py-2'>${a.ts}</td><td class='px-3 py-2'>${a.actor}</td><td class='px-3 py-2'>${a.ip}</td><td class='px-3 py-2'>${a.event}</td><td class='px-3 py-2'>${a.tgt}</td><td class='px-3 py-2'>${a.res}</td><td class='px-3 py-2 text-right'><button class='px-3 py-1.5 rounded-lg border' data-i='${i}' onclick='openAudit(${i})'>View</button></td>`;
+        body.appendChild(tr);
+      });
+      $('#auditCount').textContent = rows.length + ' events';
+    }
+    $('#qAudit').addEventListener('input', renderAudit);
+    $('#fResult').addEventListener('change', renderAudit);
+
+    // Export audit CSV
+    $('#exportAudit').addEventListener('click', ()=>{
+      const header = 'time,actor,ip,event,target,result\n';
+      const lines = audit.map(a=>[a.ts,a.actor,a.ip,a.event,a.tgt,a.res].join(','));
+      const blob = new Blob([header+lines.join('\n')], {type:'text/csv'});
+      const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download='audit.csv'; a.click();
+    });
+
+    // Audit modal
+    const aModal = $('#auditModal');
+    window.openAudit = (i)=>{ $('#aJson').textContent = JSON.stringify(audit[i], null, 2); aModal.classList.remove('hidden'); };
+    $('#aClose').addEventListener('click', ()=> aModal.classList.add('hidden'));
+    $('#aDone').addEventListener('click', ()=> aModal.classList.add('hidden'));
+    $('#aCopy').addEventListener('click', ()=>{ navigator.clipboard.writeText($('#aJson').textContent); alert('Copied'); });
+
+    // Init
+    renderPerms();
+    renderAudit();
+  </script>
+</body>
+</html>
