@@ -76,7 +76,7 @@
           <h1 class="text-lg md:text-xl font-semibold text-slate-900">Settings</h1>
           <div class="ml-auto flex items-center gap-2 text-sm">
             <a href="03-record.html" class="hidden sm:inline-flex items-center gap-2 rounded-xl bg-brand-600 text-white px-3 py-1.5 shadow-soft hover:bg-brand-700">New recording</a>
-            <a href="07-settings.html" class="inline-flex items-center gap-2 p-1.5 rounded-full border border-slate-200 hover:bg-brand-50"><img alt="avatar" src="https://i.pravatar.cc/40?img=5" class="h-8 w-8 rounded-full" /></a>
+            <a href="07-settings.html" class="inline-flex items-center gap-2 p-1.5 rounded-full border border-slate-200 hover:bg-brand-50"><img id="header_profilePic" alt="avatar" src="https://i.pravatar.cc/40?img=5" class="h-8 w-8 rounded-full" /></a>
           </div>
         </div>
       </header>
@@ -102,108 +102,116 @@
               <h2 class="font-semibold">Profile</h2>
               <div class="mt-3 grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div class="md:col-span-2 rounded-xl border p-4 bg-white">
-                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+                  <form id="profile-form" class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
                     <label class="block">
                       <span class="text-slate-600">Full name</span>
-                      <input class="mt-1 w-full rounded-lg border px-3 py-2" value="You"/>
+                      <input id="profile_fullname" class="mt-1 w-full rounded-lg border px-3 py-2" value="You"/>
                     </label>
                     <label class="block">
                       <span class="text-slate-600">Email</span>
-                      <input class="mt-1 w-full rounded-lg border px-3 py-2" value="you@example.com"/>
+                      <input id="profile_email" class="mt-1 w-full rounded-lg border px-3 py-2" value="you@example.com"/>
                     </label>
                     <label class="block">
                       <span class="text-slate-600">Organization</span>
-                      <input class="mt-1 w-full rounded-lg border px-3 py-2" placeholder="Company"/>
+                      <input id="profile_org" class="mt-1 w-full rounded-lg border px-3 py-2" placeholder="Company"/>
                     </label>
                     <label class="block">
                       <span class="text-slate-600">Time zone</span>
-                      <select class="mt-1 w-full rounded-lg border px-3 py-2">
-                        <option>Asia/Kolkata (IST)</option>
-                        <option>UTC</option>
-                        <option>America/Los_Angeles (PT)</option>
+                      <select id="profile_timezone" class="mt-1 w-full rounded-lg border px-3 py-2">
+                        <option value="IST">Asia/Kolkata (IST)</option>
+                        <option value="UTC">UTC</option>
+                        <option value="PST">America/Los_Angeles (PT)</option>
                       </select>
                     </label>
-                  </div>
+                  
                   <div class="mt-4 flex items-center gap-2">
                     <button class="px-4 py-2 rounded-xl bg-brand-600 text-white">Save</button>
                     <button class="px-4 py-2 rounded-xl border">Cancel</button>
                   </div>
+                  </form>
                 </div>
-                <div class="rounded-xl border p-4 bg-white">
-                  <div class="flex items-center gap-3">
-                    <img class="h-12 w-12 rounded-full" src="https://i.pravatar.cc/80?img=5" alt="avatar"/>
-                    <div>
-                      <div class="font-medium">Your avatar</div>
-                      <div class="text-xs text-slate-500">PNG/JPG up to 2MB</div>
+                  <form id="uploadForm" class="rounded-xl border p-4 bg-white">
+                    <div  class="flex items-center gap-3">
+                      <img id="profile-img" class="h-12 w-12 rounded-full" src="https://i.pravatar.cc/80?img=5" alt="avatar"/>
+                      <div>
+                        <div class="font-medium">Your avatar</div>
+                        <div class="text-xs text-slate-500">PNG/JPG up to 2MB</div>
+                        <input class="my-2 w-48 p-2 text-sm border border-gray-300 rounded" id="file" type="file" accept="image/*"  required />
+                      </div>
                     </div>
-                  </div>
-                  <div class="mt-3 flex items-center gap-2 text-sm">
-                    <button class="px-3 py-1.5 rounded-lg border">Upload</button>
-                    <button class="px-3 py-1.5 rounded-lg border">Remove</button>
-                  </div>
-                </div>
+                  <div id="status"></div>
+                    <div class="mt-3 flex items-center gap-2 text-sm">
+                      <button id="profile_pic_upload" class="px-3 py-1.5 rounded-lg border">Upload</button>
+                      <button id="profile_pic_remove" class="px-3 py-1.5 rounded-lg border">Remove</button>
+                    </div>
+                  </form>
+              </div>
               </div>
             </section>
 
             <!-- Preferences -->
             <section id="panel-preferences" class="hidden">
               <h2 class="font-semibold">Preferences</h2>
-              <div class="mt-3 grid grid-cols-1 md:grid-cols-2 gap-4">
+              <form id="preference-form" class="mt-3 grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div class="rounded-xl border p-4 bg-white space-y-3 text-sm">
-                  <div class="flex items-center justify-between">
+                  <div  class="flex items-center justify-between">
                     <span class="text-slate-700">Default language</span>
-                    <select class="rounded-lg border px-2 py-1">
-                      <option>English (US)</option>
-                      <option selected>English (India)</option>
-                      <option>Hindi (India)</option>
-                      <option>Tamil (India)</option>
+                    <select  id="preference_langauge" class="rounded-lg border px-2 py-1">
+                      <option value="en-us">English (US)</option>
+                      <option value="en-in" selected>English (India)</option>
+                      <option value="hindi">Hindi (India)</option>
+                      <option value="tamil">Tamil (India)</option>
                     </select>
                   </div>
                   <div class="flex items-center justify-between">
                     <span class="text-slate-700">Auto-punctuation</span>
-                    <input type="checkbox" class="toggle" checked>
+                    <input id="preference_punctuation" type="checkbox" class="toggle" checked>
                   </div>
                   <div class="flex items-center justify-between">
                     <span class="text-slate-700">Speaker diarization</span>
-                    <input type="checkbox" class="toggle" checked>
+                    <input id="preference_diarization" type="checkbox" class="toggle" checked>
                   </div>
                   <div class="flex items-center justify-between">
                     <span class="text-slate-700">Show word timestamps</span>
-                    <input type="checkbox" class="toggle" checked>
+                    <input id="preference_timestamps" type="checkbox" class="toggle" checked>
                   </div>
                   <div class="flex items-center justify-between">
                     <span class="text-slate-700">Theme</span>
-                    <select class="rounded-lg border px-2 py-1">
-                      <option selected>Light (Blue)</option>
-                      <option>Dark</option>
-                      <option>System</option>
+                    <select id="preference_Theme" class="rounded-lg border px-2 py-1">
+                      <option value="light" selected>Light (Blue)</option>
+                      <option value="dark">Dark</option>
+                      <option value="system">System</option>
                     </select>
                   </div>
                 </div>
                 <div class="rounded-xl border p-4 bg-white text-sm space-y-3">
                   <div class="flex items-center justify-between">
                     <span class="text-slate-700">Skip silence on playback</span>
-                    <input type="checkbox" class="toggle">
+                    <input id="preference_playback" type="checkbox" class="toggle">
                   </div>
                   <div class="flex items-center justify-between">
                     <span class="text-slate-700">Auto-start recording page</span>
-                    <input type="checkbox" class="toggle">
+                    <input id="preference_recording" type="checkbox" class="toggle">
                   </div>
                   <div class="flex items-center justify-between">
                     <span class="text-slate-700">Auto-open summary panel</span>
-                    <input type="checkbox" class="toggle" checked>
+                    <input id="preference_summary" type="checkbox" class="toggle" checked>
                   </div>
                   <div class="flex items-center justify-between">
                     <span class="text-slate-700">Default export format</span>
-                    <select class="rounded-lg border px-2 py-1">
-                      <option>.txt</option>
-                      <option selected>.docx</option>
-                      <option>.pdf</option>
-                      <option>.srt</option>
+                    <select id="preference_format" class="rounded-lg border px-2 py-1">
+                      <option value=".txt">.txt</option>
+                      <option value=".docx" selected>.docx</option>
+                      <option value=".pdf">.pdf</option>
+                      <option value=".srt">.srt</option>
                     </select>
                   </div>
                 </div>
-              </div>
+                <div class="mt-4 flex items-center gap-2">
+                    <button class="px-4 py-2 rounded-xl bg-brand-600 text-white">Save</button>
+                    <button class="px-4 py-2 rounded-xl border">Cancel</button>
+                  </div>
+              </form>
             </section>
 
             <!-- Vocabulary -->
@@ -211,19 +219,19 @@
               <h2 class="font-semibold">Custom vocabulary</h2>
               <div class="mt-3 grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-4">
                 <div class="rounded-xl border p-4 bg-white">
-                  <div class="flex items-center gap-2">
-                    <input id="termInput" class="flex-1 rounded-lg border px-3 py-2 text-sm" placeholder="Add names, jargon, product terms… e.g., Zoho, Urapakkam, raga"/>
+                  <form id="vocabulary-form" class="flex items-center gap-2">
+                    <input id="termInput" type="text" class="flex-1 rounded-lg border px-3 py-2 text-sm" placeholder="Add names, jargon, product terms… e.g., Zoho, Urapakkam, raga"/>
                     <button id="addTerm" class="px-3 py-2 rounded-xl bg-brand-600 text-white text-sm">Add</button>
-                  </div>
+                  </form>
                   <div id="terms" class="mt-3 flex flex-wrap gap-2 text-sm">
-                    <span class="term px-2 py-1 rounded-full bg-brand-50 text-brand-700 border border-brand-200">Otter</span>
+                    <!-- <span class="term px-2 py-1 rounded-full bg-brand-50 text-brand-700 border border-brand-200">Otter</span>
                     <span class="term px-2 py-1 rounded-full bg-brand-50 text-brand-700 border border-brand-200">diarization</span>
-                    <span class="term px-2 py-1 rounded-full bg-brand-50 text-brand-700 border border-brand-200">IST</span>
+                    <span class="term px-2 py-1 rounded-full bg-brand-50 text-brand-700 border border-brand-200">IST</span> -->
                   </div>
                   <div class="mt-4 flex items-center gap-2 text-sm">
                     <button id="exportTerms" class="px-3 py-1.5 rounded-lg border">Export .json</button>
                     <label class="px-3 py-1.5 rounded-lg border cursor-pointer">Import .json
-                      <input id="importTerms" type="file" accept="application/json" class="hidden" />
+                      <input id="importTerms" type="file" accept=".json" class="hidden" />
                     </label>
                     <button id="clearTerms" class="px-3 py-1.5 rounded-lg border">Clear all</button>
                   </div>
@@ -242,20 +250,24 @@
             <!-- Notifications -->
             <section id="panel-notifications" class="hidden">
               <h2 class="font-semibold">Notifications</h2>
-              <div class="mt-3 grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+              <form id="notifications-form" class="mt-3 grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                 <div class="rounded-xl border p-4 bg-white space-y-3">
-                  <div class="flex items-center justify-between"><span>Recording finished</span><input type="checkbox" class="toggle" checked></div>
-                  <div class="flex items-center justify-between"><span>Transcript ready</span><input type="checkbox" class="toggle" checked></div>
-                  <div class="flex items-center justify-between"><span>Mentions in comments</span><input type="checkbox" class="toggle" checked></div>
-                  <div class="flex items-center justify-between"><span>Shared with you</span><input type="checkbox" class="toggle"></div>
+                  <div class="flex items-center justify-between"><span>Recording finished</span><input id="notifications_Recording" type="checkbox" class="toggle" checked></div>
+                  <div class="flex items-center justify-between"><span>Transcript ready</span><input id="notifications_Transcript" type="checkbox" class="toggle" checked></div>
+                  <div class="flex items-center justify-between"><span>Mentions in comments</span><input id="notifications_Mentions" type="checkbox" class="toggle" checked></div>
+                  <div class="flex items-center justify-between"><span>Shared with you</span><inpu id="notifications_Shared"t type="checkbox" class="toggle"></div>
                 </div>
                 <div class="rounded-xl border p-4 bg-white space-y-3">
-                  <div class="flex items-center justify-between"><span>Email</span><input type="checkbox" class="toggle" checked></div>
-                  <div class="flex items-center justify-between"><span>Push (mobile)</span><input type="checkbox" class="toggle" checked></div>
-                  <div class="flex items-center justify-between"><span>Desktop</span><input type="checkbox" class="toggle"></div>
-                  <div class="flex items-center justify-between"><span>Weekly summary</span><input type="checkbox" class="toggle"></div>
+                  <div class="flex items-center justify-between"><span>Email</span><input id="notifications_Email" type="checkbox" class="toggle" checked></div>
+                  <div class="flex items-center justify-between"><span>Push (mobile)</span><input id="notifications_Push" type="checkbox" class="toggle" checked></div>
+                  <div class="flex items-center justify-between"><span>Desktop</span><input id="notifications_Desktop" type="checkbox" class="toggle"></div>
+                  <div class="flex items-center justify-between"><span>Weekly summary</span><input id="notifications_summary" type="checkbox" class="toggle"></div>
                 </div>
-              </div>
+                <div class="mt-4 flex items-center gap-2">
+                    <button class="px-4 py-2 rounded-xl bg-brand-600 text-white">Save</button>
+                    <button class="px-4 py-2 rounded-xl border">Cancel</button>
+                  </div>
+              </form>
             </section>
 
             <!-- Shortcuts -->
@@ -284,36 +296,44 @@
             <!-- Devices -->
             <section id="panel-devices" class="hidden">
               <h2 class="font-semibold">Devices</h2>
-              <div class="mt-3 grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+              <form id="devices-form" class="mt-3 grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                 <div class="rounded-xl border p-4 bg-white space-y-3">
                   <div class="text-slate-700 font-medium">Microphone</div>
-                  <select class="w-full rounded-lg border px-3 py-2">
-                    <option>Default microphone</option>
-                    <option>External USB mic</option>
+                  <select id="devices_microphone" class="w-full rounded-lg border px-3 py-2">
+                    <option value="default" selected>Default microphone</option>
+                    <option value="external">External USB mic</option>
                   </select>
                   <div class="mt-2 h-3 rounded-full bg-slate-200 overflow-hidden"><div id="vu" class="h-full w-1/3 bg-brand-600"></div></div>
                   <div class="text-xs text-slate-500">Speak to test input levels.</div>
                 </div>
                 <div class="rounded-xl border p-4 bg-white space-y-3">
                   <div class="text-slate-700 font-medium">Speaker</div>
-                  <select class="w-full rounded-lg border px-3 py-2">
-                    <option>Default output</option>
-                    <option>Headphones</option>
+                  <select id="devices_speaker" class="w-full rounded-lg border px-3 py-2">
+                    <option value="default" selected>Default output</option>
+                    <option value="headphones">Headphones</option>
                   </select>
                   <button class="px-3 py-1.5 rounded-lg border">Play test sound</button>
                 </div>
-              </div>
+                <div class="mt-4 flex items-center gap-2">
+                    <button class="px-4 py-2 rounded-xl bg-brand-600 text-white">Save</button>
+                    <button class="px-4 py-2 rounded-xl border">Cancel</button>
+                  </div>
+              </form>
             </section>
 
             <!-- Privacy -->
             <section id="panel-privacy" class="hidden">
               <h2 class="font-semibold">Privacy & data</h2>
               <div class="mt-3 grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-                <div class="rounded-xl border p-4 bg-white space-y-3">
-                  <div class="flex items-center justify-between"><span>Make new recordings private</span><input type="checkbox" class="toggle" checked></div>
-                  <div class="flex items-center justify-between"><span>Allow link sharing by default</span><input type="checkbox" class="toggle"></div>
-                  <div class="flex items-center justify-between"><span>Auto-delete trashed items</span><select class="rounded-lg border px-2 py-1"><option>Never</option><option>30 days</option><option>60 days</option></select></div>
-                </div>
+                <form id="privacy-form" class="rounded-xl border p-4 bg-white space-y-3">
+                  <div class="flex items-center justify-between"><span>Make new recordings private</span><input  id="privacy_recording" type="checkbox" class="toggle" checked></div>
+                  <div class="flex items-center justify-between"><span>Allow link sharing by default</span><input id="privacy_sharing" type="checkbox" class="toggle"></div>
+                  <div class="flex items-center justify-between"><span>Auto-delete trashed items</span><select id="privacy_trash" class="rounded-lg border px-2 py-1"><option>Never</option><option>30 days</option><option>60 days</option></select></div>
+                  <div class="mt-4 flex items-center gap-2">
+                    <button class="px-4 py-2 rounded-xl bg-brand-600 text-white">Save</button>
+                    <button class="px-4 py-2 rounded-xl border">Cancel</button>
+                  </div>
+                </form>
                 <div class="rounded-xl border p-4 bg-white space-y-3">
                   <div class="font-medium">Account data</div>
                   <button class="px-3 py-1.5 rounded-lg border">Export account data</button>
@@ -361,31 +381,21 @@
     // Vocabulary chips
     const termInput = document.getElementById('termInput');
     const terms = document.getElementById('terms');
-    document.getElementById('addTerm').addEventListener('click', ()=>{
-      const val = termInput.value.trim(); if(!val) return; termInput.value='';
-      const chip = document.createElement('span');
-      chip.className = 'term px-2 py-1 rounded-full bg-brand-50 text-brand-700 border border-brand-200';
-      chip.textContent = val;
-      chip.title = 'Click to remove';
-      chip.addEventListener('click', ()=>chip.remove());
-      terms.appendChild(chip);
-    });
-    document.getElementById('clearTerms').addEventListener('click', ()=>{ terms.innerHTML=''; });
+    // document.getElementById('addTerm').addEventListener('click', ()=>{
+    //   const val = termInput.value.trim(); if(!val) return; termInput.value='';
+    //   const chip = document.createElement('span');
+    //   chip.className = 'term px-2 py-1 rounded-full bg-brand-50 text-brand-700 border border-brand-200';
+    //   chip.textContent = val;
+    //   chip.title = 'Click to remove';
+    //   chip.addEventListener('click', ()=>chip.remove());
+    //   terms.appendChild(chip);
+    // });
     document.getElementById('exportTerms').addEventListener('click', ()=>{
       const data = [...terms.querySelectorAll('.term')].map(x=>x.textContent);
       const blob = new Blob([JSON.stringify(data, null, 2)], {type:'application/json'});
       const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'vocabulary.json'; a.click();
     });
-    document.getElementById('importTerms').addEventListener('change', (e)=>{
-      const file = e.target.files[0]; if(!file) return;
-      const reader = new FileReader();
-      reader.onload = ()=>{
-        try { const arr = JSON.parse(reader.result);
-          arr.forEach(val=>{ const chip = document.createElement('span'); chip.className='term px-2 py-1 rounded-full bg-brand-50 text-brand-700 border border-brand-200'; chip.textContent = val; chip.title='Click to remove'; chip.addEventListener('click', ()=>chip.remove()); terms.appendChild(chip); });
-        } catch(err){ alert('Invalid JSON'); }
-      };
-      reader.readAsText(file);
-    });
+   
 
     // Shortcuts tester
     const tester = document.getElementById('tester');
@@ -403,6 +413,369 @@
 
     // Default to Profile tab on load
     showTab('profile');
+
+    let vocabularies = [];
+
+    // Update Profile
+    const serverUrl = "https://server.albetora.com/";
+    const user = "test";
+
+    const fetchData =  async (url) =>
+    {
+      console.log("fetching data from URL: ", url)
+       const res = await fetch(url);
+        
+        const data =  await res.json();
+       return data.response;
+    }
+
+    const postData =  async (url, payload) =>
+    {
+      console.log("Posting data to URL: ", url);
+      console.log("data: ", JSON.stringify(payload));
+       const res = await fetch(url, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+       body: JSON.stringify(payload)});
+       
+       console.log("Status code : " + res.ok);
+        const data =  await res.json();
+
+        return data.response;
+      
+    }
+
+
+    const setProfileData = async function(data) {
+      document.getElementById("profile_fullname").value = data.fullName;
+      document.getElementById("profile_email").value = data.email;
+      document.getElementById("profile_org").value = data.organization;
+      document.getElementById("profile_timezone").value = data.timezone;
+    }
+
+    const setPreferenceData = async function(data) {
+      document.getElementById("preference_langauge").value = data.langauge;
+      document.getElementById("preference_punctuation").checked = data.punctuation;
+      document.getElementById("preference_diarization").checked = data.diarization;
+      document.getElementById("preference_timestamps").value = data.timestamps;
+      document.getElementById("preference_Theme").value = data.Theme;
+      document.getElementById("preference_playback").checked = data.playback;
+      document.getElementById("preference_recording").checked = data.recording;
+      document.getElementById("preference_summary").checked = data.summary;
+      document.getElementById("preference_format").value = data.format;
+    }
+
+    const setNotificationsData = async function(data) {
+      document.getElementById("notifications_Recording").checked = data.recording;
+      document.getElementById("notifications_Transcript").checked = data.transcript;
+      document.getElementById("notifications_Mentions").checked = data.mentions;
+      document.getElementById("notifications_Shared").checked = data.shared;
+      document.getElementById("notifications_Email").checked = data.email;
+      document.getElementById("notifications_Push").checked = data.push;
+      document.getElementById("notifications_Desktop").checked = data.desktop;
+      document.getElementById("notifications_summary").checked = data.summary;
+    }
+    
+    const setDevices = async function(data)
+    {
+      document.getElementById("devices_speaker").value= data.speaker;
+      document.getElementById("devices_microphone").value= data.microphone;
+    }
+
+     const setPrivacy = async function(data)
+    {
+      document.getElementById("privacy_trash").value= data.trash;
+      document.getElementById("privacy_sharing").checked= data.sharing;
+      document.getElementById("privacy_recording").checked= data.recording;
+    }
+
+    const addVocabulary = async (text) => {
+        console.log('Creating node for vocabulary: ', text)
+        
+        const chip = document.createElement('span');
+        chip.className = 'term px-2 py-1 rounded-full bg-brand-50 text-brand-700 border border-brand-200';
+        chip.textContent = text;
+        chip.title = 'Click to remove';
+        chip.addEventListener('click', async ()=>{
+          vocabularies=vocabularies.filter(voc => voc !== chip.textContent  );
+          console.log("removed "+ chip.textContent +" from : " +vocabularies);
+          chip.remove()
+
+          let data = {}
+            data.vocabulary = vocabularies;
+          
+            data.user = user;
+
+          const addProfile = await postData(serverUrl+ "/api/settings/vocabulary", data);
+          console.log("Post status: ", addProfile)
+    
+        });
+        terms.appendChild(chip);
+      }
+
+    const setVocabulary = function(data) {
+      console.log("Vocabulary data ", data)
+       vocabularies= data.vocabulary;
+      console.log("Received vocabulary ", vocabularies)
+      terms.innerHTML = "";
+      vocabularies.forEach(text => addVocabulary(text))
+      
+    }
+
+     //get profile pic
+    async function loadProfile() {
+      try {
+        const res = await fetch(serverUrl+'/api/settings/profile_pic?user='+user);
+        const data = await res.json();
+
+        if (data.profilePicture) {
+          document.getElementById('profile-img').src = data.profilePicture;
+          document.getElementById('header_profilePic').src = data.profilePicture;
+        } else {
+        }
+      } catch (error) {
+        console.error('Error fetching profile:', error);
+      }
+    }
+    
+   window.onload = async() => {
+
+      await loadProfile();
+
+      let getProfile = await fetchData(serverUrl+ "/api/settings/profile?user="+user);
+      console.log("fetched Profile data : ", getProfile);
+      await setProfileData(getProfile);
+
+      let getPreference = await fetchData(serverUrl+ "/api/settings/preference?user="+user);
+      console.log("fetched preference data : ", getPreference);
+      await setPreferenceData(getPreference);
+
+      let getVocabulary = await fetchData(serverUrl+ "/api/settings/vocabulary?user="+user);
+      console.log("fetched vocabulary data : ", getVocabulary);
+      await setVocabulary(getVocabulary);
+
+      let getNotifications = await fetchData(serverUrl+'/api/settings/notifications?user='+user);
+      console.log("fetched notifications data : ", getNotifications);
+      await setNotificationsData(getNotifications);
+
+      let getDevices = await fetchData(serverUrl+'/api/settings/devices?user='+user);
+      console.log("fetched devices data : " ,getDevices);
+      await setDevices(getDevices);
+
+      let getPrivacy = await fetchData(serverUrl+'/api/settings/privacy?user='+user);
+      console.log("fetched privacy data : " ,getPrivacy);
+      await setPrivacy(getPrivacy);
+
+    }
+
+
+
+    document.getElementById("profile-form").addEventListener('submit', async e => {
+       e.preventDefault();
+       let data = {}
+        data.fullName = document.getElementById("profile_fullname").value;
+        data.email = document.getElementById("profile_email").value;
+        data.organization = document.getElementById("profile_org").value;
+        data.timezone = document.getElementById("profile_timezone").value;
+        data.user = user;
+
+       const addProfile = await postData(serverUrl+ "/api/settings/profile", data);
+       console.log("Post status: ", addProfile)
+    })
+
+     document.getElementById("preference-form").addEventListener('submit', async e => {
+       e.preventDefault();
+       let data = {}
+        data.langauge = document.getElementById("preference_langauge").value;
+        data.punctuation = document.getElementById("preference_punctuation").checked;
+        data.diarization = document.getElementById("preference_diarization").checked;
+        data.timestamps = document.getElementById("preference_timestamps").checked;
+        data.Theme = document.getElementById("preference_Theme").value;
+        data.playback = document.getElementById("preference_playback").checked;
+        data.recording = document.getElementById("preference_recording").checked;
+        data.summary = document.getElementById("preference_summary").checked;
+        data.format = document.getElementById("preference_format").value;
+        data.user = user;
+        
+       const addProfile = await postData(serverUrl+ "/api/settings/preference", data);
+       console.log("Post status: ", addProfile)
+    })
+
+    document.getElementById("vocabulary-form").addEventListener('submit', async e => {
+       e.preventDefault();
+       let data = {}
+       let newVocabulary = document.getElementById("termInput").value;
+       if(newVocabulary.trim() !== ""){
+        console.log("Adding vocabulary ", newVocabulary)
+         vocabularies.push(newVocabulary);
+          data.vocabulary = vocabularies;
+        
+          data.user = user;
+
+        const addProfile = await postData(serverUrl+ "/api/settings/vocabulary", data);
+        console.log("Post status: ", addProfile)
+        console.log("Setting vocab: ", vocabularies)
+        setVocabulary(data);
+        termInput.value="";
+       }
+    })
+
+    document.getElementById('clearTerms').addEventListener('click', async()=>{ 
+      let data = {};
+      data.vocabulary = [];
+      data.user = user;
+      const addProfile = await postData(serverUrl+ "/api/settings/vocabulary", data);
+      console.log("Post status: ", addProfile)
+      setVocabulary(data);
+
+    });
+
+     document.getElementById('importTerms').addEventListener('change',  (e)=>{
+      const file = e.target.files[0]; if(!file) return;
+      const reader = new FileReader();
+      reader.onload = async ()=>{
+        try { const arr = JSON.parse(reader.result);
+          console.log("Vocabulaories from file uplaod ", arr)
+          vocabularies.push(...arr);
+          let data = {};
+          data.vocabulary = vocabularies;
+        
+          data.user = user;
+
+        const addProfile = await postData(serverUrl+ "/api/settings/vocabulary", data);
+        console.log("Post status: ", addProfile)
+
+          setVocabulary({vocabulary: vocabularies});
+        } catch(err){ alert('Invalid JSON'); }
+      };
+      reader.readAsText(file);
+    });
+
+    document.getElementById("notifications-form").addEventListener('submit', async e => {
+       e.preventDefault();
+       let data = {}
+        data.recording = document.getElementById("notifications_Recording").checked;
+        data.transcript = document.getElementById("notifications_Transcript").checked;
+        data.mentions = document.getElementById("notifications_Mentions").checked;
+        data.shared = document.getElementById("notifications_Shared").checked;
+        data.email = document.getElementById("notifications_Email").checked;
+        data.push = document.getElementById("notifications_Push").checked;
+        data.desktop = document.getElementById("notifications_Desktop").checked;
+        data.summary = document.getElementById("notifications_summary").checked;
+        data.user = user;
+
+       const addProfile = await postData(serverUrl+ "/api/settings/notifications", data);
+       console.log("Post status: ", addProfile)
+    });
+
+     document.getElementById("devices-form").addEventListener('submit', async e => {
+       e.preventDefault();
+       let data = {}
+        data.microphone = document.getElementById("devices_microphone").value;
+        data.speaker = document.getElementById("devices_speaker").value;
+        
+        data.user = user;
+
+       const addProfile = await postData(serverUrl+ "/api/settings/devices", data);
+       console.log("Post status: ", addProfile)
+    });
+
+    document.getElementById("privacy-form").addEventListener('submit', async e => {
+       e.preventDefault();
+       let data = {}
+        data.trash = document.getElementById("privacy_trash").value;
+        data.sharing = document.getElementById("privacy_sharing").checked;
+        data.recording = document.getElementById("privacy_recording").checked;
+        
+        data.user = user;
+
+       const addProfile = await postData(serverUrl+ "/api/settings/privacy", data);
+       console.log("Post status: ", addProfile)
+    });
+
+   
+
+    
+    //upload profile pic
+    const form = document.getElementById('profile_pic_upload');
+    const status = document.getElementById('status');
+
+    form.addEventListener('click', async (event) => {
+      event.preventDefault(); // Prevent page reload
+
+      const fileInput = document.getElementById('file');
+      const file = fileInput.files[0];
+
+
+
+      const formData = new FormData();
+      formData.append('file', file);
+      formData.append('user', user);
+
+      status.textContent = 'Uploading...';
+
+      try {
+        const res = await fetch(serverUrl+'/api/settings/profile_pic', {
+          method: 'POST',
+          body: formData
+        });
+
+        const data = await res.json();
+
+        if (res.ok) {
+          status.textContent = `Upload successful!`;
+          loadProfile();
+        } else {
+          status.textContent = `Error: ${data.message}`;
+        }
+        
+       
+
+      } catch (err) {
+        console.error('Upload error:', err);
+        status.textContent = 'Upload failed.';
+      }
+         setTimeout(() => {
+          status.textContent = '';
+        }, 5000);
+
+    });
+
+     const removePic = document.getElementById('profile_pic_remove');
+    removePic.addEventListener('click', async (event) => {
+      event.preventDefault(); // Prevent page reload
+
+    
+
+      try {
+        const res = await fetch(serverUrl+'/api/settings/profile_pic?user='+user, {
+          method: 'DELETE'
+        });
+
+        const data = await res.json();
+
+        if (res.ok) {
+          status.textContent = `Deleted successfully!`;
+          document.getElementById('profile-img').src = 'https://i.pravatar.cc/40?img=5';
+          document.getElementById('header_profilePic').src = 'https://i.pravatar.cc/40?img=5';
+        } else {
+          status.textContent = `Error: ${data.message}`;
+        }
+        
+       
+
+      } catch (err) {
+        console.error('Deletion error:', err);
+        status.textContent = 'Deletion failed.';
+      }
+         setTimeout(() => {
+          status.textContent = '';
+        }, 5000);
+
+    });
+
   </script>
 </body>
 </html>
